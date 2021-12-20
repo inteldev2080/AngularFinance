@@ -1,0 +1,61 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper full-height ">
+    <!-- START PAGE CONTENT -->
+    <div class="container no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center text-uppercase">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+                {{"admin.reports.index.reports" | translate }}</p>
+
+            <ul class="main-menu">
+                <li permission permission-only="'manageOrdersReports'" ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.report.orders" class=" m-l-25">
+                        <span class="title">{{"admin.reports.index.orders" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageTransactionsReports'" ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.report.transactions" class="m-l-25">
+                        <span class="title">{{"admin.reports.index.transactions" | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div ncy-breadcrumb></div>
+                <ui-view/>
+
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+    $('.secondary-side').on('click','ul li a>.title',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

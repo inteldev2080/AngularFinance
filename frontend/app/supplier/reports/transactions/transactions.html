@@ -1,0 +1,195 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.report.transactions">{{"supplier.reports.transactions.stats.reports" | translate }}</a></li>
+        <li class="breadcrumb-item active">{{"supplier.reports.transactions.stats.transactionReports" | translate }}</li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-xl-4 col-sm-6 m-b-20">
+        <div class="border-top-balance-card">
+            <div class="p-t-10 p-b-10 p-l-15 p-r-15">
+                <h6>{{"supplier.reports.transactions.stats.transactions" | translate }}</h6>
+                <h5 class="bold">{{$ctrl.transaction.numberOfTransactions}}
+                    <small>
+                        <small class="w300 sm-text-left upper-case">{{"supplier.reports.transactions.stats.transaction" | translate }}</small>
+                    </small>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 m-b-20">
+        <div class="border-top-balance-card" ng-class="{'danger': $ctrl.transaction.totalCredit < 0, 'warning': $ctrl.transaction.totalCredit == 0}">
+            <div class="p-t-10 p-b-10 p-l-15 p-r-15">
+                <h6>{{"supplier.reports.transactions.stats.transactionVolume" | translate }}</h6>
+                <h5 class="bold">{{$ctrl.transaction.totalBalance| currency:"":2}}
+                    <small>
+                        <small class="w300 sm-text-left upper-case">{{"supplier.reports.transactions.stats.sar" | translate }}</small>
+                    </small>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 m-b-20">
+        <div class="border-top-balance-card" ng-class="{'danger': $ctrl.transaction.totalCredit < 0, 'warning': $ctrl.transaction.totalCredit == 0}">
+            <div class="p-t-10 p-b-10 p-l-15 p-r-15">
+                <h6>{{"supplier.reports.transactions.stats.approvedPayment" | translate }}</h6>
+                <h5 class="bold">{{$ctrl.transaction.totalCredit | currency:"":2}}
+                    <small>
+                        <small class="w300 sm-text-left upper-case">{{"supplier.reports.transactions.stats.sar" | translate }}</small>
+                    </small></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="gray-container">
+        <div class="row">
+            <div class="col"><p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{"supplier.reports.transactions.filter.transactions" | translate }}</p></div>
+            <div class="col d-flex justify-content-start justify-content-sm-end mb-3 mb-sm-0">
+                <small class="text-uppercase p-t-10 p-l-10 p-r-10">{{"supplier.reports.transactions.filter.export" | translate }}</small>
+                <div class="btn-toolbar" role="toolbar">
+                    <div dir="ltr" class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-primary" ng-click="$ctrl.exportFile('pdf')"><i
+                                class="fa fa-file-pdf-o"></i> PDF
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="$ctrl.exportFile('xls')"><i
+                                class="fa fa-file-excel-o"></i> EXCEL
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-header p-t-0" style="min-height: 20px">
+            <div class="card-title">
+                ({{$ctrl.searchCriteria.startDate | date:'medium'}} - {{$ctrl.searchCriteria.endDate | date:'medium'}})
+            </div>
+            <div class="col-sm-6 pull-right">
+
+            </div>
+        </div>
+        <div class="row m-t-20">
+            <div class="col-sm-4">
+                <div style="z-index:1;" class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.reports.transactions.filter.customer" | translate }}</label>
+                    <select ng-model="$ctrl.searchCriteria.customerId" ng-change="$ctrl.onFilterChange($ctrl.searchCriteria)" id="customerSelect"
+                            class="full-width" data-placeholder="Select Customer" data-init-plugin="select2">
+                        <option value="">اختر</option>
+                        <option value="All">{{"supplier.reports.transactions.filter.All" | translate }}</option>
+                        <option ng-repeat="item in $ctrl.customers" value="{{item._id}}">{{item.representativeName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div style="z-index:1;" class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.reports.transactions.filter.type" | translate }}</label>
+                    <select ng-model="$ctrl.searchCriteria.type" ng-change="$ctrl.onFilterChange($ctrl.searchCriteria)" id="typeSelect"
+                            class="full-width" data-placeholder="Select Type" data-init-plugin="select2">
+                        <option value="All" >All</option>
+                        <option value="Debit">{{"supplier.reports.transactions.type.debit" | translate }}</option>
+
+                        <option value="Credit">{{"supplier.reports.transactions.type.credit" | translate }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-group-default input-group">
+                    <div class="form-input-group">
+                        <label>{{"supplier.reports.transactions.filter.period" | translate }}</label>
+                        <input type="text" style="width: 100%" name="reservation" id="daterangepicker"
+                               class="form-control"
+                               value="{{$ctrl.searchCriteria.startDate}} {{$ctrl.searchCriteria.endDate}}"/>
+                    </div>
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12 padding-0">
+                <div class="dataTables_wrapper table-responsive">
+                    <table class="table table-striped table-compact table-hover">
+                        <thead>
+                        <tr role="row">
+                            <th class="bold" width="200">{{"supplier.reports.transactions.table.date" | translate }}</th>
+                            <th class="bold" width="0">{{"supplier.reports.transactions.table.type" | translate }}</th>
+                            <th class="bold">{{"supplier.reports.transactions.table.from" | translate }}</th>
+                            <th class="bold" width="100">{{"supplier.reports.transactions.table.amount" | translate }}</th>
+                            <th class="bold" width="0">{{"supplier.reports.transactions.table.paymentMethod" | translate }}</th>
+                        </tr></thead>
+                        <tbody>
+
+                        <tr ng-repeat="item in $ctrl.transaction.transactions" class="gradeX odd content-table-payment cursor" role="row" ng-click="$ctrl.selected(item)">
+                            <td class="sorting_1 mn-150 p-r-0">
+                                <span class="label upper-case">{{item.date | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                <span class="label upper-case">{{item.date | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                            </td>
+                            <td class="sorting_1 mn-50 p-r-0 p-l-0">
+                                    <span ng-if="item.type === 'credit'"
+                                          class="label label-success upper-case">{{"supplier.reports.transactions.type.credit" | translate }}</span>
+                                <span ng-if="item.type === 'debit'"
+                                      class="label label-important upper-case">{{"supplier.reports.transactions.type.debit" | translate }}</span>
+                            </td>
+                            <td class="sorting_1 mn-150 p-l-5 text-capitalize">{{item.from}}</td>
+
+                            <td class="sorting_1 p-l-5">{{item.amount| currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                            <td class="sorting_1 p-l-5">
+                                <span ng-if="item.paymentMethod === 'Cash'"
+                                      class="label label-success upper-case"><li class="fa fa-money"></li> {{"supplier.account.payment.cash" | translate}}</span>
+                                <span ng-if="item.paymentMethod === 'Cheque'"
+                                      class="label label-info upper-case"><li class="fa pg-credit_card_line"></li> {{"supplier.account.payment.cheque" | translate}}</span>
+                                <span ng-if="item.paymentMethod === 'Bank'"
+                                      class="label label-inverse upper-case"><li class="fa fa-bank"></li> {{"supplier.account.payment.bank" | translate}}</span>
+
+
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <list-pagination total-pages="$ctrl.totalPages" current-page="$ctrl.currentPage" on-page-click="$ctrl.setPage(pageNumber)"></list-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<view-payment bill="$ctrl.billItem" payment-type="'AS'"></view-payment>
+
+<script>
+    $('#customerSelect , #typeSelect').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

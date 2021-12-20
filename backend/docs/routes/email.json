@@ -1,0 +1,432 @@
+{
+  "schemas": {
+    "Email": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "template": {
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            },
+            "en": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
+
+          }
+        },
+        "original_template": {
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            },
+            "en": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+  },
+  "paths": {
+    "/email": {
+      "get": {
+        "tags": [
+          "Email"
+        ],
+        "summary": "Get list of email.",
+        "operationId": "emailList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "emails": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Email"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Email"
+        ],
+        "summary": "Create new email.",
+        "operationId": "createEmail",
+        "requestBody": {
+          "description": "Email Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+
+                  "arabicTitle": {
+                    "type": "string"
+                  },
+                  "arabicBody": {
+                    "type": "string"
+                  },
+                  "englishTitle": {
+                    "type": "string"
+                  },
+                  "englishBody": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": "string"
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Email"
+        ],
+        "summary": "Update email.",
+        "operationId": "updateEmail",
+        "requestBody": {
+          "description": "Email Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+
+                  "arabicTitle": {
+                    "type": "string"
+                  },
+                  "arabicBody": {
+                    "type": "string"
+                  },
+                  "englishTitle": {
+                    "type": "string"
+                  },
+                  "englishBody": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": "string"
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/email/{emailId}": {
+      "get": {
+        "tags": [
+          "Email"
+        ],
+        "summary": "Get email by id.",
+        "operationId": "emailbyId",
+        "parameters": [{
+          "name": "emailId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+
+    "/email/reset": {
+      "put": {
+        "tags": [
+          "Email"
+        ],
+        "summary": "Reset email.",
+        "operationId": "resetEmail",
+        "requestBody": {
+          "description": "Email Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "array",
+                          "$ref": "#/components/schemas/Email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+
+  }
+}

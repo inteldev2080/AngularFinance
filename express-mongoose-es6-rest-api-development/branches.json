@@ -1,0 +1,759 @@
+{ 
+    "_id" : ObjectId("5ea87663d8d93354f6161318"), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "createdAt" : ISODate("2020-04-28T21:30:59.162+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212، السعودية"
+    }, 
+    "branchName" : "coffee", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1ac685cce33f65397fa822"), 
+    "customer" : ObjectId("5f1ac685cce33f65397fa81f"), 
+    "createdAt" : ISODate("2020-07-24T14:31:17.243+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.53383545174399, 
+            44.92539140625
+        ], 
+        "address" : "Unnamed Road Saudi Arabia"
+    }, 
+    "branchName" : "baking", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f3b8463687ef766db4a8a70"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "createdAt" : ISODate("2020-08-18T10:33:55.408+0000"), 
+    "location" : {
+        "type" : "point", 
+        "coordinates" : [
+            26.3385403, 
+            50.20831949999999
+        ], 
+        "address" : "Dose Cafe | دوز كافيه | KBR Rakka، طريق الأمير سلطان، Al Rakah Al Janubiyah, الخبر السعودية"
+    }, 
+    "branchName" : "Dose Rakkah", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f3c209b687ef766db4a8a73"), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "createdAt" : ISODate("2020-08-18T21:40:27.427+0000"), 
+    "location" : {
+        "address" : "19212، السعودية", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "type" : "point"
+    }, 
+    "branchName" : "Coffee - Hofuf", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f3c20ac687ef766db4a8a74"), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "createdAt" : ISODate("2020-08-18T21:40:44.920+0000"), 
+    "location" : {
+        "address" : "19212، السعودية", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "type" : "point"
+    }, 
+    "branchName" : "Coffee - Riyadh", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f411a524fd10364fd9d30ed"), 
+    "customer" : ObjectId("5f411a524fd10364fd9d30ea"), 
+    "createdAt" : ISODate("2020-08-22T16:14:58.366+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "coffeetest", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f42a7256f0d7d32989a8282"), 
+    "customer" : ObjectId("5f42a7246f0d7d32989a827f"), 
+    "createdAt" : ISODate("2020-08-23T20:28:05.150+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "maliks & co", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f42aef1931d8d39b52bba46"), 
+    "customer" : ObjectId("5f42aef1931d8d39b52bba43"), 
+    "createdAt" : ISODate("2020-08-23T21:01:21.812+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "113131", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f456c9895b1207f0d403bcd"), 
+    "customer" : ObjectId("5f456c9895b1207f0d403bca"), 
+    "createdAt" : ISODate("2020-08-25T22:55:04.681+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "test wallah", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f45a239d0da7f4f7b1dbb6e"), 
+    "customer" : ObjectId("5f45a239d0da7f4f7b1dbb6b"), 
+    "createdAt" : ISODate("2020-08-26T02:43:53.995+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            25.3802705, 
+            49.5885666
+        ], 
+        "address" : "Hofuf Taxi Stand, King Abdulaziz Road, Al Hofuf Saudi Arabia"
+    }, 
+    "branchName" : "testpermission", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4768961111bb265a26525a"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "createdAt" : ISODate("2020-08-27T11:02:30.659+0000"), 
+    "location" : {
+        "type" : "point", 
+        "coordinates" : [
+            26.4579517, 
+            50.1203651
+        ], 
+        "address" : "Dose Cafe | دوز كافيه | DMM Shatie, Dammam السعودية"
+    }, 
+    "branchName" : "Dose Dammam", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f478d481111bb265a26526f"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "createdAt" : ISODate("2020-08-27T13:39:04.822+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | KBR Rakka، Prince Sultan Road, Al Khobar Saudi Arabia", 
+        "coordinates" : [
+            26.3385403, 
+            50.20831949999999
+        ], 
+        "type" : "point"
+    }, 
+    "branchName" : "Dose Rakkah", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f478dbb1111bb265a265270"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "createdAt" : ISODate("2020-08-27T13:40:59.998+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | KBR Golden Belt, Prince Humud Street, Al Khobar Saudi Arabia", 
+        "coordinates" : [
+            26.3183033, 
+            50.20392289999999
+        ], 
+        "type" : "point"
+    }, 
+    "branchName" : "Dose Patio", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4a6fce9f78705936d53073"), 
+    "customer" : ObjectId("5f4a6fce9f78705936d53070"), 
+    "createdAt" : ISODate("2020-08-29T18:10:06.642+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "ondemand", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4aa45543ce3f5fb73ea20a"), 
+    "customer" : ObjectId("5f4aa45543ce3f5fb73ea207"), 
+    "createdAt" : ISODate("2020-08-29T21:54:13.247+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "ondemands", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4aab3c43ce3f5fb73ea215"), 
+    "customer" : ObjectId("5f4aab3c43ce3f5fb73ea212"), 
+    "createdAt" : ISODate("2020-08-29T22:23:40.357+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212, Saudi Arabia"
+    }, 
+    "branchName" : "mo customer", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4ab2a243ce3f5fb73ea222"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "createdAt" : ISODate("2020-08-29T22:55:14.859+0000"), 
+    "location" : {
+        "address" : "19212, Saudi Arabia", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "city" : "Riyadh", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "123", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ab")
+}
+{ 
+    "_id" : ObjectId("5f4bc575adc4d51af535b38b"), 
+    "customer" : ObjectId("5f4bc575adc4d51af535b388"), 
+    "createdAt" : ISODate("2020-08-30T18:27:49.265+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "address" : "19212، السعودية"
+    }, 
+    "branchName" : "cafemo", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4ca6ef22c0291c7f2e5fb9"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "createdAt" : ISODate("2020-08-31T10:29:51.100+0000"), 
+    "location" : {
+        "type" : "Point", 
+        "coordinates" : [
+            24.7664122, 
+            46.62365579999999
+        ], 
+        "address" : "Fabrica De Cafe, Prince Muhammad Ibn Saad Ibn Abdulaziz Road, Riyadh Saudi Arabia"
+    }, 
+    "branchName" : "شركة مصنع القهوة لتقديم الوجبات", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4d264122c0291c7f2e5fc5"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-08-31T19:33:05.418+0000"), 
+    "location" : {
+        "address" : "Dose cafe | دوز كافيه | RUH Malqa, Anas Ibn Malik Road, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.8074462, 
+            46.6170921
+        ], 
+        "type" : "Point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "coffee taste co.", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b8")
+}
+{ 
+    "_id" : ObjectId("5f4de2c91d2357606dfa18a4"), 
+    "customer" : ObjectId("5f4de2c81d2357606dfa18a1"), 
+    "createdAt" : ISODate("2020-09-01T08:57:29.085+0000"), 
+    "location" : {
+        "address" : "19212, Saudi Arabia", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "type" : "Point", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Vegetables Basket", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : null
+}
+{ 
+    "_id" : ObjectId("5f4ffe0f0d4032396a3f3374"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:18:23.758+0000"), 
+    "location" : {
+        "address" : "Dose cafe | دوز كافيه | RUH Malqa, Anas Ibn Malik Road, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.8074462, 
+            46.6170921
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Malqa BRANCH", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b0")
+}
+{ 
+    "_id" : ObjectId("5f4ffe210d4032396a3f3375"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:18:41.033+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | RUH Park, Park, Northern Ring Branch Road, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.7567469, 
+            46.6290012
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Riyadh Park", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b1")
+}
+{ 
+    "_id" : ObjectId("5f4ffe2e0d4032396a3f3376"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:18:54.621+0000"), 
+    "location" : {
+        "address" : "Dose Cafe، طريق الملك عبدالله، الحمراء، الرياض 13216, Saudi Arabia", 
+        "coordinates" : [
+            24.7636795, 
+            46.74623479999999
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Deem Plaza", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b2")
+}
+{ 
+    "_id" : ObjectId("5f4ffe3e0d4032396a3f3377"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:19:10.212+0000"), 
+    "location" : {
+        "address" : "Riyadh Front, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.8414096, 
+            46.733338
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Riyadh Front", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b3")
+}
+{ 
+    "_id" : ObjectId("5f4ffe4d0d4032396a3f3378"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:19:25.689+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | RUH Exit 25, Southern Ring Branch Road, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.5692986, 
+            46.66216659999999
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Jarir Exit 25", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b1")
+}
+{ 
+    "_id" : ObjectId("5f4ffe570d4032396a3f3379"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:19:35.984+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | RUH T One, Al Awal, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.7604444, 
+            46.6045816
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Turki 1st", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b5")
+}
+{ 
+    "_id" : ObjectId("5f4ffe640d4032396a3f337a"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:19:48.417+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | RUH Hub, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.7332514, 
+            46.6109352
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Riyadh Hub", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3b6")
+}
+{ 
+    "_id" : ObjectId("5f4ffe770d4032396a3f337b"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-02T23:20:07.449+0000"), 
+    "location" : {
+        "address" : "Dose Cafe | دوز كافيه | RUH Yasmine, Abi Bakr As Siddiq Road, Alyasmin, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.8138081, 
+            46.6675678
+        ], 
+        "type" : "point", 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Yasmeen Branch", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3af")
+}
+{ 
+    "_id" : ObjectId("5f55f7bb8d911f4a04884d93"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "createdAt" : ISODate("2020-09-07T12:04:59.270+0000"), 
+    "location" : {
+        "type" : "point", 
+        "coordinates" : [
+            24.780599951371194, 
+            46.61722228740236
+        ], 
+        "address" : "7211 As Sahari Al Aqiq Riyadh 13515, العقيق، الرياض 13515, Saudi Arabia"
+    }, 
+    "branchName" : "4TWINS HITTIN", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f6f69dd0e9f621d8f7c83ba"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2020-09-26T19:18:37.419+0000"), 
+    "location" : {
+        "address" : "Prince Satam Bin Abdulaziz, Al Khuzama, Riyadh 12576, Saudi Arabia", 
+        "coordinates" : [
+            24.728050055071165, 
+            46.58902919453125
+        ], 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "city" : "Riyadh"
+    }, 
+    "branchName" : "Dose Alyarmuk", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3af")
+}
+{ 
+    "_id" : ObjectId("5f7d6a980e9f621d8f7c8c06"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "createdAt" : ISODate("2020-10-07T10:13:28.831+0000"), 
+    "location" : {
+        "type" : "point", 
+        "coordinates" : [
+            24.737634620635216, 
+            46.631295115184784
+        ], 
+        "address" : "3428 Prince Turki Ibn Abdulaziz Al Awwal Rd, An Nakheel, Riyadh 12382 6291, Saudi Arabia"
+    }, 
+    "branchName" : "Equal Coffee hub, Tawazi", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60045ba7d6c13f401fe3eaa5"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "createdAt" : ISODate("2021-01-17T18:45:43.375+0000"), 
+    "location" : {
+        "address" : "19212, Saudi Arabia", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "city" : "Riyadh", 
+        "coordinates" : [
+            23.8859, 
+            45.0792
+        ], 
+        "type" : "point"
+    }, 
+    "branchName" : "Malik the Branch", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ab")
+}
+{ 
+    "_id" : ObjectId("60198525ecbe283231f45374"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2021-02-02T20:00:21.348+0000"), 
+    "location" : {
+        "city" : "Dammam", 
+        "address" : "dose cafe", 
+        "coordinates" : [
+
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "Alyarmuk", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3af")
+}
+{ 
+    "_id" : ObjectId("6019a4dedaaa743a340eb565"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2021-02-02T22:15:42.472+0000"), 
+    "location" : {
+        "city" : "HOFUF", 
+        "address" : "dose ", 
+        "coordinates" : [
+
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "Dose New", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ae")
+}
+{ 
+    "_id" : ObjectId("601adbdf94bdfa31b2d2526b"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "createdAt" : ISODate("2021-02-03T20:22:39.095+0000"), 
+    "location" : {
+        "address" : "2770 Abu Ubaydah Amir Ibn Al Jarrah, Al Kandarah District, Jeddah 22242 6987, Saudi Arabia", 
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "coordinates" : [
+            21.493156757488634, 
+            39.20042499882814
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "!23", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ab")
+}
+{ 
+    "_id" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "createdAt" : ISODate("2021-02-03T20:23:26.337+0000"), 
+    "location" : {
+        "address" : "4428, Ajyad, Makkah 24231 6870, Saudi Arabia", 
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "coordinates" : [
+            21.419011280337866, 
+            39.827468864062496
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "Baby12", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ab")
+}
+{ 
+    "_id" : ObjectId("603276aa64d7b1032f634ad8"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2021-02-21T18:05:14.196+0000"), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ae"), 
+    "location" : {
+        "city" : "HOFUF", 
+        "address" : "HOFUF", 
+        "coordinates" : [
+            46.5423373, 
+            24.7255553
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "Four Twins | Nada", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60450b7e27370a6aecc3302a"), 
+    "customer" : ObjectId("60450b7e27370a6aecc33027"), 
+    "createdAt" : ISODate("2021-03-07T20:21:02.708+0000"), 
+    "location" : {
+        "address" : "Prince Satam Bin Abdulaziz, Al Khuzama, Riyadh 12576, Saudi Arabia", 
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "coordinates" : [
+            24.728050055071165, 
+            46.58902919453125
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "dsa", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("6073445d8bce253631eb0304"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2021-04-11T21:47:57.106+0000"), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3af"), 
+    "location" : {
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "address" : "Riyadh Park | الرياض بارك، Northern Ring Branch Road, Riyadh Saudi Arabia", 
+        "coordinates" : [
+            24.7558509, 
+            46.6301956
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "test", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("607344748bce253631eb0305"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "createdAt" : ISODate("2021-04-11T21:48:20.902+0000"), 
+    "manager" : ObjectId("60293aee8e96b72ae212c3ae"), 
+    "location" : {
+        "city" : "Makkah", 
+        "cityId" : ObjectId("6035210759b65949234624df"), 
+        "address" : "Makkha mukarma, Mecca Saudi Arabia", 
+        "coordinates" : [
+            21.5801041, 
+            39.7703495
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "test2", 
+    "status" : "InActive", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60a8fb085d6faa50100aee17"), 
+    "customer" : ObjectId("60a8fb075d6faa50100aee14"), 
+    "createdAt" : ISODate("2021-05-22T15:37:28.127+0000"), 
+    "location" : {
+        "address" : "Prince Satam Bin Abdulaziz, Al Khuzama, Riyadh 12576, Saudi Arabia", 
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "coordinates" : [
+            24.728050055071165, 
+            46.58902919453125
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "oidsa", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb59c21534ac396058efbe"), 
+    "customer" : ObjectId("60bb59c11534ac396058efbb"), 
+    "createdAt" : ISODate("2021-06-05T14:02:26.162+0000"), 
+    "location" : {
+        "address" : "Prince Satam Bin Abdulaziz, Al Khuzama, Riyadh 12576, Saudi Arabia", 
+        "city" : "Riyadh", 
+        "cityId" : ObjectId("6032888f6840cd47eb13d80c"), 
+        "coordinates" : [
+            24.728050055071165, 
+            46.58902919453125
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "comp", 
+    "status" : "Active", 
+    "__v" : NumberInt(0), 
+    "manager" : null
+}
+{ 
+    "_id" : ObjectId("60bb5b2f1534ac396058efbf"), 
+    "customer" : ObjectId("60bb59c11534ac396058efbb"), 
+    "createdAt" : ISODate("2021-06-05T14:08:31.315+0000"), 
+    "manager" : null, 
+    "location" : {
+        "city" : "Makkah", 
+        "cityId" : ObjectId("6035210759b65949234624df"), 
+        "address" : "4757, Ajyad, Makkah 24231 6572, Saudi Arabia", 
+        "coordinates" : [
+            21.416466550776896, 
+            39.83069955507813
+        ], 
+        "type" : "Point"
+    }, 
+    "branchName" : "Malik 2", 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}

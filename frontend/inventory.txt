@@ -1,0 +1,20 @@
+Inventory Front End Implementation
+
+Routing:
+Inventories routing is defined in app > supplier > supplier.route.js
+
+
+Translations:
+All translations related to inventory module is defined in app > supplier > supplier.translate.ar.json and supplier.translate.en.json
+
+Module:
+Inventory module is all defined in app > supplier > inventories
+
+Inventory entrance point is app > supplier > inventories > index.html
+
+Main recipe listing is app > supplier > inventories > recipes-items-list > recipes.html
+
+All recipes popups are defined in pp > supplier > inventories > receipt-form
+
+Ingredients listing and ingredients add edit delete forms are defined in app > supplier > inventories > ingredient-form & app > supplier > inventories > ingredients-items-list
+

@@ -1,0 +1,1283 @@
+{
+  "header": {
+    "changeLanguage": "English",
+    "hello": "مرحبا،",
+    "myProfile": "الملف الشخصي",
+    "logout": "تسجيل الخروج",
+    "cart": "عربة التسوق",
+    "type": "اكتب في أي مكان",
+    "search": "البحث",
+    "contactUS": "تواصل معنا"
+  },
+  "footer": {
+    "copyright": "حقوق الطبع والنشر © 2021",
+    "rights": "جميع الحقوق محفوظة",
+    "hand_craft_statement": "تم تطويره بواسطة",
+    "made_statement": "وصنع مع الحب ®",
+    "terms": "شروط الاستخدام",
+    "privacy": "سياسة الخصوصية",
+    "project_name": "Supplies On",
+    "developer": "اندى لابز ذ.م.م"
+  },
+  "supplier": {
+    "account": {
+      "billing": "الفواتير",
+      "staff": "الموظفين",
+      "roles": {
+        "title": "الوظائف و التصريحات",
+        "button": {
+          "add": "وظيفة جديده "
+        }
+      },
+      "profile": {
+        "side_menu": {
+          "back": "رجوع"
+        },
+        "breadcrumb": {
+          "supplier": "المزود",
+          "profile": "الملف الشخصي",
+          "contact": "تواصل معنا"
+        },
+        "text": {
+          "company_info": "معلومات الشركة",
+          "acc_holder_info": "البيانات الشخصية",
+          "reset_password": "إعادة تعيين كلمة المرور"
+        },
+        "button": {
+          "save_changes": "حفظ التغييرات",
+          "upload_photo": "ارفاق الملف",
+          "download": "تنزيل الملف",
+          "upload_cover_image": "تحميل صورة الغلاف",
+          "updateAttachment": "تحديث المرفقات"
+        },
+        "field": {
+          "company_name": {
+            "label": "اسم الشركة",
+            "placeholder": "اسم الشركة",
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "cr_number": {
+            "label": "رقم السجل التجاري",
+            "placeholder": "رقم السجل التجاري",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة، يجب أن يكون 10 أرقام فقط"
+          },
+          "cr_Expdate": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "تاريخ انتهاء الصلاحية(ميلادى)",
+            "labelHijri": "تاريخ انتهاء الصلاحية (هجري)",
+            "placeholder": "DD\/MM\/YYYY"
+          },
+          "cr_photo": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "صورة السجل التجارى",
+            "placeholder": "لم تقم باختيار ملف",
+            "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت"
+          },
+          "VAT": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "الضريبة المضافة",
+            "placeholder": "الضريبة المضافة",
+            "invalid": "الضريبة لابد ان تكون على هيئة ارقام او ارقام عشرية"
+          },
+          "vatPhoto": {
+            "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+            "label": "صورة الرقم الضريبي",
+            "required": "هذه الخانة مطلوبه",
+            "photoErr": "حجم الصورة تخطى 4 ميجا بايت",
+            "placeholder": "لم تقم باختيار ملف"
+          },
+          "select_date": {
+            "label": "أختر تاريخ :",
+            "hijri": "هجرى",
+            "gregorian": "ميلادى"
+          },
+          "location": {
+            "label": "الموقع",
+            "placeholder": "أدخل موقعك",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "first_name": {
+            "label": "الاسم الأول",
+            "placeholder": "الاسم الأول",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "last_name": {
+            "label": "الاسم الأخير",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "الاسم الأخير",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "email": {
+            "label": "البريد الإلكتروني",
+            "placeholder": "Email@supplieson.com",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+          },
+          "phone": {
+            "invalid": "رقم الهاتف غير صحيح",
+            "label": "رقم الهاتف ",
+            "placeholder": "9665XXXXXXXX",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "old_password": {
+            "placeholder": "كلمة المرور القديمة",
+            "label": "كلمة المرور القديمة",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+          },
+          "new_password": {
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+            "required": "هذه الخانة مطلوبه",
+            "label": "كلمة المرور الجديدة",
+            "placeholder": "كلمة المرور الجديدة"
+          },
+          "language": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "اللغة",
+            "placeholder": "اللغة"
+          }
+        },
+        "message": {
+          "old_password_incorrect": "كلمة المرور القديمة غير صحيحة",
+          "password_update_successfully": "تم تحديث كلمة المرور بنجاح",
+          "duplicate-data": "البيانات التي أدخلتها موجودة من قبل",
+          "failure": "حدث خطأ يرجى المحاولة مرة أخرى في وقت لاحق",
+          "profile_update_successfully": "تم تحديث الملف الشخصي بنجاح",
+          "address_missing": "يرجى العلم ان العنوان غير موجود",
+          "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+          "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+        },
+        "users": {
+          "title": "الموظفين",
+          "text": {
+            "users": "المستخدمين",
+            "Name": "الاسم",
+            "Role": "الوظيفة",
+            "Email": "البريد الإلكتروني",
+            "status": "الحالة",
+            "search": "البحث عن طريق الاسم أو البريد الإلكتروني",
+            "select_role": "حدد الوظيفة",
+            "all": "الكل",
+            "update_user": "تحديث المستخدم"
+          },
+          "button": {
+            "New_user": "مستخدم جديد"
+          },
+          "New_user": {
+            "text": {
+              "new_user": "إنشاء مستخدم جديد"
+            },
+            "field": {
+              "first_name": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "الاسم الأول",
+                "placeholder": "الاسم الأول",
+                "invalid": "يحتوي على أحرف غير صالحة"
+              },
+              "last_name": {
+                "placeholder": "الاسم الأخير",
+                "label": "الاسم الأخير",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يحتوي على أحرف غير صالحة"
+              },
+              "email": {
+                "placeholder": "البريد الإلكتروني",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+                "label": "البريد الإلكتروني"
+              },
+              "mobile": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "رقم الهاتف",
+                "placeholder": "رقم الهاتف",
+                "invalid": "رقم الهاتف غير صحيح"
+              },
+              "password": {
+                "label": "كلمة المرور",
+                "placeholder": "كلمة المرور",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+              },
+              "roles": {
+                "label": "الوظيفة",
+                "placeholder": "حدد الوظيفة"
+              },
+              "status": {
+                "label": "الحالة",
+                "placeholder": "حدد الحالة"
+              },
+              "status_active": "نشط",
+              "status_blocked": "محظور",
+              "confirm_password": {
+                "required": "هذا الخانة مطلوبة ويجب أن تطابق كلمة المرور",
+                "label": "تأكيد كلمة المرور",
+                "placeholder": "تأكيد كلمة المرور",
+                "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة"
+              }
+            },
+            "button": {
+              "add_user": "إضافة مستخدم",
+              "close": "إغلاق",
+              "save": "حفظ"
+            },
+            "validate_user_successfully": "تم إضافة المستخدم بنجاح",
+            "validate_user_failed": "البيانات التي أدخلتها موجودة من قبل"
+          },
+          "reset_password": {
+            "text": {
+              "reset_password": "إعادة تعيين كلمة المرور"
+            },
+            "button": {
+              "reset_password": "إعادة تعيين كلمة المرور"
+            },
+            "field": {
+              "new_password": {
+                "label": "كلمة المرور الجديدة",
+                "placeholder": "كلمة المرور الجديدة"
+              }
+            }
+          },
+          "message": {
+            "success": {
+              "update": "تم التعديل بنجاح",
+              "add": "تم الاضافة بنجاح"
+            },
+            "existFailure": "تم تسجيل رقم الهاتف او البريد الالكتروني من قبل ",
+            "failure": "خطأ في حفظ البيانات..برجاء المحاولة لاحقا",
+            "change_password_success": "تم اعادة تعيين كلمة السر بنجاح",
+            "change_password_failure": "حدث خطأ في اعادة تعيين كلمة السر"
+          }
+        },
+        "payment": {
+          "repName": "ضابط الإتصال",
+          "phone": "رقم الهاتف",
+          "email": "البريد الإلكتروني",
+          "billingDes": "الحسابات والتعاملات المالية بينك وبين SuppliesON.com",
+          "balance": "الرصيد",
+          "record_payment": "تأكيد الإيداع",
+          "search": "بحث باسم العميل",
+          "status": "الحاله",
+          "payment_installment": "فترات السداد",
+          "payment_added": "تم تسجيل عملية الدفع بنجاح، سيتحقق مدير الموقع من عملية الدفع ويرسل لك اخطار قريبا.",
+          "payment_failed": "فشل في تسجيل عملية الدفع الخاص بك",
+          "allow_exceed_billing_limit": "السماح لهذا العميل بتجاوز موعد دفع الفواتير",
+          "allow_exceed_credit_limit": "السماح لهذا العميل بتجاوز حد الائتمان الشهري",
+          "payment": "الدفع",
+          "payments": "المدفوعات",
+          "paymentsClaims": "تأكيد الإيداع",
+          "specialPrices": "أسعار خاصة",
+          "specialPricesTable": {
+            "productName": "اسم المنتج",
+            "specialPrice": "السعر الحالي",
+            "originalPrice": "السعر الأصلي",
+            "added": "تم إضافة سعر خاص لهذا المنتج بنجاح",
+            "duplicated": "السعر الخاص بهذا المنتج موجود بالفعل!",
+            "deleted": "تم حذف السعر خاص لهذا المنتج بنجاح",
+            "updated": "تم تعديل السعر خاص لهذا المنتج بنجاح",
+            "error": "عذرا حدث خطأ ما. الرجاء المحاوله مره اخري"
+          },
+          "creditThisMonth": "الإستهلاك هذا الشهر",
+          "limitThisMonth": "الحد الشهري الأقصى",
+          "nextPayment": "موعد الدفعة القادمة",
+          "nextInvoice": "موعد الفاتورة القادمة",
+          "updateInfo": "تم تحديث المعلومات",
+          "creditLimit": "حد الائتمان",
+          "sar": "ريال",
+          "approved": "تم الموافقة عليها",
+          "pending": "قيد الانتظار",
+          "rejected": "مرفوضة",
+          "cash": "إستلام نقدي",
+          "cheque": "شيك مصدق",
+          "bank": "حوالة بنكية",
+          "billingHistory": "سجل الفواتير",
+          "paymentClaims": "طلبات تأكيد الإيداع",
+          "every": "كل",
+          "Day": "{value, plural, =0 { الآن } one{ يوم 1 } other{# أيام }}",
+          "Week": "{value, plural, =0 { الآن } one{ اسبوع 1 } other{# أسابيع }}",
+          "Month": "{value, plural, =0 {الآن} one{ 1 شهر } two{ شهرين } few{ # أشهر } many{ # شهر } other{ # شهر }}",
+          "credit": "إيداع",
+          "invoice": "فاتورة",
+          "invoice_for": "فاتورة شهر",
+          "select_period": "إختر الفترة",
+          "details": "التفاصيل",
+          "detailed_transactions": "سجل مفصل للمعاملات",
+          "table": {
+            "date": "التاريخ",
+            "description": "الوصف",
+            "type": "النوع",
+            "referenceId": "الرقم المرجعي",
+            "status": "الحالة",
+            "customerName": "اسم العميل",
+            "amount": "المبلغ",
+            "balance": "الرصيد"
+          },
+          "edit": "تعديل",
+          "delete": "حذف",
+          "cancel": "الغاء",
+          "save": "حفظ"
+        },
+        "customer": {
+          "invited": "مدعو",
+          "suspended": "معلق",
+          "active": "نشط",
+          "blocked": "محظور",
+          "activate": "تنشيط",
+          "block": "حظر",
+          "suspend": "تعليق",
+          "city": "مدينة",
+          "cityUpdated": "تم تحديث المدينة بنجاح.",
+          "updateAddress": "تحديث العنوان",
+          "addressUpdated": "تم تحديث العنوان بنجاح.",
+          "branch": {
+            "branchCount": "عدد الفروع",
+            "viewBranches": "مشاهدة الفروع",
+            "branch": "الفروع",
+            "label": "فرع",
+            "manager": "مدير",
+            "location": "موقع",
+            "city": "مدينة",
+            "date": "تاريخ",
+            "status": "حالة",
+            "status_active": "نشيط",
+            "status_blocked": "ممنوع"
+          }
+        }
+      }
+    },
+    "menu": {
+      "product": "المنتجات و الاقسام",
+      "orders": "الطلبات",
+      "reports": "التقارير",
+      "customers": "العملاء",
+      "account": "الحساب",
+      "customersList": "قائمة العملاء",
+      "payments": "المدفوعات",
+      "paymentsClaims": "مطالبات الدفع"
+    },
+    "product": {
+      "breadcrumb": {
+        "productList": "المنتجات",
+        "addNewProduct": "اضافة منتج جديد",
+        "editProduct": "تعديل منتج",
+        "productDetail": "تفاصيل المنتج"
+      },
+      "all": "جميع الأقسام",
+      "newProduct": "منتج جديد",
+      "search": "البحث...",
+      "back": "رجوع",
+      "emptySub": "لا توجد أقسام فرعية",
+      "english": "الإنجليزية",
+      "arabic": "العربية",
+      "titleEN": "العنوان (إنجليزي)",
+      "typeTitle": "اكتب العنوان",
+      "descEN": "الوصف (إنجليزي)",
+      "titleAR": "العنوان (عربي)",
+      "descAR": "الوصف (عربي)",
+      "addImage": "إرفاق صورة",
+      "uploadCover": "إرفاق الصورة الرئيسية",
+      "price": "السعر",
+      "currency": "ريال",
+      "store": "المخزن",
+      "shelf": "الرف #",
+      "status": "الحالة",
+      "selectStatus": "إختر الحالة",
+      "hidden": "مخفي",
+      "active": "فعال",
+      "sku": "SKU",
+      "category": "القسم",
+      "selectCategory": "إختر القسم",
+      "add": "إضافة",
+      "discard": "إلغاء",
+      "noProducts": "لا توجد منتجات",
+      "noInternet": "الرجاء التحقق من اتصالك بالانترنت ",
+      "unexpectedError": "خطأ غير متوقع",
+      "notice": "يجب ملىء الخانات باللغة العربية و الانجليزية",
+      "message": {
+        "productAddSuccess": "تم إضافة المنتج بنجاح",
+        "productUpdateSuccess": "تم تحديث المنتج بنجاح",
+        "coverPhotoUploadSuccess": "تم تحميل صورة الغلاف بنجاح",
+        "coverPhotoUploadError": "فشل فى تحميل صورة الغلاف ",
+        "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا المنتج؟",
+        "productDeleteSuccess": "تم حذف المنتج بنجاح",
+        "productDeleteFailure": "حدث خطا ما, حاول مرة أخرى في وقت لاحق",
+        "productCompleteFields": "أملىء جميع الخانات بالعربية والانجليزية",
+        "coverPhoto": "الرجاء تحميل صورة الغلاف"
+      },
+      "field": {
+        "categories": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاقسام",
+          "placeholder": "الاقسام"
+        },
+        "arabicName": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاسم بالعربية",
+          "placeholder": "الاسم بالعربية"
+        },
+        "englishName": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاسم بالإنجليزية",
+          "placeholder": "الاسم بالإنجليزية"
+        },
+        "arabicDescription": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الوصف بالعربية",
+          "placeholder": "الوصف بالعربية"
+        },
+        "englishDescription": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الوصف بالإنجليزية",
+          "placeholder": "الوصف بالإنجليزية"
+        },
+        "sku": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "sku",
+          "placeholder": "1952C14"
+        },
+        "store": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "مخزن",
+          "placeholder": "1952C14"
+        },
+        "shelf": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الرف",
+          "placeholder": "1952C14"
+        },
+        "price": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "السعر",
+          "placeholder": "0.00"
+        },
+        "unit": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الوحدة",
+          "placeholder": "الوحدة"
+        },
+        "images": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الصور",
+          "placeholder": "الصور"
+        },
+        "status": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الحالة",
+          "placeholder": "الحالة"
+        }
+      },
+      "button": {
+        "back": "رجوع",
+        "english": "الإنجليزية",
+        "arabic": "العربية",
+        "main_info": "المعلومات الأساسية",
+        "more_details": "تفاصيل أخرى",
+        "edit": "تعديل",
+        "uploadCover": "تحميل صورة الغلاف",
+        "addImage": "إضافة صورة",
+        "add": "إضافة",
+        "next": "التالي",
+        "discard": "إلغاء",
+        "save": "حفظ التغييرات",
+        "uploadImage": "تحميل الصورة",
+        "delete": "حذف",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد"
+      }
+    },
+    "orders": {
+      "overview": "نظرة عامة",
+      "newOrders": "طلبات جديدة",
+      "preparation": "التجهيز",
+      "delivery": "التوصيل",
+      "failed": "طلبات فاشلة",
+      "review": "التقييم",
+      "noProducts": "لايوجد منتجات"
+    },
+    "overview": {
+      "order": "{value, plural, =0 {N\/A} one{طلب واحد} two{طلبان} few{# طلبات} many{# طلباً} other{# طلب}}",
+      "item": "{value, plural, =0 {N\/A} one{منتج} two{منتجان} few{# منتجات} many{# منتجا} other{# منتج}}",
+      "items": "{value, plural, =0 {N\/A} one{ومنتج آخر} two{و منتجان آخرين} few{# منتجات أخرى} many{# منتجاً آخر} other{# منتج آخر}}"
+    },
+    "order": {
+      "message": {
+        "success": "تمت العمليه بنجاح",
+        "error": "عذرا حدث خطأ ما الرجاء اعادة المحاوله"
+      },
+      "list": {
+        "overview": "نظرة عامة  علي الطلبات ",
+        "new": "الطلبات الجديده",
+        "preparation": "الطلبات فى التجهيز",
+        "delivery": "الطلبات فى التوصيل",
+        "failed": "الطلبات الفاشله",
+        "review": "الطلبات المقيمة"
+      },
+      "detail": "تفاصيل الطلب",
+      "view": {
+        "deliveryImage": "صورة التسليم (مطلوب)",
+        "deliveryImagePlaceholder": "صورة التسليم",
+        "deliveryDate": "تاريخ التسليم او الوصول",
+        "driverDetails": "تفاصيل السائق",
+        "firstName": "الاسم",
+        "lastName": "اللقب",
+        "mobileNumber": "رقم الهاتف",
+        "print": "طباعة",
+        "failedToDeliver": "فشل فى التوصيل",
+        "retryDelivery": "اعادة التوصيل",
+        "failReason": "سبب الفشل",
+        "rejectOrder": "رفض الطلب",
+        "delivered": "تم التسليم",
+        "readyForDelivery": "جاهز للتوصيل",
+        "repName": "ضابط الإتصال",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "review": "التقييم",
+        "condition": "حالة المنتجات",
+        "delivery": "التوصيل",
+        "overall": "صورة عامة",
+        "note": "ملحوظة",
+        "table": {
+          "product": "المنتج",
+          "sku": "SKU",
+          "store": "المخزن",
+          "shelf": "الرف #",
+          "quantity": "الكمية",
+          "status": "الحالة",
+          "unitPrice": "سعر الوحدة",
+          "total": "المجموع"
+        },
+        "field": {
+          "rejectReason": {
+            "label": "سبب الرفض",
+            "placeholder": "أدخل سبب الرفض",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "failReason": {
+            "label": "سبب الفشل",
+            "placeholder": "تأكيد كلمة المرور الجديدة",
+            "required": "هذا الخانة مطلوبة ",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          }
+        },
+        "actions": {
+          "reject": "تم رفض هذا الطلب! تم إرسال إشعار إلى العميل.",
+          "failed": "تم الغاء هذا الطلب ، وسيتم إشعار العميل بسبب الفشل.",
+          "canceled": "تم إلغاء هذا الطلب! تم إرسال إشعار إلى العميل.",
+          "readyForDelivery": "تم تجهيز الطلب بنجاح وسيتم إرساله كما تم طلبه",
+          "delivered": "تم تسليم الطلب بنجاح ، تم إرسال إشعار إلى العميل.",
+          "outOfDelivery": "تم خروج الطلب للتسليم بنجاح",
+          "unexpectedError": "حدث خطا ما، يرجى المحاولة مرة أخرى في وقت لاحق",
+          "acceptOrder": "تم قبول الطلب بنجاح وفى انتظار تجهيزه",
+          "buttons": {
+            "accept": "قبول الطلب",
+            "cancel": "الغاء الطلب",
+            "reject": "رفض الطلب",
+            "readyForDelivery": "جاهز للتوصيل",
+            "outForDelivery": "خارج للتوصيل",
+            "failedToDeliver": "فشل فى التوصيل",
+            "retryDelivery": "إعادة التوصيل",
+            "delivered": "تم التسليم",
+            "accept_all": "قبول الكل"
+          }
+        },
+        "failedToDeliverTitle": "فشل في تسليم الطلبات",
+        "rejectedDeliverTitle": "الطلبات المرفوضة و الملغية",
+        "outForDelivery": "خارج للتوصيل",
+        "outAndPrint": "خارج للتوصيل& طباعة",
+        "noNotes": "لا توجد تعليقات",
+        "cancelConfirmation": "هل أنت متأكد من أنك تريد إلغاء الطلب ؟",
+        "reason": "السبب",
+        "exit": "لا",
+        "confirm": "نعم، إلغاء هذا الطلب",
+        "confirmReject": "نعم، إلغاء هذا الطلب",
+        "noOrders": "لا يوجد طلبات",
+        "noOrder": "عذرا، لم يتم العثور على أي طلب!",
+        "noInternet": "لا يوجد اتصال بالإنترنت!",
+        "unexpectedError": "عذرا، حدث خطأ غير متوقع!",
+        "status": {
+          "accepted": "مقبول",
+          "new": "طلب جديد",
+          "rejected": "مرفوض",
+          "canceled": "ملغى",
+          "ready": "جاهز للتوصيل",
+          "out": "خارج للتوصيل",
+          "delivered": "تم التسليم",
+          "recurring": "طلب متكرر",
+          "canceledByCustomer": "ملغي من العميل"
+        },
+        "failedOrderTitle": "فشل في تسليم هذا الطلب.",
+        "rejectOrderTitle": "رفض هذا الطلب",
+        "failedOrderLabel": "سبب الفشل",
+        "chooseDriverTitle": "الرجاء اختيار السائق.",
+        "chooseDriverLabel": "السائق",
+        "selectDriverLabel": "حدد السائق",
+        "cancel": "إلغاء",
+        "branch": "اسم الفرع",
+        "chooseDriver": "اختر السائق"
+      },
+      "log": {
+        "date": "التاريخ",
+        "status": "الحالة",
+        "activity": "سجل النشاطات",
+        "by": "تغيرت بواسطة",
+        "supplier": "المورد",
+        "customer": "العميل"
+      },
+      "button": {
+        "addProduct": "اضافة"
+      },
+      "label": {
+        "productQuantity": "الكمية",
+        "productName": "المنتج"
+      }
+    },
+    "customers": {
+      "list": {
+        "title": "العملاء",
+        "export": {
+          "title": "تصدير",
+          "pdf": "pdf",
+          "xls": "xls"
+        },
+        "button": {
+          "add_payment": "تسجيل عملية الدفع",
+          "invite": "دعوة عميل",
+          "showDetails": "عرض التفاصيل"
+        },
+        "search": {
+          "status": {
+            "label": "الحالة",
+            "placeholder": "الحالة"
+          },
+          "payment": {
+            "label": "الدفع",
+            "placeholder": "الدفع",
+            "payingSoon": {
+              "label": "الدفع قريبا",
+              "placeholder": "الدفع قريبا"
+            },
+            "missedPayment": {
+              "label": "فاتورة لم تدفع",
+              "placeholder": "فاتورة لم تدفع"
+            }
+          },
+          "customerName": {
+            "label": "اسم العميل",
+            "placeholder": "اسم العميل"
+          }
+        },
+        "table": {
+          "header": {
+            "name": "الاسم",
+            "status": "الحالة",
+            "balance": "الرصيد",
+            "remainingTillLimit": "المتبقي حتى الحد الأقصى",
+            "paymentDue": "تاريخ استحقاق الدفع",
+            "city": "مدينة",
+            "repName": "C.R Name"
+          }
+        },
+        "view": {
+          "noOrders": "لا يوجد طلبات"
+        }
+      },
+      "invite-customer": {
+        "title": "دعوة عميل",
+        "field": {
+          "email": {
+            "label": "البريد الإلكتروني",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "أدخل بريد إلكتروني صحيح"
+          }
+        },
+        "button": {
+          "invite": "دعوة"
+        },
+        "message": {
+          "success": "تم دعوة العميل بنجاح",
+          "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+          "alreadyInvited": "تم دعوة هذا العميل من قبل"
+        }
+      },
+      "payments": {
+        "title": "المدفوعات",
+        "message": {
+          "add": {
+            "success": "تم تسجيل عملية الدفع بنجاح",
+            "failure": "عذرا ، فشل في تسجيل عملية الدفع"
+          }
+        }
+      }
+    },
+    "reports": {
+      "breadcrumb": {
+        "ordersReport": "تقرير الطلبات",
+        "ordersDetail": "تفاصيل الطلب",
+        "transactionsReport": "تقرير المعاملات",
+        "summaryReport": "تقارير موجزة",
+        "transactionsDetail": "تفاصيل المعامله"
+      },
+      "index": {
+        "reports": "التقارير",
+        "orders": "الطلبات",
+        "transactions": "المعاملات النقدية",
+        "summary": "ملخص",
+        "detailed": "مفصلة",
+        "detailedReport": "تقارير مفصلة"
+      },
+      "orders": {
+        "status": {
+          "accepted": "مقبول",
+          "new": "طلب جديد",
+          "rejected": "مرفوض",
+          "canceled": "ملغى",
+          "ready": "جاهز للتوصيل",
+          "out": "خارج للتوصيل",
+          "delivered": "تم التسليم",
+          "failedToDeliver": "فشل فى التوصيل",
+          "canceledByCustomer": "ملغي",
+          "canceledByCustomer2": "ملغي من العميل"
+        },
+        "stats": {
+          "reports": "التقارير",
+          "ordersReport": "تقرير الطلبات",
+          "orders": "الطلبات",
+          "orderDetails": "تفاصيل الطلب",
+          "order": "الطلب",
+          "sar": "ريال",
+          "orderPerDay": "طلب\/ يوم",
+          "revenue": "الإيرادات",
+          "averageOrders": "المتوسط ​​اليومي للطلبات",
+          "averageRevenue": "المتوسط ​​اليومي للإيرادات"
+        },
+        "filter": {
+          "supplier": "المورد",
+          "customer": "العميل",
+          "period": "الفترة",
+          "status": "الحالة",
+          "selectSupplier": "حدد المورد",
+          "selectCustomer": "حدد العميل",
+          "export": "تصدير"
+        },
+        "table": {
+          "date": "التاريخ",
+          "orderNumber": "رقم الطلب",
+          "customer": "العميل",
+          "supplier": "المورد",
+          "totalPrice": "السعر الإجمالي",
+          "status": "الحالة",
+          "showDetails": "عرض التفاصيل",
+          "branch": "اسم الفرع"
+        },
+        "details": {
+          "product": "المنتج",
+          "price": "السعر",
+          "sku": "Sku",
+          "store": "المخزن",
+          "shelf": "الرف",
+          "quantity": "الكمية",
+          "print": "طباعة"
+        }
+      },
+      "transactions": {
+        "type": {
+          "credit": "دائن",
+          "debit": "مدين"
+        },
+        "paymentMethod": {
+          "cash": "نقدي",
+          "cheque": "شيك",
+          "bank": "بنك"
+        },
+        "stats": {
+          "reports": "التقارير",
+          "transaction": "معاملة نقدية ",
+          "sar": "ريال",
+          "transactionReports": "تقارير المعاملات النقدية",
+          "transactions": "المعاملات النقدية",
+          "totalBalance": "إجمالي الرصيد",
+          "totalCredit": "الرصيد المتبقي",
+          "transactionVolume": "حجم المعاملات النقدية",
+          "approvedPayment": "المدفوعات المقبولة"
+        },
+        "filter": {
+          "transactions": "المعاملات",
+          "export": "تصدير",
+          "customer": "العميل",
+          "type": "النوع",
+          "selectCustomer": "اختر العميل",
+          "All": "الكل",
+          "period": "الفترة"
+        },
+        "table": {
+          "date": "التاريخ",
+          "type": "النوع",
+          "from": "من",
+          "paymentMethod": "طريقة الدفع",
+          "amount": "المبلغ",
+          "showDetails": "عرض التفاصيل",
+          "viewOrder": "عرض الطلب"
+        }
+      }
+    },
+    "customer": {
+      "button": {
+        "uploadSpecialPrices": "رفع الاسعار الخاصه",
+        "downloadSpecialPrices": " تنزيل الاسعار الحاليه"
+      },
+      "label": {
+        "bulkOperations": "مجموعة الاسعار الخاصة",
+        "export": "تصدير"
+      },
+      "message": {
+        "uploadSpecialPriceSuccess": "تم رفع الاسعار الخاصه بنجاح",
+        "uploadSpecialPriceFailure": "حدث خطأ ما الرجاء اعادة المحاوله"
+      }
+    },
+    "vat": "الضريبة المضافة",
+    "sub_total": "الاجمالى قبل الضريبة",
+    "total_price": "الاجمالى",
+    "recipes": {
+      "breadcrumb": {
+        "recipeDetails": "Recipe Detail"
+      },
+      "list": {
+        "title": "Recipes",
+        "button": {
+          "new_recipe": "New Recipes/Items",
+          "showDetails": "Show Details"
+        },
+        "search": {
+          "status": {
+            "label": "Status",
+            "placeholder": "status",
+            "active": "Active",
+            "suspended": "Suspended",
+            "blocked": "Blocked",
+            "deleted": "Deleted"
+          },
+          "recipeName": {
+            "label": "Recipes/Items Name",
+            "placeholder": "Recipes/Items Name"
+          }
+        },
+        "table": {
+          "header": {
+            "barcode": "Bar Code",
+            "inventory_sku": "PRODUCT SKU",
+            "recipe_item_name": "RECIPE / ITEM NAME",
+            "inventoryType": "Inventory Type",
+            "actions": "Actions",
+            "delete_recipe": "Delete"
+          }
+        }
+      },
+      "create-recipe": {
+        "button": {
+          "close": "close",
+          "save": "Create",
+          "reset": "Reset",
+          "new_recipe": "New Receipe/Item",
+          "view_recipe": "View/Edit"
+        },
+        "title": "Recipes/Items",
+        "field": {
+          "recipe_name": {
+            "invalid": "contains invalid characters",
+            "required": "This field is required",
+            "label": "Recipe/Item name",
+            "placeholder": "Recipe/Item name"
+          },
+          "sku": {
+            "invalid": "Invalid sku format",
+            "label": "SKU",
+            "placeholder": "SKU1234",
+            "required": "This field is required"
+          },
+          "bar_code": {
+            "required": "This field is required",
+            "placeholder": "Bar Code",
+            "label": "Bar Code",
+            "invalid": "should contain 3 to 48 numbers only"
+          },
+          "select_recipe": {
+            "label": "Select Type :",
+            "recipe": "Recipe",
+            "item": "Item"
+          },
+          "select_item": {
+            "required": "This field is required",
+            "placeholder": "DD/MM/YYYY",
+            "label": "Item",
+            "labelReceipe": "Recipe"
+          }
+        },
+        "message": {
+          "success_creation": "Recipe Item created successfully",
+          "failed_creation": "Failure occurred , please try again later",
+          "already_have_account": "You Already have Account",
+          "invalidFile": "Only images are allowed (Formats supported: png, jpg, jpeg).",
+          "commercialRegisterIsDuplicate": "Commercial Register is duplicate",
+          "emailOrMobilePhoneIsDuplicate": "Email Or MobilePhone Is Duplicate",
+          "expireDate_exceed": "Gregorian Expire Date Exceeds 5 Years",
+          "expireDate_todayOrLess": "Gregorian Expire Date can't be today's date or before",
+          "expireDateHijri_exceed": "Hijri Expire Date Exceeds 5 Years",
+          "expireDateHijri_todayOrLess": "Hijri Expire Date can't be today's date or before"
+        },
+        "recipe": {
+          "suspended": "Suspended",
+          "active": "Active",
+          "blocked": "Blocked",
+          "deleted": "Deleted",
+          "activate": "Activate",
+          "block": "Block",
+          "suspend": "Suspend",
+          "unblock": "UnBlock",
+          "approve": "Approve",
+          "delete": "Delete",
+          "recipe_updated": "recipe updated successfully",
+          "recipe_item_exists": "Item already exists"
+        }
+      },
+      "payment": {
+        "repName": "Rep. Name",
+        "phone": "Phone",
+        "email": "Email",
+        "save": "Save",
+        "cr_photo": "CR",
+        "vat_photo": "VAT",
+        "billingDes": "The is the account billing between you and SuppliesON.com",
+        "balance": "Balance",
+        "record_payment": "Record Payment",
+        "search": "Search By Customer",
+        "status": "Status",
+        "payment_installment": "Payment Cycle",
+        "payment_added": "Your payment has been recorded successfully, The admin will verify the payment and notify you soon.",
+        "payment_failed": "Failed to add your payment record",
+        "allow_exceed_billing_limit": "Allow this customer to exceed the billing date payment",
+        "allow_exceed_credit_limit": "Allow this customer to exceed the monthly credit limit",
+        "payment": "Payment",
+        "payments": "Payments",
+        "paymentsClaims": "Payments Claims",
+        "specialPrices": "Special Prices",
+        "creditThisMonth": "This Month Credit",
+        "limitThisMonth": "This Month Limit",
+        "nextPayment": "Next payment",
+        "nextInvoice": "Next invoice",
+        "updateInfo": "Information has been updated",
+        "creditLimit": "Credit Limit",
+        "sar": "SAR",
+        "approved": "Approved",
+        "pending": "Pending",
+        "rejected": "Rejected",
+        "cash": "Cash",
+        "cheque": "Cheque",
+        "bank": "Bank",
+        "billingHistory": "Billing History",
+        "paymentClaims": "Payment Claims",
+        "every": "Every",
+        "Day": "{value, plural, =0 { this day } one{ 1 day } other{ # day }}",
+        "Week": "{value, plural, =0 { this week } one{ 1 week } other{ # weeks }}",
+        "Month": "{value, plural, =0 { this month } one{ 1 month } other{ # months }}",
+        "credit": "credit",
+        "invoice": "invoice",
+        "invoice_for": "Invoice for",
+        "select_period": "Select Period",
+        "details": "Show Details",
+        "detailed_transactions": "Detailed Transactions",
+        "table": {
+          "date": "Date",
+          "description": "Description",
+          "type": "Type",
+          "referenceId": "Reference Id",
+          "status": "Status",
+          "customerName": "Customer Name",
+          "amount": "Amount",
+          "balance": "Balance"
+        },
+        "label": {
+          "search": "Search",
+          "status": "Status"
+        },
+        "required": "This field is required",
+        "invalidPhone": "Invalid phone format",
+        "invalidEmail": "Invalid email format",
+        "invalidUsername": "Invalid Username format"
+      },
+      "recipe": {
+        "invited": "Invited",
+        "suspended": "Suspended",
+        "active": "Active",
+        "blocked": "Blocked",
+        "deleted": "Deleted",
+        "activate": "Activate",
+        "block": "Block",
+        "suspend": "Suspend",
+        "unblock": "UnBlock",
+        "approve": "Approve",
+        "delete": "Delete",
+        "change_status": "Change status",
+        "reset_password": "Reset password",
+        "recipe_updated": "Recipe updated successfully",
+        "recipe_email_exists": "Email already exists",
+        "recipe_mobilePhone_exists": "Mobile Number already exists"
+      }
+    },
+    "ingredients": {
+      "breadcrumb": {
+        "ingredientDetails": "Ingredient Detail"
+      },
+      "list": {
+        "title": "Ingredient",
+        "button": {
+          "new_ingredient": "New Ingredients",
+          "showDetails": "Show Details",
+          "saveIngredients": "Save Ingredients"
+        },
+        "search": {
+          "status": {
+            "label": "Status",
+            "placeholder": "status",
+            "active": "Active",
+            "suspended": "Suspended",
+            "blocked": "Blocked",
+            "deleted": "Deleted"
+          },
+          "ingredientName": {
+            "label": "Ingredients",
+            "placeholder": "Ingredients"
+          }
+        },
+        "table": {
+          "header": {
+            "barcode": "Bar Code",
+            "inventory_sku": "SKU",
+            "ingredient_name": "Ingredient",
+            "inventoryType": "Inventory Type",
+            "available_quantity": "Available Quantity",
+            "quantity": "Quantity",
+            "unit": "Unit",
+            "threshold": "Threshold",
+            "actions": "Actions",
+            "delete_recipe": "Delete",
+            "flag": "flag",
+            "select": "Check/unCheck"
+          }
+        }
+      },
+      "create-ingredient": {
+        "button": {
+          "close": "close",
+          "save": "Save Ingredients",
+          "cancel": "Cancel",
+          "reset": "Reset",
+          "new_ingredients": "New Ingredients",
+          "add_ingredient": "Add Ingredient",
+          "edit_ingredient": "Edit Ingredient",
+          "select_ingredient": "Select Ingredient"
+        },
+        "title": "Create Ingredient",
+        "editTitle": "Edit Ingredient",
+        "field": {
+          "ingredient_name": {
+            "invalid": "contains invalid characters",
+            "required": "This field is required",
+            "label": "Ingredient",
+            "placeholder": "Name"
+          },
+          "sku": {
+            "invalid": "SKU can be 4 to 8 characters.",
+            "label": "SKU",
+            "placeholder": "SKU1234",
+            "required": "This field is required"
+          },
+          "bar_code": {
+            "required": "This field is required",
+            "placeholder": "Bar Code",
+            "label": "Bar Code",
+            "invalid": "should contain 10 numbers only "
+          },
+          "flags": {
+            "placeholder": "Flags",
+            "label": "Flags"
+          },
+          "available_quantity": {
+            "required": "This field is required",
+            "label": "Available ",
+            "placeholder": "Quantity",
+            "invalid": "should contain 10 numbers only "
+          },
+          "select_kilogram": {
+            "required": "This field required",
+            "placeholder": "KG",
+            "label": "Select Type :",
+            "kilogram": "Kilogram"
+          },
+          "select_gram": {
+            "required": "This field required",
+            "placeholder": "GRAM",
+            "label": "Select Type :",
+            "gram": "gram"
+          },
+          "select_millilitre": {
+            "required": "This field required",
+            "placeholder": "Millilitre",
+            "label": "Select Type :",
+            "millilitre": "Millilitre"
+          },
+          "select_litre": {
+            "required": "This field required",
+            "placeholder": "litre",
+            "label": "Select Type :",
+            "litre": "litre"
+          },
+          "quantity_threshold": {
+            "label": "Threshold",
+            "placeholder": "Threshold",
+            "required": "This field required",
+            "invalid": "Should contain numbers only "
+          },
+          "ingredient_delete": {
+            "label": "Delete",
+            "placeholder": "Delete"
+          },
+          "unit": {
+            "label": "Unit",
+            "placeholder": "Unit"
+          }
+        },
+        "message": {
+          "success_creation": "Ingredient created successfully",
+          "success_updated": "Ingredient updated successfully",
+          "failed_creation": "Failure occurred , please try again later",
+          "already_have_account": "You Already have Ingredient",
+          "invalidFile": "Only images are allowed (Formats supported: png, jpg, jpeg).",
+          "commercialRegisterIsDuplicate": "Commercial Register is duplicate",
+          "emailOrMobilePhoneIsDuplicate": "Email Or MobilePhone Is Duplicate",
+          "expireDate_exceed": "Gregorian Expire Date Exceeds 5 Years",
+          "expireDate_todayOrLess": "Gregorian Expire Date can't be today's date or before",
+          "expireDateHijri_exceed": "Hijri Expire Date Exceeds 5 Years",
+          "expireDateHijri_todayOrLess": "Hijri Expire Date can't be today's date or before"
+        },
+        "ingredient": {
+          "suspended": "Suspended",
+          "active": "Active",
+          "blocked": "Blocked",
+          "deleted": "Deleted",
+          "activate": "Activate",
+          "block": "Block",
+          "suspend": "Suspend",
+          "unblock": "UnBlock",
+          "approve": "Approve",
+          "delete": "Delete",
+          "ingredient_updated": "Ingredient updated successfully",
+          "ingredient_item_exists": "Item already exists"
+        }
+      },
+      "payment": {
+        "repName": "Rep. Name",
+        "phone": "Phone",
+        "email": "Email",
+        "save": "Save",
+        "cr_photo": "CR",
+        "vat_photo": "VAT",
+        "billingDes": "The is the account billing between you and SuppliesON.com",
+        "balance": "Balance",
+        "record_payment": "Record Payment",
+        "search": "Search By Customer",
+        "status": "Status",
+        "payment_installment": "Payment Cycle",
+        "payment_added": "Your payment has been recorded successfully, The admin will verify the payment and notify you soon.",
+        "payment_failed": "Failed to add your payment record",
+        "allow_exceed_billing_limit": "Allow this customer to exceed the billing date payment",
+        "allow_exceed_credit_limit": "Allow this customer to exceed the monthly credit limit",
+        "payment": "Payment",
+        "payments": "Payments",
+        "paymentsClaims": "Payments Claims",
+        "specialPrices": "Special Prices",
+        "creditThisMonth": "This Month Credit",
+        "limitThisMonth": "This Month Limit",
+        "nextPayment": "Next payment",
+        "nextInvoice": "Next invoice",
+        "updateInfo": "Information has been updated",
+        "creditLimit": "Credit Limit",
+        "sar": "SAR",
+        "approved": "Approved",
+        "pending": "Pending",
+        "rejected": "Rejected",
+        "cash": "Cash",
+        "cheque": "Cheque",
+        "bank": "Bank",
+        "billingHistory": "Billing History",
+        "paymentClaims": "Payment Claims",
+        "every": "Every",
+        "Day": "{value, plural, =0 { this day } one{ 1 day } other{ # day }}",
+        "Week": "{value, plural, =0 { this week } one{ 1 week } other{ # weeks }}",
+        "Month": "{value, plural, =0 { this month } one{ 1 month } other{ # months }}",
+        "credit": "credit",
+        "invoice": "invoice",
+        "invoice_for": "Invoice for",
+        "select_period": "Select Period",
+        "details": "Show Details",
+        "detailed_transactions": "Detailed Transactions",
+        "table": {
+          "date": "Date",
+          "description": "Description",
+          "type": "Type",
+          "referenceId": "Reference Id",
+          "status": "Status",
+          "customerName": "Customer Name",
+          "amount": "Amount",
+          "balance": "Balance"
+        },
+        "label": {
+          "search": "Search",
+          "status": "Status"
+        },
+        "required": "This field is required",
+        "invalidPhone": "Invalid phone format",
+        "invalidEmail": "Invalid email format",
+        "invalidUsername": "Invalid Username format"
+      },
+      "ingredient": {
+        "invited": "Invited",
+        "suspended": "Suspended",
+        "active": "Active",
+        "blocked": "Blocked",
+        "deleted": "Deleted",
+        "activate": "Activate",
+        "block": "Block",
+        "suspend": "Suspend",
+        "unblock": "UnBlock",
+        "approve": "Approve",
+        "delete": "Delete",
+        "change_status": "Change status",
+        "reset_password": "Reset password",
+        "ingredient_updated": "Ingredient updated successfully",
+        "ingredient_email_exists": "Email already exists",
+        "ingredient_mobilePhone_exists": "Mobile Number already exists"
+      }
+    }
+  },
+  "meta": {
+    "project_name_supplies": "Supplies",
+    "project_name_on": "ON"
+  }
+}

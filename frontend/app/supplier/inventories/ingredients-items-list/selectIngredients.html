@@ -1,0 +1,158 @@
+<!-- START INNER CONTENT -->
+
+<div class="sidebar-border"></div>
+
+<div class="content tab-content">
+    <div class="tab-pane active" id="tab3hellowWorld">
+        <div class="row animated zoomIn">
+            <!-- Inventory HTML Start -->
+            <div class="card">
+                <div class="gray-container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                                {{'supplier.ingredients.list.search.ingredientName.label' | translate}}
+                            </p>
+                        </div>
+                        <div
+                                class="col-sm mb-sm-0 mb-3 d-flex justify-content-start justify-content-sm-end"
+                        >
+                            <div class="btn-toolbar" role="toolbar">
+                                <div dir="ltr" class="btn-group btn-group-sm">
+                                    <button ng-disabled="!$ctrl.checkedData.length" class="btn btn-primary btn-block"
+                                            ng-click="$ctrl.saveSelections()">
+                                        {{'supplier.ingredients.list.button.saveIngredients' |
+                                        translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-block">
+                        <!-- ngIf: $ctrl.reportIsLoaded -->
+                        <div class="col-md-12 padding-0" style="">
+                            <shimmer hide="$ctrl.recipesAreLoaded" col="5"></shimmer>
+                            <div class="dataTables_wrapper">
+                                <div class="table-responsive">
+                                    <table ng-if="$ctrl.recipesAreLoaded"
+                                           class="table table-striped table-compact table-hover">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.select' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.barcode' |
+                                                translate}}
+                                            </th>
+
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.inventory_sku' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.ingredient_name' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.available_quantity' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.quantity' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.unit' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'supplier.ingredients.list.table.header.threshold' |
+                                                translate}}
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in $ctrl.ingredientsData"
+                                            class="gradeX odd content-table-payment"
+                                            role="row">
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <a style="cursor: pointer;"><i ng-if="!item.selected"
+                                                                               class="fa fa-square-o inventory-delete-btn-size"
+                                                                               ng-click="$ctrl.checked(item, true);"></i>
+                                                    <i ng-if="item.selected"
+                                                       class="fa fa-check-square-o inventory-delete-btn-size"
+                                                       ng-click="$ctrl.checked(item, false);"></i>
+                                                </a>
+                                            </td>
+
+                                            <td class="sorting_1 mn-120 inventory-text-center text-center">
+                                                <svg style="width: 200px; height: auto;"
+                                                     id="barcodeSelect{{item.barcode}}"
+                                                ></svg>
+                                            </td>
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.sku}}</span>
+                                            </td>
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.englishName}}</span>
+                                            </td>
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.quantity}}</span>
+                                            </td>
+
+                                            <td ng-if="!item.selected"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">0</span>
+                                            </td>
+
+                                            <td ng-if="item.selected"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <input type="number"
+                                                       id="quanityAdd"
+                                                       name="quanityAdd"
+                                                       ng-pattern="$ctrl.limitRegex"
+                                                       style="width: 90%;"
+                                                       placeholder="{{'supplier.ingredients.list.table.header.quantity'| translate }}"
+                                                       ng-model="item.quantityAdd"
+                                                       required
+                                                />
+                                            </td>
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.unit}}</span>
+                                            </td>
+
+                                            <td class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.threshold}} {{item.unit}}</span>
+                                            </td>
+
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <list-pagination
+                                            total-pages="$ctrl.totalPages"
+                                            on-page-click="$ctrl.setPage(pageNumber)"
+                                            current-page="$ctrl.currentPage">
+                                    </list-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory HTML End -->
+        </div>
+    </div>
+</div>
+
+<!--<add-ingredient-quantity></add-ingredient-quantity>-->

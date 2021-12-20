@@ -1,0 +1,2000 @@
+{
+  "schemas": {
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "object"
+        },
+        "staff": [{
+          "type": "object"
+        }],
+        "type": {
+          "type": "string"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "object"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "address": {
+              "type": "string"
+            },
+            "city": {
+              "type": "object"
+            }
+          }
+        },
+        "branch": {
+          "type": "object"
+        },
+        "representativeName": {
+          "type": "string"
+        },
+        "representativePhone": {
+          "type": "string"
+        },
+        "representativeEmail": {
+          "type": "string"
+        },
+        "commercialRegister": {
+          "type": "string"
+        },
+        "commercialRegisterExpireDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "commercialRegisterExpireDateIslamic": {
+          "type": "string",
+          "format": "date"
+        },
+        "commercialRegisterExpireDateIslamic": {
+          "type": "string",
+          "format": "date"
+        },
+        "commercialRegisterPhoto": {
+          "type": "string"
+        },
+        "coverPhoto": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/customers": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customer list.",
+        "operationId": "customerAccessList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "payingSoon",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "missedPayment",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "customerName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Create Customer.",
+        "operationId": "customerCreate",
+        "requestBody": {
+          "description": "User Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "coordinates",
+                  "representativeName",
+                  "representativePhone",
+                  "representativeEmail",
+                  "commercialRegister",
+                  "commercialRegisterPhoto",
+                  "userEmail",
+                  "userMobilePhone",
+                  "userFirstName",
+                  "userPassword",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+                  "coordinates": {
+                    "type": "array",
+                    "items": [{
+                      "type": "number"
+                    }]
+                  },
+                  "representativeName": {
+                    "type": "string"
+                  },
+                  "representativePhone": {
+                    "type": "string"
+                  },
+                  "representativeEmail": {
+                    "type": "string"
+                  },
+                  "commercialRegister": {
+                    "type": "string"
+                  },
+                  "commercialRegisterPhoto": {
+                    "type": "string"
+                  },
+                  "userEmail": {
+                    "type": "string"
+                  },
+                  "userFirstName": {
+                    "type": "string"
+                  },
+                  "userMobilePhone": {
+                    "type": "string"
+                  },
+                  "userPassword": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update Customer.",
+        "operationId": "customerUpdate",
+        "requestBody": {
+          "description": "User Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "representativeName"
+                ],
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "language": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "type": "object",
+                      "properties": {
+                        "coordinates": {
+                          "type": "array",
+                          "items": [{
+                            "type": "number"
+                          }]
+                        }
+                      }
+                    }
+                  },
+                  "representativeName": {
+                    "type": "string"
+                  },
+                  "commercialRegister": {
+                    "type": "string"
+                  },
+                  "commercialRegisterPhoto": {
+                    "type": "string"
+                  },
+                  "commercialRegisterExpireDate": {
+                    "type": "string"
+                  },
+                  "commercialRegisterExpireDateIslamic": {
+                    "type": "string"
+                  },
+                  "photo": {
+                    "type": "string"
+                  },
+                  "branchId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/customers/invite": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Create Invite.",
+        "operationId": "customerInvite",
+        "requestBody": {
+          "description": "User Email.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "customerEmail"
+                ],
+                "type": "object",
+                "properties": {
+                  "customerEmail": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/supplier/{customerId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update Supplier Relation to Customer.",
+        "operationId": "supplierRelation",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Update Supplier.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "paymentInterval"
+                ],
+                "type": "object",
+                "properties": {
+                  "paymentInterval": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "creditLimit": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/current": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get current customer.",
+        "operationId": "currentCustomer",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/specialPrices/{customerId}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customers special prices.",
+        "operationId": "specialPrices",
+        "parameters": [{
+            "name": "customerId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "payingSoon",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "missedPayment",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/billingHistory/{customerId}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customer's billing history.",
+        "operationId": "billingHistory",
+        "parameters": [{
+            "name": "customerId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/block/{customerId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "block customer.",
+        "operationId": "blockCustomer",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/unblock/{customerId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Unblock customer.",
+        "operationId": "unblockCustomer",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/specialPrices": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get special prices of customer.",
+        "operationId": "getSpecialPrice",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "description": "hex.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "hex.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Create special prices for customer.",
+        "operationId": "createSpecialPrice",
+        "requestBody": {
+          "description": "Create Special Price.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "customerId",
+                  "productId",
+                  "price"
+                ],
+                "type": "object",
+                "properties": {
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "productId": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/specialPrices/{productId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update Product Price.",
+        "operationId": "updateProductPrice",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Update Product Price.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "customerId",
+                  "price"
+                ],
+                "type": "object",
+                "properties": {
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Delete product price.",
+        "operationId": "deleteSpecialPrice",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/download/specialPrices": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Download special prices file.",
+        "operationId": "downloadFile",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/upload/specialPrices/{customerId}": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Upload special prices file.",
+        "operationId": "uploadFile",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/staff": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get staff members of customers.",
+        "operationId": "getStaff",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Create new customer staff.",
+        "operationId": "staffCreate",
+        "requestBody": {
+          "description": "Staff Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "mobileNumber",
+                  "firstName",
+                  "lastName",
+                  "password",
+                  "role",
+                  "status",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "email": {
+                    "type": "string"
+                  },
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/staff/{staffId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update customer staff.",
+        "operationId": "updateStaff",
+        "parameters": [{
+          "name": "staffId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Staff Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "email",
+                  "mobileNumber",
+                  "firstName",
+                  "lastName",
+                  "password",
+                  "role",
+                  "status",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "email": {
+                    "type": "string"
+                  },
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Remove staff from supplier.",
+        "operationId": "removeStaff",
+        "parameters": [{
+          "name": "staffId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/{customerId}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get user.",
+        "operationId": "getUser",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/fix/customer/staff": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Fixing Customers.",
+        "operationId": "fixingCustomers",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/city/update/{customerId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update Cutomer's city.",
+        "operationId": "updateCity",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Update Cutomer's city.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "cityId"
+                ],
+                "type": "object",
+                "properties": {
+                  "cityId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "customers/address/update/{customerId}": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update Cutomer's address.",
+        "operationId": "updateAddress",
+        "parameters": [{
+          "name": "customerId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Update Cutomer's address.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "coordinates",
+                  "address"
+                ],
+                "type": "object",
+                "properties": {
+                  "coordinates": {
+                    "type": "array",
+                    "items": [{
+                      "type": "number"
+                    }]
+                  },
+                  "address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "customers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Customer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+
+  }
+}

@@ -1,0 +1,144 @@
+<!-- START INNER CONTENT -->
+
+<div class="sidebar-border"></div>
+
+<div class="content tab-content">
+    <div class="tab-pane active" id="tab3hellowWorld">
+        <div class="row animated zoomIn">
+            <!-- Inventory HTML Start -->
+            <div class="card">
+                <div class="gray-container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                                {{'admin.recipes.create-recipe.title' | translate}}
+                            </p>
+                        </div>
+                        <div
+                                class="col-sm mb-sm-0 mb-3 d-flex justify-content-start justify-content-sm-end"
+                        >
+                            <div class="btn-toolbar" role="toolbar">
+                                <div dir="ltr" class="btn-group btn-group-sm">
+                                    <button
+                                            class="btn btn-primary btn-block"
+                                            ng-click="$ctrl.openReceiptFormPoup()"
+                                    >
+                                        <i class="pg-plus" style="vertical-align: middle;"></i>
+                                        {{'admin.recipes.create-recipe.button.new_recipe' |
+                                        translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-block">
+                        <!-- ngIf: $ctrl.reportIsLoaded -->
+                        <div class="col-md-12 padding-0" style="">
+                            <shimmer hide="$ctrl.recipesAreLoaded" col="5"></shimmer>
+                            <div class="dataTables_wrapper">
+                                <div class="table-responsive">
+                                    <table
+                                            ng-if="$ctrl.recipesAreLoaded"
+                                            class="table table-striped table-compact table-hover"
+                                    >
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="bold text-center">
+                                                {{'admin.recipes.list.table.header.barcode' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.recipes.list.table.header.inventory_sku' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.recipes.list.table.header.recipe_item_name' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.recipes.list.table.header.actions' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.recipes.list.table.header.delete_recipe' |
+                                                translate}}
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <!-- ngRepeat: item in $ctrl.report.orders -->
+                                        <tr
+                                                ng-repeat="item in $ctrl.recipesItems"
+                                                class="gradeX odd content-table-payment"
+                                                role="row"
+                                        >
+                                            <td
+                                                    class="sorting_1 mn-120 inventory-text-center text-center"
+                                            >
+                                                <svg
+                                                        style="width: 200px; height: auto;"
+                                                        id="barcode{{item.barcode}}"
+                                                ></svg>
+                                            </td>
+                                            <td
+                                                    class="sorting_1 mn-120 inventory-text-center text-center"
+                                            >
+                                                <span class="upper-case">{{item.sku}}</span>
+                                            </td>
+
+                                            <td
+                                                    class="sorting_1 mn-120 inventory-text-center text-center"
+                                            >
+                                                <span class="upper-case">{{item.englishName}}</span>
+                                            </td>
+
+                                            <td class="sorting_1 mn-120 inventory-text-center text-center">
+                                                <button
+                                                        class="btn btn-primary btn-block text-center"
+                                                        ng-click="$ctrl.openEditRecipeFormPoup(item)">
+                                                    <i
+                                                            class="pg-plus"
+                                                            style="vertical-align: middle;"
+                                                    ></i>
+                                                    {{'admin.recipes.create-recipe.button.view_recipe' |
+                                                    translate}}
+                                                </button>
+                                            </td>
+
+                                            <td
+                                                    class="sorting_1 mn-120 inventory-text-center text-center"
+                                            >
+                                                <a style="cursor: pointer;"
+                                                ><i
+                                                        class="fa fa-trash inventory-delete-btn-size"
+                                                        ng-click="$ctrl.deleteRecipeItem(item)"
+                                                ></i
+                                                ></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <list-pagination
+                                            total-pages="$ctrl.totalPages"
+                                            on-page-click="$ctrl.setPage(pageNumber)"
+                                            current-page="$ctrl.currentPage">
+                                    </list-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory HTML End -->
+        </div>
+    </div>
+</div>
+<!-- END INNER CONTENT -->
+
+<receipt-form></receipt-form>
+<edit-recipe-form></edit-recipe-form>
+<ingredient-form></ingredient-form>
+<edit-ingredient-form></edit-ingredient-form>

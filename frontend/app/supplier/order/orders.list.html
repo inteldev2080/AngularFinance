@@ -1,0 +1,141 @@
+<div class="container" style="margin-bottom: 8%;">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.order" ui-sref-opts="{reload:true}">{{"supplier.menu.orders"
+            | translate }}</a></li>
+        <li ng-if="$ctrl.ordersStatus === 'Pending'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.new">{{"supplier.orders.newOrders"
+            | translate }}</a></li>
+        <li ng-if="$ctrl.ordersStatus === 'Accepted'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.preparation">{{"supplier.orders.preparation" | translate }}</a></li>
+        <li ng-if="$ctrl.ordersStatus === 'ReadyForDelivery'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.delivery">{{"supplier.orders.delivery" | translate }}</a></li>
+        <li ng-if="$ctrl.ordersStatus === 'Rejected'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.failed">{{"supplier.orders.failed" | translate }}</a></li>
+        <li ng-if="$ctrl.ordersStatus === 'Delivered'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.review">{{"supplier.orders.review" | translate }}</a></li>
+    </ol>
+
+    <div class="col-sm-4" style="float: right;">
+        <div style="z-index:1;"
+             class="form-group form-group-custom form-group-default form-group-default-select2">
+            <label class="label-custom">{{"supplier.account.customer.city" | translate }}</label>
+            <select ng-model="$ctrl.citySelect" id="selectedCity"
+                    ng-options="item as item.englishName for item in $ctrl.cityList track by item._id"
+                    class="full-width" ng-change="$ctrl.onChangeCity()" data-placeholder="Select City"
+                    data-init-plugin="select2">
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-4" style="float: right;">
+        <div class="form-group form-group-default input-group">
+            <div class="form-input-group">
+                <label for="daterangepicker">{{"supplier.reports.orders.filter.period" | translate }}</label>
+                <input type="text" style="width: 100%" name="reservation" id="daterangepicker"
+                       class="form-control"
+                       value="{{$ctrl.query.startDate}} {{$ctrl.query.endDate}}"/>
+            </div>
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat="(masterKey, masterValue) in $ctrl.orderList.orders | groupBy: 'order.city'">
+
+    <p class="upper-case bold p-t-10 p-l-20 p-r-20" ng-if="masterKey != 'undefined' && masterKey != '' ">
+        {{ masterKey }}
+    </p>
+    <div ng-repeat="(key, value) in masterValue | groupBy: 'order.updatedAtDay'">
+        <p class="upper-case bold p-t-10 p-l-20 p-r-20">
+            {{key}}
+        </p>
+
+        <div class="row p-l-20 p-r-20">
+            <div class="col-lg-4 col-sm-6 d-flex flex-column" ng-repeat="card in value">
+                <!-- START ITEM -->
+                <div ui-sref="app.supplier.order.view.details({orderId:card.order._id})"
+                     class="card social-card share share-other full-width m-b-10 d-flex flex-1 full-height no-border"
+                     data-social="item">
+                    <div class="card-content card-image-description flex-1"
+                         background="{{card.order.customer.coverPhoto}}">
+
+                        <div class="card-image-overlay">
+                            <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" |
+                                translate}}</h5>
+                            <h5 ng-if="card.products.length == 1" class="description">{{$ctrl._$translate.use() ===
+                                'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}</h5>
+                            <h5 ng-if="card.products.length == 2" class="description">{{$ctrl._$translate.use() ===
+                                'en'? card.products[0].product.englishName: card.products[0].product.arabicName}},
+                                {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName:
+                                card.products[1].product.arabicName}}</h5>
+                            <h5 ng-if="card.products.length >= 3" class="description">{{$ctrl._$translate.use() ===
+                                'en'? card.products[0].product.englishName: card.products[0].product.arabicName}},
+                                {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName:
+                                card.products[1].product.arabicName}} <span translate="supplier.overview.items"
+                                                                            translate-values="{value: card.products.length-2}"></span>
+                            </h5>
+                            <!--<h5 class="count"><span translate="supplier.overview.item" translate-values="{value: card.products.length}"></span></h5>-->
+                            <h5 class="count"><span translate="supplier.overview.item"
+                                                    translate-values="{value: card.products.length}"></span></h5>
+                            <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" |
+                                translate}}</h5>
+
+                        </div>
+                    </div>
+                    <div class="card-header clearfix">
+                        <div><span class="card-footer-custom-title">{{card.order.customer.representativeName}} </span>
+                        </div>
+                        <div ng-if="card.order.city"><span class="card-footer-custom-title">{{card.order.branchName}} ({{card.order.city}})</span>
+                        </div>
+                        <div ng-if="!card.order.city"><span
+                                class="card-footer-custom-title">{{card.order.branchName}}</span></div>
+                        <div>
+                            <ul class="reactions">
+                                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- END ITEM -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dataTables_wrapper p-b-20">
+    <list-pagination message="'no-orders'" total-pages="$ctrl.ordersTotalPages"
+                     on-page-click="$ctrl.setOrdersCurrentPage(pageNumber)"
+                     current-page="$ctrl.ordersCurrentPage"></list-pagination>
+</div>
+<shimmer hide="$ctrl.ordersIsLoaded" col="3"></shimmer>
+
+<!--<div class="row" ng-if="$ctrl.orderList.orders.length === 0">-->
+<!--<div class="col">-->
+<!--<div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">-->
+<!--<div class="card-image-overlay"></div>-->
+<!--<img src="assets/img/cards/no-orders.svg">-->
+<!--<p class="paragraph m-t-10">{{"supplier.order.view.noOrders" | translate }}</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="row" ng-if="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+            <p class="paragraph m-t-10">{{"supplier.order.view.unexpectedError" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"supplier.order.view.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>

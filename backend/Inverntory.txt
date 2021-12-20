@@ -1,0 +1,19 @@
+Inventory Backend Implementation
+
+Model:
+server > models >
+ingredient.model.js : Defines all the data modeling for ingredients
+recipes.model.js : Defines all the data modeling for recipes
+recipesItems.model.js : Defines all the data modeling for recipes Items
+
+
+Each ingredient, recipe and recipe Item is associated with Supplier Id
+
+
+Routing:
+Routes are defined on server > routes > inventory.route.js
+
+Logic:
+All business logic is defined in server > controllers > inventory.controller.js
+
+

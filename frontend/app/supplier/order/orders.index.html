@@ -1,0 +1,89 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center upper-case">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-grid"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"></path><polyline points="2.32 6.16 12 11 21.68 6.16"></polyline><line x1="12" y1="22.76" x2="12" y2="11"></line></svg>
+                {{"supplier.menu.orders" | translate }}</p>
+
+            <shimmer row="8" hide="$ctrl.ordersCountIsLoaded"></shimmer>
+            <ul ng-if="$ctrl.ordersCountIsLoaded" class="main-menu">
+
+                <li permission permission-only="'manageOrderOverview'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.overview">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.pending}}</span>
+                        <span class="title">{{"supplier.orders.overview" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageNewOrders'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.new({productId:''})">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.pending}}</span>
+                        <span class="title">{{"supplier.orders.newOrders" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageOrderPreparation'"  ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.preparation">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.accepted}}</span>
+                        <span class="title">{{"supplier.orders.preparation" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageOrderDelivery'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.delivery">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.readyForDelivery + $ctrl.ordersCount.outForDelivery}}</span>
+                        <span class="title">{{"supplier.orders.delivery" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageOrderFailed'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.failed">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.canceled + $ctrl.ordersCount.rejected + $ctrl.ordersCount.failedToDeliver + $ctrl.ordersCount.canceledByCustomer}}</span>
+                        <span class="title">{{"supplier.orders.failed" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'manageOrderReviews'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.order.list.review">
+                        <span class="badge badge-primary pull-left">{{$ctrl.ordersCount.review}}</span>
+                        <span class="title">{{"supplier.orders.review" | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+
+                <ui-view/>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+
+    $('.secondary-side').on('click','.main-menu li',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

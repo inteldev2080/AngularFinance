@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df38"), 
+    "__v" : NumberInt(0), 
+    "type" : "ORDERS", 
+    "template" : {
+        "english" : {
+            "body" : "orderReport.html", 
+            "title" : "Orders Reports"
+        }, 
+        "arabic" : {
+            "body" : "orderReport.html", 
+            "title" : "تقارير الطلبات"
+        }
+    }
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df39"), 
+    "__v" : NumberInt(0), 
+    "type" : "TRANSACTIONS", 
+    "template" : {
+        "english" : {
+            "body" : "transactionReport.html", 
+            "title" : "Transactions Reports"
+        }, 
+        "arabic" : {
+            "body" : "transactionReport.html", 
+            "title" : "تقارير العمليات والمدفوعات"
+        }
+    }
+}

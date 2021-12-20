@@ -1,0 +1,262 @@
+<div class="modal fade slide-up payments payments_2"
+     id="addIngredientQuantityModal"
+     tabindex="-1"
+     role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <button
+                        type="button"
+                        ng-click="$ctrl.resetForm(receiptForm)"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true"
+                >
+                    <i class="pg-close fs-14"></i>
+                    {{ "admin.recipes.create-recipe.button.close" | translate }}
+                </button>
+
+                <div class="text-center p-r-25 p-l-25">
+                    <h5
+                            class="semi-bold m-t-30 m-b-10"
+                            style="font-size: 28px; font-weight: 500;"
+                    >
+                        {{ "admin.recipes.create-recipe.title" | translate }}
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form
+                            name="receiptForm"
+                            id="receiptForm"
+                            ng-submit="$ctrl.createRecipe(receiptForm)"
+                            class="p-t-15"
+                            role="form"
+                            novalidate
+                    >
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div
+                                        pg-form-group
+                                        class="form-group form-group-default"
+                                        ng-class="{
+                    'has-error':
+                      recipeForm.recipeName.$invalid &&
+                      !recipeForm.recipeName.$pristine
+                  }"
+                                >
+                                    <label>{{
+                                        "admin.recipes.create-recipe.field.recipe_name.label"
+                                        | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input
+                                                type="text"
+                                                id="recipeName"
+                                                class="form-control"
+                                                name="recipeName"
+                                                placeholder="{{
+                        'admin.recipes.create-recipe.field.recipe_name.placeholder'
+                          | translate
+                      }}"
+                                                ng-model="$ctrl.formData.englishName"
+                                                required
+                                        />
+                                    </div>
+                                </div>
+                                <label
+                                        class="error"
+                                        for="recipeName"
+                                        ng-show="
+                    recipeForm.recipeName.$error.required &&
+                    !recipeForm.recipeName.$pristine
+                  "
+                                >
+                                    {{
+                                    "admin.recipes.create-recipes.field.company_name.required"
+                                    | translate
+                                    }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div
+                                        pg-form-group
+                                        class="form-group form-group-default"
+                                        ng-class="{
+                    'has-error':
+                      receiptForm.commercialRegister.$invalid &&
+                      !receiptForm.commercialRegister.$pristine
+                  }"
+                                >
+                                    <label>{{
+                                        "admin.recipes.create-recipe.field.bar_code.label"
+                                        | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                id="commercialRegister"
+                                                name="commercialRegister"
+                                                placeholder="{{
+                        'admin.recipes.create-recipe.field.bar_code.placeholder'
+                          | translate
+                      }}"
+                                                ng-model="$ctrl.formData.barCode"
+                                                ng-pattern="$ctrl.regexBar"
+                                                required
+                                        />
+                                    </div>
+                                </div>
+                                <label
+                                        class="error"
+                                        for="commercialRegister"
+                                        ng-show="
+                    receiptForm.commercialRegister.$error.required &&
+                    !receiptForm.commercialRegister.$pristine
+                  "
+                                >
+                                    {{
+                                    "admin.recipes.create-recipe.field.bar_code.required"
+                                    | translate
+                                    }}
+                                </label>
+                                <label
+                                        class="error"
+                                        for="commercialRegister"
+                                        ng-show="
+                    receiptForm.commercialRegister.$error.pattern &&
+                    !receiptForm.commercialRegister.$pristine
+                  "
+                                >
+                                    {{
+                                    "admin.recipes.create-recipe.field.bar_code.invalid"
+                                    | translate
+                                    }}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div
+                                        pg-form-group
+                                        class="form-group form-group-default"
+                                        ng-class="{
+                    'has-error':
+                      receiptForm.sku.$invalid && !receiptForm.sku.$pristine
+                  }"
+                                >
+                                    <label>{{
+                                        "admin.recipes.create-recipe.field.sku.label" | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input
+                                                type="text"
+                                                id="sku"
+                                                class="form-control"
+                                                name="sku"
+                                                ng-pattern="$ctrl.regexSKU"
+                                                placeholder="{{
+                        'admin.recipes.create-recipe.field.sku.placeholder'
+                          | translate
+                      }}"
+                                                ng-model="$ctrl.formData.recipeSku"
+                                                required
+                                        />
+                                    </div>
+                                </div>
+                                <label
+                                        class="error"
+                                        for="sku"
+                                        ng-show="
+                    receiptForm.sku.$error.required &&
+                    !receiptForm.sku.$pristine
+                  "
+                                >
+                                    {{
+                                    "admin.recipes.create-recipe.field.sku.required" | translate
+                                    }}
+                                </label>
+                                <label
+                                        class="error"
+                                        for="sku"
+                                        ng-show="
+                    receiptForm.sku.$error.pattern && !receiptForm.sku.$pristine
+                  "
+                                >
+                                    {{
+                                    "admin.recipes.create-recipe.field.sku.invalid" | translate
+                                    }}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="d-flex flex-wrap radio radio-success">
+                                    <div class="m-r-20">
+                    <span class="bold fs-12 p-l-5">{{
+                      "admin.recipes.create-recipe.field.select_recipe.label"
+                        | translate
+                    }}</span>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex">
+                                            <div>
+                                                <input
+                                                        type="radio"
+                                                        ng-click="$ctrl.formData.typeMethod = 'Recipe'"
+                                                        value="Recipe"
+                                                        name="typeMethod"
+                                                        id="recipe"
+                                                />
+                                                <label for="recipe">{{
+                                                    "admin.recipes.create-recipe.field.select_recipe.recipe"
+                                                    | translate
+                                                    }}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio"
+                                                       ng-click="$ctrl.formData.typeMethod = 'Item'"
+                                                       value="Item"
+                                                       name="typeMethod"
+                                                       id="item"/>
+                                                <label for="item">{{
+                                                    "admin.recipes.create-recipe.field.select_recipe.item"
+                                                    | translate
+                                                    }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col m-t-10 sm-m-t-10 clearfix">
+                                <div class="pull-right">
+                                    <button
+                                            class="btn btn-primary btn-cons m-t-10 pull-right"
+                                            type="submit"
+                                            ng-disabled="receiptForm.$invalid || !$ctrl.formData.typeMethod"
+                                    >
+                                        {{ "admin.recipes.create-recipe.button.save" | translate }}
+                                    </button>
+                                </div>
+                                <div class="pull-left">
+                                    <div
+                                            id="loading"
+                                            ng-if="$ctrl.registerLoading"
+                                            class="progress-circle-indeterminate"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>

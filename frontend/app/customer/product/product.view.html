@@ -1,0 +1,118 @@
+<!--<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.order" ui-sref-opts="{reload:true}">{{"customer.menu.product" | translate }}</a></li>
+        <li class="breadcrumb-item text-capitalize">{{supplierName}}</li>
+        <li class="breadcrumb-item text-capitalize">{{ currentLanguage.language ==='ar' ? $ctrl.product.arabicName : $ctrl.product.englishName}}</li>
+    </ol>
+</div>-->
+<!--<div class="hidden-lg-up pull-left m-b-10">-->
+    <!--<back></back>-->
+<!--</div>-->
+<div ng-show="!$ctrl.isLoading && !$ctrl.catIsLoading" class="card card-details-form">
+    <fieldset ng-readonly="true">
+        <form ng-readonly="true" id="productForm" name="productForm"  accessible-form novalidate>
+            <div class="card-header text-center header-bg padding-0" background="{{$ctrl.product.coverPhoto}}"
+                   style="height: 200px;">
+                <div class="image-overlay">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="card-header padding-0" style="overflow: hidden">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 class="p-l-30 p-t-20">{{ currentLanguage.language ==='ar' ? $ctrl.product.arabicName : $ctrl.product.englishName}}</h4>
+                    </div>
+                    <div class="col-md-4 padding-0 margin-0 m-b-10">
+                        <div class="row">
+                            <div class="col" ng-repeat="imgUrl in $ctrl.product.images  track by $index" style="height: 80px" background="{{imgUrl}}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-8 col-sm">
+                        <div class="card card-transparent">
+                            <label ng-if="currentLanguage.language ==='ar'" class="label-custom">{{"customer.product.field.arabicDescription.label" | translate}}</label>
+                            <label ng-if="currentLanguage.language ==='en'" class="label-custom">{{"customer.product.field.englishDescription.label" | translate}}</label>
+
+                            <p>{{ currentLanguage.language ==='ar' ? $ctrl.product.arabicDescription : $ctrl.product.englishDescription}}</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group form-group-custom form-group-default">
+                            <label class="label-custom">{{"customer.product.field.categories.label" | translate}}</label>
+                            <input type="text" class="form-control"
+                                   placeholder="{{'customer.product.field.categories.placeholder' | translate}}"
+                                   class="form-control"
+                                   value="{{ currentLanguage.language ==='ar' ? $ctrl.product.categories[0].arabicName : $ctrl.product.categories[0].englishName}}"
+                                   ng-readonly="true">
+                        </div>
+                        <!--<div class="form-group form-group-custom form-group-default m-t-15 m-b-15">-->
+                            <!--<label class="label-custom">{{"customer.product.field.price.label" | translate}}</label>-->
+                            <!--<input type="text" class="form-control"-->
+                                   <!--class="form-control"-->
+                                   <!--value="{{$ctrl.product.price}}"-->
+                                   <!--ng-readonly="true">-->
+                        <!--</div>-->
+
+                        <div ng-show="$ctrl.product && !$ctrl.product.requestFeature" class="no-animate form-group form-group-default input-group">
+                            <div class="form-input-group form-group-custom">
+                                <label class="label-custom p-l-15 p-r-15">{{"customer.product.field.price.label" | translate}}</label>
+                                <input type="number" class="form-control p-l-15 p-r-15"
+                                       class="form-control"
+                                       ng-model="$ctrl.product.price"
+                                       ng-readonly="true">
+                            </div>
+                            <div class="input-group-addon">{{"customer.product.field.price.currency" | translate}}</div>
+                        </div>
+
+                        <div ng-show="$ctrl.product && !$ctrl.product.requestFeature" class="no-animate form-group form-group-default input-group">
+                            <div class="form-input-group form-group-custom">
+                                <label class="label-custom p-l-15 p-r-15">{{"customer.product.field.quantity.label" | translate}}</label>
+                                <!--<input type="number" class="form-control p-l-15 p-r-15"-->
+                                       <!--placeholder="{{'customer.product.field.quantity.placeholder' | translate}}"-->
+                                       <!--class="form-control"-->
+                                       <!--ng-model="$ctrl.product.quantity"-->
+                                       <!--ng-readonly="true">-->
+                                <input type="number" class="form-control p-l-15 p-r-15"
+                                       placeholder="{{'customer.product.field.quantity.placeholder' | translate}}"
+                                       class="form-control" min="1"
+                                       ng-model="$ctrl.product.quantity">
+                            </div>
+                            <div class="input-group-addon">{{ currentLanguage.language ==='ar' ? $ctrl.product.unit.arabicName : $ctrl.product.unit.englishName}}</div>
+                        </div>
+
+                        <button ng-show="$ctrl.product && !$ctrl.product.requestFeature" ng-click="$ctrl.addToCart()" class="btn btn-primary btn-block btn-lg" >{{"customer.product.button.addToCart" | translate}}</button>
+                        <button ng-show="$ctrl.product && $ctrl.product.requestFeature" ng-click="$ctrl.requestProduct()" class="btn btn-primary btn-block btn-lg" >{{"customer.product.button.requestPrice" | translate}}</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </fieldset>
+</div>
+<shimmer hide="!$ctrl.isLoading"></shimmer>
+<div class="row" ng-if="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"customer.product.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>
+<script>
+    $.Pages.init();
+</script>

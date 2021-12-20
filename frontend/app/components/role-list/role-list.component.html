@@ -1,0 +1,154 @@
+<shimmer hide="!$ctrl.isLoading" col="3" row="3" clipped="true"></shimmer>
+<div class="card">
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12  padding-0">
+                <div class="dataTables_wrapper no-footer">
+                    <div class="table-responsive">
+
+                        <table ng-if="!$ctrl.isLoading" class="table table-striped dataTable dataTableFormat no-footer roles-table" role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th scope="col" class="sorting_asc bold no-outline" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product: activate to sort column descending">
+
+                                        </th>
+                                <th scope="col" class="sorting_asc bold no-outline text-center" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'component.role-list.text.name' | translate}}
+                                </th>
+                                <th scope="col" class="sorting_asc bold no-outline text-center" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'component.role-list.text.permissions' | translate}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="role in $ctrl.roles" class="gradeX odd content-table-payment" role="row" ng-init="outerIndex=$index">
+                                <td data-label="# {{$index+1}}" class="sorting_1 v-align-middle"><span class="btn btn-default center" ng-if="!$ctrl.blockRolesAdd" ng-click="$ctrl.openChangeRoleModal(role._id)">   <i class="fa fa-trash"></i></span>
+                                </td>
+                                <td data-label="{{'component.role-list.text.name' | translate}}" class="sorting_1 v-align-middle">{{$ctrl.$translate.use() === 'ar'?role.arabicName:role.englishName}}</td>
+                                <td data-label="{{'component.role-list.text.permissions' | translate}}" class="sorting_1">
+                                    <div class="row">
+                                        <div class="col-sm-3 m-b-10" ng-repeat="permission in $ctrl.permissions" ng-init="innerIndex=$index">
+                                            <div class="checkbox check-primary">
+                                                <input  type="checkbox"
+                                                        ng-if="$ctrl.blockRolesAdd"
+                                                        checklist-model="role.permissions"
+                                                        checked="checked" value="check2" name="check"
+                                                        id="{{outerIndex}}_{{innerIndex}}"
+                                                        checklist-value="permission._id"
+                                                        ng-change="$ctrl.check(role, permission, checked)" disabled>
+
+                                                <input  type="checkbox"
+                                                        ng-if="!$ctrl.blockRolesAdd"
+                                                        checklist-model="role.permissions"
+                                                        checked="checked" value="check2" name="check"
+                                                        id="{{outerIndex}}_{{innerIndex}}"
+                                                        checklist-value="permission._id"
+                                                        ng-change="$ctrl.check(role, permission, checked)">
+                                                <label class="" for="{{outerIndex}}_{{innerIndex}}">
+                                                    {{$ctrl.$translate.use() === 'ar'?permission.arabicName :permission.englishName}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <list-pagination ng-if="!$ctrl.isLoading"  total-pages="$ctrl.totalPages" current-page="$ctrl.currentPage" on-page-click="$ctrl.setPage(pageNumber)"></list-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade stick-up" id="changeRoleModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"component.role-list.message.deleteRole.selectalternativeRole" | translate}}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"component.role-list.message.deleteRole.selectalternativeRole" | translate}}</label>
+                    <select class="full-width" ng-show="$ctrl.roles" data-disable-search="true" ng-model="$ctrl.alternativeRoleId"
+                            data-init-plugin="select2" id="selectRole">
+                        <option ng-repeat="role in $ctrl.roles" ng-if="role._id !== $ctrl.roleIdToByDeleted" value="{{role._id}}">
+                            {{$ctrl.$translate.use() === 'ar'?role.arabicName:role.englishName}}
+                        </option>
+                    </select>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <button ng-click="$ctrl.deleteRole()" class="btn btn-primary btn-block" ng-disabled="!$ctrl.alternativeRoleId">{{"component.role-list.message.deleteRole.confirm" | translate }}</button>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#changeRoleModal').modal('hide');" class="btn btn-block">{{"component.role-list.message.deleteRole.cancel" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade slide-up"  id="deleteModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"confirmDelete" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <button  onclick="$('#deleteModal').modal('hide');" class="btn btn-primary col-md-4 m-l-15 m-r-5 m-t-5">{{"cancel" | translate }}</button>
+                    <button data-toggle="modal" data-target="#changeRoleModal"  ng-click="$ctrl.deleteRole()" class="btn btn-danger col-md-4 m-t-5">{{"confirm" | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    $('#selectRole').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>
+

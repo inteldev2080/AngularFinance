@@ -1,0 +1,27 @@
+{ 
+    "_id" : ObjectId("5f4b7ca6568eca0254047c31"), 
+    "email" : "asif.customer@mailinator.com", 
+    "mobileNumber" : "966585235741", 
+    "firstName" : "asif", 
+    "lastName" : "customer", 
+    "createdAt" : ISODate("2020-08-30T12:10:06.374+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f510e8f0d4032396a3f34b6"), 
+    "email" : "malik.customer@mailinator.com", 
+    "mobileNumber" : "966523176312", 
+    "firstName" : "malik", 
+    "lastName" : "malinaor", 
+    "createdAt" : ISODate("2020-09-02T17:01:30.919+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60a8fadc5d6faa50100aee10"), 
+    "email" : "polka1234@mailinator.com", 
+    "mobileNumber" : "966543212321", 
+    "firstName" : "asyds", 
+    "lastName" : "asyds", 
+    "createdAt" : ISODate("2021-05-22T15:29:56.059+0000"), 
+    "__v" : NumberInt(0)
+}

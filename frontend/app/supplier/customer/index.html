@@ -1,0 +1,59 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center text-uppercase">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                {{"supplier.menu.customers" | translate }}</p>
+            <ul class="main-menu">
+                <li permission permission-only="'manageCustomers'" ui-sref-active="active top-level">
+                    <a ui-sref="app.supplier.customer.list" class=" m-l-25">
+                        <span class="title">{{"supplier.menu.customers" | translate }}</span>
+                    </a>
+                </li>
+                <li permission permission-only="'managePayments'" ui-sref-active="active top-level bold">
+                    <a ui-sref="app.supplier.customer.payments" class="m-l-25 p-r-0">
+                        <span class="title">{{"supplier.account.payment.paymentsClaims" | translate }}</span>
+                        <span class="badge badge-success pull-right">{{$ctrl.pendingPaymentsCount}}</span>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div ncy-breadcrumb></div>
+                <ui-view/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+    $('.secondary-side').on('click','ul li a>.title',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

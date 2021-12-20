@@ -1,0 +1,143 @@
+<div class="row m-b-20">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="row">
+            <div class="col">
+                <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{'admin.suppliers.list.title' | translate}}</p>
+            </div>
+            <div class="col  d-flex justify-content-start justify-content-sm-end mb-3 mb-sm-0">
+                <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{'admin.suppliers.list.export.title' |
+                    translate}}</p>
+                <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-transparent" ng-click="$ctrl.exportSupplierList('pdf')">
+                            {{'admin.suppliers.list.export.pdf' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-transparent" ng-click="$ctrl.exportSupplierList('xls')">
+                            {{'admin.suppliers.list.export.xls' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+        <button class="btn btn-primary btn-block" ng-click="$ctrl.openSupplierFormPoup()">
+            {{'admin.suppliers.list.button.new_supplier' | translate}}
+        </button>
+    </div>
+</div>
+<div class="card">
+    <div class="gray-container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="w600">{{'admin.suppliers.list.search.status.label' | translate}}</p>
+                <div class="checkbox check-primary">
+                            <span ng-repeat="item in $ctrl.status">
+                                  <input type="checkbox"
+                                         checklist-model="$ctrl.searchCriteria.status"
+                                         checklist-value="item"
+                                         checked="checked"
+                                         name="check" id="check{{$index}}"
+                                         ng-change="$ctrl.check(item, checked)">
+                                  <label ng-if="item==='Active'" class="small-text" for="check{{$index}}">{{'admin.suppliers.list.search.status.active' | translate}}</label>
+                                  <label ng-if="item==='Suspended'" class="small-text" for="check{{$index}}">{{'admin.suppliers.list.search.status.suspended' | translate}}</label>
+                                  <label ng-if="item==='Blocked'" class="small-text" for="check{{$index}}">{{'admin.suppliers.list.search.status.blocked' | translate}}</label>
+                                  <label ng-if="item==='Deleted'" class="small-text" for="check{{$index}}">{{'admin.suppliers.list.search.status.deleted' | translate}}</label>
+                            </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p class="w600"> {{'admin.suppliers.list.search.payment.label' | translate}}</p>
+                <div class="checkbox check-primary">
+                    <input type="checkbox" value="1" id="checkbox4" ng-model="$ctrl.searchCriteria.payingSoon"
+                           ng-change="$ctrl.checkPayment()">
+                    <label for="checkbox4" class="small-text">
+                        {{'admin.suppliers.list.search.payment.payingSoon.label' | translate}}
+                    </label>
+                    <input type="checkbox" value="2" id="checkbox5" ng-model="$ctrl.searchCriteria.missedPayment"
+                           ng-change="$ctrl.checkPayment()">
+                    <label for="checkbox5" class="small-text">
+                        {{'admin.suppliers.list.search.payment.missedPayment.label' | translate}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="card-block">
+            <div class="row m-b-10">
+                <div class="col-12">
+                    <div class="form-group">
+                        <input type="text" ng-model="$ctrl.searchCriteria.supplierName"
+                               placeholder="{{'admin.suppliers.list.search.supplierName.label' | translate}}"
+                               ng-change="$ctrl.getSuppliers($ctrl.searchCriteria)" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12  padding-0">
+                <shimmer hide="$ctrl.suppliersAreLoaded" col="5"></shimmer>
+                <div class="dataTables_wrapper no-footer">
+                    <div class="table-responsive">
+                        <table ng-if="$ctrl.suppliersAreLoaded" class="table table-striped table-compact table-hover"
+                               role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th>
+                                    {{'admin.suppliers.list.table.header.status' | translate}}
+                                </th>
+                                <th>
+                                    {{'admin.suppliers.list.table.header.name' | translate}}
+                                </th>
+                                <th class="text-center">
+                                    {{'admin.suppliers.list.table.header.balance' | translate}}
+                                </th>
+                                <th class="text-center mn-150">
+                                    {{'admin.suppliers.list.table.header.remainingTillLimit' | translate}}
+                                </th>
+                                <th class="text-center">
+                                    {{'admin.suppliers.list.table.header.paymentDue'| translate}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in $ctrl.suppliers" class="gradeX odd content-table-payment cursor"
+                                role="row" ui-sref="app.admin.supplier.detail({supplierId:item.supplier._id})">
+                                <td class="sorting_1 mn-120">
+                                            <span ng-if="item.supplier.status === 'Active'"
+                                                  class="label label-success upper-case">{{"admin.suppliers.supplier.active" | translate}}</span>
+                                    <span ng-if="item.supplier.status === 'Suspended'"
+                                          class="label label-warning upper-case">{{"admin.suppliers.supplier.suspended" | translate}}</span>
+                                    <span ng-if="item.supplier.status === 'Blocked'"
+                                          class="label label-important upper-case">{{"admin.suppliers.supplier.blocked" | translate}}</span>
+                                    <span ng-if="item.supplier.status === 'Deleted'"
+                                          class="label label-important upper-case">{{"admin.suppliers.supplier.deleted" | translate}}</span>
+                                </td>
+                                <td class="sorting_1 mn-120">{{item.supplier.representativeName}}</td>
+                                <td class="sorting_1 text-center mn-100">{{item.balance | currency : "" : 2}}
+                                    <small>{{"admin.suppliers.payment.sar" | translate }}</small>
+                                </td>
+                                <td class="sorting_1 text-center mn-100">{{item.remainingTillLimit | currency : "" : 2}}
+                                    <small>{{"admin.suppliers.payment.sar" | translate }}</small>
+                                </td>
+                                <td class="sorting_1 text-center mn-150"
+                                    ng-class="{ 'text-danger' : item.supplier.dueDateMissed }">
+                                    <span ng-if="$ctrl.$translate.use() === 'ar'">{{item.supplier.nextPaymentDueDate  | amDateFormat:'YYYY-MM-DD':null:locale}}</span>
+                                    <span ng-if="$ctrl.$translate.use() === 'en'">{{item.supplier.nextPaymentDueDate  | amDateFormat:'DD-MM-YYYY'}}</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <list-pagination total-pages="$ctrl.totalPages"
+                                         on-page-click="$ctrl.setPage(pageNumber)"
+                                         current-page="$ctrl.currentPage">
+
+                        </list-pagination>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<supplier-form></supplier-form>

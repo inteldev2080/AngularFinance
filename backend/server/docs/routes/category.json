@@ -1,0 +1,559 @@
+{
+  "schemas": {
+    "Category": {
+      "type": "object",
+      "properties": {
+        "parentCategory": {
+          "type": "object"
+        },
+        "childCategory": [{
+          "type": "object"
+        }],
+        "products": [{
+          "type": "object"
+        }],
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/categories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Get list of categories.",
+        "operationId": "categoryList",
+        "parameters": [{
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "categories": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Category"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Create new category.",
+        "operationId": "createCategory",
+        "requestBody": {
+          "description": "Category Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "arabicName",
+                  "englishName"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "number"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "parentCategory": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Category": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/categories/otherProducts/{categoryId}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Get other products.",
+        "operationId": "getOtherProducts",
+        "parameters": [{
+            "name": "categoryId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "otherProducts": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Category"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/categories/products/{categoryId}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Get list of products for category.",
+        "operationId": "getProductsForCategory",
+        "parameters": [{
+            "name": "categoryId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "products": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Category"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/categories/{categoryId}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Get category.",
+        "operationId": "getCategory",
+        "parameters": [{
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Category": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Update category.",
+        "operationId": "updateCategory",
+        "parameters": [{
+          "name": "categoryId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Category Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "arabicName",
+                  "englishName",
+                  "status"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "number"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "parentCategory": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Category": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Delete category.",
+        "operationId": "deleteCategory",
+        "parameters": [{
+          "name": "categoryId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Category": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Category"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

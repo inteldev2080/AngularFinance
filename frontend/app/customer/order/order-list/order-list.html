@@ -1,0 +1,330 @@
+<div class="row">
+    <div class="col-sm-6 m-b-20">
+        <div class="border-top-balance-card">
+            <div class="p-t-10 p-b-10 p-l-15 p-r-15">
+                <h6>{{"customer.order.text.totalOrders" | translate }}</h6>
+                <shimmer hide="$ctrl.ordersHistoryIsLoaded" row="1" clipped="true"></shimmer>
+                <h5 ng-if="$ctrl.ordersHistoryIsLoaded" class="bold">
+                    <small>
+                        <small class="w300 sm-text-left upper-case">{{"customer.order.text.orderCount" | translate : {value: $ctrl.totalOrders} }}</small>
+                    </small>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 m-b-20">
+        <div class="border-top-balance-card" ng-class="{'danger': $ctrl.ordersRevenue > 0}">
+            <div class="p-t-10 p-b-10 p-l-15 p-r-15">
+                <h6>{{"customer.order.text.totalPayment" | translate }}</h6>
+                <shimmer hide="$ctrl.ordersHistoryIsLoaded" row="1" clipped="true"></shimmer>
+                <h5 ng-if="$ctrl.ordersHistoryIsLoaded" class="bold">
+                    <small>
+                        {{$ctrl.ordersRevenue | currency:"":2}}
+
+                        <small class="w300 sm-text-left upper-case">{{"customer.order.text.sar" | translate }}</small>
+                    </small>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="col">
+            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{'customer.order.text.recurringOrder' | translate}}
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3"></div>
+</div>
+<shimmer col="4" row="4" hide="$ctrl.recurOrdersAreLoaded" clipped="true"></shimmer>
+<div ng-if="$ctrl.recurOrdersAreLoaded && $ctrl.recurringOrders.length > 0" class="card">
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12  padding-0">
+                <div class="dataTables_wrapper no-footer">
+                    <div class="table-responsive">
+                        <table class="table table-striped dataTable table-compact no-footer" role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.header.date' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.header.branchName' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.orderID' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.header.repetition' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.header.items' | translate}}
+
+                                </th>
+                                <th class="sorting_asc bold " tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.header.total' | translate}}
+                                </th>
+                                <th class="sorting_asc bold text-center" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.recurringOrderTable.button.cancelRecurring' | translate}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in $ctrl.recurringOrders"
+                                class="gradeX odd content-table-payment cursor" role="row">
+                                <td class="mn-170">
+                                    <span class="label upper-case">{{item.createdAt  | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                    <span class="label upper-case">{{item.createdAt  | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                </td>
+                                <td class="mn-100 sorting_1 p-l-15">{{item.branchName}}</td>
+                                <td class="mn-170 sorting_1 p-l-15">
+                                    <a href="" style="color:blue"
+                                       ui-sref="app.customer.orders.detail({orderId:item._id,type:'recurOrder'})">
+                                        {{item.orderId}}
+                                    </a>
+                                </td>
+                                <td class="mn-120 sorting_1 p-l-15">
+                                    {{"customer.account.payment.every" | translate }}
+                                    {{"customer.account.payment."+item.orderIntervalType | translate : {value: item.orderFrequency} }}
+                                </td>
+                                <td class="mn-100 sorting_1 p-l-15">{{"customer.order.item" | translate : {value: item.items} }}</td>
+                                <td class="mn-100 sorting_1 p-l-15">{{(item.total) + (item.VAT )| currency: "":2}} {{"customer.currency" | translate}}</td>
+                                <td class="mn-50 sorting_1 text-center p-l-15"><a href="" ng-click="$ctrl.openConfirmMessage($event,item._id)">
+                                    <!--<span> <i class="fa fa-times-circle-o"></i></span>-->
+                                    <span> <i class="fa fa-trash fs-18"></i></span>
+
+                                </a></td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                        <list-pagination total-pages="$ctrl.recurringOrdersTotalPages"
+                                         on-page-click="$ctrl.setPageRecurringOrders(pageNumber)"
+                                         current-page="$ctrl.recurringOrdersCurrentPage"></list-pagination>
+                        <shimmer col="5" row="4" hide="true"></shimmer>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noRecurringOrdersFound">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-orders.svg">
+            <p class="paragraph m-t-10">{{"customer.order.message.noOrders" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row m-b-15 m-t-30">
+    <div class="col-sm-6">
+        <div class="col">
+            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{'customer.order.text.ordersHistory' | translate}}
+            </p></div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group transparent">
+            <input ng-model="$ctrl.orderHistoryQuery.orderId"
+                   ng-change="$ctrl.getOrdersHistory($ctrl.orderHistoryQuery)"
+                   type="text" placeholder="{{'customer.order.text.placeHolder' | translate }}" class="form-control">
+            <span
+                  class="input-group-addon">
+                          <i class="fa fa-search"></i>
+                      </span>
+        </div>
+    </div>
+</div>
+<shimmer col="4" row="4" hide="$ctrl.ordersHistoryIsLoaded" clipped="true"></shimmer>
+<div ng-if="$ctrl.ordersHistoryIsLoaded && $ctrl.orders.length>0" class="card">
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12  padding-0">
+                <div class="dataTables_wrapper no-footer">
+                    <div class="table-responsive">
+                        <table class="table table-striped dataTable table-hover table-compact no-footer" role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.date' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.branchName' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.orderID' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.items' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.status' | translate}}
+                                </th>
+                                <th class="sorting_asc bold" tabindex="0" rowspan="1" colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'customer.order.ordersHistoryTable.header.total' | translate}}
+                                </th>
+                                <th class="bold" tabindex="0" rowspan="1" colspan="1"
+                                aria-label="Product: activate to sort column descending">
+                                {{'customer.order.ordersHistoryTable.header.reOrder' | translate}}
+                            </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in $ctrl.orders" class="gradeX odd content-table-payment cursor"
+                                role="row" ui-sref="app.customer.orders.detail({orderId:item._id,type:'normalOrder'})">
+                                <td class="v-align-middle mn-150">
+                                    <span class="label upper-case">{{item.createdAt  | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                    <span class="label upper-case">{{item.createdAt  | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                </td>
+                                <td class="mn-100 sorting_1 p-l-15">{{item.branchName}}</td>
+                                <td class="v-align-middle mn-140 sorting_1 p-l-15">
+                                    <a href=""
+                                       ui-sref="app.customer.orders.detail({orderId:item._id,type:'normalOrder'})">
+                                        {{item.orderId}}
+                                    </a>
+                                </td>
+                                <td ng-if="item.items > 0" class="v-align-middle mn-80 sorting_1 p-l-15">{{"customer.order.item" | translate : {value: item.items} }}</td>
+                                <td ng-if="item.items == 0" class="v-align-middle mn-80 sorting_1 p-l-15"><span>{{"customer.order.ordersHistoryTable.noProducts" | translate}}</span></td>
+                                <td class="v-align-middle mn-150 sorting_1 p-l-15">
+                                    <span ng-if="item.status === 'Accepted'"
+                                          class="label label-success upper-case">{{"customer.order.status.approved" | translate}}</span>
+                                    <span ng-if="item.status === 'Pending'"
+                                          class="label label-warning upper-case">{{"customer.order.status.pending" | translate}}</span>
+                                    <span ng-if="item.status === 'Rejected'"
+                                          class="label label-important upper-case">{{"customer.order.status.rejected" | translate}}</span>
+                                    <span ng-if="item.status === 'ReadyForDelivery'"
+                                          class="label label-success upper-case">{{"customer.order.status.readyForDelivery" | translate}}</span>
+                                    <span ng-if="item.status === 'OutForDelivery'"
+                                          class="label label-warning upper-case">{{"customer.order.status.outForDelivery" | translate}}</span>
+                                    <span ng-if="item.status === 'Delivered'"
+                                          class="label label-success upper-case">{{"customer.order.status.delivered" | translate}}</span>
+                                    <span ng-if="item.status === 'Canceled'"
+                                          class="label label-important upper-case">{{"customer.order.status.canceled" | translate}}</span>
+                                    <span ng-if="item.status === 'CanceledByCustomer'"
+                                          class="label label-important upper-case" data-toggle="tooltip" title="{{'customer.order.view.status.canceledByCustomer2' | translate }}">{{"customer.order.view.status.canceledByCustomer" | translate}} <i class="fa fa-info-circle fa-lg" ></i></span>
+                                    <!--class="label label-important upper-case" data-toggle="tooltip" title="{{'customer.order.view.status.canceledByCustomer2' | translate }}">{{"customer.order.view.status.canceledByCustomer" | translate }} <i class="fa fa-info-circle fa-lg" ></i></span>-->
+                                    <span ng-if="item.status === 'FailedToDeliver'"
+                                          class="label label-important upper-case">{{"customer.order.status.failedToDeliver" | translate}}</span>
+
+                                </td>
+                                <td class="v-align-middle mn-120 sorting_1 p-l-15">{{(item.total) + (item.VAT) | currency: "":2}} {{"customer.currency" | translate}}</td>
+                                <td class="mn-50 sorting_1 text-center p-l-15"><a href="" ng-click="$ctrl.openReOrderConfirmMessage($event,item._id)">
+                                    <!--<span> <i class="fa fa-times-circle-o"></i></span>-->
+                                    <span> <i class="fa fa-refresh fs-18"></i></span>
+
+                                </a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <list-pagination total-pages="$ctrl.ordersHistoryTotalPages"
+                                         on-page-click="$ctrl.setPageOrdersHistory(pageNumber)"
+                                         current-page="$ctrl.ordersHistoryCurrentPage"></list-pagination>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noOrdersFound">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-orders.svg">
+            <p class="paragraph m-t-10">{{"customer.order.message.noOrders" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+            <p class="paragraph m-t-10">{{"customer.order.message.unexpectedError" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"customer.order.message.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="modal fade disable-scroll slide-up"  id="cancelRecurringModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"customer.order.cancelRecurringModal.message" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <button  onclick="$('#cancelRecurringModal').modal('hide');" class="btn btn-primary btn-block m-t-5">{{"customer.order.cancelRecurringModal.button.cancel" | translate }}</button>
+                    </div>
+                    <div class="col-6">
+                        <button  ng-click="$ctrl.confirmDelete()" class="btn btn-danger btn-block m-t-5">{{"customer.order.cancelRecurringModal.button.confirm" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade disable-scroll slide-up"  id="reOrderModal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header clearfix text-left">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                    </button>
+                    <h5><span class="semi-bold">{{"customer.order.reOrderModal.message" | translate }}</span></h5>
+                    <p></p>
+    
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <button  onclick="$('#reOrderModal').modal('hide');" class="btn btn-primary btn-block m-t-5">{{"customer.order.reOrderModal.button.cancel" | translate }}</button>
+                        </div>
+                        <div class="col-6">
+                            <button  ng-click="$ctrl.confirmReOrder()" class="btn btn-danger btn-block m-t-5">{{"customer.order.reOrderModal.button.confirm" | translate }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

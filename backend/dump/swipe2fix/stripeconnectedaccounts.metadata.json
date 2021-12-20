@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"swipe2fix.stripeconnectedaccounts"},{"v":2,"key":{"accountId":1},"name":"IDX_ACCOUNT","ns":"swipe2fix.stripeconnectedaccounts","background":true},{"v":2,"key":{"accountId":1,"connectedAccountId":1},"name":"IDX_STRIPE_CONNECTED_ACCOUNT","ns":"swipe2fix.stripeconnectedaccounts","background":true}]}

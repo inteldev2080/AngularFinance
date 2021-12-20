@@ -1,0 +1,218 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item">{{"supplier.reports.orders.stats.reports" | translate }}</li>
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.report.invoices" ui-sref-opts="{reload:false}">{{"supplier.reports.invoices.title" | translate }}</a></li>
+        <li class="breadcrumb-item active">{{"supplier.reports.invoices.details" | translate }}</li>
+    </ol>
+</div>
+<div class="card card-details">
+    <div class="card-header">
+        <button class="btn btn-transparent btn-lg pull-right" ng-click="$ctrl.exportFile()">{{"supplier.reports.orders.details.print" | translate}}</button>
+        <div class="card-title" style="padding-top: 10px;">
+            {{"supplier.reports.invoices.invoiceDetail" | translate}}: 
+        </div>
+    </div>
+    <div class="card-block wide-leftup">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-center">{{"supplier.reports.invoices.taxInvoice" | translate}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-compact">
+                    <tr>
+                        <td>{{"supplier.reports.invoices.number" | translate}}</td>
+                        <td>{{$ctrl.invoice.invoiceId}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{"supplier.reports.invoices.issueDate" | translate}}</td>
+                        <td>{{$ctrl.invoice.createdAt | amDateFormat:'DD-MM-YYYY'}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{"supplier.reports.invoices.dateOfSupply" | translate}}</td>
+                        <td>{{$ctrl.invoice.createdAt | amDateFormat:'DD-MM-YYYY'}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <img src="{{$ctrl.invoice.image}}" width="150px" height="150px" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-compact">
+                    <thead>
+                        <tr role="row">
+                            <th class="bold" colspan="2">{{"supplier.reports.invoices.seller" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.name" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.supplier.representativeName}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.buildingNo" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.streetName" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.supplier.location.address}}</td>
+                        </tr>
+                        <!-- <tr>
+                            <td width="50%">{{"supplier.reports.invoices.district" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.city" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr> -->
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.country" | translate}}</td>
+                            <td width="50%">Saudi Arabia</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.postalCode" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.additionalInfo" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.vatNumber" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.supplier.VATRegisterNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.otherSellerId" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.supplier.commercialRegister}}</td>
+                        </tr>  
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <table class="table table-compact">
+                    <thead>
+                        <tr role="row">
+                            <th class="bold" colspan="2">{{"supplier.reports.invoices.buyer" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.name" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.customer.representativeName}}</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.buildingNo" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.branchName" | translate }}</td>
+                            <td width="50%">{{$ctrl.invoice.order.branchName}}</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.streetName" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.customer.location.address}}</td>
+                        </tr>
+                        <!-- <tr>
+                            <td width="50%">{{"supplier.reports.invoices.district" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.city" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr> -->
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.country" | translate}}</td>
+                            <td width="50%">Saudi Arabia</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.postalCode" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.additionalInfo" | translate}}</td>
+                            <td width="50%"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.vatNumber" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.customer.representativeName}}</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">{{"supplier.reports.invoices.otherBuyerId" | translate}}</td>
+                            <td width="50%">{{$ctrl.invoice.customer.commercialRegister}}</td>
+                        </tr>  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-compact">
+                    <thead>
+                        <tr role="row">
+                            <th class="bold" colspan="8">{{"supplier.reports.invoices.lineItems" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.natureOfGoods" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.unitPrice" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.quantity" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.taxableAmount" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.discount" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.taxRate" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.taxAmount" | translate}}</td>
+                            <td>{{"supplier.reports.invoices.itemSubtotal" | translate}}</td>
+                        </tr>
+                        <tr ng-repeat="item in $ctrl.invoice.order.orderProduct" >
+                            <td>{{item.product.englishName}} - {{item.product.arabicName}}</td>
+                            <td>{{item.price | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                            <td>{{item.quantity | currency:"":0}}</td>
+                            <td>{{item.price * item.quantity | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                            <td>0</td>
+                            <td>15%</td>
+                            <td>{{item.price * item.quantity * 0.15 | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                            <td>{{item.price * item.quantity * 0.15 + item.price * item.quantity | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-compact">
+                    <thead>
+                        <tr role="row">
+                            <th class="bold" colspan="2">{{"supplier.reports.invoices.totalAmount" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.totalExculd" | translate}}</td>
+                            <td>{{$ctrl.invoice.price | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                        </tr>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.discount" | translate}}</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.totalTaxableAmount" | translate}}</td>
+                            <td>{{$ctrl.invoice.price | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</small></td>
+                        </tr>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.totalVat" | translate}}</td>
+                            <td>{{$ctrl.invoice.VAT | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{"supplier.reports.invoices.totalAmountDue" | translate}}</td>
+                            <td>{{$ctrl.invoice.price * 1.15 | currency:"":2}} <small>{{"supplier.account.payment.sar" | translate }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

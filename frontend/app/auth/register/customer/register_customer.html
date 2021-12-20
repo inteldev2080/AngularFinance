@@ -1,0 +1,590 @@
+<form id="form-register" name="registerForm" class="p-t-15" role="form" ng-submit="$ctrl.register(registerForm)"
+      accessible-form novalidate>
+    <div id="failure2" ng-if="$ctrl.isFailure" class="alert alert-danger" role="alert">
+        <button id="close3" class="close" data-dismiss="alert"></button>
+        <strong id="error3"></strong>{{$ctrl.message| translate }}
+    </div>
+    <div id="success2" ng-if="$ctrl.isSuccess" class="alert alert-success" role="alert">
+        <button id="close4" class="close" data-dismiss="alert"></button>
+        <strong id="error4"></strong>{{$ctrl.message | translate }}
+    </div>
+    <div id="loading2" ng-if="$ctrl.registerLoading" class="progress-circle-indeterminate"></div>
+    <div id="rootwizard">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-tabs-linetriangle nav-tabs-separator nav-stack-sm p-l-0 p-r-0" id="tablist2"
+            role="tablist" data-init-reponsive-tabs="dropdownfx">
+            <li id="nav-item3" class="nav-item">
+                <a class="active" id="show-account" data-toggle="tab" pg-tab href="#account" role="tab"><i
+                        class="fa fa-user tab-icon"></i> <span>{{"auth.register.customer.tabs.tab_account_info" | translate }}</span></a>
+            </li>
+            <li id="nav-item4" class="nav-item">
+                <a class="" id="show-company" data-toggle="tab" pg-tab href="#company" role="tab"><i
+                        class="fa fa-building tab-icon"></i> <span>{{"auth.register.customer.tabs.tab_company_info" | translate }}</span></a>
+            </li>
+            <li id="nav-item5" class="nav-item">
+                <a class="" data-toggle="tab" id="showMap" pg-tab href="#address" ng-click="$ctrl.showMap = true"
+                   role="tab"><i class="fa fa-map-marker tab-icon"></i> <span>{{"auth.register.customer.tabs.tab_address" | translate }}</span></a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane padding-20 sm-no-padding active slide-left" id="account">
+                <div class="row row-same-height">
+                    <div style="width:100%">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default required"
+                                     ng-class="{ 'has-error' : registerForm.userFirstName.$invalid && !registerForm.userFirstName.$pristine }">
+                                    <label>{{"auth.register.customer.field.first_name.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" id="userFirstName" name="userFirstName"
+                                               placeholder='{{"auth.register.customer.field.first_name.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.userFirstName" required minlength="2"
+                                               maxlength="20"
+                                               ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\. ]*$/"
+                                        >
+                                    </div>
+                                </div>
+                                <label id="userFirstNameInvalid" class="error" for="userFirstName"
+                                       ng-show="registerForm.userFirstName.$error.pattern && !registerForm.userFirstName.$pristine">
+                                    - {{"auth.register.customer.field.first_name.invalid" | translate }}.
+                                </label>
+                                <label id="userFirstNameRequired" class="error" for="userFirstName"
+                                       ng-show="registerForm.userFirstName.$error.required && !registerForm.userFirstName.$pristine">
+                                    - {{"auth.register.customer.field.first_name.required" | translate }}.
+                                </label>
+                                <label id="userFirstNameMinLength" class="error" for="userFirstName"
+                                       ng-show="registerForm.userFirstName.$error.minlength && !registerForm.userFirstName.$pristine">
+                                    - {{"auth.register.customer.field.first_name.minLength" | translate }}.
+                                </label>
+                                <label id="userFirstNameMaxLength" class="error" for="userFirstName"
+                                       ng-show="registerForm.userFirstName.$error.maxlength && !registerForm.userFirstName.$pristine">
+                                    - {{"auth.register.customer.field.first_name.maxLength" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-6">
+
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-show="false"
+                                     ng-class="{ 'has-error' : registerForm.userLastName.$invalid && !registerForm.userLastName.$pristine }">
+                                    <label>{{"auth.register.customer.field.last_name.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" id="userLastName" name="userLastName"
+                                               placeholder='{{"auth.register.customer.field.last_name.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.userLastName" minlength="2"
+                                               maxlength="20"
+                                               ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\. ]*$/"
+                                        >
+                                    </div>
+                                </div>
+                                <!--<label id="userLastNameInvalid" class="error" for="userLastName"-->
+                                <!--ng-show="registerForm.userLastName.$error.pattern  && !registerForm.userLastName.$pristine">-->
+                                <!-- - {{"auth.register.customer.field.last_name.invalid" | translate }}.-->
+                                <!--</label>-->
+                                <!--<label id="userLastNameRequired" class="error" for="userLastName"-->
+                                <!--ng-show="registerForm.userLastName.$error.required  && !registerForm.userLastName.$pristine">-->
+                                <!-- - {{"auth.register.customer.field.last_name.required" | translate }}.-->
+                                <!--</label>-->
+                                <!--<label id="userLastNameMinLength" class="error" for="userLastName"-->
+                                <!--ng-show="registerForm.userLastName.$error.minlength  && !registerForm.userLastName.$pristine">-->
+                                <!-- - {{"auth.register.customer.field.last_name.minLength" | translate }}.-->
+                                <!--</label>-->
+                                <!--<label id="userLastNameMaxLength" class="error" for="userLastName"-->
+                                <!--ng-show="registerForm.userLastName.$error.maxlength  && !registerForm.userLastName.$pristine">-->
+                                <!-- - {{"auth.register.customer.field.last_name.maxLength" | translate }}.-->
+                                <!--</label>-->
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.userEmail.$invalid && !registerForm.userEmail.$pristine }">
+                                    <label>{{"auth.register.customer.field.email.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="email" class="form-control" name="userEmail" id="userEmail"
+                                               placeholder='{{"auth.register.customer.field.email.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.userEmail"
+                                               ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                               required/>
+                                    </div>
+                                </div>
+                                <label id="userEmailRequired" class="error" for="userEmail"
+                                       ng-show="registerForm.userEmail.$error.required  && !registerForm.userEmail.$pristine">
+                                    - {{"auth.register.customer.field.email.required" | translate }}.
+                                </label>
+                                <label id="userEmailInvalid" class="error" for="userEmail"
+                                       ng-show="registerForm.userEmail.$error.pattern  && !registerForm.userEmail.$pristine">
+                                    - {{"auth.register.customer.field.email.invalid" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default required"
+                                     ng-class="{ 'has-error' : registerForm.userMobilePhone.$invalid && !registerForm.userMobilePhone.$pristine }">
+                                    <label>{{"auth.register.customer.field.mobile.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control"
+                                               name="userMobilePhone" id="userMobilePhone"
+                                               placeholder='{{"auth.register.customer.field.mobile.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.userMobilePhone"
+                                               ng-pattern='/^9665[0-9]{8}$$/' required>
+                                    </div>
+                                </div>
+                                <label id="userMobilePhoneInvalid" class="error" for="userMobilePhone"
+                                       ng-show="registerForm.userMobilePhone.$error.pattern  && !registerForm.userMobilePhone.$pristine">
+                                    - {{"auth.register.customer.field.mobile.invalid" | translate }}.
+                                </label>
+                                <label id="userMobilePhoneRequired" class="error" for="userMobilePhone"
+                                       ng-show="registerForm.userMobilePhone.$error.required  && !registerForm.userMobilePhone.$pristine">
+                                    - {{"auth.register.customer.field.mobile.required" | translate }}.
+                                </label>
+
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.userPassword.$invalid && !registerForm.userPassword.$pristine }">
+                                    <label>{{"auth.register.customer.field.password.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="password" class="form-control" name="userPassword"
+                                               id="userPassword"
+                                               placeholder='{{"auth.register.customer.field.password.placeholder" | translate }}'
+                                               ng-pattern="/[a-zA-Z\u0600-\u06FF@#_-]+[0-9]+[a-zA-Z\u0600-\u06FF0-9@#_-]*|[0-9]+[a-zA-Z\u0600-\u06FF@#_-][a-zA-Z\u0600-\u06FF0-9@#_-]*/"
+                                               ng-minlength="6"
+                                               ng-maxlength="20"
+                                               ng-model="$ctrl.customer.userPassword" required>
+                                    </div>
+                                </div>
+                                <label id="userPasswordRequired" class="error" for="userPassword"
+                                       ng-show="registerForm.userPassword.$error.required  && !registerForm.userPassword.$pristine">
+                                    - {{"auth.register.customer.field.password.required" | translate }}.
+                                </label>
+                                <label id="userPasswordInvalid" class="error" for="userPassword"
+                                       ng-show="registerForm.userPassword.$error.pattern  && !registerForm.userPassword.$pristine">
+                                    - {{"auth.register.customer.field.password.invalid" | translate }}.
+                                </label>
+                                <label id="userPasswordMin_length" class="error" for="userPassword"
+                                       ng-show="registerForm.userPassword.$error.minlength  && !registerForm.userPassword.$pristine">
+                                    - {{"auth.register.customer.field.password.min_length" | translate }}.
+                                </label>
+                                <label id="userPasswordMax_length" class="error" for="userPassword"
+                                       ng-show="registerForm.userPassword.$error.maxlength  && !registerForm.userPassword.$pristine">
+                                    - {{"auth.register.customer.field.password.max_length" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.confirmPassword.$invalid && !registerForm.confirmPassword.$pristine }">
+                                    <label>{{"auth.register.customer.field.confirm_password.label" | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input type="password" class="form-control" name="confirmPassword"
+                                               id="confirmPassword"
+                                               placeholder='{{"auth.register.customer.field.confirm_password.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.confirmPassword"
+                                               compare-to="$ctrl.customer.userPassword">
+                                    </div>
+                                </div>
+                                <label id="confirmPasswordRequired" class="error" for="confirmPassword"
+                                       ng-show="registerForm.confirmPassword.$error.required && !registerForm.confirmPassword.$pristine">
+                                    - {{"auth.register.customer.field.confirm_password.required" | translate }}.
+                                </label>
+                                <label id="confirmPasswordInvalid" class="error" for="confirmPassword"
+                                       ng-show="registerForm.confirmPassword.$error.compareTo && !registerForm.confirmPassword.$pristine">
+                                    - {{"auth.register.customer.field.confirm_password.invalid" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane slide-left padding-20 sm-no-padding" id="company">
+                <div class="row row-same-height">
+                    <div style="width:100%">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.representativeName.$invalid && !registerForm.representativeName.$pristine }">
+                                    <label>{{"auth.register.customer.field.company_name.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" name="representativeName"
+                                               id="representativeName"
+                                               placeholder='{{"auth.register.customer.field.company_name.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.representativeName"
+                                               required>
+                                    </div>
+                                </div>
+
+                                <label id="representativeNameRequired" class="error" for="representativeName"
+                                       ng-show="registerForm.representativeName.$error.required && !registerForm.representativeName.$pristine">
+                                    - {{"auth.register.customer.field.company_name.required" | translate }}.
+                                </label>
+                                <label id="representativeNameInvalid" class="error" for="representativeName"
+                                       ng-show="registerForm.representativeName.$error.pattern && !registerForm.representativeName.$pristine">
+                                    - {{"auth.register.customer.field.company_name.invalid" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.commercialRegister.$invalid && !registerForm.commercialRegister.$pristine }">
+                                    <label>{{"auth.register.customer.field.cr_number.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" id="commercialRegister"
+                                               name="commercialRegister"
+                                               placeholder='{{"auth.register.customer.field.cr_number.placeholder" | translate }}'
+                                               ng-model="$ctrl.customer.commercialRegister"
+                                               ng-pattern="/^\d{10}$$/"
+                                               required>
+                                    </div>
+                                </div>
+                                <label id="commercialRegisterRequired" class="error" for="commercialRegister"
+                                       ng-show="registerForm.commercialRegister.$error.required && !registerForm.commercialRegister.$pristine">
+                                    - {{"auth.register.customer.field.cr_number.required" | translate }}.
+                                </label>
+                                <label id="commercialRegisterInvalid" class="error" for="commercialRegister"
+                                       ng-show="registerForm.commercialRegister.$error.pattern && !registerForm.commercialRegister.$pristine">
+                                    - {{"auth.register.customer.field.cr_number.invalid" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex flex-wrap radio radio-success">
+                                    <div class="m-r-20">
+                                        <span class="bold fs-12 p-l-5">{{"auth.register.customer.field.select_date.label" | translate }}</span>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="radio" ng-model="$ctrl.dateMethod" value="Hijri"
+                                                       name="paymentMethod" id="hijri">
+                                                <label for="hijri">{{"auth.register.customer.field.select_date.hijri" |
+                                                    translate }}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" ng-model="$ctrl.dateMethod" value="Gregorian"
+                                                       name="paymentMethod" id="gregorian ">
+                                                <label for="gregorian ">{{"auth.register.customer.field.select_date.gregorian"
+                                                    | translate }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-show="$ctrl.dateMethod == 'Hijri'">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default required"
+                                     ng-class="{ 'has-error' : registerForm.commercialRegisterExpireDateIslamic.$invalid && !registerForm.commercialRegisterExpireDateIslamic.$pristine }">
+                                    <label>{{"auth.register.customer.field.cr_Expdate.labelHijri" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control unstyled"
+                                               id="commercialRegisterExpireDateIslamic"
+                                               name="commercialRegisterExpireDateIslamic"
+                                               placeholder='' autocomplete="off"
+                                               ng-model="$ctrl.customer.commercialRegisterExpireDateIslamic"
+                                               ng-required="$ctrl.dateMethod == 'Hijri'">
+                                    </div>
+                                </div>
+                                <label id="commercialRegisterExpireDateIslamicLabel" class="error"
+                                       for="commercialRegisterExpireDate"
+                                       ng-show="registerForm.commercialRegisterExpireDateIslamic.$invalid && !registerForm.commercialRegisterExpireDateIslamic.$pristine">
+                                    - {{"auth.register.customer.field.cr_Expdate.required" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-6" ng-show="$ctrl.dateMethod == 'Gregorian'">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default  required"
+                                     ng-class="{ 'has-error' : registerForm.commercialRegisterExpireDate.$invalid && !registerForm.commercialRegisterExpireDate.$pristine }">
+                                    <label>{{"auth.register.customer.field.cr_Expdate.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control unstyled"
+                                               id="commercialRegisterExpireDate"
+                                               name="commercialRegisterExpireDate"
+                                               placeholder='' autocomplete="off"
+                                               ng-model="$ctrl.customer.commercialRegisterExpireDate"
+                                               ng-required="$ctrl.dateMethod == 'Gregorian'">
+                                    </div>
+                                </div>
+                                <label id="commercialRegisterExpireDateRequired" class="error"
+                                       for="commercialRegisterExpireDate"
+                                       ng-show="registerForm.commercialRegisterExpireDate.$invalid && !registerForm.commercialRegisterExpireDate.$pristine">
+                                    - {{"auth.register.customer.field.cr_Expdate.required" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default no-margin required"
+                                     ng-class="{ 'has-error' : registerForm.commercialRegisterPhoto.$error.required && !registerForm.commercialRegisterPhoto.$pristine }">
+                                    <label>{{"auth.register.customer.field.cr_photo.label" | translate }}</label>
+                                    <label class="cursor" for="commercialRegisterPhoto">
+                                        <i class="pg-plus"></i>
+                                        <i ng-if="$ctrl.commercialPhoto" style="color: #373e43;">{{$ctrl.commercialPhoto}}</i>
+                                        <i ng-if="!$ctrl.commercialPhoto">
+                                            {{"auth.register.customer.field.cr_photo.placeholder" | translate }} </i>
+                                    </label>
+
+                                    <div class="controls" style="display: none;">
+                                        <input id="commercialRegisterPhoto" name="commercialRegisterPhoto" type="file"
+                                               style="width:166px;" class="form-control p-b-35"
+                                               ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'commercialRegisterPhoto')"
+                                               ng-model="$ctrl.commercialRegisterPhoto"
+                                               accept="image/*, application/pdf"
+                                               ng-change="validateFileType($ctrl.invalidTypeMessage)"
+                                               placeholder='{{"auth.register.customer.field.cr_photo.placeholder" | translate }}'
+                                               ngf-model-invalid="errorFile" required>
+                                        <!--<img width="100%" ng-if="$ctrl.commercialRegisterPhoto" ng-src="{{$ctrl.commercialRegisterPhoto}}"/>-->
+
+                                    </div>
+                                </div>
+                                <label id="commercialRegisterPhotoRequired" class="error" for="commercialRegisterPhoto"
+                                       ng-show="registerForm.commercialRegisterPhoto.$error.required && !registerForm.commercialRegisterPhoto.$pristine">
+                                    - {{"auth.register.customer.field.cr_photo.required" | translate }}.
+                                </label>
+                                <!--  <label ng-show="registerForm.commercialRegisterPhoto.$error.maxSize" id="commercialRegisterPhotoSizeError" class="error" for="commercialRegisterPhoto">
+                                      - {{"auth.register.customer.field.cr_photo.photoErr" | translate }}.
+                                  </label>
+                                  -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane slide-left padding-20 sm-no-padding" id="address">
+
+                <div class="row row-same-height">
+                    <div class="col-sm-6">
+                        <div style="z-index:1;"
+                             class="form-group form-group-custom form-group-default form-group-default-select2 no-margin required">
+                            <label class="label-custom">{{"auth.register.customer.field.address.city" | translate
+                                }}</label>
+                            <select select2 ng-model="$ctrl.selectedCity" id="selectedCity"
+                                    ng-options="item as item.englishName for item in $ctrl.cityList track by item._id"
+                                    class="full-width" ng-change="$ctrl.onChangeCity()" data-placeholder="Select City"
+                                    data-init-plugin="select2">
+                            </select>
+                        </div>
+                    </div>
+                    <div pg-form-group class="form-group form-group-default no-margin required"
+                         ng-class="{ 'has-error' : registerForm.address.$invalid && !registerForm.address.$pristine }">
+                        <label>{{"auth.register.customer.field.address.label" | translate }}</label>
+                        <div class="controls">
+                            <input places-auto-complete size=80
+                                   name="address"
+                                   id="addressInput"
+                                   class="form-control"
+                                   component-restrictions="{country:'sa'}"
+                                   ng-model="$ctrl.customer.address"
+                                   types="{{$ctrl.types}}"
+                                   on-place-changed="$ctrl.placeChanged()" required/>
+                        </div>
+                    </div>
+                    <label id="addressInputRequired" class="error" for="addressInput"
+                           ng-show="registerForm.address.$error.required && !registerForm.address.$pristine">
+                        - {{"auth.register.customer.field.address.required" | translate }}.
+                    </label>
+                    <div class="m-b-10" style="width:100%" map-lazy-load="{{$ctrl.googleMapsUrl}}">
+                        <ng-map ng-if="$ctrl.showMap" id="map" zoom="5" center="{{$ctrl.customer.coordinates}}">
+                            <!-- on-position_changed="$ctrl.getpos($event)"-->
+                            <marker position="{{$ctrl.customer.coordinates}}" title="Location"
+                                    on-dragend="$ctrl.getpos($event)"
+                                    animation="DROP"
+                                    draggable="true"></marker>
+                        </ng-map>
+                        <!--{{$ctrl.customer.coordinates}}-->
+                        <div id="map-location" ng-show="$ctrl.place">
+                            {{"auth.register.customer.field.address.label" | translate }} =
+                            {{$ctrl.place.formatted_address}} <br/>
+                            {{"auth.register.customer.field.address.label" | translate }}:
+                            {{$ctrl.place.geometry.location}}<br/>
+                        </div>
+                        <!-- {{"auth.register.customer.field.address.label" | translate }} : {{$ctrl.customer.address}}
+                         {{$ctrl.customer.coordinates}}-->
+                        <div pg-form-group class="checkbox check-primary m-t-20" required>
+                            <input type="checkbox" class="form-control" ng-required="$ctrl.privacyAccept"
+                                   ng-model="$ctrl.privacyAccept" id="privacyAccept">
+                            <label for="privacyAccept">{{'auth.register.supplier.field.privacy_policy.label' | translate
+                                }} <a ui-sref="app.privacy" target="_blank">{{'auth.register.supplier.field.privacy_policy.privacy_terms'
+                                    | translate }}</a></label>
+                            <!--<label>{{"auth.register.customer.field.privacy_policy.privacy_terms" | translate }}</label>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane slide-left padding-20 sm-no-padding" id="done">
+                success
+            </div>
+            <div class="padding-20 sm-padding-5 sm-m-b-20 sm-m-t-20 bg-white clearfix">
+                <ul class="pager wizard d-flex justify-content-center justify-content-sm-end flex-row-reverse no-style">
+                    <li class="next">
+                        <button class="btn btn-primary btn-cons btn-animated from-left fa fa-building pull-right"
+                                id="button-next" type="button">
+                            <span> {{"auth.register.customer.button.next" | translate }}</span>
+                        </button>
+                    </li>
+                    <li class="next finish hidden">
+                        <button type="submit"
+                                class="btn btn-primary btn-cons btn-animated from-left fa fa-building pull-right"
+                                id="button-signup"
+                                ng-disabled="registerForm.$invalid || !$ctrl.commercialRegisterPhoto || !$ctrl.privacyAccept || $ctrl.registerLoading || !$ctrl.selectedCity">
+                            {{"auth.register.customer.button.signup" | translate }}
+                        </button>
+                    </li>
+                    <li class="previous first hidden">
+                        <button id="first2" class="btn btn-default btn-cons btn-animated from-left fa fa-cog pull-right"
+                                type="button">
+                            <span>First</span>
+                        </button>
+                    </li>
+                    <li class="previous">
+                        <button class="btn btn-default btn-cons pull-right" id="button-previous" type="button">
+                            <span>{{"auth.register.customer.button.previous" | translate }}</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    /* ============================================================
+ * Form Wizard
+ * Multistep form wizard using Bootstrap Wizard Plugin
+ * For DEMO purposes only. Extract what you need.
+ * ============================================================ */
+    (function ($) {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear() + 5;
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("commercialRegisterExpireDate").setAttribute("max", today);
+    })(window.jQuery);
+
+    (function ($) {
+
+        'use strict';
+
+        $(document).ready(function () {
+            $('#rootwizard').bootstrapWizard({
+                onTabShow(tab, navigation, index) {
+                    const $total = navigation.find('li').length;
+                    const $current = index + 1;
+                    // controller.showMap = $current === 3;
+                    if ($current === 3) {
+                        document.getElementById('showMap')
+                            .click();
+                    }
+                    // If it's the last tab then hide the last button and show the finish instead
+                    if ($current >= $total) {
+                        $('#rootwizard').find('.pager .next').hide();
+                        $('#rootwizard').find('.pager .finish').show().removeClass('disabled hidden');
+                    } else {
+                        $('#rootwizard').find('.pager .next').show();
+                        $('#rootwizard').find('.pager .finish').hide();
+                    }
+
+                    const li = navigation.find('li a.active').parent();
+
+                    const btnNext = $('#rootwizard').find('.pager .next').find('button');
+                    const btnPrev = $('#rootwizard').find('.pager .previous').find('button');
+
+                    // remove fontAwesome icon classes
+                    function removeIcons(btn) {
+                        btn.removeClass((index, css) => (css.match(/(^|\s)fa-\S+/g) || []).join(' '));
+                    }
+
+                    if ($current > 1 && $current < $total) {
+                        const nextIcon = li.next().find('.fa');
+                        const nextIconClass = nextIcon.attr('class').match(/fa-[\w-]*/).join();
+
+                        removeIcons(btnNext);
+                        btnNext.addClass(`${nextIconClass} btn-animated from-left fa`);
+
+                        const prevIcon = li.prev().find('.fa');
+                        const prevIconClass = prevIcon.attr('class').match(/fa-[\w-]*/).join();
+
+                        removeIcons(btnPrev);
+                        btnPrev.addClass(`${prevIconClass} btn-animated from-left fa`);
+                    } else if ($current == 1) {
+                        // remove classes needed for button animations from previous button
+                        btnPrev.removeClass('btn-animated from-left fa');
+                        removeIcons(btnPrev);
+                    } else {
+                        // remove classes needed for button animations from next button
+                        btnNext.removeClass('btn-animated from-left fa');
+                        removeIcons(btnNext);
+                    }
+                },
+                onNext(tab, navigation, index) {
+
+                },
+                onPrevious(tab, navigation, index) {
+
+                },
+                onInit() {
+                    $('#rootwizard ul').removeClass('nav-pills');
+                }
+
+            }).bind(this);
+
+            $('.remove-item').click(function () {
+                $(this).parents('tr').fadeOut(function () {
+                    $(this).remove();
+                });
+            });
+
+        });
+
+    })(window.jQuery);
+
+</script>
+
+<script>
+    $('#selectedCity').on('select2:open', function () {
+        let that = $(this);
+        let flag = false;
+        if ($(window).width() > 739) {
+            $(window).bind('wheel', function (e) {
+
+            });
+        }
+        else {
+            $(window).bind('wheel', function (e) {
+                console.log(e.target);
+                if (!flag && e.target.className === 'select2-results__option') {
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if (!flag && e.target.className !== 'select2-results__option') {
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+
+</script>
+

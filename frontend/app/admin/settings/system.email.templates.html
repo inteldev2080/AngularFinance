@@ -1,0 +1,67 @@
+<div class="card card-details-table">
+    <div class="card-header header-bg">
+        <div>
+            <div class="card-title">
+                {{"admin.settings.templates.emailTemplates" | translate }}
+            </div>
+            <div class="card-description">
+                {{"admin.settings.templates.warning" | translate }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-block card-wide-padding wide-leftup">
+        <shimmer hide="$ctrl.templatesIsLoaded" col="2" row="20" clipped="true"></shimmer>
+        <div ng-repeat="(title, obj) in $ctrl.templates">
+            <div class="row m-t-30">
+                <div class="col upper-case">{{title}}</div>
+                <div class="col">
+                    <button class="btn pull-right btn-primary btn-xs p-r-30 p-l-30 m-b-10"
+                            ng-click="$ctrl.save(title, obj)"><i class="pg pg-save"></i> {{"admin.settings.templates.save" | translate }}</button>
+
+                    <button class="btn pull-right btn-defualt btn-xs p-r-30 p-l-30 m-b-10 m-r-10"
+                            ng-click="$ctrl.reset(title, obj)"><i class="pg pg-save"></i> {{"admin.settings.templates.reset" | translate }}</button>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group form-group-default required">
+                        <label>{{"admin.settings.templates.title" | translate }}</label>
+                        <input type="text" id="newUserTitle" name="newUserTitle" class="form-control"
+                               ng-model="obj.template.en.title" required>
+                    </div>
+                    <div class="summernote-wrapper">
+                        <!--.note-editor .note-editable-->
+                        <div id="summernote" config="$ctrl.summernote_options" on-focus="$ctrl.focus(evt)"
+                             on-blur="$ctrl.blur(evt)" ng-model="obj.template.en.body" summernote>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group form-group-default required">
+                        <label>{{"admin.settings.templates.title" | translate }}</label>
+                        <input type="text" id="newUserTitle" dir="rtl" name="newUserTitle" class="form-control"
+                               ng-model="obj.template.ar.title" required>
+                    </div>
+
+
+                    <div class="summernote-wrapper">
+                        <!--.note-editor .note-editable-->
+                        <div id="summernote" config="$ctrl.summernote_options_arabic" on-focus="$ctrl.focus(evt)"
+                             on-blur="$ctrl.blur(evt)" ng-model="obj.template.ar.body" summernote>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

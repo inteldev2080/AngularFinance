@@ -1,0 +1,61 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center upper-case">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-shield"><path d="M12 22s8-4 8-10V4l-8-2-8 2v8c0 6 8 10 8 10z"></path></svg>
+                {{"customer.menu.account" | translate }}</p>
+            <ul class="main-menu">
+                <li  ui-sref-active="active top-level">
+                    <a ui-sref="app.customer.account.users" class="m-l-25">
+                        <span class="title">{{"customer.account.staff" | translate }}</span>
+                    </a>
+                </li>
+                <li  ui-sref-active="active top-level">
+                    <a ui-sref="app.customer.account.roles" class=" m-l-25 p-r-0">
+                        <span class="title">{{"customer.account.roles.title" | translate }}</span>
+                    </a>
+                </li>
+                <li  ui-sref-active="active top-level">
+                    <a ui-sref="app.customer.account.branches" class=" m-l-25 p-r-0">
+                        <span class="title">{{"customer.account.branches.branch" | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div ncy-breadcrumb></div>
+                <ui-view/>
+            </div>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+</script>

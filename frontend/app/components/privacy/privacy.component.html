@@ -1,0 +1,59 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div ng-show="$ctrl.isApp" class="page-container">
+    <div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div ng-show="!$ctrl.isApp" class="secondary-sidebar light" data-init="secondary-sidebar">
+             <ul class="main-menu">
+                 <li class="active top-level">
+                     <back></back>
+                 </li>
+             </ul>
+        </div>
+        <div class="inner-content p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div>
+                    <div class="card">
+                        <div class="card-block card-wide-padding">
+                            <div ng-bind-html="$ctrl.content">
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+     </div>
+</div>
+</div>
+
+<!-- START PAGE CONTENT WRAPPER -->
+    <div ng-show="!$ctrl.isApp" class="page-content-wrapper ">
+        <!-- START PAGE CONTENT -->
+        <div class="container  no-padding">
+            <div ng-show="!$ctrl.isApp" class="secondary-sidebar light" data-init="secondary-sidebar">
+                <ul class="main-menu">
+                    <li class="active top-level">
+                        <back></back>
+                    </li>
+                </ul>
+            </div>
+            <div class="inner-content p-t-15 p-r-20 p-l-20">
+                <div class="sidebar-border"></div>
+                <div class="content">
+                    <div>
+                        <div class="card">
+                            <div class="card-block card-wide-padding">
+                                <div ng-bind-html="$ctrl.content">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

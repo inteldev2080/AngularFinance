@@ -1,0 +1,132 @@
+<div class="row">
+    <div permission permission-only="'canDelete'" class="col"><button ng-click="$ctrl.openRecordPayment()" class="btn btn-primary pull-right">{{'admin.suppliers.payment.record_payment' | translate}}</button></div>
+</div>
+<br>
+<div class="card">
+    <div class="gray-container">
+        <div class="row m-b-5">
+            <div class="col"><p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{'admin.suppliers.payment.payments' | translate}} </p></div>
+            <div class="col">
+            </div>
+
+        </div>
+        <div class="card-block padding-0">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group form-group-default">
+                        <label for="supplierName">{{'admin.suppliers.payment.label.search' | translate}}</label>
+                        <input id="supplierName" name="supplierName" type="text" ng-model="$ctrl.searchCriteria.supplierName"
+                               ng-change="$ctrl.getPayments($ctrl.searchCriteria)" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                        <label for="status">{{'admin.suppliers.payment.label.status' | translate}}</label>
+                        <select id="status" name="status"  data-disable-search="true"
+                                class="full-width select2-hidden-accessible"
+                                data-init-plugin="select2"
+                                class="form-control"
+                                ng-model="$ctrl.selectedStatus"
+                                ng-change="$ctrl.onChange()"
+                                required ng-options="item as $ctrl.translateStatus(item._id) for item in $ctrl.status.data track by item._id">
+
+                        </select>
+                        <label class="error"
+                               ng-if="productForm.status.$error.required && !productForm.status.$pristine">
+                            {{'supplier.product.field.status.required' | translate}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12  padding-0">
+                <shimmer hide="$ctrl.paymentsIsLoaded" row="10" col="5" clipped="true"></shimmer>
+                <div class="dataTables_wrapper no-footer" ng-if="$ctrl.paymentsIsLoaded">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-compact" role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th class="text-center" width="180">{{"admin.suppliers.payment.table.date" | translate }}</th>
+                                <th class="text-center">{{"admin.suppliers.payment.table.referenceId" | translate }}</th>
+                                <th class="text-center">{{"admin.suppliers.payment.table.status" | translate }}</th>
+                                <th class="text-center">{{"admin.suppliers.payment.table.customerName" | translate }}</th>
+                                <th class="text-center">{{"admin.suppliers.payment.table.amount" | translate }}</th>
+                                <th class="text-center">{{"admin.suppliers.payment.table.type" | translate }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in $ctrl.payments" class="gradeX odd content-table-payment cursor" role="row" ng-click="$ctrl.getPayment(item._id)">
+                                <td class="sorting_1 text-center mn-150">
+                                    <span class="label upper-case">{{item.updateAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                    <span class="label upper-case">{{item.updateAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                </td>
+                                <td class="sorting_1 text-center mn-120"><span class="label upper-case">{{item.paymentId}}</span></td>
+                                <td class="sorting_1 text-center mn-150">
+                                    <span ng-if="item.status === 'Approved'"
+                                          class="label label-success upper-case">{{"admin.suppliers.payment.approved" | translate}}</span>
+                                    <span ng-if="item.status === 'Pending'"
+                                          class="label label-warning upper-case">{{"admin.suppliers.payment.pending" | translate}}</span>
+                                    <span ng-if="item.status === 'Rejected'"
+                                          class="label label-important upper-case">{{"admin.suppliers.payment.rejected" | translate}}</span>
+                                </td>
+                                <td class="sorting_1 text-center mn-120">{{item.supplier.representativeName}}</td>
+
+                                <td class="sorting_1 text-center mn-100">{{item.amount| currency:"":2}} <small>{{"admin.suppliers.payment.sar" | translate }}</small></td>
+                                <td class="sorting_1 text-center mn-150">
+                                    <span ng-if="item.paymentMethod === 'Cash'"
+                                          class="label label-success upper-case"><li class="fa fa-money"></li> {{"admin.suppliers.payment.cash" | translate}}</span>
+                                    <span ng-if="item.paymentMethod === 'Cheque'"
+                                          class="label label-info upper-case"><li class="fa pg-credit_card_line"></li> {{"admin.suppliers.payment.cheque" | translate}}</span>
+                                    <span ng-if="item.paymentMethod === 'Bank'"
+                                          class="label label-inverse upper-case"><li class="fa fa-bank"></li> {{"admin.suppliers.payment.bank" | translate}}</span>
+                                </td>
+
+                                <!--<td class="sorting_1"><a href=""  ui-sref="app.supplier.customer.payments-details({paymentId:item._id,payment:item})">Show Details</a></td>-->
+
+                            </tr>
+                            </tbody>
+                        </table>
+                        <list-pagination total-pages="$ctrl.totalPages" current-page="$ctrl.currentPage" on-page-click="$ctrl.getPage(pageNumber)"></list-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<payment-record on-save="$ctrl.addPayment(payment)" show-actions="true" supplier-flag="true"></payment-record>
+
+<script>
+    $('#status').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

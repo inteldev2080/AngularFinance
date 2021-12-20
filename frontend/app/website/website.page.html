@@ -1,0 +1,41 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container no-padding">
+
+        <div>
+            <div  class="secondary-sidebar light" data-init="secondary-sidebar">
+                <ul class="main-menu">
+                    <li class="active top-level">
+                        <back></back>
+                    </li>
+                </ul>
+            </div>
+            <div class="inner-content p-t-15 p-r-20 p-l-20">
+                <div class="sidebar-border"></div>
+                <div class="content">
+
+
+                    <div class="card card-details-table">
+                        <div class="card-header header-bg">
+                            <div>
+                                <div class="card-title">
+                                    {{$ctrl.content.title.english}}
+                                </div>
+                                <div class="card-description">
+                                    <div ncy-breadcrumb></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-block card-wide-padding wide-leftup">
+                            <shimmer hide="$ctrl.contentIsLoaded" row="10" clipped="true"></shimmer>
+                            <div ng-bind-html="$ctrl.content.body.english | rawHtml"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

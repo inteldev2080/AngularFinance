@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("60f2b698594ce11b6e3ad954"), 
+    "customer" : ObjectId("60293aee8e96b72ae212c3af"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "VAT" : 1.5, 
+    "isReccuring" : false, 
+    "createdAt" : ISODate("2021-07-17T13:53:12.313+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("60ff5313594ce11b6e3ad985"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(2), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2021-07-04T22:17:09.567+0000")
+        }
+    ], 
+    "__v" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("60f2c627594ce11b6e3ad957"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "VAT" : NumberInt(0), 
+    "isReccuring" : false, 
+    "createdAt" : ISODate("2021-07-17T14:59:35.289+0000"), 
+    "products" : [
+
+    ], 
+    "__v" : NumberInt(1)
+}

@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("6032888f6840cd47eb13d80c"), 
+    "englishName" : "Riyadh", 
+    "arabicName" : "Riyadh", 
+    "address" : "Prince Satam Bin Abdulaziz, Al Khuzama, Riyadh 12576, Saudi Arabia", 
+    "status" : "Active", 
+    "coordinates" : [
+        24.728050055071165, 
+        46.58902919453125
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("6035210759b65949234624df"), 
+    "englishName" : "Makkah", 
+    "arabicName" : "Makkah", 
+    "address" : "8507 Al Hijrah, Misfalah, Makkah 24233 3466, Saudi Arabia", 
+    "status" : "Active", 
+    "coordinates" : [
+        21.4081441, 
+        39.8219757
+    ], 
+    "__v" : NumberInt(0)
+}

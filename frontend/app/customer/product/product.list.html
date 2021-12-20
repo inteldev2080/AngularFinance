@@ -1,0 +1,157 @@
+<!--<button class="btn btn-default btn-cons hidden-sm-up pull-left m-b-10" onclick="window.history.go(-1); return false;">-->
+<!--<span>{{"customer.product.button.back" | translate}}</span>-->
+<!--</button>-->
+<!--<div class="hidden-lg-up m-b-30">-->
+    <!--<back></back>-->
+<!--</div>-->
+<shimmer hide="$ctrl.categoriesAreLoaded" row="1" col="5"></shimmer>
+<ul ng-if="$ctrl.categoriesAreLoaded"
+    class="nav nav-tabs nav-tabs-custom border-0 justify-content-start m-b-25 m-l-20 m-r-20">
+    <li class="nav-item">
+        <a class="active" data-toggle="tab" data-target="#home"
+           aria-expanded="true">
+            <span ng-click="$ctrl.getProducts($ctrl.category._id);"
+                  class="no-text-transform">{{'customer.product.list.text.allProducts' | translate}}</span>
+        </a>
+    </li>
+    <li ng-repeat="subCategory in $ctrl.category.childCategory" class="nav-item" ng-if="subCategory.products.length>0">
+        <a data-toggle="tab" data-target="#profile"
+           ng-click="$ctrl.getProducts(subCategory._id);" class="" aria-expanded="false">
+            <span class="no-text-transform">{{currentLanguage.language === 'ar' ? subCategory.arabicName : subCategory.englishName }}</span>
+        </a>
+    </li>
+</ul>
+
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="col">
+            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{'customer.product.list.yourProducts' | translate}}
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3"></div>
+</div>
+
+<div class="card card-details"
+     ng-show="($ctrl.products.length === 0 && $ctrl.productsAreLoaded) || $ctrl.hasError">
+    <div class="row">
+        <div class="col">
+            <div class="tx-center p-t-50 p-b-50">
+                <div class="card-image-overlay"></div>
+                <img src="assets/img/cards/no-orders.svg">
+                <p class="paragraph m-t-10">{{"customer.product.list.noSpecialPriceProduct" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane active" id="tab3hellowWorld">
+    <shimmer hide="$ctrl.productsAreLoaded" col="3"></shimmer>
+    <div ng-if="$ctrl.productsAreLoaded" class="row">
+        <div ng-repeat="product in $ctrl.products" class="col-lg-4 col-sm-6 d-flex flex-column">
+            <!-- START ITEM -->
+            <div class="card side-hover-layout-card social-card full-width m-b-30 d-flex flex-1 full-height no-border"
+                 data-social="item">
+                <div ui-sref="app.customer.product.view.product({'productId':product._id})"
+                     class="card-content card-image-description flex-1">
+                    <div class="card-header clearfix">
+                        <div class="h6 w400 p-r-50 min-height">
+                            {{ $ctrl._$translate.use() === "ar"? product.arabicName : product.englishName }}
+                            <span ng-if="product.isInCart" class="fa fa-cart-plus"></span>
+                        </div>
+                        <div class="h6">
+                                    <span class="bold">
+                                        {{product.price}} {{'customer.product.currency' | translate}}
+                                    </span>/ {{ currentLanguage.language === 'ar' ? product.unit.arabicName :
+                            product.unit.englishName }}
+                        </div>
+                    </div>
+
+                    <div class="card-bottom-image" background="{{product.coverPhoto}}">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="hover-layout-container">
+                    <div class="row hover-actions">
+                        <div class="form-group form-group-default min-height no-margin">
+                            <label>{{'customer.order.button.quantity'| translate}}</label>
+                            <input ng-init="product.quantity = 1" ng-model="product.quantity" type="number" min="1"
+                                   maxlength="10000" class="form-control" id="quantity-{{product._id}}" required>
+                        </div>
+                        <div class="btn-primary btn-block text-center w600 text-shadow no-box-shadow text-white fs-12"
+                             ng-click="$ctrl.addToCart(product)">
+                            {{"customer.product.button.addToCart" | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END ITEM -->
+        </div>
+    </div>
+    <div ng-if="$ctrl.productsAreLoaded && $ctrl.products.length > 0" class="dataTables_wrapper p-b-20">
+        <list-pagination total-pages="$ctrl.productsTotalPages" on-page-click="$ctrl.setProductsCurrentPage(pageNumber)"
+                         current-page="$ctrl.productCurrentPage"></list-pagination>
+    </div>
+</div>
+
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="col">
+            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{'customer.product.list.otherProducts' | translate}}
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3"></div>
+</div>
+<div class="card card-details"
+     ng-show="($ctrl.otherProducts.length === 0 && $ctrl.productsAreLoaded) || $ctrl.hasError">
+    <div class="row">
+        <div class="col">
+            <div class="tx-center p-t-50 p-b-50">
+                <div class="card-image-overlay"></div>
+                <img src="assets/img/cards/no-orders.svg">
+                <p class="paragraph m-t-10">{{"customer.product.list.noOtherProducts" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-pane active" id="tabnoaccessorders">
+    <shimmer hide="$ctrl.productsAreLoaded" col="3"></shimmer>
+    <div ng-if="$ctrl.productsAreLoaded  && $ctrl.otherProducts.length > 0" class="row">
+        <div ng-repeat="product in $ctrl.otherProducts" class="col-lg-4 col-sm-6 d-flex flex-column">
+            <!-- START ITEM -->
+            <div class="card side-hover-layout-card social-card full-width m-b-30 d-flex flex-1 full-height no-border"
+                 data-social="item">
+                <div ui-sref="app.customer.product.view.product({'productId':product._id})"
+                     class="card-content card-image-description flex-1">
+                    <div class="card-header clearfix">
+                        <div class="h6 w400 p-r-50 min-height">
+                            {{ $ctrl._$translate.use()=== "ar"? product.arabicName : product.englishName }}
+                        </div>
+                    </div>
+                    <div class="card-bottom-image" background="{{product.coverPhoto}}">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+
+                <!--<div class="hover-layout-container d-flex justify-content-end flex-column" style="height: calc(100% - 50px);">-->
+                    <!--<div class="row hover-actions">-->
+                        <!--<div class="btn-primary btn-block text-center w600 text-shadow no-box-shadow text-white fs-12">-->
+                            <!--{{"customer.product.button.details" | translate}}-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </div>
+            <!-- END ITEM -->
+        </div>
+    </div>
+    <div ng-if="$ctrl.otherproductsAreLoaded && $ctrl.otherProducts.length > 0" class="dataTables_wrapper p-b-20">
+        <list-pagination total-pages="$ctrl.otherProductsTotalPages"
+                         on-page-click="$ctrl.setOtherProductsCurrentPage(pageNumber)"
+                         current-page="$ctrl.otherProductCurrentPage"></list-pagination>
+    </div>
+</div>

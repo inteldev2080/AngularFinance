@@ -1,0 +1,531 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container no-padding">
+
+        <div>
+            <div class="secondary-sidebar light" data-init="secondary-sidebar">
+                <!-- <ul class="main-menu">
+                     <li class="active top-level">
+                         <back></back>
+                     </li>
+                 </ul>-->
+            </div>
+            <div class="inner-content p-t-15 p-r-20 p-l-20">
+                <div class="sidebar-border"></div>
+                <div class="content">
+                    <div ncy-breadcrumb></div>
+                    <shimmer hide="!$ctrl.profileIsloading"></shimmer>
+                    <div class="card" ng-show="!$ctrl.profileIsloading">
+                        <div class="card-header text-center header-bg padding-0 cover_photo"
+                             background="{{$ctrl.coverPhoto}}" style="hight:100%">
+                            <div class="image-overlay">
+                                <div class="custom-image-input" data-pages-bg-image="">
+                                    <label for="coverPhoto" class="text-white">
+                                        <i class="pg-plus"></i>
+                                        {{'supplier.account.profile.button.upload_photo' | translate}}
+                                    </label>
+                                    <input id="coverPhoto" name="coverPhoto" type="file"
+                                           ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'coverPhoto')"
+                                           ng-model="$ctrl.coverPhoto"
+                                           accept="image/*" ngf-max-size="4MB" required
+                                           ngf-model-invalid="errorFile">
+                                    <i ng-show="profileForm.coverPhoto.$error.required">{{'supplier.account.profile.field.coverPhoto.required'
+                                        | translate}}</i><br>
+                                    <i ng-show="profileForm.coverPhoto.$error.maxSize">
+                                        {{'customer.account.profile.field.coverPhoto.invalid' | translate}}
+                                    </i>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-block card-wide-padding">
+
+                            <p class="bold text-uppercase p-l-10">{{"supplier.account.profile.text.company_info" |
+                                translate}}</p>
+                            <form role="form" name="profileForm" autocomplete="off" accessible-form novalidate
+                                  ng-submit="$ctrl.updateMyProfile(profileForm)">
+                                <div class="form-group-attached">
+                                    <div class="row clearfix">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : profileForm.representativeName.$invalid && !profileForm.representativeName.$pristine }">
+
+                                            <label>{{"supplier.account.profile.field.company_name.label" | translate
+                                                }}</label>
+                                            <input ng-model="$ctrl.supplier.representativeName" id="representativeName"
+                                                   name="representativeName"
+                                                   class="form-control" type="text"
+                                                   minlength="2" maxlength="30"
+                                                   required>
+                                        </div>
+                                        <label class="error" for="representativeName"
+                                               ng-show="profileForm.representativeName.$error.required && !profileForm.representativeName.$pristine">
+                                            {{"supplier.account.profile.field.company_name.required" | translate }}
+                                        </label>
+                                        <label class="error" for="representativeName"
+                                               ng-show="profileForm.representativeName.$error.maxLength || profileForm.representativeName.$error.pattern || profileForm.representativeName.$error.minlength|| profileForm.representativeName.$error.maxlength  && profileForm.$submitted">
+                                            {{"supplier.account.profile.field.company_name.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-md-6 col-lg-10 no-margin no-padding">
+                                            <div class="form-group form-group-default required "
+                                                 ng-class="{ 'has-error' : profileForm.commercialRegister.$invalid && !profileForm.commercialRegister.$pristine }">
+                                                <label>{{"supplier.account.profile.field.cr_number.label" | translate
+                                                    }}</label>
+                                                <input ng-model="$ctrl.supplier.commercialRegister"
+                                                       name="commercialRegister"
+                                                       id="commercialRegister" class="form-control"
+                                                       type="text" placeholder="1952C14"
+                                                       ng-pattern="/^\d{10}$$/" disabled="disabled">
+                                            </div>
+                                            <label class="error" for="commercialRegister"
+                                                   ng-show="profileForm.commercialRegister.$error.required && !profileForm.commercialRegister.$pristine">
+                                                {{"supplier.account.profile.field.cr_number.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="commercialRegister"
+                                                   ng-show="profileForm.commercialRegister.$error.pattern && !profileForm.commercialRegister.$pristine">
+                                                {{"supplier.account.profile.field.cr_number.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                        <!--<div class="col-md-6 col-lg-5 no-margin no-padding">-->
+                                            <!--<div class="form-group form-group-default required "-->
+                                                 <!--style="border-right-color:rgba(0,0,0,.07)"-->
+                                                 <!--ng-class="{ 'has-error' : profileForm.commercialRegisterExpireDate.$invalid && !profileForm.commercialRegisterExpireDate.$pristine }">-->
+                                                <!--<label class="d-inline">-->
+                                                    <!--{{"supplier.account.profile.field.cr_Expdate.label" | translate-->
+                                                    <!--}}</label>-->
+                                                <!--<input ng-model="$ctrl.supplier.commercialRegisterExpireDate"-->
+                                                       <!--name="commercialRegisterExpireDate"-->
+                                                       <!--id="commercialRegisterExpireDate" class="form-control"-->
+                                                       <!--type="date" placeholder=""-->
+                                                       <!--required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">-->
+                                            <!--</div>-->
+                                            <!--<label class="error" for="commercialRegisterExpireDate"-->
+                                                   <!--ng-show="profileForm.commercialRegisterExpireDate.$error.required && !profileForm.commercialRegisterExpireDate.$pristine">-->
+                                                <!--{{"supplier.account.profile.field.cr_Expdate.required" | translate }}.-->
+                                            <!--</label>-->
+                                            <!--<label class="error" for="commercialRegisterExpireDate"-->
+                                                   <!--ng-show="profileForm.commercialRegisterExpireDate.$error.pattern && !profileForm.commercialRegisterExpireDate.$pristine">-->
+                                                <!--{{"supplier.account.profile.field.cr_Expdate.invalid" | translate }}.-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                        <div class="col-md-6 col-lg-2 no-margin no-padding d-flex flex-column align-self-center">
+                                            <!--<div class="custom-image-input form-image-input">-->
+                                            <!--<label for="file-upload-3">-->
+                                            <!--<i class="pg-plus"></i> {{"supplier.account.profile.button.upload_photo" | translate}}-->
+                                            <!--</label>-->
+                                            <!--<input ng-model="$ctrl.supplier.photo" id="file-upload-3" type="file"/>-->
+                                            <!--</div>-->
+                                            <a data-toggle="modal" data-target="#modalSlideUp" id="update_attachment"
+                                               href="#" style="height: 37px;"
+                                               class="btn btn-primary btn-block  align-self-stretch d-flex align-items-center justify-content-center">
+                                                {{"supplier.account.profile.button.updateAttachment" | translate}}</a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- START Form Control-->
+                                            <div pg-form-group class="form-group form-group-default"
+                                                 ng-class="{ 'has-error' : profileForm.VATRegisterNumber.$invalid && !profileForm.VATRegisterNumber.$pristine }">
+                                                <label>{{"supplier.account.profile.field.VAT.label" | translate }}</label>
+                                                <div class="controls">
+                                                    <input type="text" class="form-control" name="VATRegisterNumber"
+                                                           id="VATRegisterNumber"
+                                                           placeholder='{{"supplier.account.profile.field.VAT.placeholder" | translate }}'
+                                                           ng-model="$ctrl.supplier.VATRegisterNumber"
+                                                           ng-minlength="1"
+                                                           ng-maxlength="20"
+                                                           ng-pattern="/^(?:[0-9]+(?:\.[0-9]{0,10})?)?$/">
+                                                </div>
+                                            </div>
+                                            <label id="VATRegisterNumberRequired" class="error" for="VATRegisterNumber"
+                                                   ng-show="profileForm.VATRegisterNumber.$error.required && !profileForm.VATRegisterNumber.$pristine">
+                                                - {{"supplier.account.profile.field.VAT.required" | translate }}.
+                                            </label>
+                                            <label id="VATRegisterNumberInvalid" class="error" for="VATRegisterNumber"
+                                                   ng-show="profileForm.VATRegisterNumber.$error.pattern && !profileForm.VATRegisterNumber.$pristine">
+                                                - {{"supplier.account.profile.field.VAT.invalid" | translate }}.
+                                            </label>
+                                            <!-- END Form Control-->
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- START Form Control-->
+                                            <div pg-form-group class="form-group form-group-default"
+                                                 ng-class="{ 'has-error' : profileForm.VATRegisterPhoto.$invalid && !profileForm.VATRegisterPhoto.$pristine && ctrl.noFileSelected }">
+                                                <div class="clearfix">
+                                                    <label class="pull-left">{{"supplier.account.profile.field.vatPhoto.label" | translate }}</label>
+                                                    <i ng-if="$ctrl.supplier.VATRegisterPhoto" ng-click="$ctrl.getVATRegisterPhoto()" class="fa fa-download cursor pull-right m-t-5"></i>
+                                                </div>
+                                                    <label  class="cursor ng-binding" for="VATRegisterPhoto">
+                                                        <i class="pg-plus"></i>
+                                                        <i ng-if="$ctrl.VATPhoto" style="color: #373e43;">{{$ctrl.VATPhoto}}</i>
+                                                        <i ng-if="!$ctrl.VATPhoto"> {{"supplier.account.profile.field.vatPhoto.placeholder" | translate }} </i>
+                                                    </label>
+
+
+                                                <div class="controls" style="display: none;">
+
+                                                    <input id="VATRegisterPhoto" name="VATRegisterPhoto" type="file"
+                                                           style="width:166px;" class="form-control p-b-35"
+                                                           ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'VATRegisterPhoto')"
+                                                           ng-model="$ctrl.VATRegisterPhoto"
+                                                           accept="image/*,application/pdf"
+                                                           placeholder='{{"supplier.account.profile.field.vatPhoto.placeholder" | translate }}'
+                                                           ngf-model-invalid="errorFile">
+                                                </div>
+                                            </div>
+                                            <label id="VATRegisterPhotoLabel" class="error" for="VATRegisterPhoto"
+                                                   ng-show="profileForm.VATRegisterPhoto.$invalid && !profileForm.VATRegisterPhoto.$pristine && ctrl.noFileSelected">
+                                                - {{"supplier.account.profile.field.VATRegisterPhoto.required" | translate }}.
+                                            </label>
+
+                                            <label ng-if="$ctrl.photoErr" id="VATRegisterPhotoPhotoSizeError" class="error"
+                                                   for="VATRegisterPhoto">
+                                                - {{"supplier.account.profile.field.VATRegisterPhoto.photoErr" | translate }}.
+                                            </label>
+                                            <!-- END Form Control-->
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <!--<div class="col-sm-6">-->
+                                            <!--<div class="d-flex flex-wrap radio radio-success">-->
+                                                <!--<div class="m-r-20">-->
+                                                    <!--<span class="bold fs-12 p-l-5">{{"supplier.account.profile.field.select_date.label" | translate }}</span>-->
+                                                <!--</div>-->
+                                                <!--<div>-->
+                                                    <!--<div class="d-flex">-->
+                                                        <!--<div>-->
+                                                            <!--<input  type="radio" ng-model="$ctrl.dateMethod" value="Hijri"  name="paymentMethod" id="hijri">-->
+                                                            <!--<label for="hijri">{{"supplier.account.profile.field.select_date.hijri" | translate }}</label>-->
+                                                        <!--</div>-->
+                                                        <!--<div>-->
+                                                            <!--<input type="radio" ng-model="$ctrl.dateMethod" value="Gregorian" name="paymentMethod" id="gregorian ">-->
+                                                            <!--<label for="gregorian ">{{"supplier.account.profile.field.select_date.gregorian" | translate }}</label>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="col-md-12 no-margin no-padding" ng-show="$ctrl.supplier.commercialRegisterExpireDate">
+                                            <div class="form-group form-group-default required "
+                                                 ng-class="{ 'has-error' : profileForm.commercialRegisterExpireDate.$invalid && !profileForm.commercialRegisterExpireDate.$pristine }">
+                                                <label>{{'supplier.account.profile.field.cr_Expdate.label' | translate}}</label>
+                                                <input ng-model="$ctrl.supplier.commercialRegisterExpireDate" name="commercialRegisterExpireDate"
+                                                       id="commercialRegisterExpireDate" class="form-control unstyled"  type="date"
+                                                       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                                            </div>
+                                            <label class="error" for="commercialRegisterExpireDate" ng-show="profileForm.commercialRegisterExpireDate.$error.required && !profileForm.commercialRegisterExpireDate.$pristine">
+                                                {{"supplier.account.profile.field.cr_Expdate.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="commercialRegisterExpireDate" ng-show="profileForm.commercialRegisterExpireDate.$error.pattern && !profileForm.commercialRegisterExpireDate.$pristine">
+                                                {{"supplier.account.profile.field.cr_Expdate.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                        <div class="col-md-12 no-margin no-padding" ng-show="$ctrl.supplier.commercialRegisterExpireDateIslamic">
+                                            <div class="form-group form-group-default required "
+                                                 ng-class="{ 'has-error' : profileForm.commercialRegisterExpireDateIslamic.$invalid && !profileForm.commercialRegisterExpireDateIslamic.$pristine }">
+                                                <label>{{'supplier.account.profile.field.cr_Expdate.labelHijri' | translate}}</label>
+                                                <input ng-model="$ctrl.supplier.commercialRegisterExpireDateIslamic" name="commercialRegisterExpireDateIslamic"
+                                                       id="commercialRegisterExpireDateIslamic" class="form-control unstyled"  type="date"
+                                                       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                                            </div>
+                                            <label class="error" for="commercialRegisterExpireDateIslamic" ng-show="profileForm.commercialRegisterExpireDateIslamic.$error.required && !profileForm.commercialRegisterExpireDateIslamic.$pristine">
+                                                {{"supplier.account.profile.field.commercialRegisterExpireDateIslamic.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="commercialRegisterExpireDateIslamic" ng-show="profileForm.commercialRegisterExpireDateIslamic.$error.pattern && !profileForm.commercialRegisterExpireDateIslamic.$pristine">
+                                                {{"supplier.account.profile.field.commercialRegisterExpireDateIslamic.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-attached m-t-20 sm-no-padding" id="address">
+                                    <div class="row row-same-height">
+                                        <div pg-form-group class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : registerForm.address.$invalid && !registerForm.address.$pristine }">
+                                            <label>{{"supplier.account.profile.field.location.label" | translate
+                                                }}</label>
+                                            <div class="controls">
+                                                <input places-auto-complete size=80
+                                                       name="address"
+                                                       id="location"
+                                                       class="form-control"
+                                                       component-restrictions="{country:'sa'}"
+                                                       ng-model="$ctrl.supplier.location.address"
+                                                       types="{{$ctrl.types}}"
+                                                       on-place-changed="$ctrl.placeChanged()" required/>
+                                            </div>
+                                        </div>
+                                        <label class="error" for="address"
+                                               ng-show="profileForm.address.$error.required && !profileForm.address.$pristine">
+                                            {{"supplier.account.profile.field.location.required" | translate }}
+                                        </label>
+                                        <div class="m-b-10" style="width:100%" map-lazy-load="{{$ctrl.googleMapsUrl}}">
+                                            <ng-map ng-if="!$ctrl.profileIsloading" id="map" zoom="11"
+                                                    center="{{$ctrl.supplier.location.coordinates}}">
+
+                                                <marker position="{{$ctrl.supplier.location.coordinates}}"
+                                                        title="Location"
+                                                        animation="Animation.DROP"
+                                                        on-dragend="$ctrl.markerDragEnd(this)"
+                                                        draggable="true"></marker>
+
+                                            </ng-map>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="bold text-uppercase p-l-10">{{'supplier.account.profile.text.acc_holder_info'
+                                    | translate}}</p>
+                                <div class="form-group-attached">
+                                    <div class="row">
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 ng-class="{ 'has-error' : profileForm.firstName.$invalid && !profileForm.firstName.$pristine }">
+
+                                                <label>
+                                                    {{"supplier.account.profile.field.first_name.label" | translate }}
+                                                </label>
+                                                <input ng-model="$ctrl.supplier.user.firstName" id="firstName"
+                                                       name="firstName" class="form-control"
+                                                       type="text"
+                                                       minlength="2" maxlength="20"
+                                                       ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                                       required>
+
+                                            </div>
+                                            <label class="error" for="firstName"
+                                                   ng-show="profileForm.firstName.$error.required && !profileForm.firstName.$pristine">
+                                                {{"supplier.account.profile.field.first_name.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="firstName"
+                                                   ng-show="profileForm.firstName.$error.pattern && !profileForm.firstName.$pristine">
+                                                {{"supplier.account.profile.field.first_name.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 ng-class="{ 'has-error' : profileForm.lastName.$invalid && !profileForm.lastName.$pristine }">
+
+                                                <label>
+                                                    {{"supplier.account.profile.field.last_name.label" | translate }}
+                                                </label>
+                                                <input ng-model="$ctrl.supplier.user.lastName" id="lastName"
+                                                       name="lastName" class="form-control" type="text"
+                                                       minlength="2" maxlength="20"
+                                                       ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                                       required>
+                                            </div>
+                                            <label class="error" for="lastName"
+                                                   ng-show="profileForm.lastName.$error.required && !profileForm.lastName.$pristine">
+                                                {{"supplier.account.profile.field.last_name.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="lastName"
+                                                   ng-show="profileForm.lastName.$error.pattern && !profileForm.lastName.$pristine">
+                                                {{"supplier.account.profile.field.last_name.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 ng-class="{ 'has-error' : profileForm.email.$invalid && !profileForm.email.$pristine }">
+                                                <label>{{"supplier.account.profile.field.email.label" | translate
+                                                    }}</label>
+                                                <input ng-disabled="true" ng-model="$ctrl.supplier.user.email"
+                                                       class="form-control" id="email" name="email" type="text"
+                                                       ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                                       ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                                       required>
+                                            </div>
+                                            <label class="error" for="email"
+                                                   ng-show="profileForm.email.$error.required && !profileForm.email.$pristine">
+                                                {{"supplier.account.profile.field.email.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="email"
+                                                   ng-show="profileForm.email.$error.pattern && !profileForm.email.$pristine">
+                                                {{"supplier.account.profile.field.email.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 style="border-bottom-color:rgba(0,0,0,.07)"
+                                                 ng-class="{ 'has-error' : profileForm.mobileNumber.$invalid && !profileForm.mobileNumber.$pristine }">
+                                                <label>
+                                                    {{"supplier.account.profile.field.phone.label" | translate }}
+                                                </label>
+                                                <input ng-model="$ctrl.supplier.user.mobileNumber" id="mobileNumber"
+                                                       name="mobileNumber" class="form-control" type="text" required
+                                                       ng-pattern='/^9665[0-9]{8}$$/'>
+                                            </div>
+                                            <label class="error" for="mobileNumber"
+                                                   ng-show="profileForm.mobileNumber.$error.required && !profileForm.mobileNumber.$pristine">
+                                                {{"supplier.account.profile.field.phone.required" | translate }}.
+                                            </label>
+                                            <label class="error" for="mobileNumber"
+                                                   ng-show="profileForm.mobileNumber.$error.pattern && !profileForm.mobileNumber.$pristine">
+                                                {{"supplier.account.profile.field.phone.invalid" | translate }}.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-t-20">
+                                    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                                    </div>
+                                    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                                        <button permission permission-only="'manageProfile'" type="submit"
+                                                ng-disabled="profileForm.$invalid" id="saveChanges1"
+                                                class="btn btn-primary btn-block m-b-15">
+                                            {{"supplier.account.profile.button.save_changes" | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div ng-if="$ctrl.profileFormIsLoading" class="progress-circle-indeterminate"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card" ng-if="!$ctrl.profileIsloading">
+                        <div ng-if="$ctrl.resetFormIsFailure" class="alert alert-danger" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            {{$ctrl.message| translate}}
+                        </div>
+                        <div ng-if="$ctrl.resetFormIsSuccess" class="alert alert-success" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            {{$ctrl.message | translate }}
+                        </div>
+                        <div ng-if="$ctrl.resetFormIsLoading" class="progress-circle-indeterminate"></div>
+                        <form name="resetForm" novalidate accessible-form ng-submit="$ctrl.resetPassword(resetForm)">
+                            <div class="card-block card-wide-padding">
+                                <p class="bold text-uppercase p-l-10">
+                                    {{"supplier.account.profile.text.reset_password" | translate }}
+                                </p>
+                                <div class="form-group-attached">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 ng-class="{ 'has-error' : resetForm.oldPassword.$invalid && !resetForm.oldPassword.$pristine }">
+                                                <label>{{"supplier.account.profile.field.old_password.label" | translate
+                                                    }}</label>
+                                                <input ng-model="$ctrl.oldPassword" class="form-control"
+                                                       name="oldPassword" id="oldPassword" type="password"
+                                                       ng-pattern="/[a-zA-Z\u0600-\u06FF@#_-]+[0-9]+[a-zA-Z\u0600-\u06FF0-9@#_-]*|[0-9]+[a-zA-Z\u0600-\u06FF@#_-][a-zA-Z\u0600-\u06FF0-9@#_-]*/"
+                                                       ng-minlength="6"
+                                                       ng-maxlength="20"
+                                                       required>
+                                            </div>
+                                            <label class="error" for="oldPassword"
+                                                   ng-show="resetForm.oldPassword.$error.required && resetForm.$submitted">
+                                                {{"supplier.account.profile.field.old_password.required" | translate }}
+                                            </label>
+                                            <label class="error" for="oldPassword"
+                                                   ng-show="resetForm.oldPassword.$error.pattern || resetForm.oldPassword.$error.minlength|| resetForm.newPassword.$error.maxlength && resetForm.$submitted">
+                                                {{"supplier.account.profile.field.old_password.invalid" | translate }}
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-6 no-margin no-padding">
+                                            <div class="form-group form-group-default no-margin required"
+                                                 ng-class="{ 'has-error' : resetForm.newPassword.$invalid && !resetForm.newPassword.$pristine }">
+                                                <label>{{"supplier.account.profile.field.new_password.label" | translate
+                                                    }}</label>
+                                                <input ng-model="$ctrl.newPassword" class="form-control"
+                                                       name="newPassword" id="newPassword" type="password"
+                                                       ng-pattern="/[a-zA-Z\u0600-\u06FF@#_-]+[0-9]+[a-zA-Z\u0600-\u06FF0-9@#_-]*|[0-9]+[a-zA-Z\u0600-\u06FF@#_-][a-zA-Z\u0600-\u06FF0-9@#_-]*/"
+                                                       ng-minlength="6"
+                                                       ng-maxlength="20"
+                                                       required>
+                                            </div>
+                                            <label class="error" for="newPassword"
+                                                   ng-show="resetForm.newPassword.$error.required && resetForm.$submitted">
+                                                {{"supplier.account.profile.field.old_password.required" | translate }}
+                                            </label>
+                                            <label class="error" for="oldPassword"
+                                                   ng-show="resetForm.newPassword.$error.pattern || resetForm.newPassword.$error.minlength|| resetForm.newPassword.$error.maxlength && resetForm.$submitted">
+                                                {{"supplier.account.profile.field.old_password.invalid" | translate }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-t-20">
+                                    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                                    </div>
+                                    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                                        <button id="saveChanges2" class="btn btn-primary btn-block">
+                                            {{"supplier.account.profile.button.save_changes" | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade slide-up disable-scroll" id="modalSlideUp" tabindex="-1" role="dialog"
+             aria-hidden="false">
+            <div class="modal-dialog" style="width:auto;">
+                <div class="modal-content-wrapper">
+                    <div style="margin: 20px;position:absolute;z-index: 3000;" ng-if="$ctrl.base64ImageIsLoading"  class="progress-circle-indeterminate"></div>
+                    <div class="modal-content">
+                        <div class="modal-header clearfix text-left">
+                            <button type="button" style="top:-2px" class="close" data-dismiss="modal"
+                                    aria-hidden="true"><i class="pg-close fs-14"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center p-b-0">
+                            <p>{{$ctrl.filename}}</p>
+                            <a style="margin: 75px" ng-click="$ctrl.getCommercialRegisterPhoto()"> <i
+                                    class="fa fa-download"></i>
+                                {{'supplier.account.profile.button.download' |
+                                translate}}</a>
+
+                            <label style="margin: 75px" class="cursor" for="commercialRegisterPhoto">
+                                <i class="pg-plus"></i> {{'supplier.account.profile.button.upload_photo' |
+                                translate}}
+                            </label>
+                            <div class="custom-image-input form-image-input" style="background: none !important; height:0;" ng-form="$ctrl.crForm">
+
+
+                                <input id="commercialRegisterPhoto" name="commercialRegisterPhoto" type="file"
+                                       ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'commercialRegisterPhoto')"
+                                       ng-model="$ctrl.commercialRegisterPhoto" ngf-max-size="4MB" accept="image/*,application/pdf" required
+                                       ngf-model-invalid="errorFile">
+                                <!--  <i ng-if="$ctrl.crForm.commercialRegisterPhoto.$error.required">{{'customer.account.profile.field.cr_photo.required' | translate}}</i><br>
+                                  <i ng-if="$ctrl.crForm.commercialRegisterPhoto.$error.maxSize">
+                                      {{'customer.account.profile.field.cr_photo.invalid' | translate}}
+                                  </i>-->
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // $.Pages.init();
+    //
+    (function ($) {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear() + 5;
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("commercialRegisterExpireDate").setAttribute("max", today);
+    })(window.jQuery);
+</script>

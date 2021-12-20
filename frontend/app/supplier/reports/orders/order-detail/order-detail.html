@@ -1,0 +1,62 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item">{{"supplier.reports.orders.stats.reports" | translate }}</li>
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.report.orders" ui-sref-opts="{reload:false}">{{"supplier.reports.orders.stats.ordersReport" | translate }}</a></li>
+        <li class="breadcrumb-item active">{{"supplier.reports.orders.stats.orderDetails" | translate }}</li>
+    </ol>
+</div>
+<div class="card card-details">
+    <div class="card-header">
+        <button class="btn btn-transparent btn-lg pull-right" ng-click="$ctrl.printFile('order')">{{"supplier.reports.orders.details.print" | translate}}</button>
+        <div class="card-title" style="padding-top: 10px;">
+            {{"supplier.reports.orders.stats.order" | translate}}: {{$ctrl.order.orderId}}
+        </div>
+    </div>
+    <div class="card-block card-wide-padding wide-leftup">
+        <div class="dataTables_wrapper table-responsive no-footer">
+
+                <table class="table table-striped table-compact" id="tableWithExportOptions">
+                    <thead>
+                    <tr>
+                        <th>{{"supplier.reports.orders.details.product" | translate}}</th>
+                        <th>{{"supplier.reports.orders.details.sku" | translate}}</th>
+                        <th>{{"supplier.reports.orders.details.store" | translate}}</th>
+                        <th>{{"supplier.reports.orders.details.shelf" | translate}} #</th>
+                        <th>{{"supplier.reports.orders.details.quantity" | translate}}</th>
+                        <!-- <th><button class="btn btn-link"><i class="fa fa-check"></i></button></th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="p in $ctrl.order.products" class="odd gradeX">
+                        <td class="mn-120">{{p.product.arabicName}}</td>
+                        <td class="mn-100">{{p.product.sku}}</td>
+                        <td class="mn-100">{{p.product.store}}</td>
+                        <td class="mn-100">{{p.product.shelf}}</td>
+                        <td class="mn-100">{{p.quantity}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            <list-pagination total-pages="$ctrl.totalPages" current-page="$ctrl.currentPage" on-page-click="$ctrl.setPage(pageNumber)"></list-pagination>
+            <div class="row">
+                <div class="col-sm-12 d-flex flex-wrap justify-content-between m-t-20">
+                    <back class="order-sm-2 m-t-5"></back>
+                    <div class="d-flex flex-wrap justify-content-start justify-content-sm-end align-items-start order-sm-1">
+                        <div class="recur_order" style=""><span class="bold">{{'supplier.sub_total' | translate}} </span>
+                            <span ng-if="$ctrl.order.total"> {{$ctrl.order.total | currency : "" : 2}}</span>
+                            <span ng-if="$ctrl.order.price"> {{$ctrl.order.price | currency : "" : 2}}</span>
+                        </div>
+                        <div class="recur_order" style=""><span class="bold">{{'supplier.vat' | translate}} </span>
+                            <span> {{$ctrl.order.VAT  | currency : "" : 2}}</span>
+                        </div>
+                        <div class="recur_order" style=""><span class="bold">{{'supplier.total_price' | translate}} </span>
+                            <span ng-if="$ctrl.order.total"> {{($ctrl.order.VAT + $ctrl.order.total) | currency : "" : 2}}</span>
+                            <span ng-if="$ctrl.order.price"> {{($ctrl.order.VAT + $ctrl.order.price) | currency : "" : 2}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

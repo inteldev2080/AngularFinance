@@ -1,0 +1,84 @@
+{ 
+    "_id" : ObjectId("5ec7c5cdd8d93354f616133c"), 
+    "updatedAt" : ISODate("2020-06-28T21:38:17.958+0000"), 
+    "createdAt" : ISODate("2020-05-22T15:30:05.119+0000"), 
+    "replies" : [
+
+    ], 
+    "is_seen" : false, 
+    "message" : {
+        "title" : "استفسار", 
+        "body" : "وودت قبل التسجيل ان اتعرف ماذا يقدم لي الموقع كصاحب مطعم وسوبر ماركت \nومن هم الموردين لديكم وهل الاسعار عن طريقكم افضل من ان اشتري عن طريقي"
+    }, 
+    "user" : {
+        "name" : "seaidan ", 
+        "email" : "sgza66@gmail.com", 
+        "phone" : "966555372462"
+    }, 
+    "category" : "Inquiries", 
+    "status" : "Open", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ef9d44fd8d93354f616136a"), 
+    "updatedAt" : ISODate("2020-06-29T14:45:19.642+0000"), 
+    "createdAt" : ISODate("2020-06-29T14:45:19.642+0000"), 
+    "replies" : [
+
+    ], 
+    "is_seen" : false, 
+    "message" : {
+        "body" : "Hello there,\nI was wondering on the percentage or pricing for supplies on services.\nRegards.", 
+        "title" : "inquiry "
+    }, 
+    "user" : {
+        "phone" : "966566579533", 
+        "email" : "rsuqair@gmail.com", 
+        "name" : "reem alsuqair "
+    }, 
+    "category" : "", 
+    "status" : "Open", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f202780687ef766db4a8a57"), 
+    "updatedAt" : ISODate("2020-07-28T16:26:24.835+0000"), 
+    "createdAt" : ISODate("2020-07-28T16:26:24.835+0000"), 
+    "replies" : [
+
+    ], 
+    "is_seen" : false, 
+    "message" : {
+        "body" : "نحن شركة لدينا مطعم ومقهى ونريد الاستفاده من خدمات الموردين لديكم", 
+        "title" : "لايوجد توضيح لطريقه الاستفاده من خدماتكم "
+    }, 
+    "user" : {
+        "phone" : "966554198929", 
+        "email" : "ahmadso@crownltd.com.co", 
+        "name" : "احمد  "
+    }, 
+    "category" : "", 
+    "status" : "Open", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f59dd98d55eb72bb57c54a7"), 
+    "updatedAt" : ISODate("2020-09-10T11:02:32.609+0000"), 
+    "createdAt" : ISODate("2020-09-10T11:02:32.609+0000"), 
+    "replies" : [
+
+    ], 
+    "is_seen" : false, 
+    "message" : {
+        "body" : "Dear Team \ni need  one lisense for supplies application or web to use it in my company \nthank you \nBR \nAmr ", 
+        "title" : "I NEED LICENSE FOR SUPPLIES  "
+    }, 
+    "user" : {
+        "phone" : "966547676787", 
+        "email" : "amralibk@gmail.com", 
+        "name" : "amr ali "
+    }, 
+    "category" : "", 
+    "status" : "Open", 
+    "__v" : NumberInt(0)
+}

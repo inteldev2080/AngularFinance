@@ -1,0 +1,710 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.order" ui-sref-opts="{reload:true}">{{"supplier.menu.orders"
+            | translate }}</a></li>
+        <li ng-if="$ctrl.orderCard.status === 'Pending'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.new">{{"supplier.orders.newOrders" | translate }}</a></li>
+        <li ng-if="$ctrl.orderCard.status === 'Accepted'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.preparation">{{"supplier.orders.preparation" | translate }}</a></li>
+        <li ng-if="$ctrl.orderCard.status === 'ReadyForDelivery' || $ctrl.orderCard.status === 'OutForDelivery'"
+            class="breadcrumb-item"><a ui-sref="app.supplier.order.list.delivery">{{"supplier.orders.delivery" |
+            translate }}</a></li>
+        <li ng-if="$ctrl.orderCard.status === 'Rejected' || $ctrl.orderCard.status === 'Canceled'"
+            class="breadcrumb-item"><a ui-sref="app.supplier.order.list.failed">{{"supplier.orders.failed" | translate
+            }}</a></li>
+        <li ng-if="$ctrl.orderCard.status === 'Delivered'" class="breadcrumb-item"><a
+                ui-sref="app.supplier.order.list.review">{{"supplier.orders.review" | translate }}</a></li>
+        <li class="breadcrumb-item active">{{$ctrl.orderCard.orderId}}</li>
+    </ol>
+</div>
+
+<div class="card card-details"
+     ng-if="(!$ctrl.orderCard && $ctrl.orderIsLoaded && !$ctrl.noInternetConnection) || $ctrl.hasError">
+    <div class="row">
+        <div class="col">
+            <div class="tx-center p-t-50 p-b-50">
+                <div class="card-image-overlay"></div>
+                <img src="assets/img/cards/no-orders.svg">
+                <p class="paragraph m-t-10">{{"supplier.order.view.noOrder" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card card-details" ng-if="$ctrl.noInternetConnection">
+    <div class="row">
+        <div class="col">
+            <div class="tx-center p-t-50 p-b-50">
+                <div class="card-image-overlay"></div>
+                <img src="assets/img/cards/no-conection.svg">
+                <p class="paragraph m-t-10">{{"supplier.order.view.noInternet" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden-lg-up pull-left m-b-10">
+    <back></back>
+</div>
+<div class="card card-details" ng-show="$ctrl.orderCard.review">
+    <div class="card-header">
+
+        <div class="card-title">
+            {{"supplier.order.view.review" | translate }}
+        </div>
+        <div class="card-description">
+            {{$ctrl.orderCard.customer.representativeName}} •
+            <span class="label upper-case">{{$ctrl.orderCard.review.createdAt| amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+            <span class="label upper-case">{{$ctrl.orderCard.review.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+            <!-- {{$ctrl.orderCard.review.createdAt | moment:'fromNow'}}-->
+        </div>
+
+    </div>
+    <div class="card-block p-r-0 p-l-0">
+        <div class="row p-b-10">
+            <div class="col-sm-4">
+                <div class="form-group form-group-default p-t-10 p-b-10">
+                    <p class="p-0 m-0">{{"supplier.order.view.condition" | translate }}
+                        <span class="stars m-l-5 pull-right">
+                          <i ng-repeat="n in [] | range:$ctrl.orderCard.review.itemCondition" class="fa fa-star"></i>
+                          </span></p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-group-default p-t-10 p-b-10">
+                    <p class="p-0 m-0">{{"supplier.order.view.delivery" | translate }}
+                        <span class="stars m-l-5 pull-right">
+                          <i ng-repeat="n in [] | range:$ctrl.orderCard.review.delivery" class="fa fa-star"></i>
+                          </span></p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group form-group-default p-t-10 p-b-10">
+                    <p class="p-0 m-0">{{"supplier.order.view.overall" | translate }}
+                        <span class="stars m-l-5 pull-right">
+                          <i ng-repeat="n in [] | range:$ctrl.orderCard.review.overall" class="fa fa-star"></i>
+                          </span></p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-group-default" ng-if="$ctrl.orderIsLoaded">
+            <label class="label-lg">{{"supplier.order.view.note" | translate }}</label>
+            <p>{{$ctrl.orderCard.review.notes}}</p>
+            <p ng-if="!$ctrl.orderCard.review.notes">{{"supplier.order.view.noNotes" | translate }}</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="card card-details" ng-if="$ctrl.orderCard.status === 'FailedToDeliver'">
+    <div class="card-header d-flex justify-content-between align-items-baseline flex-wrap">
+        <div class="card-title">
+            {{"supplier.order.view.failedToDeliver" | translate }}
+        </div>
+        <button class="btn btn-success btn-lg" ng-click="$ctrl.markReadyOrder()">{{"supplier.order.view.retryDelivery" |
+            translate }}
+        </button>
+    </div>
+    <div class="card-block p-r-0 p-l-0">
+        <div class="form-group form-group-default">
+            <label class="label-lg">{{"supplier.order.view.failReason" | translate }}</label>
+            <p>{{$ctrl.orderCard.message}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="card card-details-table" ng-show="$ctrl.orderCard  && !$ctrl.noInternetConnection && !$ctrl.hasError">
+    <div class="card-header header-bg">
+        <shimmer hide="$ctrl.orderIsLoaded" row="2" clipped="true"></shimmer>
+        <div class="d-flex flex-wrap justify-content-between">
+            <div class="">
+                <div ng-show="$ctrl.orderIsLoaded">
+                    <div class="card-title">
+                        Order : {{$ctrl.orderCard.orderId}}
+
+                        <span ng-if="$ctrl.orderCard.status === 'Accepted'" class="label label-success upper-case">{{"supplier.order.view.status.accepted" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'Pending'" class="label upper-case">{{"supplier.order.view.status.new" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'Rejected'" class="label label-important upper-case">{{"supplier.order.view.status.rejected" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'Canceled'" class="label label-important upper-case">{{"supplier.order.view.status.canceled" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'CanceledByCustomer'"
+                              class="label label-important upper-case">{{"supplier.order.view.status.canceledByCustomer" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'FailedToDeliver'"
+                              class="label label-important upper-case">{{"supplier.order.view.actions.buttons.failedToDeliver" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'ReadyForDelivery'" class="label label-info upper-case">{{"supplier.order.view.status.ready" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'OutForDelivery'"
+                              class="label label-inverse upper-case">{{"supplier.order.view.status.out" | translate }}</span>
+                        <span ng-if="$ctrl.orderCard.status === 'Delivered'" class="label label-success upper-case">{{"supplier.order.view.status.delivered" | translate }}</span>
+
+                        <span ng-if="$ctrl.orderCard.isRecurring" class="label label-warning upper-case">{{"supplier.order.view.status.recurring" | translate }}</span>
+
+                    </div>
+                    <div class="card-description">
+                        {{$ctrl.orderCard.customer.representativeName}} • <span class="label upper-case">{{$ctrl.orderCard.updatedAt| amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                        <span class="label upper-case">{{$ctrl.orderCard.updatedAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                        <span ng-if="$ctrl.orderCard.deliveryDate || $ctrl.orderCard.deliveryDateIslamic"> • {{ "supplier.order.view.deliveryDate" | translate }} </span>
+                        <span class="label upper-case" ng-if="$ctrl.orderCard.deliveryDate">{{$ctrl.orderCard.deliveryDate | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                        <span class="label upper-case" ng-if="$ctrl.orderCard.deliveryDateIslamic">{{$ctrl.orderCard.deliveryDateIslamic | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                        <!-- {{$ctrl.orderCard.createdAt | moment:'fromNow'}}-->
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <button ng-if="$ctrl.orderCard.status != 'Delivered'"
+                        class="btn btn-transparent btn-lg pull-right mt-2 mt-sm-0 m-b-10"
+                        ng-click="$ctrl.printOrderDetails('pdf')">{{"supplier.order.view.print" | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--<div class="card-header header-bg d-flex justify-content-between flex-wrap">-->
+    <!--<button class="btn btn-transparent btn-lg m-b-10"  ng-click="$ctrl.printOrderDetails('pdf')">{{"supplier.order.view.print" | translate }}</button>-->
+    <!--<shimmer hide="$ctrl.orderIsLoaded" row="2" clipped="true"></shimmer>-->
+    <!--<div ng-if="$ctrl.orderIsLoaded">-->
+    <!--<div class="card-title">-->
+    <!--Order : {{$ctrl.orderCard.orderId}}-->
+
+    <!--<span ng-if="$ctrl.orderCard.status === 'Accepted'" class="label label-success upper-case">{{"supplier.order.view.status.accepted" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'Pending'" class="label upper-case">{{"supplier.order.view.status.new" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'Rejected'" class="label label-important upper-case">{{"supplier.order.view.status.rejected" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'Canceled'" class="label label-important upper-case">{{"supplier.order.view.status.canceled" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'CanceledByCustomer'" class="label label-important upper-case">{{"supplier.order.view.status.canceledByCustomer" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'FailedToDeliver'" class="label label-important upper-case">{{"supplier.order.view.actions.buttons.failedToDeliver" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'ReadyForDelivery'" class="label label-info upper-case">{{"supplier.order.view.status.ready" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'OutForDelivery'" class="label label-inverse upper-case">{{"supplier.order.view.status.out" | translate }}</span>-->
+    <!--<span ng-if="$ctrl.orderCard.status === 'Delivered'" class="label label-success upper-case">{{"supplier.order.view.status.delivered" | translate }}</span>-->
+
+    <!--<span ng-if="$ctrl.orderCard.isRecurring" class="label label-warning upper-case">{{"supplier.order.view.status.recurring" | translate }}</span>-->
+
+    <!--</div>-->
+    <!--<div class="card-description">-->
+    <!--{{$ctrl.orderCard.customer.representativeName}} •  <span class="label upper-case">{{$ctrl.orderCard.createdAt| amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>-->
+    <!--<span class="label upper-case">{{$ctrl.orderCard.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>-->
+    <!--&lt;!&ndash; {{$ctrl.orderCard.createdAt | moment:'fromNow'}}&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="card-block card-wide-padding wide-leftup">
+        <shimmer hide="$ctrl.orderIsLoaded" col="6" clipped="true"></shimmer>
+        <div class="table-responsive">
+            <table ng-show="$ctrl.orderIsLoaded" class="table table-striped" id="tableWithExportOptions">
+                <thead>
+                <tr>
+                    <th class="tb-no-side" style="padding-left: 0px!important;">
+                        <span ng-if="$ctrl.orderCard.status != 'Pending' && $ctrl.orderCard.status != 'Canceled'">
+                            {{"supplier.order.view.table.status" | translate }}
+                        </span>
+                        <button ng-if="$ctrl.orderCard.status === 'Pending' || $ctrl.orderCard.status === 'Canceled'"
+                                class="btn btn-link" ng-click="$ctrl.checkAll()">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </th>
+                    <th class="text-left">{{"supplier.order.view.table.product" | translate }}</th>
+                    <th class="text-center">{{"supplier.order.view.table.sku" | translate }}</th>
+                    <th class="text-center">{{"supplier.order.view.table.store" | translate }}</th>
+                    <th class="text-center mn-80">{{"supplier.order.view.table.shelf" | translate }}</th>
+                    <th class="text-center">{{"supplier.order.view.table.quantity" | translate }}</th>
+
+                    <th ng-if="$ctrl.productViewMode === 'viewMode' && $ctrl.orderCard.status == 'Pending'"
+                        width="40px">
+                        <button ng-click="$ctrl.setProductsViewMode('editMode')" class="btn btn-xs">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </th>
+                    <th ng-if="$ctrl.productViewMode === 'editMode' && $ctrl.orderCard.status == 'Pending'"
+                        width="40px">
+                        <button ng-click="$ctrl.setProductsViewMode('viewMode')" class="btn btn-xs">
+                            Cancel
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in $ctrl.orderCard.products">
+                    <td class="tb-no-side text-center">
+                        <span ng-show="$ctrl.orderCard.status === 'Pending' || $ctrl.orderCard.status === 'Canceled'">
+                            <div class="checkbox check-primary">
+                                <input type="checkbox" checklist-model="$ctrl.selected.products"
+                                       checklist-value="item._id" id="{{item._id}}">
+                                <label for="{{item._id}}" class="m-0"></label>
+                            </div>
+                        </span>
+                        <span class="label label-important upper-case"
+                              ng-if="$ctrl.orderCard.status != 'Pending' && $ctrl.orderCard.status != 'Canceled' && item.status === 'Rejected'">
+                            {{"supplier.order.view.status.rejected" | translate }}
+                        </span>
+                        <span class="label label-warning upper-case"
+                              ng-if="$ctrl.orderCard.status != 'Pending' && $ctrl.orderCard.status != 'Canceled' && item.status === 'Pending'">
+                            {{"supplier.order.view.status.new" | translate }}
+                        </span>
+                        <span class="label label-success upper-case"
+                              ng-if="$ctrl.orderCard.status != 'Pending' && $ctrl.orderCard.status != 'Canceled' && item.status === 'Accepted'">
+                            {{"supplier.order.view.status.accepted" | translate }}
+                        </span>
+                    </td>
+                    <td class="text-left mn-140">{{$ctrl._$translate.use() === 'en'? item.product.englishName:
+                        item.product.arabicName}}
+                    </td>
+                    <td class="text-center">{{item.product.sku}}</td>
+                    <!--
+                    <td>{{item.price}}</td>
+-->
+                    <td class="text-center">{{item.product.store}}</td>
+                    <td class="text-center">{{item.product.shelf}}</td>
+                    <td class="text-center mn-120" ng-class="{'p-10i':$ctrl.productViewMode =='editMode'}">
+                        <span ng-show="$ctrl.productViewMode === 'viewMode'">{{item.quantity}}</span>
+                        <input ng-show="$ctrl.productViewMode === 'editMode'" type="number" ng-model="item.quantity"
+                               min="1" style="max-width: 80px;margin: auto;" class="form-control input-sm"
+                               ng-blur="$ctrl.editProductInOrder(item._id, item.quantity)">
+                        <small ng-if="$ctrl.productViewMode === 'viewMode'">{{ currentLanguage.language === 'ar'?
+                            item.product.unit.arabicName : item.product.unit.englishName}}
+                        </small>
+                    </td>
+
+                    <td width="40px" ng-class="{'p-10i':$ctrl.productViewMode =='editMode'}">
+
+
+                        <button ng-if="$ctrl.productViewMode === 'editMode'"
+                                ng-click="$ctrl.deleteProductInOrder(item._id)"
+                                class="btn btn-danger btn-xs"><i class="pg-trash"></i></button>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-md-12 padding-0" ng-show="$ctrl.productsAreLoaded && $ctrl.orderCard.status == 'Pending'">
+            <div class="form-group-attached  m-t-20">
+                <div class="row">
+                    <div class="col-sm-8">
+
+                        <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                            <label class="label-custom">{{"supplier.account.payment.specialPricesTable.productName"
+                                | translate}}</label>
+                            <select class="full-width" data-placeholder="Select" data-init-plugin="select2"
+                                    ng-model="$ctrl.selectedProduct" id="productSelect">
+                                <option ng-repeat="item in $ctrl.products" ng-value="item">{{
+                                    currentLanguage.language === 'ar'? item.arabicName : item.englishName }}
+                                </option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group form-group-default">
+                            <label>{{"supplier.order.label.productQuantity" | translate}}</label>
+                            <input type="number" ng-model="$ctrl.quantity" min="1"
+                                   placeholder="{{'supplier.order.view.table.quantity' | translate }}"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-2 no-margin no-padding d-flex">
+                        <button ng-click="$ctrl.addProductToOrder()"
+                                ng-class="{'disabled': !$ctrl.quantity || !$ctrl.selectedProduct}"
+                                class="btn btn-primary btn-block align-self-stretch d-flex align-items-center justify-content-center">
+                            {{"supplier.order.button.addProduct" | translate}}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6 d-flex flex-wrap justify-content-start justify-content-sm-start align-items-start m-t-20" ng-if="$ctrl.orderCard.status === 'OutForDelivery'">
+                <div style="margin: 2px 150px 2px 150px;position:absolute;z-index: 3000;" ng-if="$ctrl.base64ImageIsLoading"
+                     class="progress-circle-indeterminate"></div>
+                <!-- START Form Control-->
+                <div class="form-group form-group-default">
+                    <label>{{'supplier.order.view.deliveryImage' | translate}}</label>
+                    <label class="cursor" for="deliveryImagePhoto">
+                        <i class="pg-plus"></i>
+                        <i ng-if="$ctrl.deliveryImageName" style="color: #373e43;">{{$ctrl.deliveryImageName}}</i>
+                        <i ng-if="!$ctrl.deliveryImageName"> {{"supplier.order.view.deliveryImagePlaceholder" | translate
+                            }} </i>
+                    </label>
+
+                    <div class="controls p-b-5" style="display: none;">
+                        <input id="deliveryImagePhoto" name="deliveryImagePhoto" type="file"
+                               placeholder='{{"supplier.order.view.deliveryImagePlaceholder" | translate }}'
+                               ngf-select="$ctrl.uploadFile($file, $invalidFiles)"
+                               ng-model="$ctrl.deliveryImagePhoto"
+                               ngf-max-size="4MB"
+                               accept="image/*"
+                               required>
+                    </div>
+                    <!--<div class="d-flex justify-content-center">-->
+                    <!--<img style="max-height:50px" ngf-thumbnail="$ctrl.deliveryImagePhoto">-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div ng-class="{'col-sm-6': $ctrl.orderCard.status === 'OutForDelivery', 'col-sm-12': $ctrl.orderCard.status !== 'OutForDelivery'}" class="d-flex flex-wrap justify-content-start justify-content-sm-end align-items-start m-t-20">
+                <div class="recur_order" style=""><span class="bold">{{'supplier.sub_total' | translate}} </span>
+                    <span ng-if="$ctrl.orderCard.total"> {{$ctrl.orderCard.total | currency : "" : 2}}</span>
+                    <span ng-if="$ctrl.orderCard.price"> {{$ctrl.orderCard.price | currency : "" : 2}}</span>
+                </div>
+                <div class="recur_order" style=""><span class="bold">{{'supplier.vat' | translate}} </span>
+                    <span> {{$ctrl.orderCard.VAT  | currency : "" : 2}}</span>
+                </div>
+                <div class="recur_order" style=""><span class="bold">{{'supplier.total_price' | translate}} </span>
+                    <span ng-if="$ctrl.orderCard.total"> {{($ctrl.orderCard.VAT + $ctrl.orderCard.total) | currency : "" : 2}}</span>
+                    <span ng-if="$ctrl.orderCard.price"> {{($ctrl.orderCard.VAT + $ctrl.orderCard.price) | currency : "" : 2}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-sm-between justify-content-center flex-wrap m-t-20"
+             ng-if="$ctrl.orderCard.status != 'CanceledByCustomer'">
+            <div class="">
+                <button data-toggle="modal" data-target="#cancelModal"
+                        ng-if="$ctrl.orderCard.status != 'Pending' && $ctrl.orderCard.status != 'FailedToDeliver' && $ctrl.orderCard.status != 'Rejected' && $ctrl.orderCard.status != 'Canceled' && $ctrl.orderCard.status != 'Delivered'"
+                        class="btn btn-warnning btn-lg m-b-10">{{"supplier.order.view.actions.buttons.cancel" |
+                    translate }}
+                </button>
+                <button data-toggle="modal" data-target="#rejectModal" ng-if="$ctrl.orderCard.status === 'Pending'"
+                        class="btn btn-danger btn-lg m-b-10">{{"supplier.order.view.actions.buttons.reject" | translate
+                    }}
+                </button>
+                <!--<button  ng-click="$ctrl.rejectOrder()" ng-if="$ctrl.orderCard.status === 'Pending'"  class="btn btn-danger btn-lg">{{"supplier.order.view.actions.buttons.reject" | translate }}</button>-->
+
+            </div>
+            <div class="d-flex justify-content-sm-between justify-content-center flex-wrap mb-3 mb-sm-0">
+                <button ng-click="$ctrl.acceptOrder()"
+                        ng-if="$ctrl.orderCard.status === 'Pending' || $ctrl.orderCard.status === 'Rejected' || $ctrl.orderCard.status === 'Canceled'"
+                        class="btn btn-primary btn-lg m-b-10">{{"supplier.order.view.actions.buttons.accept" | translate
+                    }} <span ng-if="$ctrl.selected.products.length">({{$ctrl.selected.products.length}})</span></button>
+                <button ng-click="$ctrl.markReadyOrder()" ng-if="$ctrl.orderCard.status === 'Accepted'"
+                        class="btn btn-primary btn-lg m-b-10">{{"supplier.order.view.actions.buttons.readyForDelivery" |
+                    translate }}
+                </button>
+                <button data-toggle="modal" data-target="#driverModal"
+                        ng-if="$ctrl.orderCard.status === 'ReadyForDelivery'" class="btn btn-primary btn-lg m-b-10">
+                    {{"supplier.order.view.actions.buttons.outForDelivery" | translate }}
+                </button>
+                <button data-toggle="modal" data-target="#failedModal"
+                        ng-if="$ctrl.orderCard.status === 'OutForDelivery'" class="btn btn-warnning btn-lg m-b-10">
+                    {{"supplier.order.view.actions.buttons.failedToDeliver" | translate }}
+                </button>
+                <button ng-click="$ctrl.markDeliveredOrder()" ng-if="$ctrl.orderCard.status === 'OutForDelivery'"
+                        class="btn btn-primary btn-lg m-b-10">{{"supplier.order.view.actions.buttons.delivered" |
+                    translate }}
+                </button>
+                <!--   <button ng-click="$ctrl.markReadyOrder()" ng-if="$ctrl.orderCard.status === 'FailedToDeliver'" class="btn btn-info btn-lg">{{"supplier.order.view.actions.buttons.retryDelivery" | translate }}</button>-->
+            </div>
+        </div>
+
+
+    </div>
+
+    <div ng-show="$ctrl.orderIsLoaded" class="card-image flex-1" background="{{$ctrl.orderCard.customer.coverPhoto}}">
+        <div class="card-image-overlay"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col padding-20  contact-info">
+                <shimmer hide="$ctrl.orderIsLoaded" row="5" clipped="true"></shimmer>
+                <contact ng-if="$ctrl.orderIsLoaded">
+                    <h5 class="title">{{$ctrl.orderCard.customer.representativeName}}</h5>
+                    <P>{{'supplier.order.view.branch' | translate}}: {{$ctrl.orderCard.branchName}}</P>
+                    <P>{{"supplier.order.view.repName" | translate }}:
+                        {{$ctrl.orderCard.customer.representativeName}}</P>
+                    <P>{{"supplier.order.view.phone" | translate }}: {{$ctrl.orderCard.customer.user.mobileNumber}}</P>
+                    <P>{{"supplier.order.view.email" | translate }}: {{$ctrl.orderCard.customer.user.email}}</P>
+                    <div class="address">{{$ctrl.orderCard.branch.location.address}}</div>
+                    <h5 class="title" ng-if="$ctrl.orderCard.driver">{{"supplier.order.view.driverDetails" | translate
+                        }}</h5>
+                    <p ng-if="$ctrl.orderCard.driver"> {{"supplier.order.view.firstName" | translate }}:
+                        {{$ctrl.orderCard.driver.firstName}}</p>
+                    <p ng-if="$ctrl.orderCard.driver"> {{"supplier.order.view.lastName" | translate }}:
+                        {{$ctrl.orderCard.driver.lastName}}</p>
+                    <p ng-if="$ctrl.orderCard.driver"> {{"supplier.order.view.mobileNumber" | translate }}:
+                        {{$ctrl.orderCard.driver.mobileNumber}}</p>
+                </contact>
+            </div>
+            <div class="col padding-0">
+                <div class="map-container" style="min-width: 410px; height: 200px">
+                    <!-- center="{{$ctrl.formData.coordinates}}" -->
+                    <ng-map ng-if="$ctrl.orderIsLoaded" center="{{$ctrl.orderCard.branch.location.coordinates}}"
+                            draggable="false" id="map" zoom="11" style="height: 100%">
+                        <marker position="{{$ctrl.orderCard.branch.location.coordinates}}" title="Location"
+                                on-click="$ctrl.markerClicked($ctrl.orderCard.branch.location.coordinates)"
+                                draggable="false">
+
+                        </marker>
+                    </ng-map>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-details padding-20" ng-show="$ctrl.orderLog.length > 0">
+    <shimmer hide="$ctrl.orderLogIsLoaded" clipped="true"></shimmer>
+    <div class="table-responsive">
+        <table ng-if="$ctrl.orderLogIsLoaded" class="table table-striped" id="tableWithExportOptions">
+            <thead>
+            <tr>
+                <th class="text-center" width="180">{{"supplier.order.log.date" | translate }}</th>
+                <th class="text-center" width="180">{{"supplier.order.log.status" | translate }}</th>
+                <th class="text-center">{{"supplier.order.log.activity" | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in $ctrl.orderLog">
+                <td class="text-center mn-170">
+                    <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                    <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                    <!-- <span class="label upper-case">{{item.createdAt | moment:'DD-MM-YYYY'}}</span>
+                     <span class="label upper-case">{{item.createdAt | moment:'HH:mm:ss'}}</span>-->
+                </td>
+                <td class="text-center mn-170">
+                    <span ng-if="item.status === 'Accepted'" class="label label-success upper-case">{{"supplier.order.view.status.accepted" | translate }}</span>
+                    <span ng-if="item.status === 'Pending'" class="label upper-case">{{"supplier.order.view.status.new" | translate }}</span>
+                    <span ng-if="item.status === 'Rejected'" class="label label-important upper-case">{{"supplier.order.view.status.rejected" | translate }}</span>
+                    <span ng-if="item.status === 'Canceled'" class="label label-important upper-case">{{"supplier.order.view.status.canceled" | translate }}</span>
+                    <span ng-if="item.status === 'CanceledByCustomer'" class="label label-important upper-case">{{"supplier.order.view.status.canceledByCustomer" | translate }}</span>
+                    <span ng-if="item.status === 'FailedToDeliver'" class="label label-important upper-case">{{"supplier.order.view.actions.buttons.failedToDeliver" | translate }}</span>
+                    <span ng-if="item.status === 'ReadyForDelivery'" class="label label-info upper-case">{{"supplier.order.view.status.ready" | translate }}</span>
+                    <span ng-if="item.status === 'OutForDelivery'" class="label label-inverse upper-case">{{"supplier.order.view.status.out" | translate }}</span>
+                    <span ng-if="item.status === 'Delivered'" class="label label-success upper-case">{{"supplier.order.view.status.delivered" | translate }}</span>
+                </td>
+                <td class="text-center mn-170">{{"supplier.order.log.by" | translate }}
+                    <span ng-if="item.userType === 'Supplier'">{{"supplier.order.log.supplier" | translate }}</span>
+                    <span ng-if="item.userType === 'Customer'">{{"supplier.order.log.customer" | translate }}</span>
+                    {{item.userName}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade stick-up" id="cancelModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.order.view.cancelConfirmation" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group form-group-default required"
+                     ng-class="{ 'has-error' : orderForm.firstName.$invalid && !orderForm.firstName.$pristine }">
+
+                    <label>
+                        {{"supplier.order.view.reason" | translate }}
+                    </label>
+                    <!--<textarea ng-model="$ctrl.cancelOrderMessage" rows="2" cols="10" id="cancelOrderMessage"-->
+                    <!--class="form-control"-->
+                    <!--type="text"-->
+                    <!--minlength="2" maxlength="1000"-->
+                    <!--ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"-->
+                    <!--required></textarea>-->
+                    <textarea ng-model="$ctrl.cancelOrderMessage" style="min-height:90px !important" cols="10"
+                              id="cancelOrderMessage"
+                              class="form-control"
+                              type="text"
+                              minlength="2" maxlength="1000"
+                              required></textarea>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <button ng-disabled="!$ctrl.cancelOrderMessage" ng-click="$ctrl.cancelOrder()"
+                                class="btn btn-primary btn-block">{{"supplier.order.view.confirm" | translate }}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#cancelModal').modal('hide');" class="btn btn-block">
+                            {{"supplier.order.view.exit" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade stick-up" id="driverModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.order.view.chooseDriverTitle" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.order.view.chooseDriverLabel" | translate}}</label>
+                    <select class="full-width" ng-show="$ctrl.staff" data-disable-search="true" ng-model="$ctrl.driver"
+                            data-placeholder="{{'supplier.order.view.selectDriverLabel' | translate}}"
+                            data-init-plugin="select2" id="driverSelect2">
+                        <option ng-repeat="staff in $ctrl.staff" value="{{staff._id}}">{{staff.firstName}}
+                            {{staff.lastName}}
+                        </option>
+                    </select>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <button ng-click="$ctrl.outForDeliveryOrder()" class="btn btn-primary btn-block">
+                            {{"supplier.order.view.chooseDriver" | translate }}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#driverModal').modal('hide');" class="btn btn-block">
+                            {{"supplier.order.view.cancel" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade stick-up" id="failedModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.order.view.failedOrderTitle" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group form-group-default required"
+                     ng-class="{ 'has-error' : orderForm.firstName.$invalid && !orderForm.firstName.$pristine }">
+
+                    <label for="failedToDeliverOrderMessage">
+                        {{"supplier.order.view.failedOrderLabel" | translate }}
+                    </label>
+                    <textarea ng-model="$ctrl.failedToDeliverOrderMessage" rows="2" cols="10"
+                              id="failedToDeliverOrderMessage"
+                              class="form-control" style="min-height: 58px;"
+                              type="text"
+                              minlength="2" maxlength="1000"
+                              required>
+
+                    </textarea>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button ng-disabled="!$ctrl.failedToDeliverOrderMessage" ng-click="$ctrl.markFailOrderOrder()"
+                                class="btn btn-primary btn-block">{{"supplier.order.view.confirm" | translate }}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#failedModal').modal('hide');" class="btn btn-block">
+                            {{"supplier.order.view.cancel" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade stick-up" id="rejectModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                        class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.order.view.rejectOrderTitle" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+
+                <!--<div class="form-group form-group-default required"-->
+                <!--ng-class="{ 'has-error' : orderForm.firstName.$invalid && !orderForm.firstName.$pristine }">-->
+
+                <!--<label>-->
+                <!--{{"supplier.order.view.failedOrderLabel" | translate }}-->
+                <!--</label>-->
+                <!--<textarea ng-model="$ctrl.rejectOrderMessage" rows="2" cols="10" id="rejectOrderMessage"-->
+                <!--class="form-control"-->
+                <!--type="text"-->
+                <!--minlength="2" maxlength="1000"-->
+                <!--ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"-->
+                <!--required></textarea>-->
+                <!--</div>-->
+                <div class="row">
+                    <div class="col">
+                        <!--<button ng-disabled="!$ctrl.rejectOrderMessage" ng-click="$ctrl.rejectOrder()" class="btn btn-primary btn-block">{{"supplier.order.view.confirm" | translate }}</button>-->
+                        <button ng-click="$ctrl.rejectOrder()" class="btn btn-primary btn-block">
+                            {{"supplier.order.view.confirmReject" | translate }}
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#rejectModal').modal('hide');" class="btn btn-block">
+                            {{"supplier.order.view.cancel" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    $('#productSelect , #driverSelect2').on('select2:open', function () {
+        let that = $(this);
+        let flag = false;
+        if ($(window).width() > 739) {
+            $(window).bind('wheel', function (e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function (e) {
+                console.log(e.target);
+                if (!flag && e.target.className === 'select2-results__option') {
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if (!flag && e.target.className !== 'select2-results__option') {
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>
+
+
+

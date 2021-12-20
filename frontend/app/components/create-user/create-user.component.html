@@ -1,0 +1,214 @@
+<div class="modal fade slide-up" id="userModal"  role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content-wrapper">
+             <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" ng-click="$ctrl.resetForm(userForm)" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    <i class="pg-close fs-14"></i>
+                </button>
+                <h5 ng-if="$ctrl.mode==='Save'"><span class="semi-bold">{{'component.create-user.text.new_user' | translate}}</span></h5>
+                <h5 ng-if="$ctrl.mode==='Update'"><span class="semi-bold">{{'component.create-user.text.update_user' | translate}}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <form role="form"  name="userForm" ng-submit="$ctrl.onSubmit(userForm)" accessible-form novalidate>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-6 m-b-10">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+                                    <label>{{'component.create-user.field.first_name.label' | translate}}</label>
+                                    <input ng-model="$ctrl.user.firstName" name="firstName" id="firstName"
+                                           placeholder="{{'component.create-user.field.first_name.placeholder' | translate}}"
+                                           ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                           type="text" class="form-control" required>
+                                </div>
+                                <div ng-messages="userForm.firstName.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.firstName.$pristine">
+                                      {{'component.create-user.field.first_name.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                        {{'component.create-user.field.first_name.invalid' | translate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 m-b-10">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
+                                    <label>{{'component.create-user.field.last_name.label' | translate}}</label>
+                                    <input ng-model="$ctrl.user.lastName" name="lastName"
+                                           placeholder="{{'component.create-user.field.last_name.placeholder' | translate}}"
+                                           ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                           type="text" class="form-control" required>
+                                </div>
+
+                                <div ng-messages="userForm.lastName.$error">
+                                    <span class="error"  ng-message="required" ng-if="!userForm.lastName.$pristine">
+                                       {{'component.create-user.field.last_name.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                        {{'component.create-user.field.last_name.invalid' | translate}}
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 m-b-10">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.mobileNumber.$invalid && !userForm.mobileNumber.$pristine }">
+                                    <label>{{'component.create-user.field.mobile.label' | translate}}</label>
+                                    <input ng-model="$ctrl.user.mobileNumber" name="mobileNumber"  id="mobileNumber" type="text" class="form-control"
+                                           placeholder="{{'component.create-user.field.mobile.placeholder' | translate}}"
+                                           ng-pattern='/^9665[0-9]{8}$$/'
+                                           required>
+                                </div>
+                                <div  ng-messages="userForm.mobileNumber.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.mobileNumber.$pristine">
+                                        {{'component.create-user.field.mobile.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                        {{'component.create-user.field.mobile.invalid' | translate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 m-b-10">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                                    <label>{{'component.create-user.field.email.label' | translate}}</label>
+                                    <input ng-model="$ctrl.user.email" type="email" id="email"
+                                           name="text"
+                                           ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                           placeholder="{{'component.create-user.field.email.placeholder' | translate}}"
+                                           class="form-control">
+                                           <!-- ng-disabled="$ctrl.mode==='Update'" -->
+                                </div>
+                                <!-- <div ng-messages="userForm.email.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.email.$pristine">
+                                        {{'component.create-user.field.email.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                         {{'component.create-user.field.email.invalid' | translate}}
+                                    </span>
+                                </div> -->
+                            </div>
+                            <div class="col-md-6 m-b-10" ng-if="$ctrl.mode=='Save'">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                                    <label>{{'component.create-user.field.password.label' | translate}}</label>
+                                    <input ng-model="$ctrl.user.password" type="password" name="password" id="password"
+                                           placeholder="{{'component.create-user.field.password.placeholder' | translate}}"
+                                           ng-pattern="/[a-zA-Z@#_-]+[0-9]+[a-zA-Z0-9@#_-]*|[0-9]+[a-zA-Z@#_-][a-zA-Z0-9@#_-]*/" class="form-control"  required>
+                                </div>
+                                <div ng-messages="userForm.password.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.password.$pristine">
+                                        {{'component.create-user.field.password.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                         {{'component.create-user.field.password.invalid' | translate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 m-b-10" ng-if="$ctrl.mode=='Save'">
+                                <div class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : userForm.confirmPassword.$invalid && !userForm.confirmPassword.$pristine }">
+                                    <label>{{'component.create-user.field.confirm_password.label' | translate}}</label>
+                                    <input ng-model="$ctrl.confirmPassword"
+                                           type="password" name="confirmPassword" class="form-control" id="confirmPassword"
+                                           ng-pattern="$ctrl.user.password"
+                                           placeholder="{{'component.create-user.field.confirm_password.placeholder' | translate}}"
+                                           compare-to="$ctrl.user.password" required>
+                                </div>
+                                <div ng-messages="userForm.confirmPassword.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.confirmPassword.$pristine">
+                                       {{'component.create-user.field.confirm_password.required' | translate}}
+                                    </span>
+                                    <span class="error" ng-message="pattern">
+                                         {{'component.create-user.field.confirm_password.invalid' | translate}}
+                                    </span>
+                                </div>
+                                <!--<span class="error"  ng-if="userForm.confirmPassword.$error.compareTo ">-->
+                                        <!--{{'component.create-user.field.confirm_password.invalid' | translate}}-->
+                                <!--</span>-->
+                            </div>
+
+                            <div class="col-md-6 " style="z-index: 2;" >
+                                <div class="form-group form-group-custom form-group-default form-group-default-select2"
+                                     ng-class="{ 'has-error' : userForm.role.$invalid && !userForm.role.$pristine }">
+                                    <label class="label-custom" for="role">{{'component.create-user.field.roles.label' | translate}}</label>
+                                    <select ng-model="$ctrl.user.role" name="role" id="role"
+                                             class="full-width" data-placeholder="Select Role" data-disable-search="false" data-init-plugin="select2"
+                                            required ng-options="item as $ctrl.translateRole(item) for item in $ctrl.roles.data track by item._id">
+                                    </select>
+                                </div>
+                                <div ng-messages="userForm.role.$error">
+                                    <span ng-message="required" ng-if="!userForm.role.$pristine">
+                                       {{'component.create-user.field.roles.required' | translate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group form-group-custom form-group-default form-group-default-select2"
+                                     ng-class="{ 'has-error' : userForm.status.$invalid && !userForm.status.$pristine }">
+                                    <label class="label-custom" for="status">{{'component.create-user.field.status.label' | translate}}</label>
+                                    <!--ng-options="option.arabicName for option in $ctrl.status track by option.key"-->
+                                    <select ng-model="$ctrl.user.status" name="status" id="status"
+                                            class="full-width" data-placeholder="Select Status" data-init-plugin="select2"  data-disable-search="true" required
+                                            ng-options="item as $ctrl.translateStatus(item.key) for item in $ctrl.status.data track by item.key">
+                                    </select>
+                                </div>
+                                <div ng-messages="userForm.status.$error">
+                                    <span class="error" ng-message="required" ng-if="!userForm.status.$pristine">
+                                        {{'component.create-user.field.status.required' | translate}}
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 offset-md-4 m-t-10 sm-m-t-10 text-center">
+                                <button type="submit" class="btn btn-primary btn-block m-t-5" ng-disabled="userForm.$invalid">{{$ctrl.mode | translate}}</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    $('#status, #role').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>
+

@@ -1,0 +1,31 @@
+<p id="create_account" class="p-t-15">{{"auth.register.supplier.text.create_account" | translate }},
+    <span class="text-info small" id="button-signin">{{"auth.register.customer.button.signin" | translate }}</span>
+    <button id="sign-up2" ui-sref="app.auth.login" class="btn btn-link p-l-5">{{"auth.register.supplier.text.signin" | translate }}</button>
+</p>
+
+
+
+<!--<div ng-init="IsCustomer=true;IsSupplier=true" dir="ltr" id="buttons" class="d-flex justify-content-center btn-group m-t-20 m-b-20 btn-wide" data-toggle="buttons">
+    <label  class="btn btn-primary" ng-show="IsCustomer" ng-click="IsSupplier=false;IsCustomer=true;" ui-sref-active="active" id="register-customer" ui-sref="app.auth.register.customer" aria-pressed="true">
+        <input  type="radio" name="options" id="option1" checked=""> {{"auth.register.supplier.link.customer" | translate}}
+    </label>
+    <label  class="btn btn-primary" ng-show="IsSupplier" ng-click="IsSupplier=true;IsCustomer=false;" ui-sref-active="active" id="register-supplier" ui-sref="app.auth.register.supplier" aria-pressed="true">
+        {{"auth.register.supplier.link.supplier" | translate}}
+    </label>
+</div>-->
+
+<!--<ul class="auth main-menu m-t-40 p-l-0 ">
+    <li ui-sref-active="active">
+        <a class="  ">
+            <span class="title">{{"auth.register.supplier.link.customer" | translate}}</span>
+        </a>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="app.auth.register.supplier" class=" m-l-15 m-r-15">
+            <span class="title">{{"auth.register.supplier.link.supplier" | translate}}</span>
+        </a>
+    </li>
+</ul>-->
+
+<ui-view/>
+

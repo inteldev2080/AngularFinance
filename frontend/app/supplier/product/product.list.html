@@ -1,0 +1,70 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item">{{"supplier.menu.product" | translate }}</li>
+        <li class="breadcrumb-item active text-capitalize" ng-if="categoryName">{{categoryName}}</li>
+        <li class="breadcrumb-item active text-capitalize" ng-if="subCategoryName">{{subCategoryName}}</li>
+    </ol>
+</div>
+<shimmer hide="!$ctrl.isLoading" col="3"></shimmer>
+<div ng-if="!$ctrl.isLoading"   class="row">
+    <div ng-repeat="product in $ctrl.productList.products" class="col-lg-4 col-sm-6 d-flex flex-column"
+         ui-sref="app.supplier.product.detail({productId : product._id})">
+        <!-- START ITEM -->
+        <div class="card social-card share share-other full-width m-b-10 d-flex flex-1 full-height no-border" data-social="item">
+            <div class="card-header clearfix">
+                <h5>{{ currentLanguage.language === 'ar'? product.arabicName : product.englishName }}</h5>
+                <div class="price">1<span>{{currentLanguage.language === 'ar'? product.unit.arabicName :product.unit.englishName }}</span></div>
+                <ul class="reactions">
+                    <li><a href="#">{{product.price + ' '}}{{'supplier.product.currency' | translate}}</a></li>
+                </ul>
+            </div>
+            <div class="card-content flex-1" background="{{product.coverPhoto}}">
+                <div class="card-image-overlay"></div>
+            </div>
+        </div>
+        <!-- END ITEM -->
+    </div>
+    <div class="col-lg-4 col-sm-6 d-flex flex-column">
+        <!-- START ITEM -->
+        <div ng-click="$ctrl.goToAddProductState()" class="card social-card card-add-icon share share-other full-width m-b-10 d-flex flex-1 full-height no-border" data-social="item">
+            <div class="card-header flex-1 tx-center p-t-30 p-b-30">
+                <i class="pg-plus"></i>
+                <p class="paragraph m-t-10">{{"supplier.product.newProduct" | translate}}</p>
+            </div>
+        </div>
+        <!-- END ITEM -->
+    </div>
+</div>
+<div ng-if="!$ctrl.isLoading && $ctrl.productList.products.length > 0" class="dataTables_wrapper p-b-20">
+    <list-pagination total-pages="$ctrl.productsTotalPages" on-page-click="$ctrl.setProductsCurrentPage(pageNumber)" current-page="$ctrl.productCurrentPage"></list-pagination>
+</div>
+<!--<div class="row" ng-if="$ctrl.productList.products.length === 0">-->
+    <!--<div class="col">-->
+        <!--<div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">-->
+            <!--<div class="card-image-overlay"></div>-->
+            <!--<img src="assets/img/cards/no-orders.svg">-->
+            <!--<p class="paragraph m-t-10">{{"supplier.product.noProducts" | translate }}</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="row" ng-if="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+            <p class="paragraph m-t-10">{{"supplier.product.unexpectedError" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"supplier.product.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>
+<script>
+    $.Pages.init();
+</script>

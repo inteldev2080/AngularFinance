@@ -1,0 +1,706 @@
+{
+  "schemas": {
+    "recurringOrder": {
+      "type": "object",
+      "properties": {
+        "supplier": {
+          "type": "object"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "product": {
+                "type": "object"
+              },
+              "quantity": {
+                "type": "number"
+              },
+              "price": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "branch": {
+          "type": "object"
+        },
+        "orderIntervalType": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "string"
+        },
+        "orderFrequency": {
+          "type": "number"
+        },
+        "days": {
+          "type": "number"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/recurringOrders": {
+      "get": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Get list of recurringOrders.",
+        "operationId": "recurringOrdersList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrders": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/recurringOrder"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/history": {
+      "get": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Get history of recurringOrders.",
+        "operationId": "recurringOrdersHistory",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/{recurringOrderId}/cancel": {
+      "put": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Update recurringOrder.",
+        "operationId": "recurringOrderUpdate",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/{recurringOrderId}": {
+      "get": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Get recurringOrder.",
+        "operationId": "recurringOrderGet",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Update recurringOrder.",
+        "operationId": "updateRecurringOrder",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Recurring Order Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["orderFrequency", "orderIntervalType", "startDate"],
+                "type": "object",
+                "properties": {
+                  "orderFrequency": {
+                    "type": "number"
+                  },
+                  "orderIntervalType": {
+                    "type": "string"
+                  },
+                  "startDate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/orderPurchase/{recurringOrderId}": {
+      "get": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Order purchase.",
+        "operationId": "orderPurchased",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/orderProduct/add/{recurringOrderId}": {
+      "post": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Add product to order.",
+        "operationId": "productOrderAdd",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Recurring Order Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/orderProduct/update/{recurringOrderId}": {
+      "put": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Update product in order.",
+        "operationId": "productOrderUpdate",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Recurring Order Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/recurringOrders/orderProduct/delete/{recurringOrderId}": {
+      "delete": {
+        "tags": [
+          "recurringOrder"
+        ],
+        "summary": "Delete product in order.",
+        "operationId": "productOrderDelete",
+        "parameters": [{
+          "name": "recurringOrderId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Recurring Order Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recurringOrder": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/recurringOrder"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>التاريخ</th>
+    <th>العميل</th>
+    <th>المورد</th>
+    <th>المنتج</th>
+    <th>السعر</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data}}
+  <tr>
+    <td>{{:~toTime(createdAt)}}</td>
+    <td>{{:customer.representativeName}}</td>
+    <td>{{:supplier.representativeName}}</td>
+    <td>{{:product.arabicName}}</td>
+    <td>{{:~toNumber(price)}}</td>
+  </tr>
+  {{/for}}
+  </tbody>
+</table>
+

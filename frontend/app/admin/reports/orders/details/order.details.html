@@ -1,0 +1,71 @@
+<!--<div class="container">-->
+    <!--<ol class="breadcrumb breadcrumb-alt">-->
+        <!--<li class="breadcrumb-item"><a ui-sref="app.admin.report.orders" class=" m-l-25">{{"admin.reports.orders.stats.reports"-->
+            <!--| translate}}</a></li>-->
+        <!--<li class="breadcrumb-item"><a ui-sref="app.admin.report.orders" class=" m-l-25">{{"admin.reports.orders.stats.orders"-->
+            <!--| translate}}</a></li>-->
+        <!--<li class="breadcrumb-item active">{{"admin.reports.orders.stats.order" | translate}}: {{$ctrl.order.orderId}}-->
+        <!--</li>-->
+    <!--</ol>-->
+<!--</div>-->
+<div class="card">
+    <div class="card-header ">
+        <button class="btn btn-transparent btn-lg pull-right" ng-click="$ctrl.printPdf('pdf')">
+            {{"admin.reports.orders.details.print" | translate}}
+        </button>
+        <div class="card-title" style="padding-top: 10px;">
+            {{"admin.reports.orders.stats.order" | translate}}: {{$ctrl.order.orderId}}
+        </div>
+    </div>
+    <div class="card-block">
+        <shimmer hide="$ctrl.order.products.length" row="5" clipped="true"></shimmer>
+        <div ng-show="$ctrl.order.products.length" class="dataTables_wrapper no-footer ">
+            <div class="table-responsive">
+                <table class="table table-striped" id="tableWithExportOptions">
+                    <thead>
+                    <tr>
+                        <th class="text-center">{{"admin.reports.orders.details.product" | translate}}</th>
+                        <th class="text-center">{{"admin.reports.orders.details.sku" | translate}}</th>
+                        <th class="text-center">{{"admin.reports.orders.details.store" | translate}}</th>
+                        <th class="text-center mn-80">{{"admin.reports.orders.details.shelf" | translate}} #</th>
+                        <th class="text-center">{{"admin.reports.orders.details.quantity" | translate}}</th>
+                        <!-- <th><button class="btn btn-link"><i class="fa fa-check"></i></button></th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="p in $ctrl.order.products" class="odd gradeX">
+                        <td class="text-center">{{p.product.arabicName}}</td>
+                        <td class="text-center">{{p.product.sku}}</td>
+                        <td class="text-center">{{p.product.store}}</td>
+                        <td class="text-center">{{p.product.shelf}}</td>
+                        <td class="text-center">{{p.quantity}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <list-pagination total-pages="$ctrl.totalPages" current-page="$ctrl.currentPage"
+                                 on-page-click="$ctrl.setPage(pageNumber)"></list-pagination>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 d-flex flex-wrap justify-content-between m-t-20">
+                    <back class="order-sm-2 m-t-5"></back>
+                    <div class="d-flex flex-wrap justify-content-start justify-content-sm-end align-items-start order-sm-1">
+                        <div class="recur_order" style=""><span class="bold">{{'admin.sub_total' | translate}} </span>
+                            <span ng-if="$ctrl.order.total"> {{$ctrl.order.total | currency : "" : 2}}</span>
+                            <span ng-if="$ctrl.order.price"> {{$ctrl.order.price | currency : "" : 2}}</span>
+                        </div>
+                        <div class="recur_order" style=""><span class="bold">{{'admin.vat' | translate}} </span>
+                            <span> {{$ctrl.order.VAT  | currency : "" : 2}}</span>
+                        </div>
+                        <div class="recur_order" style=""><span class="bold">{{'admin.total_price' | translate}} </span>
+                            <span ng-if="$ctrl.order.total"> {{($ctrl.order.VAT + $ctrl.order.total) | currency : "" : 2}}</span>
+                            <span ng-if="$ctrl.order.price"> {{($ctrl.order.VAT + $ctrl.order.price) | currency : "" : 2}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

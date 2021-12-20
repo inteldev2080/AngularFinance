@@ -1,0 +1,74 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper full-height ">
+    <!-- START PAGE CONTENT -->
+    <div class="container no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center text-uppercase">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                {{"m.settings" | translate }}</p>
+            <ul class="main-menu">
+                <li ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.settings.units" class=" m-l-25">
+                        <span class="title">{{"admin.settings.units.systemUnits" | translate }}</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.settings.cities" class=" m-l-25">
+                        <span class="title">{{"admin.settings.cities.label" | translate }}</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.settings.templates" class=" m-l-25">
+                        <span class="title">{{"admin.settings.templates.emailTemplates" | translate }}</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.settings.config" class=" m-l-25">
+                        <span class="title">{{"admin.settings.config.systemConfig" | translate }}</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active top-level bold">
+                    <a ui-sref="app.admin.settings.cms" class=" m-l-25">
+                        <span class="title">{{"admin.settings.cms.cms" | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div ncy-breadcrumb></div>
+                <ui-view/>
+
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+    $('.secondary-side').on('click','ul li a>.title',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

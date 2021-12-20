@@ -1,0 +1,350 @@
+{
+    "auth": {
+        "copyright": "حقوق الطبع والنشر © 2018",
+        "rights": "جميع الحقوق محفوظة",
+        "hand_craft_statement": "تم تطويره بواسطة",
+        "made_statement": "وصنع مع الحب ®",
+        "register": {
+            "supplier": {
+                "tabs": {
+                    "tab_account_info": "معلومات الحساب.",
+                    "tab_address": "العنوان"
+                },
+                "field": {
+                    "email": {
+                        "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+                        "label": "البريد الإلكتروني",
+                        "placeholder": "Email@supplieson.com",
+                        "required": "هذه الخانة مطلوبه"
+                    },
+                    "create_account": "انشاء حساب جديد",
+                    "company_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "required": "هذه الخانة مطلوبه",
+                        "label": "اسم الشركة",
+                        "placeholder": "اسم الشركة"
+                    },
+                    "mobile": {
+                        "invalid": "رقم الهاتف غير صحيح",
+                        "label": "رقم الهاتف",
+                        "placeholder": "9665XXXXXXXX",
+                        "required": "هذه الخانة مطلوبه"
+                    },
+                    "first_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "required": "هذه الخانة مطلوبه ويجب ان يكون الحد الادنى 2 حرف",
+                        "placeholder": "الاسم الاول",
+                        "label": "الاسم الاول"
+                    },
+                    "last_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "placeholder": "الاسم الأخير",
+                        "label": "الاسم الأخير",
+                        "required": "هذه الخانة مطلوبه ويجب ان يكون الحد الادنى 2 حرف"
+                    },
+                    "cr_number": {
+                        "required": "هذه الخانة مطلوبه",
+                        "placeholder": "رقم السجل التجاري",
+                        "label": "رقم السجل التجاري",
+                        "invalid": "يحتوي على أحرف غير صالحة، يجب أن يكون 10 أرقام فقط"
+                    },
+                    "cr_photo": {
+                        "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+                        "label": "صورة السجل التجارى",
+                        "you_upload":"لقد قمت بتحميل ",
+                        "required": "هذه الخانة مطلوبه",
+                        "photoErr": "حجم الصورة تخطى 4 ميجا بايت",
+                        "placeholder": "لم تقم باختيار ملف"
+                    },
+                    "vatPhoto": {
+                        "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+                        "label": "صورة الرقم الضريبي",
+                        "required": "هذه الخانة مطلوبه",
+                        "photoErr": "حجم الصورة تخطى 4 ميجا بايت",
+                        "placeholder": "لم تقم باختيار ملف"
+                    },
+                    "vatConfirm":{
+                        "vat_message":"لم يتم ادخال الرقم الضريبي، هل تود استكمال عملية التسجيل ؟",
+                        "cancel":"إلغاء"
+                    },
+                    "password": {
+                        "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+                        "required": "هذه الخانة مطلوبه",
+                        "label": "كلمة المرور",
+                        "placeholder": "كلمة المرور",
+                        "min_length": "الحد الأدنى 6",
+                        "max_length": "الحد الأقصى  20"
+                    },
+                    "VAT": {
+                        "required": "هذه الخانة مطلوبه",
+                        "label": "الضريبة المضافة",
+                        "placeholder": "الضريبة المضافة",
+                        "invalid":"الضريبة لابد ان تكون على هيئة ارقام او ارقام عشرية"
+                    },
+                    "select_date": {
+                        "label":"أختر تاريخ :",
+                        "hijri":"هجرى",
+                        "gregorian":"ميلادى"
+                    },
+                    "cr_Expdate": {
+                        "required": "هذه الخانة مطلوبه",
+                        "placeholder": "DD\/MM\/YYYY",
+                        "label": "تاريخ انتهاء الصلاحية (ميلادي)",
+                        "labelHijri": "تاريخ انتهاء الصلاحية (هجري)"
+                    },
+                    "confirm_password": {
+                        "label": "تأكيد كلمة المرور",
+                        "placeholder": "تأكيد كلمة المرور",
+                        "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة",
+                        "required": "هذه الخانة مطلوبه"
+                    }, "privacy_policy":{
+                        "label":"اوافق على ",
+                        "privacy_terms":"شروط الاستخدام و سياسة الخصوصية",
+                        "must_accept":"يجب ان توافق اولا على شروط الاستخدام وسياسة الخصوصية"
+                    }
+                },
+                "text": {
+                    "project_name": "SuppliesON",
+                    "create_account": "انشاء حساب جديد",
+                    "signin": "تسجيل الدخول"
+                },
+                "button": {
+                    "change_language": "English",
+                    "signup": "التسجيل",
+                    "signin": "هل لديك حساب ؟",
+                    "next": "التالى",
+                    "previous": "السابق"
+                },
+                "link": {
+                    "customer": "عميل",
+                    "supplier": "مورد"
+                },
+                "message": {
+                    "success_need_approval": "تم انشاء الحساب بنجاح...بانتظار موافقة مدير النظام",
+                    "success_creation": "تم إنشاء الحساب بنجاح",
+                    "failed_creation": "للأسف فشل في إنشاء الحساب ، يرجى المحاولة مرة أخرى في وقت لاحق",
+                    "already_have_account": "لديك حساب بالفعل",
+                    "invalidFile" : "اختر السجل التجاري باحد الصيغ التاليه(png,jpeg,jpg, gif, pdf)",
+                    "invalidFileSize" : "يجب ان لاتزيد مساحه الملف المختار عن 12 ميجا بايت",
+                    "commercialRegisterIsDuplicate" : "تم التسجيل من قبل بهذا رقم السجل التجاري",
+                    "emailOrMobilePhoneIsDuplicate" : "الاميل او الموبيل تم التسجيل بيه من قبل",
+                    "success_change_password":"تم تغيير كلمة السر بنجاح يمكنك تسجيل الدخول الان",
+                    "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+                    "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+                    "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+                    "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+                }
+            },
+            "customer": {
+                "tabs": {
+                    "tab_account_info": "معلومات الحساب",
+                    "tab_address": "العنوان",
+                    "tab_company_info": "معلومات الشركة"
+                },
+                "field": {
+                    "email": {
+                        "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+                        "label": "البريد الإلكتروني",
+                        "placeholder": "Email@supplieson.com",
+                        "required": "هذه الخانة مطلوبه"
+                    },
+                    "create_account": "انشاء حساب جديد",
+                    "company_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "required": "هذه الخانة مطلوبه",
+                        "label": "اسم الشركة",
+                        "placeholder": "اسم الشركة"
+                    },
+                    "mobile": {
+                        "invalid": "رقم الهاتف غير صحيح",
+                        "label": "رقم الهاتف",
+                        "placeholder": "9665XXXXXXXX",
+                        "required": "هذه الخانة مطلوبه",
+                        "minLength": "الحد الأدنى 9",
+                        "maxLength": "أقصى طول 12"
+                    },
+                    "first_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "required": "هذه الخانة مطلوبه ويجب ان يكون الحد الادنى 2 حرف",
+                        "placeholder": "الاسم الاول",
+                        "label": "اسم السجل التجاري",
+                        "minLength": "الحد الأدنى 2 حرف",
+                        "maxLength": "أقصى طول 10 حروف"
+                    },
+                    "last_name": {
+                        "invalid": "يحتوي على أحرف غير صالحة",
+                        "placeholder": "الاسم الأخير",
+                        "label": "الاسم الأخير",
+                        "required": "هذه الخانة مطلوبه ويجب ان يكون الحد الادنى 2 حرف",
+                        "minLength": "الحد الأدنى 2 حرف",
+                        "maxLength": "أقصى طول 10 حروف"
+                    },
+                    "cr_number": {
+                        "required": "هذه الخانة مطلوبه",
+                        "placeholder": "رقم السجل التجاري",
+                        "label": "رقم السجل التجاري",
+                        "invalid": "يحتوي على أحرف غير صالحة، يجب أن يكون 10 أرقام فقط"
+                    },
+                    "cr_photo": {
+                        "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+                        "label": "صورة السجل التجارى",
+                        "required": "هذه الخانة مطلوبه",
+                        "photoErr": "حجم الصورة تخطى 4 ميجا بايت",
+                        "placeholder": "لم تقم باختيار ملف"
+                    },
+                    "password": {
+                        "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+                        "required": "هذه الخانة مطلوبه",
+                        "label": "كلمة المرور",
+                        "placeholder": "كلمة المرور",
+                        "min_length": "الحد الأدنى 6",
+                        "max_length": "الحد الأقصى 20"
+                    },
+                    "select_date":{
+                        "label":"أختر تاريخ :",
+                        "hijri":"هجرى",
+                        "gregorian":"ميلادى"
+                    },
+                    "cr_Expdate": {
+                        "required": "هذه الخانة مطلوبه",
+                        "placeholder": "DD\/MM\/YYYY",
+                        "label": "تاريخ إنتهاء الصلاحية(ميلادى)",
+                        "labelHijri": "تاريخ انتهاء الصلاحية (هجري)"
+                    },
+                    "confirm_password": {
+                        "label": "تأكيد كلمة المرور",
+                        "placeholder": "تأكيد كلمة المرور",
+                        "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة",
+                        "required": "هذه الخانة مطلوبه"
+                    },
+                    "address": {
+                        "label": "العنوان",
+                        "placeholder": "أدخل عنوانك",
+                        "required": "هذه الخانة مطلوبه",
+                        "city" : "مدينة"
+                    }
+                },
+                "button": {
+                    "change_language": "English",
+                    "signup": "التسجيل",
+                    "signin": "هل لديك حساب ؟",
+                    "next": "التالى",
+                    "previous": "السابق"
+                },
+                "message": {
+                    "success_creation": "تم انشاء الحساب بنجاح",
+                    "failed_creation": "للأسف فشل في إنشاء الحساب ، يرجى المحاولة مرة أخرى في وقت لاحق",
+                    "already_have_account": "البيانات التي أدخلتها موجودة من قبل",
+                    "not_invited": "نأسف ، الخدمة غير متاحة حاليا سنقوم بالتواصل معك عندما يقوم مورد بدعوتك للتواصل على SuppliesOn.",
+                    "invalidFile" : "اختر صوره التجاري باحد الصيغ التاليه(png,jpeg,jpg, gif, pdf)",
+                    "invalidFileSize" : "يجب ان لاتزيد مساحه الملف المختار عن 12 ميجا بايت",
+                    "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+                    "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+                    "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+                    "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+                }
+            }
+        },
+        "forget_password": {
+            "message": {
+                "success": "تحقق من بريدك الإلكتروني للحصول على رابط لإعادة تعيين كلمة المرور",
+                "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق"
+            },
+            "text": {
+                "Reset_confirmation": "تحقق من بريدك الإلكتروني للحصول على رابط لإعادة تعيين كلمة المرور",
+                "company_name": "SuppliesON",
+                "forget_password_text": "أدخل عنوان بريدك الالكتروني , ستتلقى رسالة إلكترونية تتضمن رابطا لإعادة تعيين كلمة المرور"
+            },
+            "field": {
+                "Email": {
+                    "invalid": "صيغة البريد الإلكتروني غير صحيحة.",
+                    "Required": "هذه الخانة مطلوبه",
+                    "label": "البريد الإلكتروني",
+                    "placeholder": "أدخل بريدك الإلكتروني"
+                }
+            },
+            "button": {
+                "change_language": "English",
+                "retrieve_password": "استعادة كلمة المرور"
+            },
+            "link": {
+                "backto_signin": "العودة إلى تسجيل الدخول ",
+                "backto": "الرجوع الى",
+                "signin": "تسجيل الدخول"
+            }
+        },
+        "login": {
+            "invalid_login": "تفاصيل تسجيل الدخول غير صحيحة",
+            "field": {
+                "Email": {
+                    "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+                    "placeholder": "Email@supplieson.com",
+                    "required": "هذه الخانة مطلوبه",
+                    "label": "البريد الالكتروني او رقم الهاتف"
+                },
+                "password": {
+                    "label": "كلمة المرور",
+                    "required": "هذه الخانة مطلوبه",
+                    "placeholder": "أدخل كلمة المرور الخاصة بك"
+                }
+            },
+            "button": {
+                "change_language": "English",
+                "signup": "التسجيل",
+                "signin": "تسجيل الدخول"
+            },
+            "text": {
+                "project_name": "SuppliesON",
+                "account_signin": "سجل الدخول إلى حسابك فى SuppliesON",
+                "signup": "ليس لديك حساب؟"
+            },
+            "link": {
+                "forget_password": "نسيت كلمة المرور؟"
+            }
+        },
+        "reset_password": {
+            "message": {
+                "success": "تم إعادة تعيين كلمة المرور الجديدة بنجاح، ارجع لتسجيل الدخول",
+                "failure": "عذرا، حدث فشل أثناء إعادة تعيين كلمة المرور الجديدة \n حاول مرة أخرى في وقت لاحق"
+            },
+            "button": {
+                "change_language": "English",
+                "reset_password": "إعادة تعيين كلمة المرور"
+            },
+            "text": {
+                "reset_success": "تم إعادة تعيين كلمة المرور الجديدة بنجاح، ارجع لتسجيل الدخول",
+                "project_name": "SuppliesON",
+                "Reset_your_password": "إعادة تعيين كلمة المرور الخاصة بك هنا",
+                "backto_signin": "الرجوع إلى تسجيل الدخول",
+                "backto": "الرجوع الى",
+                "signin": "تسجيل الدخول",
+                "done": "تم",
+                "weSentMessageTo":"تم ارسال ايميل الى",
+                "pickPassword" : " يمكنك اعاده كلمة السر من خلاله",
+                "tryAgain" : "حاول مرة اخري",
+                "notGetEmail" : "لم تستقبل بريد الكترونى الى الان؟"
+
+            },
+            "field": {
+                "password": {
+                    "label": "كلمة المرور الجديدة",
+                    "placeholder": "أدخل كلمة المرور الجديدة",
+                    "Required": "هذه الخانة مطلوبه",
+                    "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+                },
+                "confirm_password": {
+                    "label": "تأكيد كلمة المرور الجديدة",
+                    "placeholder": "تأكيد كلمة المرور الجديدة",
+                    "required": "هذا الخانة مطلوبة ويجب أن تطابق كلمة المرور الجديدة",
+                    "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة"
+                }
+            }
+        },
+        "logged_out": "تم تسجيل الخروج بنجاح"
+    },
+    "meta": {
+        "project_name": "SuppliesOn",
+        "developer": "اندى لابز ذ.م.م"
+    },
+    "week": "{value, plural, =0 %1$s one%1$s other{# weeks}}"
+}

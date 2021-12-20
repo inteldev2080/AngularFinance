@@ -1,0 +1,112 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.order" ui-sref-opts="{reload:true}">{{"supplier.menu.orders" | translate}}</a></li>
+        <li class="breadcrumb-item active">{{"supplier.orders.overview" | translate}}</li>
+    </ol>
+</div>
+<div class="row p-t-20 p-b-20 p-l-20 p-r-20">
+    <div class="col-lg-4 col-sm-6 d-flex flex-column" ng-repeat="productov in $ctrl.productsList">
+        <!-- START ITEM -->
+        <div ui-sref="app.supplier.order.list.new({productId:productov.product._id})"  class="card social-card share share-other full-width m-b-10 d-flex flex-1 full-height cursor no-border" data-social="item">
+            <div class="card-header clearfix">
+                <h5>{{$ctrl._$translate.use()==='en'?productov.product.englishName:productov.product.arabicName}}</h5>
+                <!--<div class="price">{{productov.weight}}<span>{{productov.product.unit.englishName}}</span></div>-->
+                <div class="price">{{productov.weight}} <span class="m-l-5">{{$ctrl._$translate.use()==='en'?productov.product.unit.englishName:productov.product.unit.arabicName}}</span></div>
+                <ul class="reactions">
+                    <li><a translate="supplier.overview.order" translate-values="{value: productov.count}"></a></li>
+                </ul>
+            </div>
+            <div class="card-content flex-1" background="{{productov.product.images[0]}}">
+                <div class="card-image-overlay"></div>
+            </div>
+        </div>
+        <!-- END ITEM -->
+    </div>
+</div>
+<shimmer hide="$ctrl.overviewIsLoaded" col="3"></shimmer>
+
+<div class="row" ng-if="$ctrl.productsList.length === 0">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-orders.svg">
+            <p class="paragraph m-t-10">{{"supplier.order.view.noOrders" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+            <p class="paragraph m-t-10">{{"supplier.order.view.unexpectedError" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"supplier.order.view.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('[data-init="secondary-sidebar"]').each(function() {
+        $(this).on('click', '.main-menu li a', function(e) {
+
+            if ($(this).parent().children('.sub-menu') === false) {
+                return;
+            }
+            var el = $(this);
+            var parent = $(this).parent().parent();
+            var li = $(this).parent();
+            var sub = $(this).parent().children('.sub-menu');
+
+            if(li.hasClass("open active")){
+                el.children('.arrow').removeClass("open active");
+                sub.slideUp(200, function() {
+                    li.removeClass("open active");
+                });
+
+            }else{
+                parent.children('li.open').children('.sub-menu').slideUp(200);
+                parent.children('li.open').children('a').children('.arrow').removeClass('open active');
+                parent.children('li.open').removeClass("open active");
+                el.children('.arrow').addClass("open active");
+                sub.slideDown(200, function() {
+                    li.addClass("open active");
+
+                });
+            }
+            //e.preventDefault();
+        });
+
+    });
+
+    $('[data-init="secondary-sidebar-toggle"]').each(function() {
+        $(this).on("click", function(e) {
+            var toggleRect = $(this).get(0).getBoundingClientRect();
+            var menu  = $('[data-init="secondary-sidebar"]');
+            if(menu.hasClass("open")){
+                menu.removeClass("open");
+                menu.removeAttr("style");
+            }
+            else{
+                menu.addClass("open")
+                var menuRect = menu.get(0).getBoundingClientRect();
+                menu.css({
+                    top : toggleRect.bottom,
+                    'max-height':  ($(window).height() - toggleRect.bottom),
+                    left: $(window).width() / 2 - menuRect.width/ 2,
+                    'visibility': 'visible'
+                });
+
+            }
+        })
+
+    });
+</script>

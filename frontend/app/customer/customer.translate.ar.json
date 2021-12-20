@@ -1,0 +1,958 @@
+{
+  "header": {
+    "changeLanguage": "English",
+    "hello": "مرحبا،",
+    "myProfile": "الملف الشخصي",
+    "logout": "تسجيل الخروج",
+    "cart": "عربة التسوق",
+    "type": "اكتب في أي مكان",
+    "search": "البحث",
+    "contactUS": "تواصل معنا"
+  },
+  "footer": {
+    "copyright": "حقوق الطبع والنشر © 2021",
+    "rights": "جميع الحقوق محفوظة",
+    "hand_craft_statement": "تم تطويره بواسطة",
+    "made_statement": "وصنع مع الحب ®",
+    "terms": "شروط الاستخدام",
+    "privacy": "سياسة الخصوصية",
+    "project_name": "SuppliesON",
+    "developer": "اندى لابز ذ.م.م"
+  },
+  "customer": {
+    "menu": {
+      "product": "المنتجات و الاقسام",
+      "orders": "الطلبات",
+      "payment": "المدفوعات",
+      "account": "الحساب",
+      "report" : "التقارير"
+    },
+    "sideMenu": {
+      "suppliers": "المزودين"
+    },
+    "account": {
+      "profile": {
+        "side_menu": {
+          "back": "رجوع"
+        },
+        "breadcrumb": {
+          "customer": "العميل",
+          "profile": "الملف الشخصي",
+          "contact": "تواصل معنا"
+        }, "text": {
+          "company_info": "معلومات الشركة",
+          "acc_holder_info": "البيانات الشخصية",
+          "reset_password": "إعادة تعيين كلمة المرور"
+        },
+        "account": {
+          "profile": {
+            "side_menu": {
+              "back": "رجوع"
+            },
+            "breadcrumb": {
+              "customer": "العميل",
+              "profile": "الملف الشخصي",
+              "contact": "تواصل معنا"
+            },
+            "text": {
+              "company_info": "معلومات الشركة",
+              "acc_holder_info": "البيانات الشخصية",
+              "reset_password": "إعادة تعيين كلمة المرور"
+            },
+            "button": {
+              "save_changes": "حفظ التغييرات",
+              "upload_photo": "تحميل صورة الغلاف",
+              "upload_photo2": "تحميل صورة",
+              "download":"تحميل الملف",
+              "show_cr": "تحديث المرفقات",
+              "add_branch": "اضافة فرع ",
+              "save_branch": "حفظ",
+              "delete_branch": "حذف",
+              "edit_branch": "تعديل",
+              "cancel": "الغاء"
+            },
+            "field": {
+              "CRDateIslamic" : {
+                "required" :"هذه الخانة مطلوبه",
+                "hint": "تاريخ انتهاء الصلاحية (هجري)",
+                "placeholder": "DD\/MM\/YYYY"
+              },
+              "coverPhoto": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "صورة الغلاف",
+                "placeholder": "لم تقم باختيار ملف",
+                "invalid": "الحجم المتاح 4 ميجا"
+              },
+              "company_name": {
+                "label": "اسم الشركة",
+                "placeholder": "اسم الشركة",
+                "invalid": "يحتوي على أحرف غير صالحة",
+                "required": "هذه الخانة مطلوبه"
+              },
+              "cr_number": {
+                "label": "رقم السجل التجاري",
+                "placeholder": "رقم السجل التجاري",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يحتوي على أحرف غير صالحة، يجب أن يكون 10 أرقام فقط"
+              },
+              "cr_Expdate": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "تاريخ انتهاء الصلاحية(ميلادى)",
+                "labelHijri": "تاريخ انتهاء الصلاحية (هجري)",
+                "placeholder": "DD\/MM\/YYYY"
+              },
+              "vat": {
+                "label": "Vat",
+                "placeholder": "11",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يحتوي على أحرف غير صالحه"
+              },
+              "cr_photo": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "صورة السجل التجارى",
+                "placeholder": "لم تقم باختيار ملف",
+                "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميجا بايت"
+              },
+              "location": {
+                "label": "الموقع",
+                "placeholder": "أدخل موقعك",
+                "required": "هذه الخانة مطلوبه"
+              },
+              "first_name": {
+                "label": "الاسم الأول",
+                "placeholder": "الاسم الأول",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يحتوي على أحرف غير صالحة"
+              },
+              "last_name": {
+                "label": "الاسم الأخير",
+                "required": "هذه الخانة مطلوبه",
+                "placeholder": "الاسم الأخير",
+                "invalid": "يحتوي على أحرف غير صالحة"
+              },
+              "email": {
+                "label": "البريد الإلكتروني",
+                "placeholder": "Email@supplieson.com",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+              },
+              "phone": {
+                "invalid": "رقم الهاتف غير صحيح",
+                "label": "رقم الهاتف",
+                "placeholder": "9665XXXXXXXX",
+                "required": "هذه الخانة مطلوبه"
+              },
+              "old_password": {
+                "placeholder": "كلمة المرور القديمة",
+                "label": "كلمة المرور القديمة",
+                "required": "هذه الخانة مطلوبه",
+                "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+              },
+              "new_password": {
+                "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+                "required": "هذه الخانة مطلوبه",
+                "label": "كلمة المرور الجديدة",
+                "placeholder": "كلمة المرور الجديدة"
+              },
+              "language": {
+                "required": "هذه الخانة مطلوبه",
+                "label": "اللغة",
+                "placeholder": "اللغة"
+              },
+              "branch_input": {
+                "placeholder": "اضف فرع جديد"
+              }
+            },
+            "message": {
+              "old_password_incorrect": "كلمة المرور القديمة غير صحيحة",
+              "password_update_successfully": "تم تحديث كلمة المرور بنجاح",
+              "duplicate-data": "البيانات التي أدخلتها موجودة من قبل",
+              "failure": "حدث خطأ يرجى المحاولة مرة أخرى في وقت لاحق",
+              "profile_update_successfully": "تم تحديث الملف الشخصي بنجاح",
+              "branch_delete_error":"عذرا، لايمكن حذف هذا الفرع، يجب ان يكون لديك فرع واحد على الاقل",
+              "delete_branch_message":"هل انت متاكد من حذف هذا الفرع ؟",
+              "branch_added": "تم اضافة الفرع بنجاح",
+              "branch_deleted": "تم حذف الفرع بنجاح",
+              "branch_updated":"تم تحديث الفرع بنجاح"
+            }
+          },
+          "payment": {
+            "billingDes": "الحسابات والتعاملات المالية بينك وبين ",
+            "balance": "الرصيد",
+            "record_payment": "تأكيد الايداع",
+            "search": "بحث باسم العميل",
+            "status": "الحاله",
+            "payment_installment": "فترات السداد",
+            "payment_added": "تم تسجيل عملية الدفع بنجاح، سيتحقق مدير الموقع من عملية الدفع ويرسل لك اخطار قريبا.",
+            "payment_failed": "فشل في تسجيل عملية الدفع الخاص بك",
+            "allow_exceed_billing_limit": "السماح لهذا العميل بتجاوز موعد دفع الفواتير",
+            "allow_exceed_credit_limit": "السماح لهذا العميل بتجاوز حد الائتمان الشهري",
+            "payment": "الحسابات",
+            "payments": "المدفوعات",
+            "paymentsClaims": "تأكيد الإيداع",
+            "specialPrices": "أسعار خاصة",
+            "specialPricesTable": {
+              "productName": "اسم المنتج",
+              "specialPrice": "السعر الحالي",
+              "originalPrice": "السعر الأصلي"
+            },
+            "creditThisMonth": "الإستهلاك هذا الشهر",
+            "limitThisMonth": "الحد الشهري الأقصى",
+            "nextPayment": "موعد الدفعة القادمة",
+            "nextInvoice": "موعد الفاتورة القادمة",
+            "creditLimit": "حد الائتمان",
+            "sar": "ريال",
+            "approved": "تم الموافقة عليها",
+            "pending": "قيد الانتظار",
+            "rejected": "مرفوضة",
+            "cash": "إستلام نقدي",
+            "cheque": "شيك مصدق",
+            "bank": "حوالة بنكية",
+            "billingHistory": "سجل الفواتير",
+            "paymentClaims": "طلبات تأكيد الإيداع",
+            "every": "كل",
+            "Day": "{value, plural, =0 {الآن} one{ 1 يوم } two{ يومين } few{ # أيام } many{ # يوم } other{ # يوم }}",
+            "Week": "{value, plural, =0 {الآن} one{ 1 اسبوع } two{ اسبوعين } few{ # أسابيع } many{ # أسبوع } other{ # أسبوع }}",
+            "Month": "{value, plural, =0 {الآن} one{ 1 شهر } two{ شهرين } few{ # أشهر } many{ # شهر } other{ # شهر }}",
+            "credit": "إيداع",
+            "invoice": "فاتورة",
+            "invoice_for": "فاتورة شهر",
+            "details": "التفاصيل",
+            "detailed_transactions": "سجل مفصل للمعاملات",
+            "table": {
+              "date": "التاريخ",
+              "description": "الوصف",
+              "type": "النوع",
+              "referenceId": "الرقم المرجعي",
+              "status": "الحالة",
+              "customerName": "اسم العميل",
+              "amount": "المبلغ",
+              "balance": "الرصيد"
+            }
+          }
+        },
+        "button": {
+          "save_changes": "حفظ التغييرات",
+          "upload_photo": "تحميل صورة الغلاف",
+          "upload_photo2": "ارفاق الملف",
+          "show_cr": "تحديث المرفقات",
+          "add_branch": "اضافة فرع ",
+          "download":"تحميل الملف",
+          "save_branch": "حفظ",
+          "delete_branch": "حذف",
+          "edit_branch": "تعديل",
+          "cancel": "الغاء"
+        },
+        "field": {
+          "coverPhoto": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "صورة الغلاف",
+            "placeholder": "لم تقم باختيار ملف",
+            "invalid": "الحجم المتاح 4 ميجا"
+          },
+          "company_name": {
+            "label": "اسم الشركة",
+            "placeholder": "اسم الشركة",
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "cr_number": {
+            "label": "رقم السجل التجاري",
+            "placeholder": "رقم السجل التجاري",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة، يجب أن يكون 10 أرقام فقط"
+          },
+          "cr_Expdate": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "تاريخ انتهاء الصلاحية(ميلادى)",
+            "labelHijri": "تاريخ انتهاء الصلاحية (هجري)",
+            "placeholder": "DD\/MM\/YYYY"
+          },
+          "cr_photo": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "صورة السجل التجارى",
+            "placeholder": "لم تقم باختيار ملف",
+            "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميجا بايت"
+          },
+          "location": {
+            "label": "الموقع",
+            "placeholder": "أدخل موقعك",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "first_name": {
+            "label": "الاسم الأول",
+            "placeholder": "الاسم الأول",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "last_name": {
+            "label": "الاسم الأخير",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "الاسم الأخير",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "email": {
+            "label": "البريد الإلكتروني",
+            "placeholder": "Email@supplieson.com",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+          },
+          "phone": {
+            "invalid": "رقم الهاتف غير صحيح",
+            "label": "رقم الهاتف",
+            "placeholder": "9665XXXXXXXX",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "old_password": {
+            "placeholder": "كلمة المرور القديمة",
+            "label": "كلمة المرور القديمة",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+          },
+          "new_password": {
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+            "required": "هذه الخانة مطلوبه",
+            "label": "كلمة المرور الجديدة",
+            "placeholder": "كلمة المرور الجديدة"
+          },
+          "language": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "اللغة",
+            "placeholder": "اللغة"
+          },
+          "branch_input": {
+            "placeholder": "اضف فرع جديد"
+          },
+          "select_date": {
+            "label":"أختر تاريخ :",
+            "hijri":"هجرى",
+            "gregorian":"ميلادى"
+          }
+        },
+        "message": {
+          "old_password_incorrect": "كلمة المرور القديمة غير صحيحة",
+          "password_update_successfully": "تم تحديث كلمة المرور بنجاح",
+          "duplicate-data": "البيانات التي أدخلتها موجودة من قبل",
+          "failure": "حدث خطأ يرجى المحاولة مرة أخرى في وقت لاحق",
+          "profile_update_successfully": "تم تحديث الملف الشخصي بنجاح",
+          "branch_delete_error":"عذرا، لايمكن حذف هذا الفرع، يجب ان يكون لديك فرع واحد على الاقل",
+          "delete_branch_message":"هل انت متاكد من حذف هذا الفرع ؟",
+          "branch_added": "تم اضافة الفرع بنجاح",
+          "branch_deleted": "تم حذف الفرع بنجاح",
+          "branch_updated":"تم تحديث الفرع بنجاح",
+          "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+          "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+        }
+      },
+      "payment": {
+        "billingDes": "الحسابات والتعاملات المالية بينك وبين ",
+        "balance": "الرصيد",
+        "record_payment": "تأكيد الايداع",
+        "search": "بحث باسم العميل",
+        "status": "الحاله",
+        "payment_installment": "فترات السداد",
+        "payment_added": "تم تسجيل عملية الدفع بنجاح، سيتحقق مدير الموقع من عملية الدفع ويرسل لك اخطار قريبا.",
+        "payment_failed": "فشل في تسجيل عملية الدفع الخاص بك",
+        "allow_exceed_billing_limit": "السماح لهذا العميل بتجاوز موعد دفع الفواتير",
+        "allow_exceed_credit_limit": "السماح لهذا العميل بتجاوز حد الائتمان الشهري",
+        "payment": "الحسابات",
+        "payments": "المدفوعات",
+        "paymentsClaims": "تأكيد الإيداع",
+        "specialPrices": "أسعار خاصة",
+        "specialPricesTable": {
+          "productName": "اسم المنتج",
+          "specialPrice": "السعر الحالي",
+          "originalPrice": "السعر الأصلي"
+        },
+        "creditThisMonth": "الإستهلاك هذا الشهر",
+        "limitThisMonth": "الحد الشهري الأقصى",
+        "nextPayment": "موعد الدفعة القادمة",
+        "nextInvoice": "موعد الفاتورة القادمة",
+        "creditLimit": "حد الائتمان",
+        "sar": "ريال",
+        "approved": "تم الموافقة عليها",
+        "pending": "قيد الانتظار",
+        "rejected": "مرفوضة",
+        "cash": "إستلام نقدي",
+        "cheque": "شيك مصدق",
+        "bank": "حوالة بنكية",
+        "billingHistory": "سجل الفواتير",
+        "paymentClaims": "طلبات تأكيد الإيداع",
+        "every": "كل",
+        "Day": "{value, plural, =0 {الآن} one{ 1 يوم } two{ يومين } few{ # أيام } many{ # يوم } other{ # يوم }}",
+        "Week": "{value, plural, =0 {الآن} one{ 1 اسبوع } two{ اسبوعين } few{ # أسابيع } many{ # أسبوع } other{ # أسبوع }}",
+        "Month": "{value, plural, =0 {الآن} one{ 1 شهر } two{ شهرين } few{ # أشهر } many{ # شهر } other{ # شهر }}",
+        "credit": "إيداع",
+        "invoice": "فاتورة",
+        "invoice_for": "فاتورة شهر",
+        "details": "التفاصيل",
+        "detailed_transactions": "سجل مفصل للمعاملات",
+        "table": {
+          "date": "التاريخ",
+          "description": "الوصف",
+          "type": "النوع",
+          "referenceId": "الرقم المرجعي",
+          "status": "الحالة",
+          "customerName": "اسم العميل",
+          "amount": "المبلغ",
+          "balance": "الرصيد"
+        }
+      },
+      "staff": "الموظفين",
+      "roles": {
+        "title": "الوظائف و التصريحات",
+        "button": {
+          "add": "وظيفة جديده "
+        }
+      },
+      "branches" : {
+        "branch": "الفروع",
+        "button": "فرع جديد",
+        "search": "البحث عن طريق اسم الفرع",
+        "table" : {
+          "branchName": "اسم الفرع",
+          "manager" : "مدير",
+          "location": "موقعك",
+          "date": "تاريخ الإنشاء",
+          "status" : "الحالة",
+          "city": "مدينة"
+        },
+        "branch_added": "تمت إضافة الفرع بنجاح.",
+        "branch_failure": "وأضاف الفرع الفشل.",
+        "branch_updated": "تم تحديث الفرع بنجاح."
+      },
+      "users": {
+        "title": "الموظفين",
+        "text": {
+          "users": "المستخدمين",
+          "Name": "الاسم",
+          "Role": "الوظيفة",
+          "Email": "البريد الإلكتروني",
+          "status": "الحالة",
+          "search": "البحث عن طريق الاسم أو البريد الإلكتروني",
+          "select_role": "حدد الوظيفة",
+          "all": "الكل",
+          "update_user": "تحديث المستخدم"
+        },
+        "button": {
+          "New_user": "مستخدم جديد"
+        },
+        "New_user": {
+          "text": {
+            "new_user": "إنشاء مستخدم جديد"
+          },
+          "field": {
+            "first_name": {
+              "required": "هذه الخانة مطلوبه",
+              "label": "الاسم الأول",
+              "placeholder": "الاسم الأول",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "last_name": {
+              "placeholder": "الاسم الأخير",
+              "label": "الاسم الأخير",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "email": {
+              "placeholder": "البريد الإلكتروني",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+              "label": "البريد الإلكتروني"
+            },
+            "mobile": {
+              "required": "هذه الخانة مطلوبه",
+              "label": "رقم الهاتف",
+              "placeholder": "رقم الهاتف",
+              "invalid": "رقم الهاتف غير صحيح"
+            },
+            "password": {
+              "label": "كلمة المرور",
+              "placeholder": "كلمة المرور",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+            },
+            "roles": {
+              "label": "الوظيفة",
+              "placeholder": "حدد الوظيفة"
+            },
+            "status": {
+              "label": "الحالة",
+              "placeholder": "حدد الحالة"
+            },
+            "status_active": "نشط",
+            "status_blocked": "محظور",
+            "confirm_password": {
+              "required": "هذا الخانة مطلوبة ويجب أن تطابق كلمة المرور",
+              "label": "تأكيد كلمة المرور",
+              "placeholder": "تأكيد كلمة المرور",
+              "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة"
+            }
+          },
+          "button": {
+            "add_user": "إضافة مستخدم",
+            "close": "إغلاق",
+            "save": "حفظ"
+          },
+          "validate_user_successfully": "تم إضافة المستخدم بنجاح",
+          "validate_user_failed": "البيانات التي أدخلتها موجودة من قبل"
+        },
+        "reset_password": {
+          "text": {
+            "reset_password": "إعادة تعيين كلمة المرور"
+          },
+          "button": {
+            "reset_password": "إعادة تعيين كلمة المرور"
+          },
+          "field": {
+            "new_password": {
+              "label": "كلمة المرور الجديدة",
+              "placeholder": "كلمة المرور الجديدة"
+            }
+          }
+        },
+        "message": {
+          "success": {
+            "update": "تم التعديل بنجاح",
+            "add": "تم الاضافة بنجاح"
+          },
+          "unexpected_failure": "خطأ في حفظ البيانات..برجاء المحاولة لاحقا",
+          "failure": "هذا الحساب تم تسجيله من قبل",
+          "change_password_success": "تم اعادة تعيين كلمة السر بنجاح",
+          "change_password_failure": "حدث خطأ في اعادة تعيين كلمة السر"
+        }
+      }
+    },
+    "product": {
+      "breadcrumb": {
+        "categories": "الاقسام"
+      },
+      "list": {
+        "text": {
+          "all": "جميع الاقسام",
+          "allProducts":"كل المنتجات"
+        },
+        "yourProducts": "اسعار خاصة",
+        "otherProducts": "منتجات اخري",
+        "noSpecialPriceProduct": "عذرا ، لم يتم العثور على منتجات باسعار خاصة!",
+        "noOtherProducts": "عذرا ، لم يتم العثور على منتجات اخرى!"
+      },
+      "button": {
+        "back": "رجوع",
+        "english": "الإنجليزية",
+        "arabic": "العربية",
+        "addToCart": "إضافة إلى عربة التسوق",
+        "details": "التفاصيل",
+        "requestPrice": "طلب سعر"
+      },
+      "currency": "ريال",
+      "noProducts": "لا توجد منتجات",
+      "noInternet": "الرجاء التحقق من اتصالك بالإنترنت",
+      "unexpectedError": "خطأ غير متوقع",
+      "message": {
+        "addToCardSuccess": "تم إضافة المنتج بنجاح إلى عربة التسوق",
+        "requestProductSuccess": "تم إرسال طلب سعر الى المورد بنجاح",
+        "requestProductFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "addToCardFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "maxQuantity": "عذرا ، أقصى كمية 10000.",
+        "exceedLimit": "عذراً تم تجاوز الحد المسموح به",
+        "unAuthorized": "عذرا لا يمكن طلب منتجات, رجاء التواصل مع المورد"
+      },
+      "field": {
+        "categories": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاقسام",
+          "placeholder": "الاقسام"
+        },
+        "arabicName": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاسم بالعربية",
+          "placeholder": "الاسم بالعربية"
+        },
+        "englishName": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الاسم بالإنجليزية",
+          "placeholder": "الاسم بالإنجليزية"
+        },
+        "arabicDescription": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الوصف بالعربية",
+          "placeholder": "الوصف بالعربية"
+        },
+        "englishDescription": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الوصف بالإنجليزية",
+          "placeholder": "الوصف بالإنجليزية"
+        },
+        "sku": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "sku",
+          "placeholder": "1952C14"
+        },
+        "store": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "مخزن",
+          "placeholder": "1952C14"
+        },
+        "shelf": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الرف",
+          "placeholder": "1952C14"
+        },
+        "price": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "السعر",
+          "placeholder": "0.00",
+          "currency": "ريال"
+        },
+        "unit": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "وحدة",
+          "placeholder": "وحدة"
+        },
+        "images": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الصور",
+          "placeholder": "الصور"
+        },
+        "status": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الحالة",
+          "placeholder": "الحالة"
+        },
+        "quantity": {
+          "invalid": "يحتوي على أحرف غير صالحة",
+          "required": "هذه الخانة مطلوبه",
+          "label": "الكمية",
+          "placeholder": "الكمية"
+        }
+      }
+    },
+    "cart": {
+      "deleteModel": {
+        "message": "هل أنت متأكد من الحذف؟!",
+        "button": {
+          "cancel": "الغاء",
+          "confirm": "تأكيد"
+        }
+      },
+      "message": {
+        "updateProductQuantitySuccess": "تم تحديث كمية المنتج بنجاح",
+        "updateProductQuantityFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "deleteProductSuccess": "تم حذف المنتج بنجاح",
+        "deleteProductFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "checkoutCartSuccess": "تم إرسال الطلب بنجاح",
+        "checkoutCartFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى"
+      },
+      "select_date": {
+        "label" : "حدد تاريخ",
+        "hijri": "هجرى",
+        "gregorian": "ميلادى"
+      },
+      "cr_expdate": {
+        "required": "هذه الخانة مطلوبه",
+        "placeholder": "DD/MM/YYYY",
+        "label": "تاريخ التسليم او الوصول (ميلادى)",
+        "labelHijri": "تاريخ التسليم او الوصول (هجري)"
+      },
+      "title": "عربة التسوق",
+      "supplierLabel": "تغيير المورد",
+      "branchLabel": "تغيير الفرع",
+      "checkoutDoneMessage_link": "التقييم",
+      "checkoutDoneMessage_1": "شكرا لك على طلبك",
+      "checkoutDoneMessage_2": "طلبك قيد التجهيز",
+      "checkoutEmptyMessage_1": "السلة فارغة",
+      "checkoutEmptyMessage_2": "ابدأ بإضافة منتجات الى السلة",
+      "checkoutErrorMessage": "حدث خطأ ، يرجى المحاولة مرة أخرى!",
+      "checkoutInternetConnectionMessage": "لا يوجد اتصال بالإنترنت ، يرجى المحاولة مرة أخرى!",
+      "checkoutLimitMessage_1": "تجاوزت الحد الأقصى",
+      "checkoutLimitMessage_2": "لقد تجاوزت الحد الاستهلاك الشهري الأقصى",
+      "subTotal": "المجموع الفرعي",
+      "isRecurring": "طلب متكرر؟",
+      "autoOrderEvery": "اضافة طلب كل ",
+      "intervalType": {
+        "label": "نوع الفترة الزمنية",
+        "day": "يوم",
+        "week": "أسبوع",
+        "month": "شهر"
+      },
+      "total": "المجموع الكلي",
+      "vat": "الضربية المضافة",
+      "monthlyCredit": "المبلغ المستهلك: ",
+      "currentBalance": "الرصيد الحالى: ",
+      "placeOrder": "اطلب",
+      "productName": "اسم المنتج",
+      "quantity": "الكمية",
+      "price": "السعر"
+    },
+    "order": {
+      "breadcrumb": {
+        "orders": "الطلبات",
+        "orderDetail": "تفاصيل الطلب"
+      },
+      "item": "{value, plural, =0 {N\/A} one{منتج واحد} two{منتجان} few{# منتجات} many{# منتجاً} other{# منتج}}",
+      "text": {
+        "orderId": "رقم الطلب",
+        "totalOrders":"عدد الطلبات",
+        "totalPayment":"مجموع المستحقات المالية",
+        "recurringOrder": "الطلبات المتكررة",
+        "ordersHistory": "تاريخ الطلبات",
+        "orderNumber": " رقم الطلب",
+        "orderStatus": "حالة الطلب",
+        "placeHolder": "رقم الطلب او اسم الفرع",
+        "order":"طلب",
+        "orderCount": "{value, plural, =0 {لايوجد طلبات} one{ طلب واحد } two{ طلبان } few{ # طلبات } many{ # طلب } other{ # طلب }}",
+        "sar":"ريال"
+      },
+      "recurringOrderTable": {
+        "header": {
+          "date": "التاريخ",
+          "branchName":"الفرع",
+          "repetition": "التكرار",
+          "items": "# المنتجات",
+          "total": "المجموع"
+        },
+        "button": {
+          "cancelRecurring": "إلغاء الطلب المتكرر",
+          "showDetails": "عرض التفاصيل"
+        }
+      },
+      "ordersHistoryTable": {
+        "header": {
+          "date": "التاريخ",
+          "branchName":"الفرع",
+          "orderID": "رقم الطلب",
+          "items": "# المنتجات",
+          "total": "المجموع",
+          "status": "الحالة",
+          "reOrder": "اعادة طلب"
+        },
+        "button": {
+          "showDetails": "عرض التفاصيل"
+        },
+        "noProducts": "لايوجد منتجات"
+      },
+      "message": {
+        "cancelRecurringOrderSuccess": "تم إلغاء الطلب المتكرر بنجاح",
+        "cancelRecurringOrderFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "reOrderSuccess": "تم ارسال الطلب بنجاح",
+        "reOrderFailure": "عذرا، حدث خطأ ما الرجاء إعادة المحاولة مرة اخرى",
+        "noInternet": "الرجاء التحقق من اتصالك بالإنترنت",
+        "unexpectedError": "خطأ غير متوقع",
+        "noOrders": "لم يتم العثور على أي طلبات",
+        "success": "تمت العمليه بنجاح",
+        "error": "عذرا حدث خطأ ما الرجاء اعادة المحاوله",
+        "confirmDeleteLastProduct":"عذرا، اذا قمت بحذف هذا المنتج سوف يتم الغاء الطلب",
+        "cancelConfirmation": "هل أنت متأكد من أنك تريد إلغاء الطلب؟"
+      },
+      "view": {
+        "deliveryImage": "صورة التسليم",
+        "driverDetails": "تفاصيل السائق",
+        "firstName": "الاسم",
+        "lastName": "اللقب",
+        "mobileNumber": "رقم الهاتف",
+        "print": "طباعة",
+        "failedToDeliver": "فشل في التسليم",
+        "failedToDeliverTitle": "فشل فى تسليم الطلبات",
+        "rejectedDeliverTitle": "الطلبات المرفوضة و الملغية",
+        "retryDelivery": "إعادة التوصيل",
+        "failReason": "سبب الفشل",
+        "rejectOrder": "رفض الطلب",
+        "delivered": "تم التسليم",
+        "readyForDelivery": "جاهز للتوصيل",
+        "outForDelivery": "خارج للتوصيل",
+        "outAndPrint": "خارج للتسليم والطباعة",
+        "noNotes": "لا توجد تعليقات",
+        "repName": "ضابط الإتصال",
+        "branchName": "اسم الفرع",
+        "address": "العنوان",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "review": "التقييم",
+        "condition": "حالة المنتجات",
+        "delivery": "التوصيل",
+        "overall": "بصورة عامة",
+        "send":"إرسال",
+        "note": "ملحوظة",
+        "cancelConfirmation": "هل أنت متأكد من أنك تريد إلغاء الطلب؟",
+        "reason": "السبب",
+        "exit": "لا",
+        "confirm": "نعم ، إلغاء هذا الطلب",
+        "table": {
+          "productName": "المنتج",
+          "sku": "SKU",
+          "store": "المخزن",
+          "shelf": "الرف #",
+          "quantity": "الكمية",
+          "status": "الحالة",
+          "unitPrice": "سعر الوحدة",
+          "total": "المجموع"
+        },
+        "noOrders": "لا يوجد طلبات",
+        "noOrder": "عذرا ، لم يتم العثور على اى طلب!",
+        "noInternet": "لا يوجد اتصال بالانترنت!",
+        "unexpectedError": "عذرا ، خطأ غير متوقع!",
+        "field": {
+          "rejectReason": {
+            "label": "سبب الرفض",
+            "placeholder": "سبب الرفض",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "failReason": {
+            "label": "سبب الفشل",
+            "placeholder": "أدخل سبب الفشل",
+            "required": "هذه الخانة مطلوبة ",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          }
+        },
+        "status": {
+          "accepted": "مقبول",
+          "new": "طلب جديد",
+          "rejected": "مرفوض",
+          "canceled": "ملغى",
+          "ready": "جاهز للتوصيل",
+          "out": "خارج للتوصيل",
+          "delivered": "تم التسليم",
+          "recurring": "طلب متكرر",
+          "canceledByCustomer": "ملغي",
+          "canceledByCustomer2": "ملغي من العميل"
+        },
+        "actions": {
+          "buttons": {
+            "accept": "قبول الطلب",
+            "cancel": "الغاء الطلب",
+            "reject": "رفض الطلب",
+            "readyForDelivery": "جاهز للتوصيل",
+            "outForDelivery": "خارج للتوصيل",
+            "failedToDeliver": "فشل في التسليم",
+            "retryDelivery": "إعادة التوصيل",
+            "delivered": "تم التسليم",
+            "accept_all": "قبول الكل"
+          },
+          "reject": "تم رفض هذا الطلب! تم إرسال إشعار إلى المورد.",
+          "canceled": "تم إلغاء هذا الطلب! تم إرسال إشعار إلى المورد.",
+          "readyForDelivery": "هذا الطلب جاهز للتسليم",
+          "delivered": "تم تسليم هذا الطلب بنجاح!"
+        },
+        "failedOrderTitle": "فشل فى تسليم هذا الطلب.",
+        "failedOrderLabel": "سبب الفشل",
+        "chooseDriverTitle": "يرجى اختيار السائق.",
+        "chooseDriverLabel": "السائق",
+        "selectDriverLabel": "اختر السائق",
+        "cancel": "إلغاء",
+        "chooseDriver": "اختر السائق"
+      },
+      "log": {
+        "date": "تاريخ",
+        "status": "الحالة",
+        "activity": "سجل النشاطات",
+        "by": "تغير بواسطة",
+        "supplier": "المورد",
+        "customer": "العميل"
+      },
+      "status": {
+        "approved": "تم الموافقة عليها",
+        "pending": "قيد الانتظار",
+        "rejected": "تم رفضها",
+        "failedToDeliver": "فشل فى التوصيل",
+        "delivered": "تم التسليم",
+        "readyForDelivery": "جاهز للتوصيل",
+        "outForDelivery": "قيد التوصيل",
+        "canceled": "ملغي",
+        "preparation": "قيد التجهيز"
+      },
+      "cancelRecurringModal": {
+        "message": "سوف يتم الغاء تكرار الطلب؟",
+        "button": {
+          "cancel": "الغاء",
+          "confirm": "تأكيد"
+        }
+      },
+      "reOrderModal": {
+        "message": "سوف يتم اعادة الطلب..هل ترغب في ذلك؟",
+        "button": {
+          "cancel": "الغاء",
+          "confirm": "تأكيد"
+        }
+      },
+      "button": {
+        "addProduct": "اضافة",
+        "quantity": "الكمية"
+      },
+      "label": {
+        "productQuantity": "الكمية",
+        "productName": "المنتج"
+      }
+    },
+    "orders": {
+      "overview": "نظرة عامة",
+      "newOrders": "طلبات جديدة",
+      "preparation": "التجهيز",
+      "delivery": "التوصيل",
+      "failed": "فشل",
+      "review": "التقييم"
+    },
+    "payments": {
+      "breadcrumb": {
+        "payments": "الحسابات والتعاملات المالية "
+      },
+      "message": {
+        "add": {
+          "success": "تم تسجيل عملية الدفع بنجاح",
+          "failure": "عذرا ، فشل في تسجيل عملية الدفع"
+        }
+      },
+      "filter": {
+        "export": "تصدير"
+      }
+    },
+    "currency": "ريال",
+    "placeOrder": "تسجيل الطلب",
+    "vat": "الضريبة المضافة",
+    "sub_total": "الاجمالى قبل الضريبة",
+    "total_price": "الاجمالى",
+    "message": "رسالة",
+    "noMessage": "لا يوجد رسائل",
+    "reports" : {
+      "breadcrumb": {
+        "reports": "التقارير",
+        "transactions" : "المعاملات"
+      },
+      "menu_item" : {
+        "reports" : "التقارير",
+        "transactions" : "المعاملات"
+      },
+      "tabs" : {
+        "total_orders" : "طلب",
+        "vat" : "ضريبة القيمة المضافة",
+        "cost" : "كلفة",
+        "grand_total" : "المجموع الكلي",
+        "export" : "تصدير"
+      },
+      "filters" : {
+        "all" : "الكل",
+        "suppliers": "الموردين",
+        "branches": "الفروع"
+      }
+    }
+  },
+  "meta": {
+    "project_name_supplies": "Supplies",
+    "project_name_on": "ON"
+  }
+}

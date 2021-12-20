@@ -1,0 +1,71 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>التاريخ</th>
+    <th>العميل</th>
+    <th>المورد</th>
+    <th>رقم الطلب</th>
+    <th>المجموع</th>
+    <th>الحالة</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data.orders}}
+  <tr>
+    <td>{{:~toTime(date)}}</td>
+    <td>{{:customerName}}</td>
+    <td>{{:supplierName}}</td>
+    <td>{{:orderNumber}}</td>
+    <td>{{:~toNumber(totalPrice)}}</td>
+    {{if orderStatus === 'Accepted'}}
+    <td>مقبول</td>
+    {{/if}}
+    {{if orderStatus === 'Pending'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'Rejected'}}
+    <td>مرفوض</td>
+    {{/if}}
+    {{if orderStatus === 'Canceled'}}
+    <td>ملغى</td>
+    {{/if}}
+    {{if orderStatus === 'FailedToDeliver'}}
+    <td>فشل التوصيل</td>
+    {{/if}}
+    {{if orderStatus === 'ReadyForDelivery'}}
+    <td>جاهز للتوصيل</td>
+    {{/if}}
+    {{if orderStatus === 'OutForDelivery'}}
+    <td>قيد التوصيل</td>
+    {{/if}}
+    {{if orderStatus === 'Delivered'}}
+    <td>تم التوصيل</td>
+    {{/if}}
+  </tr>
+  {{/for}}
+  </tbody>
+</table>
+

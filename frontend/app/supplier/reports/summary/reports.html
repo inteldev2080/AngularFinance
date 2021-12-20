@@ -1,0 +1,119 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item"><a ui-sref="app.supplier.report.orders">{{"supplier.reports.transactions.stats.reports"
+            |
+            translate }}</a></li>
+        <li class="breadcrumb-item active">{{"supplier.reports.breadcrumb.summaryReport" | translate }}</li>
+    </ol>
+</div>
+
+<div class="row">
+
+</div>
+<div class="card">
+    <div class="gray-container">
+        <div class="row">
+            <div class="col"><p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{"supplier.reports.index.summary" | translate }}</p></div>
+            <div class="col d-flex justify-content-start justify-content-sm-end mb-3 mb-sm-0">
+                <small class="text-uppercase p-t-10 p-l-10 p-r-10">{{"supplier.reports.transactions.filter.export" |
+                    translate }}
+                </small>
+                <div class="btn-toolbar" role="toolbar">
+                    <div dir="ltr" class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-primary" ng-click="$ctrl.exportFile('pdf')"><i
+                                class="fa fa-file-pdf-o"></i> PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-header p-t-0" style="min-height: 20px">
+            <div class="card-title">
+                ({{$ctrl.searchCriteria.startDate | date:'medium'}} - {{$ctrl.searchCriteria.endDate | date:'medium'}})
+            </div>
+            <div class="col-sm-6 pull-right">
+
+            </div>
+        </div>
+        <div class="row m-t-20">
+            <div class="col-sm-4">
+                <div style="z-index:1;"
+                     class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.reports.summary.customers" | translate }}</label>
+                    <select ng-model="$ctrl.searchCriteria.customerId" id="customerSelect" ng-change="$ctrl.selectCustomer()"
+                            class="full-width" data-placeholder="Select Customer" data-init-plugin="select2">
+                        <option value="">اختر</option>
+                        <option value="All">{{"supplier.reports.summary.all" | translate }}</option>
+
+                        <option ng-repeat="item in $ctrl.customers" value="{{item._id}}">
+                            {{item.representativeName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group form-group-default input-group">
+                    <div class="form-input-group">
+                        <label>{{"supplier.reports.summary.period" | translate }}</label>
+                        <input type="text" style="width: 100%" name="reservation" id="daterangepicker"
+                               class="form-control"
+                               value="{{$ctrl.searchCriteria.startDate}} {{$ctrl.searchCriteria.endDate}}"/>
+                    </div>
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div style="z-index:1;"
+                     class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.reports.summary.branches" | translate }}</label>
+                    <select ng-model="$ctrl.searchCriteria.branchId" id="branchSelect" ng-disabled="!$ctrl.searchCriteria.customerId || $ctrl.searchCriteria.customerId === 'All'"
+                            class="full-width" data-placeholder="Select Branch" data-init-plugin="select2">
+                        <option value="">اختر</option>
+
+                        <option ng-repeat="item in $ctrl.branches" value="{{item._id}}">{{item.branchName}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<view-payment bill="$ctrl.billItem" payment-type="'AS'"></view-payment>
+
+<script>
+    $('#customerSelect , #typeSelect').on('select2:open', function () {
+        let that = $(this);
+        let flag = false;
+        if ($(window).width() > 739) {
+            $(window).bind('wheel', function (e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function (e) {
+                console.log(e.target);
+                if (!flag && e.target.className === 'select2-results__option') {
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if (!flag && e.target.className !== 'select2-results__option') {
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

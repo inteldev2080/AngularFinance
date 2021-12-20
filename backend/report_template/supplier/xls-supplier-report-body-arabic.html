@@ -1,0 +1,50 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>اللاسم</th>
+    <th>الحالة</th>
+    <th>الرصيد</th>
+    <th>الرصيد المتاح</th>
+    <th>تاريخ الاستحقاق</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data}}
+  <tr>
+    <td>{{:supplier.representativeName}}</td>
+    {{if supplier.status === 'Active'}}
+    <td>نشط</td>
+    {{else}}
+    <td>غير نشط</td>
+    {{/if}}
+    <td>{{:balance}}</td>
+    <td>{{:remainingTillLimit}}</td>
+    <td>{{:~toTime(supplier.nextPaymentDueDate)}}</td>
+  </tr>
+  {{/for}}
+  </tbody>
+</table>
+

@@ -1,0 +1,46 @@
+{ 
+    "_id" : ObjectId("5f029aa4d8d93354f6161380"), 
+    "paymentId" : "SUPay-140000001", 
+    "supplier" : ObjectId("5ea86eb7d8d93354f616130a"), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "amount" : NumberInt(630), 
+    "recipientName" : "mo", 
+    "paymentMethod" : "Cash", 
+    "date" : ISODate("2020-07-06T00:00:00.000+0000"), 
+    "status" : "Approved", 
+    "updateAt" : ISODate("2020-07-06T06:31:08.226+0000"), 
+    "createdAt" : ISODate("2020-07-06T06:29:40.492+0000"), 
+    "isAdminFees" : false, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1aca49cce33f65397fa849"), 
+    "paymentId" : "SUPay-140000002", 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "amount" : NumberInt(350), 
+    "recipientName" : "fahad", 
+    "paymentMethod" : "Cash", 
+    "date" : ISODate("2020-07-23T00:00:00.000+0000"), 
+    "status" : "Rejected", 
+    "updateAt" : ISODate("2020-08-31T20:57:02.417+0000"), 
+    "createdAt" : ISODate("2020-07-24T14:47:21.990+0000"), 
+    "isAdminFees" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f476d051111bb265a26526b"), 
+    "paymentId" : "SUPay-140000003", 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "amount" : NumberInt(470), 
+    "transactionId" : "454654", 
+    "accountNumber" : "123456789", 
+    "accountName" : "ahhmed omar", 
+    "bankName" : "alinma", 
+    "paymentMethod" : "Bank", 
+    "date" : ISODate("2020-08-31T00:00:00.000+0000"), 
+    "status" : "Rejected", 
+    "updateAt" : ISODate("2020-08-31T20:56:58.296+0000"), 
+    "createdAt" : ISODate("2020-08-27T11:21:25.128+0000"), 
+    "isAdminFees" : true, 
+    "__v" : NumberInt(0)
+}

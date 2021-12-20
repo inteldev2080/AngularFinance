@@ -1,0 +1,217 @@
+{
+  "schemas": {
+    "Invoice": {
+      "type": "object",
+      "properties": {
+        "transactions": [{
+          "type": "object"
+        }],
+        "supplier": {
+          "type": "object"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "invoiceId": {
+          "type": "string"
+        },
+        "total": {
+          "type": "number"
+        },
+        "close": {
+          "type": "number"
+        },
+        "isPaid": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/invoices": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Get list of invoice.",
+        "operationId": "invoiceList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "invoices": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Invoice"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Create new invoice.",
+        "operationId": "createInvoice",
+        "parameters": [{
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Invoice": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Invoice"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/invoices/{invoiceId}": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Get invoice by id.",
+        "operationId": "invoiceById",
+        "parameters": [{
+          "name": "invoiceId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Invoice": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Invoice"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

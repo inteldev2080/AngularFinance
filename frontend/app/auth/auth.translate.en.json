@@ -1,0 +1,352 @@
+{
+  "auth": {
+    "copyright": "Copyright © 2021",
+    "rights": "All rights reserved",
+    "hand_craft_statement": "Hand-crafted by",
+    "made_statement": "&amp; Made with Love ®",
+    "register": {
+      "supplier": {
+        "tabs": {
+          "tab_account_info": "Account Info.",
+          "tab_address": "Address"
+        },
+        "field": {
+          "email": {
+            "invalid": "Invalid Email format",
+            "label": "Email",
+            "placeholder": "Email@supplieson.com",
+            "required": "This field is required"
+          },
+          "create_account": "Create a new account",
+          "company_name": {
+            "invalid": "contains invalid characters",
+            "required": "This field is required",
+            "label": "Company name",
+            "placeholder": "Company name"
+          },
+          "mobile": {
+            "invalid": "Invalid phone format",
+            "label": "Mobile",
+            "placeholder": "9665XXXXXXXX",
+            "required": "This field is required"
+          },
+          "first_name": {
+            "invalid": "Contains invalid characters",
+            "required": "This field is required and minimum length 2 chars",
+            "placeholder": "first name",
+            "label": "First name"
+          },
+          "last_name": {
+            "invalid": "Contains invalid characters ",
+            "placeholder": "Last name",
+            "label": "Last name",
+            "required": "This field is required and minimum length 2 chars"
+          },
+          "cr_number": {
+            "required": "This field is required",
+            "placeholder": "C.R. Number",
+            "label": "Commercial Register Number",
+            "invalid": "Contains invalid characters , must be only 10 digits"
+          },
+          "cr_photo": {
+            "invalid": "Accepted formats  PNG - GIF - JPEG - JPG and maximum size of 4 MB",
+            "label": "C.R. Photo",
+            "you_upload": "You upload ",
+            "required": "This field is required",
+            "photoErr": "image size exceeded 4 MB",
+            "placeholder": "No file chosen"
+          },
+          "vatPhoto": {
+            "invalid": "Accepted formats  PNG - GIF - JPEG - JPG and maximum size of 4 MB",
+            "label": "VAT Photo",
+            "required": "This field is required",
+            "photoErr": "image size exceeded 4 MB",
+            "placeholder": "No file chosen"
+          },
+          "vatConfirm": {
+            "vat_message": "VAT is not provided, Are you sure you want to register ?",
+            "cancel": "Cancel"
+          },
+          "password": {
+            "invalid": "password must be from 6 to 20 characters long including numbers ",
+            "required": "This field is required",
+            "label": "Password",
+            "placeholder": "password",
+            "min_length": "Minimum length 6",
+            "max_length": "Maximum length 20"
+          },
+          "VAT": {
+            "required": "This field is required",
+            "label": "VAT",
+            "placeholder": "VAT",
+            "invalid": "vat must be number or decimal"
+          },
+          "select_date": {
+            "label": "Select date :",
+            "hijri": "Hijri",
+            "gregorian": "Gregorian"
+          },
+          "cr_Expdate": {
+            "required": "This field is required",
+            "placeholder": "DD/MM/YYYY",
+            "label": "Expire date Gregorian",
+            "labelHijri": "Expire date Hijri"
+          },
+          "confirm_password": {
+            "label": "Confirm password",
+            "placeholder": "Confirm password",
+            "invalid": "Password and confirm password must be identical",
+            "required": "This field is required"
+          },
+          "privacy_policy": {
+            "label": "I accept ",
+            "privacy_terms": "Terms of use & Privacy policy",
+            "must_accept": "You must accept Terms of use & Privacy policy to join SuppliesOn.com"
+          }
+        },
+        "text": {
+          "project_name": "SuppliesON",
+          "create_account": "Create a new account",
+          "create_account_title": "Create a new supplier account",
+          "signin": "Sign In"
+        },
+        "button": {
+          "change_language": "العربية",
+          "signup": "Sign up",
+          "signin": "Already have an account?",
+          "next": "Next",
+          "previous": "Previous"
+        },
+        "link": {
+          "customer": "Customer",
+          "supplier": "Supplier"
+        },
+        "message": {
+          "success_need_approval": "Your Account has been created successfully...Waiting for admin approval.",
+          "success_creation": "Account created successfully",
+          "failed_creation": "Unfortunately, failed to create account , please try again later",
+          "already_have_account": "You Already have Account",
+          "invalidFile": "Only images and PDF are allowed (Formats supported: png, jpg, jpeg, gif, pdf).",
+          "invalidFileSize": "File size must be less than 12 MB.",
+          "commercialRegisterIsDuplicate": "Commercial Register is duplicate",
+          "emailOrMobilePhoneIsDuplicate": "Email Or MobilePhone Is Duplicate",
+          "success_change_password": "Password changed successfully, you can login via it now",
+          "expireDate_exceed": "Gregorian Expire Date Exceeds 5 Years",
+          "expireDate_todayOrLess": "Gregorian Expire Date can't be today's date or before",
+          "expireDateHijri_exceed": "Hijri Expire Date Exceeds 5 Years",
+          "expireDateHijri_todayOrLess": "Hijri Expire Date can't be today's date or before"
+        }
+      },
+      "customer": {
+        "create_account_title": "Create a new customer account",
+        "tabs": {
+          "tab_account_info": "Account Info.",
+          "tab_address": "Address",
+          "tab_company_info": "Company Info."
+        },
+        "field": {
+          "email": {
+            "invalid": "Invalid Email format",
+            "label": "Email",
+            "placeholder": "Email@supplieson.com",
+            "required": "This field is required"
+          },
+          "create_account": "Create a new account",
+          "company_name": {
+            "invalid": "contains invalid characters",
+            "required": "This field is required",
+            "label": "Company name",
+            "placeholder": "Company name"
+          },
+          "mobile": {
+            "invalid": "Invalid phone format",
+            "label": "Mobile",
+            "placeholder": "9665XXXXXXXX",
+            "required": "This field is required",
+            "minLength": "Minimum length 9",
+            "maxLength": "Max length 12"
+          },
+          "first_name": {
+            "invalid": "Contains invalid characters",
+            "required": "This field is required and minimum length 2 chars",
+            "placeholder": "C. R Name",
+            "label": "C. R Name",
+            "minLength": "minimum length 2 chars",
+            "maxLength": "Max length 10 chars"
+          },
+          "last_name": {
+            "invalid": "Contains invalid characters ",
+            "placeholder": "Last name",
+            "label": "C. R Last name",
+            "required": "This field is required and minimum length 2 chars",
+            "minLength": "minimum length 2 chars",
+            "maxLength": "Max length 10 chars"
+          },
+          "cr_number": {
+            "required": "This field is required",
+            "placeholder": "C.R. Number",
+            "label": "Commercial Register Number",
+            "invalid": "Contains invalid characters , must be only 10 digits"
+          },
+          "cr_photo": {
+            "invalid": "Accepted formats  PNG - GIF - JPEG - JPG and maximum size of 4 MB",
+            "label": "C.R. Photo",
+            "required": "This field is required",
+            "photoErr": "image size exceeded 4 MB",
+            "placeholder": "No file chosen"
+          },
+          "password": {
+            "invalid": "password must be from 6 to 20 characters long including numbers ",
+            "required": "This field is required",
+            "label": "Password",
+            "placeholder": "password",
+            "min_length": "Minimum length 6",
+            "max_length": "Maximum length 20"
+          },
+          "select_date": {
+            "label": "Select date :",
+            "hijri": "Hijri",
+            "gregorian": "Gregorian"
+          },
+          "cr_Expdate": {
+            "required": "This field is required",
+            "placeholder": "DD/MM/YYYY",
+            "label": "Expire date Gregorian",
+            "labelHijri": "Expire date Hijri"
+          },
+          "confirm_password": {
+            "label": "Confirm password",
+            "placeholder": "Confirm password",
+            "invalid": "Password and confirm password must be identical",
+            "required": "This field is required"
+          },
+          "address": {
+            "label": "Address",
+            "placeholder": "Enter your address",
+            "required": "This field is required",
+            "city" : "City"
+          }
+        },
+        "button": {
+          "change_language": "العربية",
+          "signup": "Sign up",
+          "signin": "Already have an account?",
+          "next": "Next",
+          "previous": "Previous"
+        },
+        "message": {
+          "success_creation": "Account created successfully",
+          "failed_creation": "Unfortunately, failed to create account , please try again later",
+          "already_have_account": "The data you entered already exists",
+          "not_invited": "Unfortunately, The Service is not available now, We will contact you when Supplier invites you to SuppliesOn System.",
+          "invalidFile": "Only images and PDF are allowed (Formats supported: png, jpg, jpeg, gif, pdf).",
+          "invalidFileSize": "File size must be less than 12 MB.",
+          "expireDate_exceed": "Gregorian Expire Date Exceeds 5 Years",
+          "expireDate_todayOrLess": "Gregorian Expire Date can't be today's date or before",
+          "expireDateHijri_exceed": "Hijri Expire Date Exceeds 5 Years",
+          "expireDateHijri_todayOrLess": "Hijri Expire Date can't be today's date or before"
+        }
+      }
+    },
+    "forget_password": {
+      "message": {
+        "success": "check your Email for a link to reset your password",
+        "failure": "Failure Occurred , please try again later "
+      },
+      "text": {
+        "Reset_confirmation": "check your Email for a link to reset your password",
+        "company_name": "SuppliesON",
+        "forget_password_text": "Enter your email address. you will receive an email with a link to reset your password "
+      },
+      "field": {
+        "Email": {
+          "invalid": "Invalid Email format.",
+          "Required": "This field is required",
+          "label": "Email",
+          "placeholder": "Enter your Email "
+        }
+      },
+      "button": {
+        "change_language": "العربية",
+        "retrieve_password": "Retrieve password"
+      },
+      "link": {
+        "backto_signin": "Back to sign in ",
+        "backto": "Back To",
+        "signin": "Sign In"
+      }
+    },
+    "login": {
+      "invalid_login": "Invalid login details",
+      "field": {
+        "Email": {
+          "invalid": "Invalid Email format",
+          "placeholder": "Email@supplieson.com",
+          "required": "This field is required",
+          "label": "Email or Mobile Number"
+        },
+        "password": {
+          "label": "Password",
+          "required": "This field is required",
+          "placeholder": "Enter your password"
+        }
+      },
+      "button": {
+        "change_language": "العربية",
+        "signup": "Sign up",
+        "signin": "Sign in"
+      },
+      "text": {
+        "project_name": "SuppliesON",
+        "account_signin": "Sign into your SuppliesON account",
+        "signup": "Don't have an account?"
+      },
+      "link": {
+        "forget_password": "Forget your password?"
+      }
+    },
+    "reset_password": {
+      "message": {
+        "success": "Your new password has been reset successfully , back to sign in",
+        "failure": "Sorry , failure occurred while reset your new password\ntry again later  "
+      },
+      "button": {
+        "change_language": "العربية",
+        "reset_password": "Reset password"
+      },
+      "text": {
+        "reset_success": "Your new password has been reset successfully , back to sign in",
+        "project_name": "SuppliesON",
+        "Reset_your_password": "Reset your password here ",
+        "backto_signin": "Back to sign in",
+        "backto": "Back to",
+        "signin": "Sign in",
+        "done": "Done",
+        "weSentMessageTo": "We sent a message to",
+        "pickPassword": "so you can pick your new password.",
+        "tryAgain": "Try again.",
+        "notGetEmail": "Didn’t get the email?"
+      },
+      "field": {
+        "password": {
+          "label": "New Password",
+          "placeholder": "Enter new password",
+          "Required": "This field is required",
+          "invalid": "Password must be from 6 to 20 characters long including numbers"
+        },
+        "confirm_password": {
+          "label": "Confirm New password ",
+          "placeholder": "Confirm new password",
+          "required": "This field is required and should match the new password",
+          "invalid": "Password and confirm password must be identical "
+        }
+      }
+    },
+    "logged_out": "You have successfully logged out"
+  },
+  "meta": {
+    "project_name": "SuppliesOn",
+    "developer": "indielabs, LLC."
+  },
+  "week": "{value, plural, =0 %1$s one%1$s other{# weeks}}"
+}

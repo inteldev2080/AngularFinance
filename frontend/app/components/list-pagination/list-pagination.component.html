@@ -1,0 +1,41 @@
+<div ng-if='$ctrl.totalPages>0' class="row">
+    <div class="pagination-con">
+        <div class="dataTables_paginate paging_simple_numbers" id="tableWithExportOptions_paginate">
+            <ul class=""><li class="paginate_button previous disabled" id="tableWithExportOptions_previous">
+                <a href="#" aria-controls="tableWithExportOptions" data-dt-idx="0" tabindex="0">
+                    <i ng-class="$ctrl._$translate.use()==='en'?'pg-arrow_left':'pg-arrow_right'" ng-click="$ctrl.previous()"></i>
+                </a>
+            </li>
+                <li ng-repeat="pageNumber in $ctrl.pageRange()"  class="paginate_button" ng-class="{active: pageNumber === $ctrl.currentPage }" ng-click="$ctrl.changePage(pageNumber)">
+                    <a href="#" aria-controls="tableWithExportOptions" data-dt-idx="1" tabindex="0">{{pageNumber}}</a>
+                </li>
+
+                <li class="paginate_button next disabled" id="tableWithExportOptions_next">
+                    <a href="#" aria-controls="tableWithExportOptions" data-dt-idx="2" tabindex="0">
+                        <i ng-class="$ctrl._$translate.use()==='en'?'pg-arrow_right':'pg-arrow_left'" ng-click="$ctrl.next()"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dataTables_info mn-50" id="tableWithExportOptions_info" role="status" aria-live="polite">
+            {{'component.pages.page' | translate}} <b>{{$ctrl.currentPage}}</b> <span translate="component.pages.pageCount" translate-values="{value: $ctrl.totalPages}"></span>
+        </div>
+    </div>
+</div>
+<div ng-if='$ctrl.totalPages<=0 && !$ctrl.message' class="not-found text-center" style="margin:100px 0">
+    <img src="../../assets/img/noresult-icon.svg" alt="">
+    <p class="bold m-t-20">{{'component.pages.noResults' | translate}}</p>
+  <!--  <p class="fs-16">{{'component.pages.limits' | translate}}</p>-->
+</div>
+
+
+<div class="not-found text-center" style="margin:100px 0" ng-if="$ctrl.totalPages<=0 && $ctrl.message">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/{{$ctrl.message}}.svg">
+          <p class="paragraph m-t-10">{{$ctrl.message | translate }}</p>
+        </div>
+    </div>
+</div>

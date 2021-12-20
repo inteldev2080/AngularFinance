@@ -1,0 +1,10 @@
+{ 
+    "_id" : ObjectId("5ea87a78d8d93354f616132b"), 
+    "order" : ObjectId("5ea87784d8d93354f616131e"), 
+    "itemCondition" : NumberInt(5), 
+    "delivery" : NumberInt(5), 
+    "overall" : NumberInt(5), 
+    "notes" : "good", 
+    "createdAt" : ISODate("2020-04-28T21:48:24.629+0000"), 
+    "__v" : NumberInt(0)
+}

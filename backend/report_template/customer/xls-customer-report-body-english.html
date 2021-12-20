@@ -1,0 +1,50 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Balance</th>
+    <th>Remaining Limit</th>
+    <th>Payment Due</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data.customers}}
+  <tr>
+    <td>{{:representativeName}}</td>
+    {{if status === 'active'}}
+    <td>{{:status}}</td>
+    {{else}}
+    <td>{{:status}}</td>
+    {{/if}}
+    <td>{{:balance}}</td>
+    <td>{{:remainingTillLimit}}</td>
+    <td>{{:~toTime(paymentDue)}}</td>
+  </tr>
+  {{/for}}
+  </tbody>
+</table>
+

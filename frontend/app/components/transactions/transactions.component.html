@@ -1,0 +1,80 @@
+<div class="modal fade slide-up" id="transactions" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" style="max-width:900px;display:block">
+        <div class="modal-content-wrapper" style="display:block">
+            <div class="modal-content" style="padding: 20px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <div class="row p-r-25 p-l-25">
+                    <div class="col-sm">
+                        <h5 class="bold m-b-0">{{"component.transactions.detailed_transactions" | translate }}</h5>
+                    </div>
+                    <div class="col-sm m-t-15">
+                        <date-range start-date="$ctrl.transactionsQuery.startDate" end-date="$ctrl.transactionsQuery.endDate" on-change="$ctrl.getTransactions($ctrl.transactionsQuery)"></date-range>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="card-block-normal">
+                            <div class="col-md-12  padding-0">
+                                <shimmer hide="$ctrl.transactionsIsLoaded" row="10" col="5" clipped="true"></shimmer>
+                                <div class="dataTables_wrapper no-footer" ng-if="$ctrl.transactionsIsLoaded">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-compact table-hover" role="grid">
+                                            <thead>
+                                            <tr role="row">
+                                                <th class="" width="200">{{"component.transactions.table.type" | translate }}</th>
+                                                <th class="">{{"component.transactions.table.description" | translate }}</th>
+                                                <th class="">{{"component.transactions.table.amount" | translate }}</th>
+                                                <th class="">{{"component.transactions.table.balance" | translate }}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="item in $ctrl.transactions" class="gradeX odd content-table-payment" role="row">
+                                                <td class="mn-200">
+                                                    <span ng-if="item.type === 'credit'"
+                                                          class="label label-success upper-case">{{"component.transactions.credit" | translate }}</span>
+                                                    <span ng-if="item.type === 'debit'"
+                                                          class="label label-warning upper-case">{{"component.transactions.debit" | translate }}</span>
+
+                                                    <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY HH:mm:ss'}}</span>
+                                                </td>
+                                                <td class="mn-200">
+                                                    <span ng-if="item.type === 'credit'">
+                                                        <span ng-if="item.paymentMethod === 'Cash'"> {{"component.transactions.cash" | translate}}</span>
+                                                        <span ng-if="item.paymentMethod === 'Cheque'"> {{"component.transactions.cheque" | translate}}</span>
+                                                        <span ng-if="item.paymentMethod === 'Bank'"> {{"component.transactions.bank" | translate}}</span>
+                                                    </span>
+                                                    <span ng-if="item.type === 'debit'">
+                                                        {{"component.transactions.order" | translate }} #{{item.order.orderId}} {{"component.transactions.from" | translate }} {{item.order.customer.representativeName}} {{item.order.createdAt | moment:'MMM YYYY'}}
+                                                    </span>
+                                                </td>
+                                                <td class="">{{item.amount | currency : "" : 2}}<small>{{"component.transactions.sar" | translate }}</small></td>
+                                                <td class="">{{item.close | currency : "" : 2}}<small>{{"component.transactions.sar" | translate }}</small></td>
+                                                <td class="text-center mn-150">
+                                                    <span ng-if="item.isPaid && item.type === 'debit'" class="label label-success upper-case">{{"component.transactions.paid" | translate }}</span>
+                                                    <span ng-if="!item.isPaid && item.type === 'debit'" class="label label-warning upper-case">{{"component.transactions.notpaid" | translate }}</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <list-pagination total-pages="$ctrl.transactionsQuery.totalPages" on-page-click="$ctrl.setTransactionsPage(pageNumber)" current-page="$ctrl.transactionsQuery.currentPage"></list-pagination>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="btn-toolbar pull-right" role="toolbar">
+                            <div class="btn-group btn-group-sm" dir="ltr">
+                                <button type="button" class="btn btn-transparent" ng-click="$ctrl.exportFile('pdf')">PDF</button>
+                                <button type="button" class="btn btn-transparent" ng-click="$ctrl.exportFile('xls')">XSL</button>
+                            </div>
+                        </div>
+                        <p class="bold text-uppercase p-t-5 p-l-10 p-r-10 pull-right">{{"component.transactions.export" | translate }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>

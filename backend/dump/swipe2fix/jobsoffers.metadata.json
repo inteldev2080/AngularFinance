@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"swipe2fix.jobsoffers"},{"v":2,"key":{"driverId":1},"name":"IDX_SP","ns":"swipe2fix.jobsoffers","background":true},{"v":2,"key":{"jobId":1},"name":"IDX_JOB","ns":"swipe2fix.jobsoffers","background":true}]}

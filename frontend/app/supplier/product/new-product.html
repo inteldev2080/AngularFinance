@@ -1,0 +1,335 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div  class="secondary-sidebar light" data-init="secondary-sidebar">
+            <ul class="main-menu">
+                <li class="active top-level">
+                    <back></back>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div class="container">
+                    <ol class="breadcrumb breadcrumb-alt">
+                        <li class="breadcrumb-item"><a href="#">{{"supplier.menu.product" | translate}}</a></li>
+                        <li class="breadcrumb-item active">{{"supplier.product.newProduct" | translate}}</li>
+                    </ol>
+                </div>
+
+                <div ng-show="!$ctrl.isLoading" class="card card-details-form">
+                    <fieldset>
+                        <form id="productForm" name="productForm" ng-submit="!$ctrl.isUploadPhoto ? $ctrl.createProduct(productForm) : null" accessible-form novalidate>
+                            <!--nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter"-->
+                            <div  class="card-header text-center header-bg padding-0 cover_photo" background="{{$ctrl.coverPhoto}}" style="hight:100%">
+                                <!--nv-file-over="" uploader="uploader"-->
+                                <div   class="image-overlay">
+                                    <div class="custom-image-input p-t-10">
+                                        <label ng-if="!$ctrl.isUploadPhoto" for="coverPhoto" class="text-white">
+                                            <i class="pg-plus"></i> {{"supplier.product.button.uploadCover" | translate}}
+                                        </label>
+                                        <div class="row">
+                                            <div ng-if="$ctrl.isUploadPhoto" class="progress-circle-indeterminate"></div>
+                                        </div>
+                                        <input id="coverPhoto" name="coverPhoto" type="file"   ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'coverPhoto')" ng-model="$ctrl.coverPhoto"
+                                               accept="image/*" required
+                                               ngf-model-invalid="errorFile">
+                                        <!--   <i ng-show="productForm.coverPhoto.$error.required">*required</i><br>
+                                           <i ng-show="productForm.coverPhoto.$error.maxSize">Image too large
+                                               {{errorFile.size / 1000000|number:1}}MB: max 2M</i>-->
+                                        <!-- <img ng-show="productForm.coverPhoto.$valid" ngf-thumbnail="$ctrl.coverPhoto" class="thumb">-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="card-header padding-0">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <ul class="nav nav-tabs nav-tabs-custom border-0 justify-content-end m-t-20">
+                                            <li class="nav-item">
+                                                <a class="active" data-toggle="tab" data-target="#tab_english" ng-class="{'active': !$ctrl.next}" href="#" aria-expanded="true"><span>{{"supplier.product.button.english" | translate}}</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-toggle="tab" data-target="#tab_arabic" ng-class="{'active': $ctrl.next}" href="#" class="" aria-expanded="false"><span>{{"supplier.product.button.arabic" | translate}}</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 p-0 m-b-10 clearfix">
+                                        <div class="custom-image-input pull-left cover_photo" background="{{$ctrl.image1}}"  >
+                                            <div class="image-overlay">
+                                                <label for="image1"  class="text-white">
+                                                    <i class="pg-plus"></i> {{"supplier.product.button.addImage" | translate}}
+                                                </label>
+                                                <input id="image1" name="image1" type="file"  ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'image1')" ng-model="$ctrl.image1"
+                                                       accept="image/*" required
+                                                       ngf-model-invalid="errorFile">
+                                            </div>
+                                        </div>
+                                        <div class="custom-image-input pull-left cover_photo"  background="{{$ctrl.image2}}"  >
+                                            <div class="image-overlay">
+                                                <label for="image2" class="text-white">
+                                                    <i class="pg-plus"></i> {{"supplier.product.button.addImage" | translate}}
+                                                </label>
+                                                <input id="image2" name="image2" type="file"  ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'image2')" ng-model="$ctrl.image2"
+                                                       accept="image/*"  required
+                                                       ngf-model-invalid="errorFile">
+                                            </div>
+                                        </div>
+                                        <div class="custom-image-input pull-left cover_photo" background="{{$ctrl.image3}}"  >
+                                            <div class="image-overlay">
+                                                <label for="image3" class="text-white">
+                                                    <i class="pg-plus"></i> {{"supplier.product.button.addImage" | translate}}
+                                                </label>
+                                                <input id="image3" name="image3" type="file"  ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'image3')" ng-model="$ctrl.image3"
+                                                       accept="image/*" required
+                                                       ngf-model-invalid="errorFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm">
+                                        <div class="card card-transparent">
+
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="tab_arabic" aria-expanded="true">
+                                                    <div class="form-group form-group-custom form-group-default required"
+                                                         ng-class="{ 'has-error' : productForm.arabicName.$invalid && !productForm.arabicName.$pristine }">
+                                                        <label class="label-custom">{{"supplier.product.field.arabicName.label" | translate}}</label>
+                                                        <input id="arabicName" name="arabicName"
+                                                               type="text"
+                                                               placeholder="{{'supplier.product.field.arabicName.placeholder' | translate}}"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.arabicName"
+                                                               required>
+                                                    </div>
+                                                    <label class="error"  ng-if="productForm.arabicName.$error.required && !productForm.arabicName.$pristine">
+                                                        {{'supplier.product.field.arabicName.required' | translate}}
+                                                    </label>
+                                                    <div class="form-group form-group-custom form-group-default required"
+                                                         ng-class="{ 'has-error' : productForm.arabicDescription.$invalid && !productForm.arabicDescription.$pristine }">
+                                                        <label class="label-custom">{{"supplier.product.field.arabicDescription.label" | translate}}</label>
+                                                        <textarea id="arabicDescription" name="arabicDescription" type="text" class="form-control input-lg" rows="4" cols="10"
+                                                                  placeholder="{{'supplier.product.field.arabicDescription.placeholder' | translate}}"
+                                                                  class="form-control"
+                                                                  ng-model="$ctrl.product.arabicDescription"
+                                                                  required></textarea>
+                                                    </div>
+                                                    <label class="error"  ng-if="productForm.arabicDescription.$error.required && !productForm.arabicDescription.$pristine">
+                                                        {{'supplier.product.field.arabicDescription.required' | translate}}
+                                                    </label>
+                                                </div>
+                                                <div class="tab-pane active" id="tab_english" aria-expanded="false">
+                                                    <div class="form-group form-group-custom form-group-default required"
+                                                         ng-class="{ 'has-error' : productForm.englishName.$invalid && !productForm.englishName.$pristine }">
+                                                        <label class="label-custom">{{"supplier.product.field.englishName.label" | translate}}</label>
+                                                        <input id="englishName" name="englishName" type="text"  class="form-control"
+                                                               placeholder="{{'supplier.product.field.englishName.placeholder' | translate}}"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.englishName"
+                                                               required>
+                                                    </div>
+                                                    <label class="error"  ng-if="productForm.englishName.$error.required && !productForm.englishName.$pristine">
+                                                        {{'supplier.product.field.englishName.required' | translate}}
+                                                    </label>
+                                                    <div class="form-group form-group-custom form-group-default required"
+                                                         ng-class="{ 'has-error' : productForm.englishDescription.$invalid && !productForm.englishDescription.$pristine }">
+                                                        <label class="label-custom">{{"supplier.product.field.englishDescription.label" | translate}}</label>
+                                                        <textarea id="englishDescription" name="englishDescription" type="text" class="form-control input-lg" rows="4" cols="10"
+                                                                  placeholder="{{'supplier.product.field.englishDescription.placeholder' | translate}}"
+                                                                  class="form-control"
+                                                                  ng-model="$ctrl.product.englishDescription"
+                                                                  required></textarea>
+                                                    </div>
+                                                    <label class="error"  ng-if="productForm.englishDescription.$error.required && !productForm.englishDescription.$pristine">
+                                                        {{'supplier.product.field.englishDescription.required' | translate}}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group form-group-default input-group col-md-12">
+                                                    <div class="form-input-group form-group-custom required"
+                                                         ng-class="{ 'has-error' : productForm.price.$invalid && !productForm.price.$pristine }">
+                                                        <label class="label-custom">{{"supplier.product.field.price.label" | translate}}</label>
+                                                        <input name="price" type="number" class="form-control"  id="price"
+                                                               placeholder="{{'supplier.product.field.price.placeholder' | translate}}"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.price"
+                                                               ng-minlength="1" min="1"
+                                                               required>
+                                                    </div>
+                                                    <div class="input-group-addon">{{"supplier.product.currency" | translate}}</div>
+                                                </div>
+                                                <label class="error"  ng-if="productForm.price.$error.required && !productForm.price.$pristine">
+                                                    {{'supplier.product.field.price.required' | translate}}
+                                                </label>
+                                                <label class="error"  ng-if="productForm.price.$error.number && !productForm.price.$pristine">
+                                                    {{'supplier.product.field.price.invalid' | translate}}
+                                                </label>
+                                            </div>
+                                            <div class="col" style="display: inline-flex;">
+                                                <div class="form-group form-group-custom form-group-default">
+                                                    <label class="label-custom">{{"supplier.product.field.store.label" | translate}}</label>
+                                                    <input id="store" name="store" type="text"  class="form-control"
+                                                           placeholder="{{'supplier.product.field.store.placeholder' | translate}}"
+                                                           class="form-control"
+                                                           ng-model="$ctrl.product.store">
+                                                </div>
+                                                <div class="form-group form-group-custom form-group-default">
+                                                    <label class="label-custom">{{"supplier.product.field.shelf.label" | translate}}</label>
+                                                    <input id="shelf" name="shelf" type="text" class="form-control"
+                                                           placeholder="{{'supplier.product.field.shelf.placeholder' | translate}}"
+                                                           class="form-control"
+                                                           ng-model="$ctrl.product.shelf">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-custom form-group-default form-group-default-select2 required"
+                                             ng-class="{ 'has-error' : productForm.status.$invalid && !productForm.status.$pristine }">
+                                            <label class="label-custom">{{"supplier.product.field.status.label" | translate}}</label>
+                                            <select id="status2" name="status" class="full-width" data-disable-search="true" data-placeholder="{{'supplier.product.field.status.placeholder' | translate}}"
+                                                    data-init-plugin="select2"
+                                                    placeholder="{{'supplier.product.field.status.placeholder' | translate}}"
+                                                    class="form-control"
+                                                    ng-model="$ctrl.product.status"
+                                                    required>
+                                                <option ng-repeat="status  in $ctrl.status" value="{{status._id}}">
+                                                    {{$ctrl._$translate.use()==="en"?status.englishName:status.arabicName}}
+                                                </option>
+
+                                            </select>
+                                            <label class="error"  ng-if="productForm.status.$error.required && !productForm.status.$pristine">
+                                                {{'supplier.product.field.status.required' | translate}}
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group form-group-custom form-group-default">
+                                            <label class="label-custom">{{"supplier.product.field.sku.label" | translate}}</label>
+                                            <input type="text" class="form-control"
+                                                   placeholder="{{'supplier.product.field.sku.placeholder' | translate}}"
+                                                   class="form-control"
+                                                   ng-model="$ctrl.product.sku">
+                                        </div>
+
+                                        <div class="form-group form-group-custom form-group-default form-group-default-select2 required"
+                                             ng-class="{ 'has-error' : productForm.categories.$invalid && !productForm.categories.$pristine }">
+                                            <label class="label-custom">{{"supplier.product.field.categories.label" | translate}}</label>
+                                            <select id="categories" name="categories" class="full-width"  data-init-plugin="select2"
+                                                    placeholder="{{'supplier.product.field.categories.placeholder' | translate}}"
+                                                    class="form-control"
+                                                    ng-model="$ctrl.productCategoryId"
+                                                    required>
+                                                <optgroup ng-repeat="item in $ctrl.categories" ng-if="(item.status!='Hidden' && item.childCategory.length > 0)" label="{{$ctrl._$translate.use()==='en'?item.englishName:item.arabicName}}">
+                                                    <option  ng-repeat="subItem in item.childCategory" ng-if="subItem.status!='Hidden'" value="{{subItem._id}}">
+                                                        {{$ctrl._$translate.use()==="en"?subItem.englishName:subItem.arabicName}}
+                                                    </option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <label class="error"  ng-if="productForm.categories.$error.required && !productForm.categories.$pristine">
+                                            {{'supplier.product.field.categories.required' | translate}}
+                                        </label>
+                                        <div class="form-group form-group-custom form-group-default form-group-default-select2 required"
+                                             ng-class="{ 'has-error' : productForm.categories.$invalid && !productForm.categories.$pristine }">
+                                            <label class="label-custom">{{"supplier.product.field.unit.label" | translate}}</label>
+                                            <select id="unit" name="unit" class="full-width"  data-init-plugin="select2"
+                                                    placeholder="{{'supplier.product.field.unit.placeholder' | translate}}"
+                                                    class="form-control"
+                                                    ng-model="$ctrl.product.unit"
+                                                    required>
+                                                <option ng-repeat="unit  in $ctrl.units" value="{{unit._id}}">
+                                                    {{$ctrl._$translate.use()==="en"?unit.englishName:unit.arabicName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <label class="error"  ng-if="productForm.unit.$error.required && !productForm.unit.$pristine">
+                                            {{'supplier.product.field.unit.required' | translate}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pull-right m-t-20 m-b-20">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button type="reset" ng-click="$ctrl.resetForm(productForm)" class="btn btn-cons">{{"supplier.product.button.discard" | translate}}</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button ng-show="$ctrl.next" type="submit" class="btn btn-primary btn-cons no-animate" >{{"supplier.product.button.add" | translate}}</button>
+                                            <a ng-hide="$ctrl.next" ng-click="$ctrl.next = true" data-toggle="tab" data-target="#tab_arabic" href="#" class="btn btn-primary btn-cons no-animate" >{{"supplier.product.button.next" | translate}}</a>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+                <shimmer hide="!$ctrl.isLoading"></shimmer>
+                <div class="row" ng-if="$ctrl.hasError">
+                    <div class="col">
+                        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                            <div class="card-image-overlay"></div>
+                            <img src="assets/img/cards/error.svg">
+                            <p class="paragraph m-t-10">{{"supplier.product.unexpectedError" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-if="$ctrl.noInternetConnection">
+                    <div class="col">
+                        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                            <div class="card-image-overlay"></div>
+                            <img src="assets/img/cards/no-conection.svg">
+                            <p class="paragraph m-t-10">{{"supplier.product.noInternet" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $.Pages.init();
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#unit , #categories , #status2').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

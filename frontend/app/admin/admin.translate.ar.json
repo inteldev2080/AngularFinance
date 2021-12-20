@@ -1,0 +1,1224 @@
+{
+  "header": {
+    "changeLanguage": "English",
+    "hello": "مرحبا،",
+    "myProfile": "الملف الشخصي",
+    "logout": "تسجيل الخروج",
+    "cart": "عربة التسوق",
+    "type": "اكتب في أي مكان",
+    "search": "بحث"
+  },
+  "footer": {
+    "copyright": "حقوق الطبع والنشر © 2021",
+    "rights": "جميع الحقوق محفوظة",
+    "hand_craft_statement": "تم تطويره بواسطة",
+    "made_statement": "وصنع مع الحب",
+    "terms": "شروط الاستخدام",
+    "privacy": "سياسة الخصوصية",
+    "project_name": "سبلايز اون",
+    "developer": "اندى لابز ذ.م.م"
+  },
+  "m": {
+    "categories": "الاقسام",
+    "reports": "التقارير",
+    "suppliers": "الموردين",
+    "inventory": "المخزون",
+    "account": "الحساب",
+    "settings": "الإعدادات",
+    "messages": "الرسائل",
+    "ingredients": "مكونات",
+    "select_ingredients": "حدد المكونات",
+    "suppliersList": "قائمة الموردين",
+    "customersList" : "قائمة العملاء",
+    "payments": "المدفوعات",
+    "paymentsClaims": "مطالبات الدفع"
+  },
+  "meta": {
+    "project_name_supplies": "Supplies",
+    "project_name_on": "ON"
+  },
+  "admin": {
+    "account": {
+      "profile": {
+        "side_menu": {
+          "back": "الرجوع"
+        },
+        "breadcrumb": {
+          "admin": "مشرف الموقع",
+          "profile": "الملف الشخصي"
+        },
+        "text": {
+          "account_holder_info": "البيانات الشخصية",
+          "reset_password": "إعادة تعيين كلمة المرور"
+        },
+        "field": {
+          "first_name": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "الاسم الأول",
+            "placeholder": "الاسم الأول",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "last_name": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "الاسم الأخير",
+            "placeholder": "الاسم الأخير",
+            "invalid": "يحتوي على أحرف غير صالحة"
+          },
+          "email": {
+            "label": "البريد الإلكتروني",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "البريد الإلكتروني",
+            "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+          },
+          "mobile": {
+            "label": "رقم الهاتف",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "رقم الهاتف",
+            "invalid": "رقم الهاتف غير صحيح"
+          },
+          "old_password": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "كلمة المرور القديمة",
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+          },
+          "new_password": {
+            "label": "كلمة المرور الجديدة",
+            "required": "هذه الخانة مطلوبه",
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+          }
+        },
+        "button": {
+          "save_changes": "حفظ التغييرات"
+        },
+        "message": {
+          "failure": "حدث خطأ ما يرجى المحاولة مرة أخرى في وقت لاحق",
+          "old_password_incorrect": "كلمة المرور القديمة غير صحيحة",
+          "password_update_successfully": "تم تحديث كلمة المرور بنجاح",
+          "duplicate-data": "البيانات التي أدخلتها موجودة من قبل",
+          "profile_update_successfully": "تم تحديث الملف الشخصي بنجاح"
+        }
+      },
+      "users": {
+        "title": "الموظفين",
+        "text": {
+          "users": "المستخدمين",
+          "Name": "الاسم",
+          "Role": "وظيفة",
+          "Email": "البريد الإلكتروني",
+          "status": "الحالة",
+          "search": "البحث عن طريق الاسم أو البريد الإلكتروني",
+          "select_role": "حدد الوظيفة",
+          "all": "الكل",
+          "update_user": "تحديث المستخدم"
+        },
+        "button": {
+          "New_user": "مستخدم جديد"
+        },
+        "New_user": {
+          "text": {
+            "new_user": "إضافة مستخدم جديد"
+          },
+          "field": {
+            "first_name": {
+              "required": "هذه الخانة مطلوبه",
+              "label": "الاسم الأول",
+              "placeholder": "الاسم الأول",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "last_name": {
+              "placeholder": "الاسم الأخير",
+              "label": "الاسم الأخير",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "email": {
+              "placeholder": "البريد الإلكتروني",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+              "label": "البريد الإلكتروني"
+            },
+            "mobile": {
+              "required": "هذه الخانة مطلوبه",
+              "label": "رقم الهاتف",
+              "placeholder": "رقم الهاتف",
+              "invalid": "رقم الهاتف غير صحيح"
+            },
+            "password": {
+              "label": "كلمة المرور",
+              "placeholder": "كلمة المرور",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+            },
+            "roles": {
+              "label": "وظيفة",
+              "placeholder": "حدد الوظيفة"
+            },
+            "status": {
+              "label": "الحالة",
+              "placeholder": "حدد الحالة"
+            },
+            "status_active": "فعال",
+            "status_blocked": "محظور",
+            "confirm_password": {
+              "required": "هذا الخانة مطلوبة ويجب أن تطابق كلمة المرور",
+              "label": "تأكيد كلمة المرور",
+              "placeholder": "تأكيد كلمة المرور",
+              "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة"
+            }
+          },
+          "button": {
+            "add_user": "إضافة مستخدم",
+            "close": "إغلاق",
+            "save": "حفظ"
+          },
+          "validate_updated_successfully": "تم تعديل البيانات بنجاح",
+          "validate_user_successfully": "تم إضافة المستخدم بنجاح",
+          "validate_user_failed": "البيانات التي أدخلتها موجودة من قبل"
+        },
+        "reset_password": {
+          "text": {
+            "reset_password": "إعادة تعيين كلمة المرور"
+          },
+          "button": {
+            "reset_password": "إعادة التعيين "
+          },
+          "field": {
+            "new_password": {
+              "label": "كلمة المرور الجديدة",
+              "placeholder": "كلمة المرور الجديدة"
+            }
+          }
+        },
+        "message": {
+          "change_password_success": "تم اعادة تعيين كلمة السر بنجاح",
+          "failure": "حدث خطأ في اعادة تعيين كلمة السر"
+        }
+      },
+      "roles": {
+        "title": "الوظائف والتصريحات",
+        "text": {
+          "roles": "الوظائف",
+          "name": "الاسم",
+          "permissions ": "التصريحات",
+          "permissions": "التصريحات"
+        },
+        "checkbox": {
+          "overview": "نظرة عامة",
+          "products_categories": "المنتجات و الاقسام",
+          "orders": "الطلبات",
+          "reports": "التقارير",
+          "preparation": "التجهيز",
+          "Customers": "العملاء",
+          "delivery": "التوصيل",
+          "account": "الحساب",
+          "review": "التقييم",
+          "staff": "الموظفين",
+          "delete": "تصريح بالحذف",
+          "roles_permissions": "الوظائف و التصريحات",
+          "suppliers": "الموردين",
+          "payments": "المدفوعات"
+        },
+        "button": {
+          "New_role": "وظيفة جديدة",
+          "new_role": "وظيفة جديدة"
+        },
+        "New_role": {
+          "text": {
+            "Adding_new_role": "إضافة وظيفة جديدة"
+          },
+          "field": {
+            "Role_name_english": {
+              "label": "اسم الوظيفة بالإنجليزية",
+              "placeholder": "اسم الوظيفة بالإنجليزية",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "Role_name_arabic": {
+              "label": "اسم الوظيفة بالعربية",
+              "placeholder": "اسم الوظيفة بالعربية",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            }
+          },
+          "button": {
+            "add": "إضافة وظيفة",
+            "close": "إغلاق",
+            "save": "حفظ"
+          },
+          "Validate_Role_successfully": "تم إضافة الوظيفة بنجاح",
+          "Validate_Role_failed": "الوظيفة موجودة بالفعل"
+        },
+        "Validate_permission_failed": "حدث خطأ يرجى المحاولة مرة أخرى في وقت لاحق",
+        "Validate_permission_success": "تم تحديث التصريح بنجاح",
+        "new_role": {
+          "text": {
+            "adding_new_role": "إضافة وظيفة جديدة"
+          },
+          "field": {
+            "role_name_english": {
+              "label": "اسم الوظيفة بالإنجليزية",
+              "placeholder": "اسم الوظيفة بالإنجليزية",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            },
+            "role_name_arabic": {
+              "label": "اسم الوظيفة بالعربية",
+              "placeholder": "اسم الوظيفة بالعربية",
+              "required": "هذه الخانة مطلوبه",
+              "invalid": "يحتوي على أحرف غير صالحة"
+            }
+          },
+          "button": {
+            "add": "إضافة وظيفة",
+            "close": "إغلاق",
+            "save": "حفظ"
+          },
+          "Validate_Role_successfully": "تم إضافة الوظيفة بنجاح",
+          "Validate_Role_failed": "الوظيفة موجودة بالفعل"
+        }
+      },
+      "otherUsers": {
+        "title": "الاعضاء الاخرين"
+      }
+    },
+    "categories": {
+      "title": "الاقسام",
+      "newCategory": "قسم جديد",
+      "createNewCategory": "إضافة قسم جديد",
+      "createNewSubCategory": "إضافة قسم فرعي جديد",
+      "addSubCategory": "إضافة قسم فرعي",
+      "editCategory": "تعديل القسم",
+      "english": "انجليزي",
+      "arabic": "عربي",
+      "englishName": "الإسم بالانجليزية",
+      "arabicName": "الإسم بالعربية",
+      "role": "الحالة",
+      "hidden": "مخفي",
+      "save": "حفظ",
+      "hide": "إخفاء",
+      "unhide": "إظهار",
+      "rename": "تعديل",
+      "update": "تحديث",
+      "active": "مفعل",
+      "delete": "حذف",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "categoryUpdateSuccess": "تم تحديث القسم بنجاح!",
+      "field": {
+        "arabicName": {
+          "label": "الاسم بالعربية",
+          "placeholder": "الاسم بالعربية",
+          "required": "هذه الخانة مطلوبه",
+          "minLength": "الحد الأدنى للطول 2 حرف",
+          "maxLength": "أقصى طول 20 حرف"
+        },
+        "englishName": {
+          "label": "الاسم بالإنجليزية",
+          "placeholder": "الاسم بالإنجليزية",
+          "required": "هذه الخانة مطلوبه",
+          "minLength": "الحد الأدنى للطول 2 حرف",
+          "maxLength": "أقصى حد للطول 20 حرف"
+        },
+        "status": {
+          "label": "الحالة",
+          "placeholder": "الحالة",
+          "required": "هذه الخانة مطلوبه"
+        }
+      },
+      "message": {
+        "categoryAddSuccess": "تم إضافة القسم بنجاح!",
+        "categoryUpdateSuccess": "تم تحديث القسم بنجاح!",
+        "categoryDeleteSuccess": "تم حذف القسم بنجاح!",
+        "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+        "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا المنتج؟",
+        "disableAddSubCategory": "من فضلك ، انتظر لإنهاء الإجراء السابق ..",
+        "haveChildCategory": "هذا القسم لديه منتجات ، يرجى حذف المنتجات أولا",
+        "haveProducts": "عذرًا ، لا يمكن حذف هذا القسم فهو يشمل منتجات"
+      },
+      "Role": "الوظيفة"
+    },
+    "suppliers": {
+      "breadcrumb": {
+        "supplierDetails": "تفاصيل المورد"
+      },
+      "list": {
+        "title": "الموردين",
+        "export": {
+          "title": "تصدير",
+          "pdf": "pdf",
+          "xls": "xls"
+        },
+        "button": {
+          "new_supplier": "مورد جديد",
+          "showDetails": "عرض التفاصيل"
+        },
+        "search": {
+          "status": {
+            "label": "الحالة",
+            "placeholder": "الحالة",
+            "active": "نشط",
+            "suspended": "معلق",
+            "blocked": "محظور",
+            "deleted": "محذوف"
+          },
+          "payment": {
+            "label": "الدفع",
+            "placeholder": "الدفع",
+            "payingSoon": {
+              "label": "فاتورة ستدفع قريبا",
+              "placeholder": "فاتورة ستدفع قريبا"
+            },
+            "missedPayment": {
+              "label": "فاتورة لم تدفع",
+              "placeholder": "فاتورة لم تدفع"
+            }
+          },
+          "supplierName": {
+            "label": "اسم المورد",
+            "placeholder": "اسم المورد"
+          }
+        },
+        "table": {
+          "header": {
+            "name": "الاسم",
+            "status": "الحالة",
+            "balance": "الرصيد",
+            "remainingTillLimit": "المتبقي حتى الحد الأقصى",
+            "paymentDue": "تاريخ استحقاق الدفع"
+          }
+        }
+      },
+      "create-supplier": {
+        "button": {
+          "close": "إغلاق",
+          "save": "حفظ",
+          "reset": ""
+        },
+        "title": "مورد جديد",
+        "field": {
+          "email": {
+            "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+            "label": "البريد الإلكتروني",
+            "placeholder": "Email@supplieson.com",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "company_name": {
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه",
+            "label": "اسم الشركة",
+            "placeholder": "اسم الشركة"
+          },
+          "mobile": {
+            "invalid": "رقم الهاتف غير صحيح",
+            "label": "رقم الهاتف",
+            "placeholder": "9665XXXXXXXX",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "first_name": {
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "الاسم الأول",
+            "label": "الاسم الأول"
+          },
+          "last_name": {
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "placeholder": "الاسم الأخير",
+            "label": "الاسم الأخير",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "cr_number": {
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "رقم السجل التجاري",
+            "label": "رقم السجل التجاري",
+            "invalid": "يجب أن يحتوي على 10 أرقام فقط"
+          },
+          "cr_photo": {
+            "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+            "label": "صورة السجل التجارى",
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "لم تقم باختيار ملف"
+          },
+          "password": {
+            "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام",
+            "required": "هذه الخانة مطلوبه",
+            "label": "كلمة المرور",
+            "placeholder": "كلمة المرور",
+            "min_length": "الحد الأدنى للطول 6 حروف",
+            "max_length": "الحد الأقصى للطول 20 حرف"
+          },
+          "select_date": {
+            "label": "أختر تاريخ :",
+            "hijri": "هجرى",
+            "gregorian": "ميلادى"
+          },
+          "cr_expdate": {
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "DD/MM/YYYY",
+            "label": "تاريخ إنتهاء الصلاحية (ميلادى)",
+            "labelHijri": "تاريخ انتهاء الصلاحية (هجري)"
+          },
+          "VAT": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "الضريبة المضافة",
+            "placeholder": "الضريبة المضافة",
+            "invalid": "الضريبة لابد ان تكون على هيئة ارقام او ارقام عشرية"
+          },
+          "vatPhoto": {
+            "invalid": "تقبل صيغ PNG - GIF - JPEG - JPG و أقصى حجم 4 ميغا بايت",
+            "label": "صورة الرقم الضريبي",
+            "required": "هذه الخانة مطلوبه",
+            "photoErr": "حجم الصورة تخطى 4 ميجا بايت",
+            "placeholder": "لم تقم باختيار ملف"
+          },
+          "confirm_password": {
+            "label": "تأكيد كلمة المرور",
+            "placeholder": "تأكيد كلمة المرور",
+            "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة",
+            "required": "هذه الخانة مطلوبه"
+          }
+        },
+        "message": {
+          "success_creation": "تم إنشاء الحساب بنجاح",
+          "failed_creation": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+          "already_have_account": "لديك حساب بالفعل ",
+          "invalidFile": "اختر صوره السجل التجاري باحد الصيغ التاليه (png,jpeg,jpg)",
+          "commercialRegisterIsDuplicate": "السجل التجاري مكرر",
+          "emailOrMobilePhoneIsDuplicate": "البريد الإلكتروني أو رقم الهاتف مكرر",
+          "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+          "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+          "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+        }
+      },
+      "payment": {
+        "repName": "ضابط الإتصال",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "save": "حفظ",
+        "cr_photo": "السجل التجارى",
+        "vat_photo": "الرقم الضريبى",
+        "billingDes": "الحسابات والتعاملات المالية بينك وبين SuppliesON.com",
+        "balance": "الرصيد",
+        "record_payment": "تسجيل عملية الدفع",
+        "search": "بحث باسم العميل",
+        "status": "الحاله",
+        "payment_installment": "فترات السداد",
+        "payment_added": "تم تسجيل عملية الدفع بنجاح، سيتحقق مدير الموقع من عملية الدفع ويرسل لك اخطار قريبا.",
+        "payment_failed": "فشل في تسجيل عملية الدفع الخاص بك",
+        "allow_exceed_billing_limit": "السماح لهذا العميل بتجاوز موعد دفع الفواتير",
+        "allow_exceed_credit_limit": "السماح لهذا العميل بتجاوز حد الائتمان الشهري",
+        "payment": "الدفع",
+        "payments": "المدفوعات",
+        "paymentsClaims": "تأكيد الإيداع",
+        "specialPrices": "أسعار خاصة",
+        "creditThisMonth": "الإستهلاك هذا الشهر",
+        "limitThisMonth": "الحد الشهري الأقصى",
+        "nextPayment": "موعد الدفعة القادمة",
+        "nextInvoice": "موعد الفاتورة القادمة",
+        "updateInfo": "تم تحديث المعلومات",
+        "creditLimit": "حد الائتمان",
+        "sar": "ريال",
+        "approved": "تم الموافقة عليها",
+        "pending": "قيد الانتظار",
+        "rejected": "مرفوضة",
+        "cash": "إستلام نقدي",
+        "cheque": "شيك مصدق",
+        "bank": "حوالة بنكية",
+        "billingHistory": "سجل الفواتير",
+        "paymentClaims": "طلبات تأكيد الإيداع",
+        "every": "كل",
+        "Day": "{value, plural, =0 {الآن} one{ 1 يوم } two{ يومين } few{ # أيام } many{ # يوم } other{ # يوم }}",
+        "Week": "{value, plural, =0 {الآن} one{ 1 اسبوع } two{ اسبوعين } few{ # أسابيع } many{ # أسبوع } other{ # أسبوع }}",
+        "Month": "{value, plural, =0 {الآن} one{ 1 شهر } two{ شهرين } few{ # أشهر } many{ # شهر } other{ # شهر }}",
+        "credit": "إيداع",
+        "invoice": "فاتورة",
+        "invoice_for": "فاتورة شهر",
+        "select_period": "إختر الفترة",
+        "details": "التفاصيل",
+        "detailed_transactions": "سجل مفصل للمعاملات",
+        "table": {
+          "date": "التاريخ",
+          "description": "الوصف",
+          "type": "النوع",
+          "referenceId": "الرقم المرجعي",
+          "status": "الحالة",
+          "customerName": "اسم العميل",
+          "amount": "المبلغ",
+          "balance": "الرصيد"
+        },
+        "label": {
+          "search": "بحث",
+          "status": "الحاله"
+        },
+        "required": "هذه الخانة مطلوبه",
+        "invalidPhone": "رقم الهاتف غير صحيح",
+        "invalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+        "invalidUsername": "صيغة الاسم غير صحيحة"
+      },
+      "supplier": {
+        "invited": "مدعو",
+        "suspended": "معلق",
+        "active": "نشط",
+        "blocked": "محظور",
+        "deleted": "محذوف",
+        "activate": "تنشيط",
+        "block": "حظر",
+        "suspend": "تعليق",
+        "unblock": "الغاء الحظر",
+        "approve": "تنشيط",
+        "delete": "حذف",
+        "change_status": "تغير الحالة",
+        "reset_password": "اعادة تعيين كلمة المرور",
+        "supplier_updated": "تم تغيير بيانات المورد بنجاح",
+        "supplier_email_exists": "البريد اللاكتروني موجود بالفعل",
+        "supplier_mobilePhone_exists": "رقم الهاتف موجود بالفعل"
+      }
+    },
+    "recipes": {
+      "breadcrumb": {
+        "recipeDetails": "تفاصيل الوصفة"
+      },
+      "list": {
+        "title": "وصفات",
+        "button": {
+          "new_recipe": "وصفات / أصناف جديدة",
+          "showDetails": "اظهر التفاصيل"
+        },
+        "search": {
+          "status": {
+            "label": "الحالة",
+            "placeholder": "الحالة",
+            "active": "نشيط",
+            "suspended": "معلق",
+            "blocked": "محظور",
+            "deleted": "تم الحذف"
+          },
+          "payment": {
+            "label": "Payment",
+            "placeholder": "Payment",
+            "payingSoon": {
+              "label": "Paying Soon",
+              "placeholder": "Paying Soon"
+            },
+            "missedPayment": {
+              "label": "Missed Payment",
+              "placeholder": "Missed Payment"
+            }
+          },
+          "recipeName": {
+            "label": "اسم الوصفة",
+            "placeholder": "اسم الوصفة"
+          }
+        },
+        "table": {
+          "header": {
+            "barcode": "الرمز الشريطي",
+            "inventory_sku": "وحدة حفظ الأوراق المالية",
+            "recipe_item_name": "وصفة / اسم البند",
+            "inventoryType": "نوع المخزون",
+            "actions": "أجراءات",
+            "delete_recipe": "حذف"
+          }
+        }
+      },
+      "create-recipe": {
+        "button": {
+          "close": "أغلق",
+          "save": "خلق",
+          "reset": "إعادة تعيين",
+          "new_recipe": "إيصال / عنصر جديد",
+          "view_recipe" : "معاينة ما تم تحريره"
+        },
+        "title": "وصفات / أصناف",
+        "field": {
+          "recipe_name": {
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه",
+            "label": "وصفة / اسم العنصر",
+            "placeholder": "وصفة / اسم العنصر"
+          },
+          "sku": {
+            "invalid": "تنسيق SKU غير صالح",
+            "label": "SKU",
+            "placeholder": "SKU1234",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "bar_code": {
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "الرمز الشريطي",
+            "label": "الرمز الشريطي",
+            "invalid": "يجب أن يحتوي على 10 أرقام فقط"
+          },
+          "select_recipe": {
+            "label": "اختر صنف :",
+            "recipe": "وصفة",
+            "item": "بند"
+          },
+          "select_item": {
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "DD/MM/YYYY",
+            "label": "بند",
+            "labelReceipe": "وصفة"
+          }
+        },
+        "message": {
+          "success_creation": "تم إنشاء الوصفة بنجاح",
+          "failed_creation": "حدث فشل ، يرجى المحاولة مرة أخرى في وقت لاحق",
+          "already_have_account": "لديك بالفعل وصفة"
+        }
+      },
+      "recipe": {
+        "suspended": "معلق",
+        "active": "نشيط",
+        "blocked": "محظور",
+        "deleted": "تم الحذف",
+        "activate": "تفعيل",
+        "block": "منع",
+        "suspend": "تعليق",
+        "unblock": "رفع الحظر",
+        "approve": "يوافق",
+        "delete": "حذف"
+      }
+    },
+    "ingredients": {
+      "breadcrumb": {
+        "ingredientDetails": "تفاصيل المكون"
+      },
+      "list": {
+        "title": "المكونات",
+        "button": {
+          "new_ingredient": "مكونات جديدة",
+          "showDetails": "اظهر التفاصيل",
+          "saveIngredients": "حفظ المكونات"
+        },
+        "search": {
+          "status": {
+            "label": "الحالة",
+            "placeholder": "الحالة",
+            "active": "نشيط",
+            "suspended": "معلق",
+            "blocked": "محظور",
+            "deleted": "تم الحذف"
+          },
+          "ingredientName": {
+            "label": "مكونات",
+            "placeholder": "مكونات"
+          }
+        },
+        "table": {
+          "header": {
+            "barcode": "الرمز الشريطي",
+            "inventory_sku": "SKU",
+            "ingredient_name": "المكونات",
+            "inventoryType": "نوع المخزون",
+            "available_quantity": "كمية",
+            "quantity": "كمية",
+            "actions": "أجراءات",
+            "unit": "وحدة",
+            "delete_recipe": "حذف",
+            "threshold": "عتبة",
+            "flag": "العلم",
+            "select": "تحديد"
+          }
+        }
+      },
+      "create-ingredient": {
+        "button": {
+          "close": "أغلق",
+          "save": "حفظ المكونات",
+          "cancel": "إلغاء",
+          "reset": "إعادة تعيين",
+          "new_ingredients": "مكونات جديدة",
+          "edit_ingredient": "تحرير العنصر",
+          "select_ingredient": "حدد المكونات"
+        },
+        "title": "إنشاء مكونات",
+        "editTitle" : "تحرير العنصر",
+        "field": {
+          "ingredient_name": {
+            "invalid": "يحتوي على أحرف غير صالحة",
+            "required": "هذه الخانة مطلوبه",
+            "label": "المكونات",
+            "placeholder": "اسم"
+          },
+          "sku": {
+            "invalid": "تنسيق SKU غير صالح",
+            "label": "SKU",
+            "placeholder": "9665XXXXXXXX",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "bar_code": {
+            "required": "هذه الخانة مطلوبه",
+            "placeholder": "الرمز الشريطي",
+            "label": "الرمز الشريطي",
+            "invalid": "يجب أن يحتوي على 10 أرقام فقط"
+          },
+          "flags": {
+            "placeholder": "الأعلام",
+            "label": "الأعلام"
+          },
+          "available_quantity": {
+            "required": "هذه الخانة مطلوبه",
+            "label": "متاح ",
+            "placeholder": "كمية",
+            "invalid": "يجب أن يحتوي على 10 أرقام فقط"
+          },
+          "select_kilogram": {
+            "required": "هذا الحقل مطلوب",
+            "placeholder": "كيلوغرام",
+            "label": "اختر صنف :",
+            "kilogram": "كيلوغرام"
+          },
+          "select_gram": {
+            "required": "هذا الحقل مطلوب",
+            "placeholder": "غرام",
+            "label": "اختر صنف :",
+            "gram": "غرام"
+          },
+          "select_millilitre": {
+            "required": "هذا الحقل مطلوب",
+            "placeholder": "ملليلتر",
+            "label": "اختر صنف :",
+            "millilitre": "ملليلتر"
+          },
+          "select_litre": {
+            "required": "هذا الحقل مطلوب",
+            "placeholder": "لتر",
+            "label": "اختر صنف :",
+            "litre": "لتر"
+          },
+          "quantity_threshold": {
+            "label": "عتبة",
+            "placeholder": "عتبة",
+            "required": "هذا الحقل مطلوب",
+            "invalid": "يجب أن يحتوي على أرقام فقط"
+          },
+          "ingredient_delete": {
+            "label": "حذف",
+            "placeholder": "حذف"
+          },
+          "unit": {
+            "label": "وحدة",
+            "placeholder": "وحدة"
+          }
+        },
+        "message": {
+          "message": {
+            "success_creation": "تم إنشاء الحساب بنجاح",
+            "success_updated": "تم تحديث العنصر بنجاح",
+            "failed_creation": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+            "already_have_account": "لديك حساب بالفعل ",
+            "invalidFile": "اختر صوره السجل التجاري باحد الصيغ التاليه (png,jpeg,jpg)",
+            "commercialRegisterIsDuplicate": "السجل التجاري مكرر",
+            "emailOrMobilePhoneIsDuplicate": "البريد الإلكتروني أو رقم الهاتف مكرر",
+            "expireDate_exceed": "التاريخ الميلادي لنتهاء الصلاحية تخطى 5 سنوات",
+            "expireDate_todayOrLess": "التاريخ الميلادي لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل",
+            "expireDateHijri_exceed": "التاريخ الهجري لنتهاء الصلاحية تخطى 5 سنوات",
+            "expireDateHijri_todayOrLess": "التاريخ الهجري لنتهاء الصلاحية لا يمكن ان يكون بتاريخ اليوم او ما قبل"
+          },
+          "ingredient": {
+            "invited": "مدعو",
+            "suspended": "معلق",
+            "active": "نشط",
+            "blocked": "محظور",
+            "deleted": "محذوف",
+            "activate": "تنشيط",
+            "block": "حظر",
+            "suspend": "تعليق",
+            "unblock": "الغاء الحظر",
+            "approve": "تنشيط",
+            "delete": "حذف",
+            "change_status": "تغير الحالة",
+            "reset_password": "اعادة تعيين كلمة المرور",
+            "supplier_updated": "تم تغيير بيانات المورد بنجاح",
+            "supplier_email_exists": "البريد اللاكتروني موجود بالفعل",
+            "supplier_mobilePhone_exists": "رقم الهاتف موجود بالفعل"
+          }
+        },
+        "ingredient": {
+          "suspended": "معلق",
+          "active": "نشيط",
+          "blocked": "محظور",
+          "deleted": "تم الحذف",
+          "activate": "تفعيل",
+          "block": "منع",
+          "suspend": "تعليق",
+          "unblock": "رفع الحظر",
+          "approve": "يوافق",
+          "delete": "حذف"
+        }
+      }
+    },
+    "messages": {
+      "title": "الرسائل",
+      "search": "بحث",
+      "inbox": "صندوق الوارد",
+      "allIssues": "أرشيف",
+      "BusinessInquiries": "الاستفسارات التجارية",
+      "Issues": "القضايا",
+      "careers": "الوظائف",
+      "noMessagesLine1": "عذرا ! لم نتمكن من العثور على أي رسائل",
+      "noMessagesLine2": "ربما كان البحث محدد جدا ، يرجى محاولة البحث مرة أخرى",
+      "noEmailSelected": "لم يتم تحديد أي بريد إلكتروني",
+      "moveToInquiries": "نقل للاستفسارات",
+      "moveToIssues": "نقل للمشكلات",
+      "moveToCareers": "نقل للوظائف",
+      "archive": "أرشيف",
+      "delete": "حذف",
+      "close": "إغلاق",
+      "reopen": "إعادة فتح",
+      "reply": "الرد",
+      "noEmails": "لا توجد رسائل بريد الكتروني",
+      "selectEmail": "يرجى تحديد البريد الإلكتروني",
+      "deleted_successfully": "تم حذف الرسالة بنجاح!"
+    },
+    "settings": {
+      "settings": "الإعدادات",
+      "units": {
+        "units": "الوحدات",
+        "systemUnits": "وحدات النظام",
+        "warning": "تحذير: ستؤثر ايه تغييرات علي إعدادات النظام",
+        "button": {
+          "addUnits": "إضافة وحدات",
+          "title": "تأكيد الحذف",
+          "cancel": "إلغاء",
+          "confirm": "تأكيد"
+        },
+        "popUp1": {
+          "english": {
+            "label": "الإنجليزية",
+            "placeholder": "اسم الوحدة بالإنجليزية",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "arabic": {
+            "label": "العربية",
+            "placeholder": "اسم الوحدة بالعربية",
+            "required": "هذه الخانة مطلوبه"
+          },
+          "new": "وحدة جديدة",
+          "option": "وحدة",
+          "add": "إضافة",
+          "close": "إغلاق"
+        },
+        "popUp2": {
+          "english": {
+            "label": "الإنجليزية",
+            "placeholder": "الخيار بالإنجليزية"
+          },
+          "arabic": {
+            "label": "العربية",
+            "placeholder": "الخيار بالعربية"
+          },
+          "edit": "تعديل",
+          "option": "وحدة",
+          "save": "حفظ",
+          "close": "إغلاق",
+          "delete": "حذف"
+        },
+        "table": {
+          "english": "الإنجليزية",
+          "arabic": "العربية",
+          "op": "OP"
+        },
+        "success": "تم حذف الوحدة بنجاح",
+        "failure": "لا يمكن حذف وحدة مرتبطة بمنتجات",
+        "unexpectedFailure": "حدث خطأ ما الرجاء اعادة المحاولة"
+      },
+      "cities" : {
+        "label" : "مدن",
+        "button" : {
+          "addCities" : "أضف مدينة"
+        },
+        "table" : {
+          "arabic": "عربي",
+          "english": "الإنجليزية",
+          "op": "OP",
+          "status": "حالة"
+        },
+        "popup" : {
+          "heading" : "مدينة جديدة",
+          "arabic": "عربي",
+          "english": "الإنجليزية",
+          "englishHolder": "مدينة باللغة الإنجليزية",
+          "arabicHolder": "المدينة بالعربية",
+          "englishRequired": "هذه الخانة مطلوبه",
+          "arabicRequired": "هذه الخانة مطلوبه",
+          "add" : "يضيف",
+          "close": "قريب",
+          "location": "موقع",
+          "edit" : "تحرير المدينة",
+          "label": "مدينة"
+        },
+        "success": "تمت إزالة المدينة بنجاح",
+        "failure": "لا يمكن إزالة المدينة المخصصة للمنتج",
+        "unexpectedFailure": "خطأ غير متوقع"
+      },
+      "templates": {
+        "emailTemplates": "نماذج البريد الإلكتروني",
+        "warning": "تحذير: ستؤثر ايه تغييرات علي إعدادات النظام",
+        "newUsers": "مستخدمين جدد",
+        "save": "حفظ",
+        "reset": "اعادة تعيين",
+        "title": "العنوان"
+      },
+      "cms": {
+        "systemConfig": "اعدادات النظام",
+        "cms": "ادارة المحتوى",
+        "warning": "تحذير: ستؤثر ايه تغييرات علي إعدادات النظام",
+        "button": "إضافة محتوى",
+        "table": {
+          "title": "العنوان",
+          "op": "OP"
+        },
+        "tabs": {
+          "english": "الإنجليزية",
+          "arabic": "العربية",
+          "settings": "الاعدادات"
+        },
+        "popUp1": {
+          "cardTitle": {
+            "new": "جديد",
+            "content": "المحتوى"
+          },
+          "title": {
+            "label": "العنوان",
+            "placeholder": "العنوان"
+          },
+          "title_ar": {
+            "label": "العنوان بالعربية",
+            "placeholder": "العنوان"
+          },
+          "title_en": {
+            "label": "العنوان بالانجليزية",
+            "placeholder": "العنوان"
+          },
+          "status": {
+            "label": "الحاله",
+            "placeholder": "الحاله"
+          },
+          "key": {
+            "label": "key",
+            "placeholder": "key"
+          },
+          "add": "إضافة",
+          "cancel": "إلغاء"
+        },
+        "popUp2": {
+          "cardTitle": {
+            "edit": "تعديل",
+            "content": "المحتوى"
+          },
+          "title": {
+            "label": "العنوان",
+            "placeholder": "العنوان"
+          },
+          "title_ar": {
+            "label": "العنوان بالعربية",
+            "placeholder": "العنوان"
+          },
+          "title_en": {
+            "label": "العنوان بالانجليزية",
+            "placeholder": "العنوان"
+          },
+          "save": "حفظ",
+          "close": "إغلاق"
+        },
+        "label": {
+          "arabicBody": "المحتوى العربي",
+          "englishBody": "المحتوي الانجليزي "
+        }
+      },
+      "config": {
+        "systemConfig": "اعدادات النظام",
+        "config": "التهيئة",
+        "warning": "تحذير: ستؤثر ايه تغييرات علي إعدادات النظام",
+        "button": "إضافة متغيرات",
+        "table": {
+          "title": "العنوان",
+          "key": "key",
+          "value": "القيمة",
+          "op": "OP"
+        },
+        "popUp1": {
+          "cardTitle": {
+            "new": "متغيرات جديدة",
+            "variables": ""
+          },
+          "title": {
+            "label": "العنوان",
+            "placeholder": "العنوان"
+          },
+          "key": {
+            "label": "المفتاح",
+            "placeholder": "المفتاح"
+          },
+          "group": {
+            "label": "المجموعة",
+            "placeholder": "المجموعة"
+          },
+          "type": {
+            "label": "النوع",
+            "placeholder": "النوع"
+          },
+          "order": {
+            "label": "الترتيب",
+            "placeholder": "1"
+          },
+          "value": {
+            "label": "القيمة",
+            "placeholder": "القيمة"
+          },
+          "add": "إضافة",
+          "close": "إغلاق"
+        },
+        "popUp2": {
+          "cardTitle": {
+            "edit": "تعديل",
+            "variables": "المتغيرات"
+          },
+          "title": {
+            "label": "العنوان",
+            "placeholder": "العنوان"
+          },
+          "key": {
+            "label": "Key",
+            "placeholder": "Key"
+          },
+          "group": {
+            "label": "المجموعة",
+            "placeholder": "المجموعة"
+          },
+          "type": {
+            "label": "النوع",
+            "placeholder": "النوع"
+          },
+          "order": {
+            "label": "الترتيب",
+            "placeholder": "1"
+          },
+          "value": {
+            "label": "القيمة",
+            "placeholder": "القيمة"
+          },
+          "save": "حفظ",
+          "close": "إغلاق"
+        }
+      },
+      "noResults": "لا توجد نتائج",
+      "message": {
+        "success": "تمت العمليه بنجاح",
+        "error": "حدث خطأ الرجاء اعادة المحاولة"
+      },
+      "warning": "تحذير: ستؤثر ايه تغييرات علي إعدادات النظام ",
+      "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا المتغير؟",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد"
+    },
+    "reports": {
+      "index": {
+        "reports": "التقارير",
+        "orders": "الطلبات",
+        "transactions": "المعاملات النقدية"
+      },
+      "orders": {
+        "status": {
+          "accepted": "مقبول",
+          "new": "طلب جديد",
+          "rejected": "مرفوض",
+          "canceled": "ملغى",
+          "ready": "جاهز للتوصيل",
+          "out": "خارج للتوصيل",
+          "delivered": "تم التسليم",
+          "failedToDeliver": "فشل فى التوصيل",
+          "canceledByCustomer": "ملغي",
+          "canceledByCustomer2": "ملغي من العميل"
+        },
+        "stats": {
+          "reports": "التقارير",
+          "ordersReport": "تقرير الطلبات",
+          "orders": "الطلبات",
+          "orderDetails": "تفاصيل الطلب",
+          "order": "طلب",
+          "sar": "ريال",
+          "orderPerDay": "طلب / يوم",
+          "revenue": "الإيرادات",
+          "averageOrders": "المتوسط ​​اليومي للطلبات",
+          "averageRevenue": "المتوسط ​​اليومي للإيرادات"
+        },
+        "filter": {
+          "supplier": "المورد",
+          "customer": "العميل",
+          "period": "الفترة",
+          "status": "الحالة",
+          "selectSupplier": "حدد المورد",
+          "selectCustomer": "حدد العميل",
+          "selectStatus": "حدد الحالة",
+          "export": "تصدير"
+        },
+        "table": {
+          "date": "التاريخ",
+          "orderNumber": "رقم الطلب",
+          "customer": "العميل",
+          "supplier": "المورد",
+          "totalPrice": "السعر الإجمالي",
+          "status": "الحالة",
+          "showDetails": "عرض التفاصيل"
+        },
+        "details": {
+          "product": "المنتج",
+          "sku": "Sku",
+          "store": "مخزن",
+          "shelf": "الرف",
+          "quantity": "الكمية",
+          "print": "طباعة"
+        }
+      },
+      "transactions": {
+        "type": {
+          "credit": "دائن",
+          "debit": "مدين"
+        },
+        "paymentMethod": {
+          "cash": "نقدي",
+          "cheque": "شيك",
+          "bank": "بنك"
+        },
+        "stats": {
+          "reports": "التقارير",
+          "transaction": "معاملة نقدية",
+          "sar": "ريال",
+          "transactionReports": "تقارير المعاملات",
+          "transactions": "المعاملات",
+          "totalBalance": "إجمالي الرصيد",
+          "totalCredit": "الرصيد المتبقي",
+          "transactionVolume": "حجم المعاملات النقدية",
+          "approvedPayment": "المدفوعات المقبولة"
+        },
+        "filter": {
+          "transactions": "المعاملات",
+          "export": "تصدير",
+          "supplier": "المورد",
+          "type": "النوع",
+          "selectSupplier": "اختر المورد",
+          "All": "الكل",
+          "period": "الفترة"
+        },
+        "table": {
+          "date": "التاريخ",
+          "type": "النوع",
+          "from": "من",
+          "paymentMethod": "طريقة الدفع",
+          "amount": "المبلغ",
+          "showDetails": "عرض التفاصيل",
+          "viewOrder": "عرض الطلب"
+        }
+      }
+    },
+    "vat": "الضريبة المضافة",
+    "sub_total": "الاجمالى قبل الضريبة",
+    "total_price": "الاجمالى",
+    "unexpectedError": "حدث خطأ ما ",
+    "noInternet": "لا يوجد اتصال بالانترنت"
+  },
+  "week": "\"{value, plural, =0 %1$s one%1$s other{# weeks}}\""
+}

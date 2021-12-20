@@ -1,0 +1,405 @@
+{
+  "schemas": {
+    "Role": {
+      "type": "object",
+      "properties": {
+        "supplier": {
+          "type": "object"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "user": {
+          "type": "object"
+        },
+        "userType": {
+          "type": "string"
+        },
+        "permissions": [{
+          "type": "object"
+        }],
+        "isLocked": {
+          "type": "boolean"
+        },
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/roles": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Get list of roles.",
+        "operationId": "rolesList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "roles": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Role"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Create new role.",
+        "operationId": "roleCreate",
+        "requestBody": {
+          "description": "Role Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "permissions",
+                  "arabicName",
+                  "englishName"
+                ],
+                "type": "object",
+                "properties": {
+                  "permissions": {
+                    "type": "array"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Role": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Role"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/roles/permissions": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Get list of permissions.",
+        "operationId": "permissionList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "permissions": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Role"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/roles/{roleId}": {
+      "put": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Update role.",
+        "operationId": "updateRole",
+        "parameters": [{
+          "name": "roleId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Role Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "permissions",
+                  "arabicName",
+                  "englishName"
+                ],
+                "type": "object",
+                "properties": {
+                  "permissions": {
+                    "type": "array"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Role": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Role"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Delete role.",
+        "operationId": "deleteRole",
+        "parameters": [{
+          "name": "roleId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Role Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "alternativeRoleId"
+                ],
+                "type": "object",
+                "properties": {
+                  "alternativeRoleId": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Role": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Role"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

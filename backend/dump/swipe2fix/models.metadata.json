@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"swipe2fix.models"},{"v":2,"key":{"modelName":1},"name":"IDX_MODEL_NAME","ns":"swipe2fix.models","background":true}]}

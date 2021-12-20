@@ -1,0 +1,345 @@
+{
+  "schemas": {
+    "Unit": {
+      "type": "object",
+      "properties": {
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/systemUnits": {
+      "get": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Get list of system units.",
+        "operationId": "unitsList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "units": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Unit"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Create new system unit.",
+        "operationId": "createUnit",
+        "requestBody": {
+          "description": "System Unit Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "arabicName",
+                  "englishName"
+                ],
+                "type": "object",
+                "properties": {
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Unit": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Unit"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/systemUnits/{unitId}": {
+      "put": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Update system unit.",
+        "operationId": "updateUnit",
+        "parameters": [{
+          "name": "unitId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "System Unit Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "arabicName",
+                  "englishName"
+                ],
+                "type": "object",
+                "properties": {
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Unit": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Unit"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "get": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Get list of unit by Id.",
+        "operationId": "getUnitById",
+        "parameters": [{
+          "name": "unitId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Unit": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Unit"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Delete unit by Id.",
+        "operationId": "deleteUnitById",
+        "parameters": [{
+          "name": "unitId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Unit": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Unit"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

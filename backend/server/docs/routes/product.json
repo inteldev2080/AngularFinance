@@ -1,0 +1,615 @@
+{
+  "schemas": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "categories": [{
+          "type": "object"
+        }],
+        "supplier": {
+          "type": "object"
+        },
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        },
+        "arabicDescription": {
+          "type": "string"
+        },
+        "englishDescription": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "store": {
+          "type": "string"
+        },
+        "shelf": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "object"
+        },
+        "images": {
+          "type": "array"
+        },
+        "coverPhoto": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get list of products.",
+        "operationId": "productsList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "products": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Product"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Create new product.",
+        "operationId": "productCreate",
+        "requestBody": {
+          "description": "Product Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "categories",
+                  "arabicName",
+                  "englishName",
+                  "arabicDescription",
+                  "englishDescription",
+                  "price",
+                  "unit",
+                  "status",
+                  "coverPhoto"
+                ],
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "array"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  },
+                  "arabicDescription": {
+                    "type": "string"
+                  },
+                  "englishDescription": {
+                    "type": "string"
+                  },
+                  "sku": {
+                    "type": "string"
+                  },
+                  "store": {
+                    "type": "string"
+                  },
+                  "shelf": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "coverPhoto": {
+                    "type": "string"
+                  },
+                  "images": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Product": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/products/supplier/{supplier}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get list of products for customer.",
+        "operationId": "listProduct",
+        "parameters": [{
+            "name": "supplier",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "products": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Product"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/products/{productId}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get product by id.",
+        "operationId": "getProduct",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Product": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Update product.",
+        "operationId": "productUpdate",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Product Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "categories",
+                  "arabicName",
+                  "englishName",
+                  "arabicDescription",
+                  "englishDescription",
+                  "price",
+                  "unit",
+                  "status"
+                ],
+                "type": "object",
+                "properties": {
+                  "categories": {
+                    "type": "array"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "string"
+                  },
+                  "arabicDescription": {
+                    "type": "string"
+                  },
+                  "englishDescription": {
+                    "type": "string"
+                  },
+                  "sku": {
+                    "type": "string"
+                  },
+                  "store": {
+                    "type": "string"
+                  },
+                  "shelf": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "coverPhoto": {
+                    "type": "string"
+                  },
+                  "images": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Product": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Delete product.",
+        "operationId": "deleteProduct",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Product": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/products/requestSpecialPrice/{productId}": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Request special price.",
+        "operationId": "requestSpecialPrice",
+        "parameters": [{
+          "name": "productId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Product": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Product"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center text-uppercase">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                {{'customer.sideMenu.suppliers' | translate}}
+            </p>
+            <ul class="main-menu" style="max-height: 285px;overflow-y: auto;overflow-x:hidden;height: auto;" id="supplier-main-menu">
+                <li ui-sref-active="active top-level" ng-repeat="sup in $ctrl.customer.suppliers" ng-class="{'active top-level': supplierId == sup.supplier._id}">
+                    <a ng-if="sup.supplier.status==='Active' &&  sup.relationStatus ==='Active'" ng-click="$ctrl.selectSupplier(sup.supplier, sup.relationStatus )" class=" m-l-25">
+                        <span class="title">{{sup.supplier.representativeName}}</span>
+                    </a>
+                    <a ng-if="(sup.supplier.status==='Blocked' || sup.relationStatus ==='Blocked')  && $ctrl._$state.is('app.customer.payments.list.suppliers')" ng-click="$ctrl.selectSupplier(sup.supplier, sup.relationStatus )" style=" text-decoration: line-through; color: #aeb6bb" class=" m-l-25">
+                        <span class="title">{{sup.supplier.representativeName}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content p-t-15 p-r-20 p-l-20 relative">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <!--<div ncy-breadcrumb></div>-->
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+
+    $('.secondary-side').on('click','ul li a>.title',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>
+

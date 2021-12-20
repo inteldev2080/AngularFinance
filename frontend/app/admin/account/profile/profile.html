@@ -1,0 +1,213 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+    <div class="secondary-sidebar light" data-init="secondary-sidebar">
+
+       <!-- <ul class="main-menu">
+            <li class="active top-level">
+                <back></back>
+            </li>
+        </ul>-->
+    </div>
+    <div class="inner-content p-t-15 p-r-20 p-l-20">
+        <div class="sidebar-border"></div>
+        <div class="content">
+            <div ncy-breadcrumb></div>
+            <div>
+                <div class="card">
+                    <div class="card-block card-wide-padding">
+
+                        <!--<div ng-if="$ctrl.isProfielFailure" class="alert alert-danger" role="alert">-->
+                            <!--<button class="close" data-dismiss="alert"></button>-->
+                            <!--<strong></strong>{{$ctrl.message| translate}}-->
+                        <!--</div>-->
+                        <!--<div ng-if="$ctrl.isProfielSuccess" class="alert alert-success" role="alert">-->
+                            <!--<button class="close" data-dismiss="alert"></button>-->
+                            <!--<strong></strong>{{$ctrl.message | translate }}-->
+                        <!--</div>-->
+                        <div ng-if="$ctrl.isProfielLoading" class="progress-circle-indeterminate"></div>
+                        <form role="form" id="profileForm" name="profileForm" autocomplete="off" accessible-form novalidate
+                              ng-submit="$ctrl.updateMyProfile(profileForm)">
+                            <p class="bold text-uppercase p-l-10">
+                                {{"admin.account.profile.text.account_holder_info" | translate}}
+                            </p>
+                            <div class="form-group-attached">
+                                <div class="row clearfix">
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : profileForm.firstName.$invalid && !profileForm.firstName.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">
+                                                {{"admin.account.profile.field.first_name.label" | translate}}
+                                            </label>
+                                            <input class="form-control" name="firstName" id="firstName" type="text"
+                                                   ng-model="$ctrl.user.firstName"
+                                                   required minlength="2" maxlength="20"
+                                                   ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                            >
+                                        </div>
+                                        <label class="error" for="firstName"
+                                               ng-show="profileForm.firstName.$error.required && profileForm.firstName.$pristine">
+                                            {{"admin.account.profile.field.first_name.required" | translate }}
+                                        </label>
+                                        <label class="error" for="firstName"
+                                               ng-show="profileForm.firstName.$error.pattern || profileForm.firstName.$error.minlength|| profileForm.firstName.$error.maxlength  && profileForm.$submitted">
+                                            {{"admin.account.profile.field.first_name.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : profileForm.lastName.$invalid && !profileForm.lastName.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">{{"admin.account.profile.field.last_name.label"
+                                                | translate}}</label>
+                                            <input class="form-control" name="lastName" id="lastName" type="text"
+                                                   ng-model="$ctrl.user.lastName" required minlength="2" maxlength="20"
+                                                   ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                            >
+                                        </div>
+                                        <label class="error" for="lastName"
+                                               ng-show="profileForm.lastName.$error.required && profileForm.lastName.$pristine">
+                                            {{"admin.account.profile.field.last_name.required" | translate }}
+                                        </label>
+                                        <label class="error" for="lastName"
+                                               ng-show="profileForm.lastName.$error.pattern || profileForm.lastName.$error.minlength|| profileForm.lastName.$error.maxlength  && profileForm.lastName.$pristine">
+                                            {{"admin.account.profile.field.last_name.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : profileForm.email.$invalid && !profileForm.email.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">
+                                                {{"admin.account.profile.field.email.label" | translate}}</label>
+                                            <input ng-disabled="true" class="form-control" name="email" id="email" ng-model="$ctrl.user.email"
+                                                   type="text"
+                                                   ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                                   required/>
+                                        </div>
+                                        <label class="error" for="email"
+                                               ng-show="profileForm.email.$error.required && !profileForm.email.$pristine">
+                                            {{"admin.account.profile.field.email.required" | translate }}
+                                        </label>
+                                        <label class="error" for="email"
+                                               ng-show="profileForm.email.$error.pattern  && !profileForm.email.$pristine">
+                                            {{"admin.account.profile.field.email.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : profileForm.mobileNumber.$invalid && !profileForm.mobileNumber.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">
+                                                {{"admin.account.profile.field.mobile.label" | translate}}</label>
+                                            <input class="form-control" name="mobileNumber" id="mobileNumber" type="text"
+                                                   ng-model="$ctrl.user.mobileNumber" ng-pattern='/^9665[0-9]{8}$$/' required>
+                                        </div>
+                                        <label class="error" for="mobileNumber"
+                                               ng-show="profileForm.mobileNumber.$error.required && profileForm.$submitted">
+                                            {{"admin.account.profile.field.mobile.required" | translate }}
+                                        </label>
+                                        <label class="error" for="mobileNumber"
+                                               ng-show="profileForm.mobileNumber.$error.pattern || profileForm.mobileNumber.$error.minlength|| profileForm.mobileNumber.$error.maxlength  && profileForm.$submitted">
+                                            {{"admin.account.profile.field.mobile.invalid" | translate }}
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-20">
+                                <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                                </div>
+                                <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                                    <button permission permission-only="'manageProfile'" type="submit" id="saveChanges1" class="btn btn-primary btn-block"
+                                            ng-disabled="profileForm.$invalid">
+                                        {{"admin.account.profile.button.save_changes" | translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card m-t-30">
+                    <div class="card-block card-wide-padding">
+                        <div ng-if="$ctrl.isFailure" class="alert alert-danger" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            <strong></strong>{{$ctrl.message| translate}}
+                        </div>
+                        <div ng-if="$ctrl.isSuccess" class="alert alert-success" role="alert">
+                            <button class="close" data-dismiss="alert"></button>
+                            <strong></strong>{{$ctrl.message | translate }}
+                        </div>
+                        <div ng-if="$ctrl.loading" class="progress-circle-indeterminate"></div>
+                        <form id="resetForm" name="resetForm" autocomplete="off" accessible-form novalidate
+                              ng-submit="$ctrl.changePassword(resetForm)">
+                            <p class="bold text-uppercase p-l-10">
+                                {{"admin.account.profile.text.reset_password" | translate}}
+                            </p>
+                            <div class="form-group-attached">
+                                <div class="row clearfix">
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : resetForm.oldPassword.$invalid && !resetForm.oldPassword.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">
+                                                {{"admin.account.profile.field.old_password.label" | translate}}
+                                            </label>
+                                            <input type="password" ng-model="$ctrl.oldPassword" name="oldPassword"
+                                                   id="oldPassword"
+                                                   class="form-control"
+                                                   ng-pattern="/[a-zA-Z\u0600-\u06FF@#_-]+[0-9]+[a-zA-Z\u0600-\u06FF0-9@#_-]*|[0-9]+[a-zA-Z\u0600-\u06FF@#_-][a-zA-Z\u0600-\u06FF0-9@#_-]*/"
+                                                   ng-minlength="6"
+                                                   ng-maxlength="20"
+                                                   required>
+                                        </div>
+                                        <label class="error" for="oldPassword"
+                                               ng-show="resetForm.oldPassword.$error.required && resetForm.$submitted">
+                                            {{"admin.account.profile.field.old_password.required" | translate }}
+                                        </label>
+                                        <label class="error" for="oldPassword"
+                                               ng-show="resetForm.oldPassword.$error.pattern || resetForm.oldPassword.$error.minlength|| resetForm.oldPassword.$error.maxlength  && resetForm.$submitted">
+                                            {{"admin.account.profile.field.old_password.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6 no-margin no-padding">
+                                        <div class="form-group form-group-default no-margin required"
+                                             ng-class="{ 'has-error' : resetForm.newPassword.$invalid && !resetForm.newPassword.$pristine }">
+                                            <label class="no-text-transform fs-12 bold">
+                                                {{"admin.account.profile.field.new_password.label" | translate}}
+                                            </label>
+                                            <input type="password" ng-model="$ctrl.newPassword" id="newPassword"
+                                                   name="newPassword"
+                                                   class="form-control"
+                                                   ng-pattern="/[a-zA-Z\u0600-\u06FF@#_-]+[0-9]+[a-zA-Z\u0600-\u06FF0-9@#_-]*|[0-9]+[a-zA-Z\u0600-\u06FF@#_-][a-zA-Z\u0600-\u06FF0-9@#_-]*/"
+                                                   ng-minlength="6"
+                                                   ng-maxlength="20"
+                                                   required>
+                                        </div>
+                                        <label class="error" for="newPassword"
+                                               ng-show="resetForm.newPassword.$error.required && resetForm.$submitted">
+                                            {{"admin.account.profile.field.old_password.required" | translate }}
+                                        </label>
+                                        <label class="error" for="oldPassword"
+                                               ng-show="resetForm.newPassword.$error.pattern || resetForm.newPassword.$error.minlength|| resetForm.newPassword.$error.maxlength && resetForm.$submitted">
+                                            {{"admin.account.profile.field.old_password.invalid" | translate }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-20">
+                                <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                                </div>
+                                <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                                    <button id="saveChanges2" class="btn btn-primary btn-block">
+                                        {{"admin.account.profile.button.save_changes" | translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

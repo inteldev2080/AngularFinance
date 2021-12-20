@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "831932ca-7dc2-4b4b-924f-2e8d174c8d0f",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Supplier",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://dev.supplieson.com/api/v1/suppliers?VATRegisterNumber=909090&VATRegisterPhoto=https://supplieson.com/api/upload/image/470959861eeaf63de14704f2905026d4&commercialRegister=1234567892&commercialRegisterExpireDate=2021-11-30&commercialRegisterExpireDateIslamic=2022-11-05 T08:00:00.000Z&commercialRegisterPhoto=https://supplieson.com/api/upload/image/d9d145391a998006f495605d37880976&confirmPassword=abcabc&language=en&representativeName=ewee&userEmail=useremail:s2s@gmail.com&userFirstName=James&userLastName=Coulter&userMobilePhone=966554756352&userPassword=abcabc",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"supplieson",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"suppliers"
+					],
+					"query": [
+						{
+							"key": "VATRegisterNumber",
+							"value": "909090"
+						},
+						{
+							"key": "VATRegisterPhoto",
+							"value": "https://supplieson.com/api/upload/image/470959861eeaf63de14704f2905026d4"
+						},
+						{
+							"key": "commercialRegister",
+							"value": "1234567892"
+						},
+						{
+							"key": "commercialRegisterExpireDate",
+							"value": "2021-11-30"
+						},
+						{
+							"key": "commercialRegisterExpireDateIslamic",
+							"value": "2022-11-05 T08:00:00.000Z"
+						},
+						{
+							"key": "commercialRegisterPhoto",
+							"value": "https://supplieson.com/api/upload/image/d9d145391a998006f495605d37880976"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "abcabc"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						},
+						{
+							"key": "representativeName",
+							"value": "ewee"
+						},
+						{
+							"key": "userEmail",
+							"value": "useremail:s2s@gmail.com"
+						},
+						{
+							"key": "userFirstName",
+							"value": "James"
+						},
+						{
+							"key": "userLastName",
+							"value": "Coulter"
+						},
+						{
+							"key": "userMobilePhone",
+							"value": "966554756352"
+						},
+						{
+							"key": "userPassword",
+							"value": "abcabc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://dev.supplieson.com/api/v1/customers?address=74PF+G2 Hijrat Al Harah Saudi Arabia&cityId=60451294e09ae62bed9be53b&commercialRegister=1234567584&commercialRegisterExpireDate=2021-11-30&commercialRegisterPhoto=https://supplieson.com/api/upload/image/d9d145391a998006f495605d37880976&confirmPassword=qweQWE123!@%23&language=en&representativeName=company&userEmail=jamesdcoulter@gmail.com&userFirstName=James&userMobilePhone=966554756352&userPassword=qweQWE123!@%23&coordinates=[26.286348600000018, 49.122605187500014]",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"supplieson",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "74PF+G2 Hijrat Al Harah Saudi Arabia"
+						},
+						{
+							"key": "cityId",
+							"value": "60451294e09ae62bed9be53b"
+						},
+						{
+							"key": "commercialRegister",
+							"value": "1234567584"
+						},
+						{
+							"key": "commercialRegisterExpireDate",
+							"value": "2021-11-30"
+						},
+						{
+							"key": "commercialRegisterPhoto",
+							"value": "https://supplieson.com/api/upload/image/d9d145391a998006f495605d37880976"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "qweQWE123!@%23"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						},
+						{
+							"key": "representativeName",
+							"value": "company"
+						},
+						{
+							"key": "userEmail",
+							"value": "jamesdcoulter@gmail.com"
+						},
+						{
+							"key": "userFirstName",
+							"value": "James"
+						},
+						{
+							"key": "userMobilePhone",
+							"value": "966554756352"
+						},
+						{
+							"key": "userPassword",
+							"value": "qweQWE123!@%23"
+						},
+						{
+							"key": "coordinates",
+							"value": "[26.286348600000018, 49.122605187500014]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://dev.supplieson.com/api/v1/login?username=bakingkuptest@gmail.com&password=supplieson2030",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"supplieson",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "bakingkuptest@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "supplieson2030"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ForgotPassword-sendEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://dev.supplieson.com/api/v1/send?email=seniordev1994128@gmail.com",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"supplieson",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"send"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "seniordev1994128@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "supplieson2030",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

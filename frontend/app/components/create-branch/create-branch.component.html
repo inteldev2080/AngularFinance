@@ -1,0 +1,148 @@
+<div class="modal fade slide-up" id="branchModal" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-header clearfix text-left">
+                    <button type="button" ng-click="$ctrl.resetForm(branchForm)" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        <i class="pg-close fs-14"></i>
+                    </button>
+                    <h5 ng-if="$ctrl.mode==='Save'"><span class="semi-bold">{{'component.create-branch.text.adding_new_branch' | translate}}</span></h5>
+                    <h5 ng-if="$ctrl.mode==='Update'"><span class="semi-bold">{{'component.create-branch.text.update_branch' | translate}}</span></h5>
+                    <p></p>
+
+                </div>
+                <div class="modal-body">
+                    <form role="form"  name="branchForm" ng-submit="$ctrl.onSubmit(branchForm)" accessible-form novalidate>
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-6 m-b-10">
+                                    <div class="form-group form-group-default"
+                                         ng-class="{ 'has-error' : branchForm.branchName.$invalid && !branchForm.branchName.$pristine }">
+                                        <label>{{'component.create-branch.field.branchName.label' | translate}}</label>
+                                        <input ng-model="$ctrl.branch.branchName" name="branchName" id="branchName"
+                                               placeholder="{{'component.create-branch.field.branchName.place_holder' | translate}}"
+                                               type="text" class="form-control" required>
+                                    </div>
+                                    <div ng-messages="branchForm.branchName.$error">
+                                    <span class="error" ng-message="required" ng-if="!branchForm.branchName.$pristine">
+                                      {{'component.create-branch.field.branchName.required' | translate}}
+                                    </span>
+                                        <span class="error" ng-message="pattern">
+                                        {{'component.create-branch.field.branchName.invalid' | translate}}
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 m-b-10">
+                                    <div style="z-index:1;" class="form-group form-group-custom form-group-default form-group-default-select2">
+                                        <label class="label-custom">{{"component.create-branch.field.city.label" | translate }}</label>
+                                        <select ng-model="$ctrl.branch.citySelected" id="selectedCity"
+                                                ng-options="item as item.englishName for item in $ctrl.citylist track by item._id"
+                                                class="full-width" data-placeholder="{{'component.create-branch.field.city.place_holder' | translate}}" data-init-plugin="select2">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 " style="z-index: 2;" >
+                                    <div class="form-group form-group-custom form-group-default form-group-default-select2"
+                                         ng-class="{ 'has-error' : branchForm.manager.$invalid && !branchForm.manager.$pristine }">
+                                        <label class="label-custom" for="manager">{{'component.create-branch.field.manager.label' | translate}}</label>
+                                        <select ng-model="$ctrl.branch.manager" name="manager" id="manager"
+                                                class="full-width" data-placeholder="Select Manager" data-disable-search="false" data-init-plugin="select2"
+                                                ng-options="item as item.representativeName for item in $ctrl.staff.data track by item._id">
+                                        </select>
+                                    </div>
+                                    <div ng-messages="userForm.role.$error">
+                                    <span ng-message="required" ng-if="!userForm.role.$pristine">
+                                       {{'component.create-branch.field.manager.required' | translate}}
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div style="z-index: 2;"
+                                         class="form-group form-group-custom form-group-default form-group-default-select2 m-b-0">
+                                        <label for="status" class="">
+                                            {{'customer.account.users.text.status' | translate}}
+                                        </label>
+                                        <select name="status" id="status" ng-model="$ctrl.branch.selectedStatus"
+                                                class="full-width"
+                                                data-placeholder="Select status" data-init-plugin="select2" data-disable-search="true"
+                                                ng-options="item as $ctrl.translateStatus(item.key) for item in $ctrl.status.data track by item.key">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div pg-form-group class="form-group form-group-default no-margin required" ng-class="{ 'has-error' : branchForm.address.$invalid && !branchForm.address.$pristine }">
+                                        <label>{{"component.create-branch.field.location.label" | translate }}</label>
+                                        <div class="controls">
+                                            <input places-auto-complete size=80
+                                                   name="address"
+                                                   id="location"
+                                                   class="form-control"
+                                                   component-restrictions="{country:'sa'}"
+                                                   ng-model="$ctrl.branch.location.address"
+                                                   types="{{$ctrl.types}}"
+                                                   on-place-changed="$ctrl.placeChanged()" required/>
+                                        </div>
+                                    </div>
+                                    <label class="error" ng-show="branchForm.address.$error.required && !branchForm.address.$pristine">
+                                        {{"component.create-branch.field.location.required" | translate }}.
+                                    </label>
+                                    <div class="m-b-10" style="width:100%" map-lazy-load="{{$ctrl.googleMapsUrl}}">
+                                        <ng-map ng-show="!$ctrl.profileIsloading"  id="map" zoom="11"
+                                                center="{{$ctrl.branch.location.coordinates}}">
+                                            <marker position="{{$ctrl.branch.location.coordinates}}"
+                                                    title="Location"  animation="Animation.DROP"
+                                                    on-dragend="$ctrl.markerDragEnd()"
+                                                    draggable="true">
+                                            </marker>
+
+                                        </ng-map>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 offset-md-4 m-t-10 sm-m-t-10 text-center">
+                                    <button type="submit" class="btn btn-primary btn-block m-t-5" ng-disabled="branchForm.$invalid">{{$ctrl.mode | translate}}</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    $('#selectedCity').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+
+</script>
+
+

@@ -1,0 +1,360 @@
+<div class="modal fade slide-up payments payments_2" id="supplierFormModal" tabindex="-1"   role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <button type="button" ng-click="$ctrl.resetForm(supplierForm)" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="pg-close fs-14"></i>
+                    {{'admin.suppliers.create-supplier.button.close' | translate}}
+                </button>
+                <div class="text-center p-r-25 p-l-25">
+                    <h5 class="semi-bold m-t-30 m-b-10" style="font-size: 28px;font-weight: 500;">
+                        {{'admin.suppliers.create-supplier.title' | translate}}
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form name="supplierForm"
+                          id="supplierForm" ng-submit="$ctrl.createSupplier(supplierForm)" class="p-t-15" role="form" novalidate>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.companyName.$invalid && !supplierForm.companyName.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.company_name.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="text" id="companyName" class="form-control" name="companyName"
+                                               placeholder="{{'admin.suppliers.create-supplier.field.company_name.placeholder' | translate}}"
+                                               ng-model="$ctrl.formData.representativeName"
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="companyName" ng-show="supplierForm.companyName.$error.required && !supplierForm.companyName.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.company_name.required' | translate}}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.userEmail.$invalid && !supplierForm.userEmail.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.email.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="email" id="userEmail" class="form-control" name="userEmail" placeholder="Email"
+                                               ng-model="$ctrl.formData.userEmail"
+                                               ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="userEmail" ng-show="supplierForm.userEmail.$error.required && !supplierForm.userEmail.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.email.required' | translate}}
+                                </label>
+                                <label class="error" for="userEmail" ng-show="supplierForm.userEmail.$error.pattern && !supplierForm.userEmail.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.email.invalid' | translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.mobile.$invalid && !supplierForm.mobile.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.mobile.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="text" id="mobile" class="form-control" name="mobile" ng-pattern='/^9665[0-9]{8}$$/'
+                                               placeholder="{{'admin.suppliers.create-supplier.field.mobile.placeholder' | translate}}" ng-model="$ctrl.formData.userMobilePhone"
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="mobile" ng-show="supplierForm.mobile.$error.required && !supplierForm.mobile.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.mobile.required' | translate}}
+                                </label>
+                                <label class="error" for="userEmail" ng-show="supplierForm.mobile.$error.pattern && !supplierForm.mobile.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.mobile.invalid' | translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.userFirstName.$invalid && !supplierForm.userFirstName.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.first_name.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control"
+                                               id="userFirstName"
+                                               ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                               name="userFirstName" placeholder="{{'admin.suppliers.create-supplier.field.first_name.placeholder' | translate}}"
+                                               ng-model="$ctrl.formData.userFirstName"
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="userFirstName" ng-show="supplierForm.userFirstName.$error.required && !supplierForm.userFirstName.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.first_name.required' | translate}}
+                                </label>
+                                <label class="error" for="userFirstName" ng-show="supplierForm.userFirstName.$error.pattern && !supplierForm.userFirstName.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.first_name.invalid' | translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.userLastName.$error.required && !supplierForm.userLastName.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.last_name.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" name="userLastName"
+                                               id="userLastName"
+                                               ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                               placeholder="{{'admin.suppliers.create-supplier.field.last_name.placeholder' | translate}}" ng-model="$ctrl.formData.userLastName"
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="userLastName" ng-show="supplierForm.userLastName.$error.required && !supplierForm.userLastName.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.first_name.required' | translate}}
+                                </label>
+                                <label class="error" for="userLastName" ng-show="supplierForm.userLastName.$error.pattern && !supplierForm.userLastName.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.first_name.invalid' | translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.commercialRegister.$invalid && !supplierForm.commercialRegister.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.cr_number.label' | translate}}</label>                                    <div class="controls">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="commercialRegister"
+                                           name="commercialRegister"
+                                           placeholder="{{'admin.suppliers.create-supplier.field.cr_number.placeholder' | translate}}"
+                                           ng-model="$ctrl.formData.commercialRegister"
+                                           ng-pattern="/^\d{10}$$/"
+                                           required>
+                                </div>
+                                </div>
+                                <label class="error" for="commercialRegister" ng-show="supplierForm.commercialRegister.$error.required && !supplierForm.commercialRegister.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.cr_number.required' | translate}}
+                                </label>
+                                <label class="error" for="commercialRegister" ng-show="supplierForm.commercialRegister.$error.pattern && !supplierForm.commercialRegister.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.cr_number.invalid' | translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="d-flex flex-wrap radio radio-success">
+                                    <div class="m-r-20">
+                                        <span class="bold fs-12 p-l-5">{{'admin.suppliers.create-supplier.field.select_date.label' | translate}}</span>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex">
+                                            <div>
+                                                <input  type="radio" ng-model="$ctrl.dateMethod" value="Hijri"  name="paymentMethod" id="hijri">
+                                                <label for="hijri">{{'admin.suppliers.create-supplier.field.select_date.hijri' | translate}}</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" ng-model="$ctrl.dateMethod" value="Gregorian" name="paymentMethod" id="gregorian">
+                                                <label for="gregorian">{{'admin.suppliers.create-supplier.field.select_date.gregorian' | translate}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6" ng-show="$ctrl.dateMethod == 'Hijri'">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.commercialRegisterExpireDateIslamic.$invalid && !supplierForm.commercialRegisterExpireDateIslamic.$pristine }">
+                                    <div class="clearfix">
+                                        <label class="pull-left">{{'admin.suppliers.create-supplier.field.cr_expdate.labelHijri' | translate}}</label>
+                                        <i class="fa fa-calendar pull-right m-t-5"></i>
+                                    </div>
+
+                                    <div class="controls">
+                                        <input  type="date" class="form-control unstyled" name="commercialRegisterExpireDateIslamic"
+                                               id="commercialRegisterExpireDateIslamic"
+                                               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" autocomplete="off"
+                                               ng-model="$ctrl.formData.commercialRegisterExpireDateIslamic" ng-required="$ctrl.dateMethod == 'Hijri'">
+                                    </div>
+                                </div>
+                                <label  id="commercialRegisterExpireDateIslamicLabel" class="error"
+                                        for="commercialRegisterExpireDateIslamic" ng-show="supplierForm.commercialRegisterExpireDateIslamic.$error.required && !supplierForm.commercialRegisterExpireDateIslamic.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.cr_expdate.required' | translate}}
+                                </label>
+
+                            </div>
+
+                            <div class="col-sm-6" ng-show="$ctrl.dateMethod == 'Gregorian'">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.commercialRegisterExpireDate.$invalid && !supplierForm.commercialRegisterExpireDate.$pristine }">
+                                    <div class="clearfix">
+                                        <label class="pull-left">{{'admin.suppliers.create-supplier.field.cr_expdate.label' | translate}}</label>
+                                        <i class="fa fa-calendar pull-right m-t-5"></i>
+                                    </div>
+
+                                    <div class="controls">
+                                        <input type="date" class="form-control unstyled" name="commercialRegisterExpireDate"
+                                               id="commercialRegisterExpireDate"
+                                               pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" autocomplete="off"
+                                               ng-model="$ctrl.formData.commercialRegisterExpireDate" ng-required="$ctrl.dateMethod == 'Gregorian'">
+                                    </div>
+                                </div>
+                                <label class="error" for="commercialRegisterExpireDate" ng-show="supplierForm.commercialRegisterExpireDate.$error.required && !supplierForm.commercialRegisterExpireDate.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.cr_expdate.required' | translate}}
+                                </label>
+
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.commercialRegisterPhoto.$invalid && !supplierForm.commercialRegisterPhoto.$pristine && ctrl.noFileSelected }">
+                                    <label>{{'admin.suppliers.create-supplier.field.cr_photo.label' | translate}}</label>
+                                    <label  class="cursor" for="commercialRegisterPhoto">
+                                        <i class="pg-plus"></i>
+                                        <i ng-if="$ctrl.commercialPhoto" style="color: #373e43;">{{$ctrl.commercialPhoto}}</i>
+                                        <i ng-if="!$ctrl.commercialPhoto"> {{"admin.suppliers.create-supplier.field.cr_photo.placeholder" | translate }}  </i>
+                                    </label>
+
+                                    <div class="controls p-b-5" style="display: none;">
+                                        <input id="commercialRegisterPhoto" name="commercialRegisterPhoto" type="file"
+                                               placeholder='{{"admin.suppliers.create-supplier.field.cr_photo.placeholder" | translate }}'
+                                               ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'commercialRegisterPhoto')"
+                                               ng-model="$ctrl.commercialRegisterPhoto"
+                                               accept="image/*"
+                                               required>
+                                    </div>
+                                    <!--<div class="d-flex justify-content-center">-->
+                                        <!--<img style="max-height:100px" ngf-thumbnail="$ctrl.commercialRegisterPhoto">-->
+                                    <!--</div>-->
+                                </div>
+                                <label class="error" for="commercialRegisterPhoto" ng-show="supplierForm.commercialRegisterPhoto.$error.required && !supplierForm.commercialRegisterPhoto.$pristine  && ctrl.noFileSelected">
+                                    {{'admin.suppliers.create-supplier.field.cr_photo.required' | translate}}
+                                </label>
+                                <label class="error" for="commercialRegisterPhoto" ng-show="supplierForm.commercialRegisterPhoto.$error.maxSize && !supplierForm.commercialRegisterPhoto.$pristine && ctrl.noFileSelected">
+                                    {{'admin.suppliers.create-supplier.field.cr_photo.invalid' | translate}}
+                                </label>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : supplierForm.VATRegisterNumber.$invalid && !supplierForm.VATRegisterNumber.$pristine }">
+                                    <label>{{"admin.suppliers.create-supplier.field.VAT.label" | translate }}</label>
+                                    <div class="controls">
+                                        <input type="text" class="form-control" name="VATRegisterNumber"
+                                               id="VATRegisterNumber"
+                                               placeholder='{{"admin.suppliers.create-supplier.field.VAT.placeholder" | translate }}'
+                                               ng-model="$ctrl.formData.VATRegisterNumber"
+                                               ng-minlength="1"
+                                               ng-maxlength="20"
+                                               ng-pattern="/^(?:[0-9]+(?:\.[0-9]{0,10})?)?$/">
+                                    </div>
+                                </div>
+                                <label id="VATRegisterNumberRequired" class="error" for="VATRegisterNumber"
+                                       ng-show="supplierForm.VATRegisterNumber.$error.required && !supplierForm.VATRegisterNumber.$pristine">
+                                    - {{"admin.suppliers.create-supplier.field.VAT.required" | translate }}.
+                                </label>
+                                <label id="VATRegisterNumberInvalid" class="error" for="VATRegisterNumber"
+                                       ng-show="supplierForm.VATRegisterNumber.$error.pattern && !supplierForm.VATRegisterNumber.$pristine">
+                                    - {{"admin.suppliers.create-supplier.field.VAT.invalid" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+
+                            </div>
+
+                            <div class="col-sm-12">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default"
+                                     ng-class="{ 'has-error' : supplierForm.VATRegisterPhoto.$invalid && !supplierForm.VATRegisterPhoto.$pristine && ctrl.noFileSelected }">
+                                    <label>{{"admin.suppliers.create-supplier.field.vatPhoto.label" | translate }}</label>
+                                    <label  class="cursor ng-binding" for="VATRegisterPhoto">
+                                        <i class="pg-plus"></i>
+                                        <i ng-if="$ctrl.VATPhoto" style="color: #373e43;">{{$ctrl.VATPhoto}}</i>
+                                        <i ng-if="!$ctrl.VATPhoto"> {{"admin.suppliers.create-supplier.field.vatPhoto.placeholder" | translate }} </i>
+                                    </label>
+                                    <div class="controls" style="display: none;">
+
+                                        <input id="VATRegisterPhoto" name="VATRegisterPhoto" type="file"
+                                               style="width:166px;" class="form-control p-b-35"
+                                               ngf-select="$ctrl.uploadFile($file, $invalidFiles, 'VATRegisterPhoto')"
+                                               ng-model="$ctrl.VATRegisterPhoto"
+                                               accept="image/*,application/pdf"
+                                               placeholder='{{"admin.suppliers.create-supplier.field.vatPhoto.placeholder" | translate }}'
+                                               ngf-model-invalid="errorFile">
+                                    </div>
+                                </div>
+                                <label id="VATRegisterPhotoLabel" class="error" for="VATRegisterPhoto"
+                                       ng-show="supplierForm.VATRegisterPhoto.$invalid && !supplierForm.VATRegisterPhoto.$pristine && ctrl.noFileSelected">
+                                    - {{"admin.suppliers.create-supplier.field.VATRegisterPhoto.required" | translate }}.
+                                </label>
+
+                                <label ng-if="$ctrl.photoErr" id="VATRegisterPhotoPhotoSizeError" class="error"
+                                       for="VATRegisterPhoto">
+                                    - {{"admin.suppliers.create-supplier.field.VATRegisterPhoto.photoErr" | translate }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.userPassword.$invalid && !supplierForm.userPassword.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.password.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="password" class="form-control" name="userPassword"
+                                               id="userPassword"
+                                               ng-pattern="/[a-zA-Z@#_-]+[0-9]+[a-zA-Z0-9@#_-]*|[0-9]+[a-zA-Z@#_-][a-zA-Z0-9@#_-]*/"
+                                               placeholder="{{'admin.suppliers.create-supplier.field.password.placeholder' | translate}}" ng-model="$ctrl.formData.userPassword"
+                                               required>
+                                    </div>
+                                </div>
+                                <label class="error" for="userPassword" ng-show="supplierForm.userPassword.$error.required && !supplierForm.userPassword.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.password.required' | translate}}
+                                </label>
+                                <label class="error" for="userPassword" ng-show="supplierForm.userPassword.$error.pattern && !supplierForm.userPassword.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.password.invalid' | translate}}
+                                </label>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : supplierForm.confirmPassword.$invalid && !supplierForm.confirmPassword.$pristine }">
+                                    <label>{{'admin.suppliers.create-supplier.field.confirm_password.label' | translate}}</label>
+                                    <div class="controls">
+                                        <input type="password" class="form-control"
+                                               id="confirmPassword"
+                                               name="confirmPassword" placeholder="{{'admin.suppliers.create-supplier.field.confirm_password.placeholder' | translate}}" ng-model="$ctrl.formData.confirmPassword"
+                                               compare-to="$ctrl.formData.userPassword">
+                                    </div>
+                                </div>
+
+                                <label class="error" for="confirmPassword" ng-show="supplierForm.confirmPassword.$error.required && !supplierForm.confirmPassword.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.confirm_password.required' | translate}}
+                                </label>
+                                <label class="error" for="confirmPassword" ng-show="supplierForm.confirmPassword.$error.compareTo && !supplierForm.confirmPassword.$pristine">
+                                    {{'admin.suppliers.create-supplier.field.confirm_password.invalid' | translate}}
+                                </label>
+
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col m-t-10 sm-m-t-10 clearfix">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-cons m-t-10 pull-right" type="submit"  ng-disabled="supplierForm.$invalid">
+                                        {{'admin.suppliers.create-supplier.button.save' | translate}}
+                                    </button>
+                                </div>
+                                <div class="pull-left">
+                                        <div id="loading" ng-if="$ctrl.registerLoading" class="progress-circle-indeterminate"></div>
+                                    <!--<button ng-click="" class="btn btn-danger btn-cons m-t-10 pull-left" type="button">-->
+                                        <!--{{'admin.suppliers.create-supplier.button.reset' | translate}}-->
+                                    <!--</button>-->
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+<script>
+    $('#supplierFormModal').on('hidden.bs.modal', function () {
+        $('#supplierForm').trigger('reset');
+    });
+</script>

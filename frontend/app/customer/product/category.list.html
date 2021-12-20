@@ -1,0 +1,87 @@
+<div class="checkbox check-primary">
+    <input type="checkbox" value="2" id="checkbox5" ng-model="$ctrl.categoryQuery.all"
+           ng-change="$ctrl.requestCategories()">
+    <label for="checkbox5" class="bold">
+        {{'customer.product.list.text.all' | translate}}
+    </label>
+</div>
+
+<shimmer hide="$ctrl.categoriesLoaded" col="3"></shimmer>
+<div id="cat1" class="row" ng-if="$ctrl.categoriesLoaded">
+    <div ng-repeat="cat in $ctrl.categories"
+         ui-sref="app.customer.product.view.products({categoryId:cat._id, supplierId:$ctrl.supplierId, isAll: $ctrl.requestAllCategories})"
+         class="col-lg-4 col-sm-6 d-flex flex-column" ng-if="cat.childCategory.length>0">
+        <!-- START ITEM -->
+        <div class="card hover-layout-card social-card card-add-icon share share-other full-width m-b-30 d-flex flex-1 full-height no-border"
+             data-social="item">
+            <div class="card-content-container">
+                <div class="bold h5">
+                    {{currentLanguage.language === 'ar' ? cat.arabicName : cat.englishName}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dataTables_wrapper">
+    <list-pagination total-pages="$ctrl.categoriesTotalPages"
+                     on-page-click="$ctrl.setPageCategories(pageNumber)"
+                     current-page="$ctrl.categoryCurrentPage"></list-pagination>
+</div>
+
+
+<script>
+    $('[data-init="secondary-sidebar"]').each(function () {
+        $(this).on('click', '.main-menu li a', function (e) {
+
+            if ($(this).parent().children('.sub-menu') === false) {
+                return;
+            }
+            var el = $(this);
+            var parent = $(this).parent().parent();
+            var li = $(this).parent();
+            var sub = $(this).parent().children('.sub-menu');
+
+            if (li.hasClass("open active")) {
+                el.children('.arrow').removeClass("open active");
+                sub.slideUp(200, function () {
+                    li.removeClass("open active");
+                });
+
+            } else {
+                parent.children('li.open').children('.sub-menu').slideUp(200);
+                parent.children('li.open').children('a').children('.arrow').removeClass('open active');
+                parent.children('li.open').removeClass("open active");
+                el.children('.arrow').addClass("open active");
+                sub.slideDown(200, function () {
+                    li.addClass("open active");
+
+                });
+            }
+            //e.preventDefault();
+        });
+
+    });
+
+    $('[data-init="secondary-sidebar-toggle"]').each(function () {
+        $(this).on("click", function (e) {
+            var toggleRect = $(this).get(0).getBoundingClientRect();
+            var menu = $('[data-init="secondary-sidebar"]');
+            if (menu.hasClass("open")) {
+                menu.removeClass("open");
+                menu.removeAttr("style");
+            }
+            else {
+                menu.addClass("open")
+                var menuRect = menu.get(0).getBoundingClientRect();
+                menu.css({
+                    top: toggleRect.bottom,
+                    'max-height': ($(window).height() - toggleRect.bottom),
+                    left: $(window).width() / 2 - menuRect.width / 2,
+                    'visibility': 'visible'
+                });
+
+            }
+        })
+
+    });
+</script>

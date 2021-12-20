@@ -1,0 +1,196 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container no-padding">
+
+        <div>
+            <div  class="secondary-sidebar light" data-init="secondary-sidebar">
+                <ul class="main-menu">
+                    <li class="active top-level">
+                        <back></back>
+                    </li>
+                </ul>
+            </div>
+            <div class="inner-content p-t-15 p-r-20 p-l-20">
+                <div class="sidebar-border"></div>
+                <div class="content">
+
+
+                    <div class="card card-details-table">
+                        <div class="card-header header-bg">
+                            <div>
+                                <div class="card-title">
+                                    {{$ctrl.content.title.english}}
+                                </div>
+                                <div class="card-description">
+                                    <div ncy-breadcrumb></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-block card-wide-padding wide-leftup">
+
+                                <!--<div ng-if="$ctrl.isProfielFailure" class="alert alert-danger" role="alert">-->
+                                <!--<button class="close" data-dismiss="alert"></button>-->
+                                <!--<strong></strong>{{$ctrl.message| translate}}-->
+                                <!--</div>-->
+                                <!--<div ng-if="$ctrl.isProfielSuccess" class="alert alert-success" role="alert">-->
+                                <!--<button class="close" data-dismiss="alert"></button>-->
+                                <!--<strong></strong>{{$ctrl.message | translate }}-->
+                                <!--</div>-->
+                                <div ng-if="$ctrl.isProfielLoading" class="progress-circle-indeterminate"></div>
+                                <form role="form" id="feedbackForm" name="feedbackForm" autocomplete="off" accessible-form novalidate
+                                      ng-submit="$ctrl.sendFeedback(feedbackForm)">
+                                    <p class="bold text-uppercase p-l-10">
+                                        {{"admin.account.profile.text.account_holder_info" | translate}}
+                                    </p>
+                                    <div class="form-group-attached">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6 no-margin no-padding">
+                                                <div class="form-group form-group-default no-margin required"
+                                                     ng-class="{ 'has-error' : feedbackForm.user.name.$invalid && !feedbackForm.user.name.$pristine }">
+                                                    <label class="no-text-transform fs-12 bold">
+                                                        {{"admin.account.profile.field.first_name.label" | translate}}
+                                                    </label>
+                                                    <input class="form-control" name="user.name" id="user.name" type="text"
+                                                           ng-model="$ctrl.feedback.user.name"
+                                                           required minlength="2" maxlength="20"
+                                                           ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                                    >
+                                                </div>
+                                                <label class="error" for="user.name"
+                                                       ng-show="feedbackForm.user.name.$error.required && feedbackForm.user.name.$pristine">
+                                                    {{"admin.account.profile.field.first_name.required" | translate }}
+                                                </label>
+                                                <label class="error" for="user.name"
+                                                       ng-show="feedbackForm.user.name.$error.pattern || feedbackForm.user.name.$error.minlength|| feedbackForm.user.name.$error.maxlength  && feedbackForm.$submitted">
+                                                    {{"admin.account.profile.field.first_name.invalid" | translate }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6 no-margin no-padding">
+                                                <div class="form-group form-group-default no-margin required"
+                                                     ng-class="{ 'has-error' : feedbackForm.user.email.$invalid && !feedbackForm.user.email.$pristine }">
+                                                    <label class="no-text-transform fs-12 bold">
+                                                        {{"admin.account.profile.field.first_name.label" | translate}}
+                                                    </label>
+                                                    <input class="form-control" name="user.email" id="user.email" ng-model="$ctrl.feedback.user.email"
+                                                           type="text"
+                                                           ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                                           required/>
+                                                </div>
+                                                <label class="error" for="user.email"
+                                                       ng-show="feedbackForm.user.email.$error.required && feedbackForm.user.email.$pristine">
+                                                    {{"admin.account.profile.field.first_name.required" | translate }}
+                                                </label>
+                                                <label class="error" for="user.email"
+                                                       ng-show="feedbackForm.user.email.$error.pattern || feedbackForm.user.email.$error.minlength|| feedbackForm.user.email.$error.maxlength  && feedbackForm.$submitted">
+                                                    {{"admin.account.profile.field.first_name.invalid" | translate }}
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-6 no-margin no-padding">
+                                                <div class="form-group form-group-default no-margin required"
+                                                     ng-class="{ 'has-error' : feedbackForm.user.phone.$invalid && !feedbackForm.user.phone.$pristine }">
+                                                    <label class="no-text-transform fs-12 bold">
+                                                        {{"admin.account.profile.field.mobile.label" | translate}}</label>
+                                                    <input class="form-control" name="user.phone" id="user.phone" type="text"
+                                                           ng-model="$ctrl.feedback.user.phone" ng-pattern='/^9665[0-9]{8}$$/' required>
+                                                </div>
+                                                <label class="error" for="user.phone"
+                                                       ng-show="feedbackForm.user.phone.$error.required && feedbackForm.$submitted">
+                                                    {{"admin.account.profile.field.mobile.required" | translate }}
+                                                </label>
+                                                <label class="error" for="user.phone"
+                                                       ng-show="feedbackForm.user.phone.$error.pattern || feedbackForm.user.phone.$error.minlength|| feedbackForm.user.phone.$error.maxlength  && feedbackForm.$submitted">
+                                                    {{"admin.account.profile.field.mobile.invalid" | translate }}
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="form-group-attached">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-12 no-margin no-padding">
+                                                <div class="form-group form-group-default no-margin required"
+                                                     ng-class="{ 'has-error' : feedbackForm.message.title.$invalid && !feedbackForm.message.title.$pristine }">
+                                                    <label class="no-text-transform fs-12 bold">{{"admin.account.profile.field.last_name.label"
+                                                        | translate}}</label>
+                                                    <input class="form-control" name="message.title" id="message.title" type="text"
+                                                           ng-model="$ctrl.feedback.message.title" required minlength="2" maxlength="20"
+                                                           ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                                    >
+                                                </div>
+                                                <label class="error" for="message.title"
+                                                       ng-show="feedbackForm.message.title.$error.required && feedbackForm.message.title.$pristine">
+                                                    {{"admin.account.profile.field.last_name.required" | translate }}
+                                                </label>
+                                                <label class="error" for="message.title"
+                                                       ng-show="feedbackForm.message.title.$error.pattern || feedbackForm.message.title.$error.minlength|| feedbackForm.message.title.$error.maxlength  && feedbackForm.message.title.$pristine">
+                                                    {{"admin.account.profile.field.last_name.invalid" | translate }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-sm-12 no-margin no-padding">
+                                                <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                                                    <label class="label-custom">{{"supplier.product.field.status.label" | translate}}</label>
+                                                    <select id="status" name="status" class="full-width" data-disable-search="true" data-placeholder="{{'supplier.product.field.status.placeholder' | translate}}"
+                                                            data-init-plugin="select2"
+                                                            placeholder="{{'supplier.product.field.status.placeholder' | translate}}"
+                                                            class="form-control"
+                                                            ng-model="$ctrl.selectedCategory"
+                                                            required>
+                                                        <option selected value="Inquiries">Inquiries</option>
+                                                        <option value="Issues">Issues</option>
+                                                        <option value="Careers">Careers</option>
+                                                    </select>
+                                                    <label class="error"  ng-if="feedbackForm.category.$error.required && !feedbackForm.category.$pristine">
+                                                        {{'supplier.product.field.status.required' | translate}}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-sm-12 no-margin no-padding">
+                                                <div class="form-group form-group-default no-margin required"
+                                                     ng-class="{ 'has-error' : feedbackForm.message.body.$invalid && !feedbackForm.message.body.$pristine }">
+                                                    <label class="no-text-transform fs-12 bold">{{"admin.account.profile.field.last_name.label"
+                                                        | translate}}</label>
+                                                    <input class="form-control" name="message.body" id="message.body" type="text"
+                                                           ng-model="$ctrl.feedback.message.body" required minlength="2" maxlength="20"
+                                                           ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                                                    >
+                                                </div>
+                                                <label class="error" for="message.body"
+                                                       ng-show="feedbackForm.message.body.$error.required && feedbackForm.message.body.$pristine">
+                                                    {{"admin.account.profile.field.last_name.required" | translate }}
+                                                </label>
+                                                <label class="error" for="message.body"
+                                                       ng-show="feedbackForm.message.body.$error.pattern || feedbackForm.message.body.$error.minlength|| feedbackForm.message.body.$error.maxlength  && feedbackForm.message.body.$pristine">
+                                                    {{"admin.account.profile.field.last_name.invalid" | translate }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-20">
+                                        <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                                        </div>
+                                        <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                                            <button type="submit" id="saveChanges1" class="btn btn-primary btn-block"
+                                                    ng-disabled="feedbackForm.$invalid">
+                                                {{"admin.account.profile.button.save_changes" | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"neolth-testing.neolth_access_log"},{"v":2,"key":{"accessorUserId":1},"name":"accessorUserId_1","ns":"neolth-testing.neolth_access_log"},{"v":2,"key":{"targetUserId":1},"name":"targetUserId_1","ns":"neolth-testing.neolth_access_log"}]}

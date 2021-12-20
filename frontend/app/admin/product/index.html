@@ -1,0 +1,66 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper full-height ">
+    <!-- START PAGE CONTENT -->
+    <div class="container full-height no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center upper-case">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="m-r-10 feather feather-grid">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                {{"m.categories" | translate }}
+            </p>
+
+            <button class="btn btn-primary m-l-50 m-t-5 m-b-10 btn-cons cursor"
+                    ng-click="$ctrl.openCreateCategoryPopup()"><i class="fa fa-plus" aria-hidden="true"></i>
+                {{"admin.categories.newCategory" | translate }}
+            </button>
+
+            <ul class="main-menu" style="max-height: 285px;overflow-y: auto;height: auto;">
+                <li ng-repeat="item in $ctrl.categories" ui-sref-active="active top-level bold">
+                    <a class="m-l-25 cursor">
+                        <span ng-if="$ctrl._$translate.use() === 'en'" ng-click="$ctrl.setParentCategoryId(item._id)">{{item.englishName}} <span
+                                ng-if="item.status=='Hidden'" class="fa fa-eye-slash m-l-5"></span></span>
+                        <span ng-if="$ctrl._$translate.use() !== 'en'" ng-click="$ctrl.setParentCategoryId(item._id)">{{item.arabicName}} <span
+                                ng-if="item.status=='Hidden'" class="fa fa-eye-slash m-l-5"></span></span>
+
+                    </a>
+                </li>
+            </ul>
+            <shimmer hide="$ctrl.categoriesLoaded"></shimmer>
+        </div>
+        <ui-view></ui-view>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle, .secondary-side button').on('click',function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+    });
+
+    $('.secondary-side .main-menu').on('click','li',function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

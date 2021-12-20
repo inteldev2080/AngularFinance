@@ -1,0 +1,102 @@
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="col">
+            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                {{'supplier.account.customer.branch.branch' | translate}}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="">
+        <div class="card-block">
+            <div class="col-md-12  padding-0">
+                <div class="dataTables_wrapper no-footer">
+                    <shimmer hide="!$ctrl.usersIsLoading"></shimmer>
+                    <div class="table-responsive">
+                        <table ng-if="!$ctrl.usersIsLoading"
+                               class="table table-striped dataTable dataTableFormat no-footer table-hover" role="grid">
+                            <thead>
+                            <tr role="row">
+                                <th class="sorting_asc no-text-transform fs-12 " tabindex="0" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.label' | translate}}
+                                </th>
+                                <th class="sorting_asc no-text-transform fs-12 text-center" tabindex="0" rowspan="1"
+                                    colspan="1" aria-sort="ascending"
+                                    aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.manager' | translate}}
+                                </th>
+                                <th class="sorting_asc no-text-transform fs-12 " tabindex="0" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.location' | translate}}
+                                </th>
+                                <th class="sorting_asc no-text-transform fs-12 " tabindex="0" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.city' | translate}}
+                                </th>
+                                <th class="sorting_asc no-text-transform fs-12 " tabindex="0" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.date' | translate}}
+                                </th>
+                                <th class="sorting_asc no-text-transform fs-12 " tabindex="0" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                    {{'supplier.account.customer.branch.status' | translate}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in $ctrl.branches" class="gradeX odd content-table-payment" role="row">
+                                <td class="sorting_1 p-l-15 mn-100">{{item.branchName}}</td>
+                                <td class="sorting_1 p-l-15 text-center mn-130">{{item.manager.representativeName ||
+                                    'N/A'}}
+                                </td>
+                                <td class="sorting_1 p-l-15 mn-170">{{item.location.address}}</td>
+                                <td class="sorting_1 p-l-15 mn-100">{{item.location.city}}</td>
+                                <td class="sorting_1 p-l-15 mn-120">{{item.createdAt | amUtcOffset:'-0000' |
+                                    amDateFormat:'DD-MM-YYYY'}}
+                                </td>
+                                <td class="sorting_1 p-l-15 mn-120">
+                                    <span ng-show="item.status === 'Active'">{{'supplier.account.customer.branch.status_active' | translate}}</span>
+                                    <span ng-show="item.status === 'Blocked'">{{'supplier.account.customer.branch..status_blocked' | translate}}</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <list-pagination total-pages="$ctrl.totalPages" on-page-click="$ctrl.setPage(pageNumber)"
+                                         current-page="$ctrl.currentPage"></list-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<create-branch mode="$ctrl.mode" location="$ctrl.location" citylist="$ctrl.cityList" staff="$ctrl.staffs" on-save="$ctrl.createBranch(branch)"
+               on-update="$ctrl.updateBranch(branch)" branch="$ctrl.branch"></create-branch>
+
+<script>
+    $('#role , #status').on('select2:open', function () {
+        let that = $(this);
+        let flag = false;
+        if ($(window).width() > 739) {
+            $(window).bind('wheel', function (e) {
+            });
+        }
+        else {
+            $(window).bind('wheel', function (e) {
+                console.log(e.target);
+                if (!flag && e.target.className === 'select2-results__option') {
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if (!flag && e.target.className !== 'select2-results__option') {
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

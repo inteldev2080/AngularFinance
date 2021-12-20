@@ -1,0 +1,225 @@
+{
+  "schemas": {
+    "Notification": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "refObjectId": {
+              "type": "object"
+            }
+          }
+        },
+        "level": {
+          "type": "string"
+        },
+        "isRead": {
+          "type": "boolean"
+        },
+        "user": {
+          "type": "object"
+        },
+        "actionTitle": {
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "string"
+            },
+            "en": {
+              "type": "string"
+            },
+            "actionUrl": {
+              "type": "string"
+            }
+          }
+        },
+        "url": {
+          "type": "string"
+        },
+        "staeParams": {
+          "type": "string"
+        }
+
+      }
+    }
+  },
+  "paths": {
+    "/notifications": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Notifications list.",
+        "operationId": "notificationList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "notifications": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Notification"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/notifications/{notificationId}": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Get notification by id.",
+        "operationId": "notificationById",
+        "parameters": [{
+          "name": "notificationId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Notification": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Notification"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Update notification.",
+        "operationId": "updateNotication",
+        "parameters": [{
+          "name": "notificationId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Notification": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Notification"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

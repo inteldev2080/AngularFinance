@@ -1,0 +1,512 @@
+{
+  "schemas": {
+    "Content": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "string"
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "arabic": {
+              "type": "string"
+            },
+            "english": {
+              "type": "string"
+            }
+          }
+        },
+        "body": {
+          "type": "object",
+          "properties": {
+            "arabic": {
+              "type": "string"
+            },
+            "english": {
+              "type": "string"
+            }
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+
+        "key": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/contents": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "Get list of contents.",
+        "operationId": "contentList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "content": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Content"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "Create new content.",
+        "operationId": "createContent",
+        "requestBody": {
+          "description": "Content Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "title",
+                  "body",
+                  "status",
+                  "key"
+                ],
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "object",
+                    "properties": {
+                      "arabic": {
+                        "type": "string"
+                      },
+                      "english": {
+                        "type": "string"
+                      }
+                    }
+                  },
+
+                  "body": {
+                    "type": "object",
+                    "properties": {
+                      "arabic": {
+                        "type": "string"
+                      },
+                      "english": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "content": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Content"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/contents/{contentId}": {
+        "put": {
+          "tags": [
+            "Content"
+          ],
+          "summary": "Update content.",
+          "operationId": "updateContent",
+          "parameters": [{
+            "name": "contentId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }],
+          "requestBody": {
+            "description": "Content Attributes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "title",
+                    "body",
+                    "status",
+                    "key"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "object",
+                      "properties": {
+                        "arabic": {
+                          "type": "string"
+                        },
+                        "english": {
+                          "type": "string"
+                        }
+                      }
+                    },
+  
+                    "body": {
+                      "type": "object",
+                      "properties": {
+                        "arabic": {
+                          "type": "string"
+                        },
+                        "english": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    }
+  
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Return successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Content"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "$ref": "#/components/responses/400"
+            },
+            "401": {
+              "$ref": "#/components/responses/401"
+            },
+            "403": {
+              "$ref": "#/components/responses/403"
+            },
+            "409": {
+              "$ref": "#/components/responses/409"
+            },
+            "500": {
+              "$ref": "#/components/responses/500"
+            }
+          },
+          "security": [{
+            "APIKeyHeader": []
+          }]
+        },
+        "get": {
+          "tags": [
+            "Content"
+          ],
+          "summary": "Get content by Id.",
+          "operationId": "getContent",
+          "parameters": [{
+            "name": "contentId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }],
+          "responses": {
+            "200": {
+              "description": "Return successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                            "content": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/Content"
+                              }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "$ref": "#/components/responses/400"
+            },
+            "401": {
+              "$ref": "#/components/responses/401"
+            },
+            "403": {
+              "$ref": "#/components/responses/403"
+            },
+            "409": {
+              "$ref": "#/components/responses/409"
+            },
+            "500": {
+              "$ref": "#/components/responses/500"
+            }
+          },
+          "security": [{
+            "APIKeyHeader": []
+          }]
+        },
+        "delete": {
+          "tags": [
+            "Content"
+          ],
+          "summary": "Delete content.",
+          "operationId": "deleteContent",
+          "parameters": [{
+            "name": "contentId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }],
+          "responses": {
+            "200": {
+              "description": "Return successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Content"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "$ref": "#/components/responses/400"
+            },
+            "401": {
+              "$ref": "#/components/responses/401"
+            },
+            "403": {
+              "$ref": "#/components/responses/403"
+            },
+            "409": {
+              "$ref": "#/components/responses/409"
+            },
+            "500": {
+              "$ref": "#/components/responses/500"
+            }
+          },
+          "security": [{
+            "APIKeyHeader": []
+          }]
+        }
+      },
+      "/contacts/reply/{contactId}": {
+        "put": {
+          "tags": [
+            "Contact"
+          ],
+          "summary": "Update contact.",
+          "operationId": "update",
+          "parameters": [{
+            "name": "contactId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }],
+          "requestBody": {
+            "description": "Contact Attributes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "user",
+                    "reply"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "user": {
+                      "type": "string"
+                    },
+                    "reply": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Return successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "contact": {
+                            "type": "object",
+                            "$ref": "#/components/schemas/Contact"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "$ref": "#/components/responses/400"
+            },
+            "401": {
+              "$ref": "#/components/responses/401"
+            },
+            "403": {
+              "$ref": "#/components/responses/403"
+            },
+            "409": {
+              "$ref": "#/components/responses/409"
+            },
+            "500": {
+              "$ref": "#/components/responses/500"
+            }
+          },
+          "security": [{
+            "APIKeyHeader": []
+          }]
+        }
+      }
+  }
+}

@@ -1,0 +1,173 @@
+<shimmer hide="!$ctrl.usersIsLoading" row="5" col="5" clipped="true"></shimmer>
+<div ng-show="!$ctrl.usersIsLoading">
+    <div class="row m-b-15">
+        <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+            <div class="col">
+                <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                    {{'admin.account.users.text.users' | translate}}
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+            <button ng-click="CustomerListBranchesCtrl.openNewUserPopup()" class="btn btn-primary btn-block">
+                {{'admin.account.users.button.New_user' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="gray-container">
+            <div class="row justify-content-between">
+                <div class="col-sm-4">
+                    <div class="form-group form-group-default m-b-0">
+                        <label class="no-text-transform bold fs-12">
+                            {{'admin.account.users.text.search' | translate}}
+                        </label>
+                        <input type="text" ng-model="$ctrl.searchCriteria.adminQuery" ng-change="$ctrl.onFilterChange()"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div
+                         class="form-group form-group-custom form-group-default form-group-default-select2 m-b-0">
+                        <label class="label-custom" style="z-index:10 !important" for="status">
+                            {{'admin.account.users.text.status' | translate}}
+                        </label>
+                        <select id="status" name="status" ng-model="$ctrl.selectedStatus" ng-change="$ctrl.onFilterChange()"
+                                class="full-width" data-disable-search="true"
+                                data-placeholder="Select status" data-init-plugin="select2"
+                                ng-options="item as $ctrl.translateStatus(item.key) for item in $ctrl.status.data track by item.key">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <!-- {{currentLanguage.language}} -->
+                    <div
+                         class="form-group form-group-custom form-group-default form-group-default-select2 m-b-0">
+                        <label class="label-custom" style="z-index:10 !important" for="roleId">
+                            {{'admin.account.users.text.select_role' | translate}}
+                        </label>
+                        <select id="roleId" name="roleId" ng-model="$ctrl.selectedRole" ng-change="$ctrl.onFilterChange()"
+                                class="full-width"
+                                data-placeholder="Select Role" data-init-plugin="select2"
+                                ng-options="item as $ctrl.translateRole(item) for item in $ctrl.roles.data track by item._id">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+
+            <div ng-show="!$ctrl.usersIsLoading" class="card-block">
+                <div class="col-md-12  padding-0">
+                    <div class="dataTables_wrapper no-footer">
+                        <div class="table-responsive">
+
+                            <table ng-show="!$ctrl.usersIsLoading"
+                                   class="table table-striped dataTable dataTableFormat no-footer table-hover" role="grid">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc no-text-transform fs-12" tabindex="0" rowspan="1" colspan="1"
+                                        aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                        {{'admin.account.users.text.Name' | translate}}
+                                    </th>
+                                    <th class="sorting_asc no-text-transform fs-12 text-center" tabindex="0" rowspan="1" colspan="1"
+                                        aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                        {{'admin.account.users.text.Role' | translate}}
+                                    </th>
+                                    <th class="sorting_asc no-text-transform fs-12" tabindex="0" rowspan="1" colspan="1"
+                                        aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                        {{'admin.account.users.text.Email' | translate}}
+                                    </th>
+                                    <th class="sorting_asc no-text-transform fs-12 text-center" tabindex="0" rowspan="1" colspan="1"
+                                        aria-sort="ascending" aria-label="Product: activate to sort column descending">
+                                        {{'admin.account.users.text.status' | translate}}
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in $ctrl.adminUsers" class="gradeX odd content-table-payment"
+                                    role="row">
+                                    <td class="sorting_1 p-l-15 mn-110">{{item.firstName}}</td>
+                                    <td class="sorting_1 p-l-15 text-center mn-130">
+                                        {{$ctrl._$translate.use() === 'ar' ? item.role.arabicName : item.role.englishName}}
+                                    </td>
+                                    <td class="sorting_1 p-l-15">{{item.email}}</td>
+                                    <td class="sorting_1 p-l-15 text-center">
+                                        {{$ctrl.translateStatus(item.status)}}
+                                    </td>
+                                    <td class="sorting_1 p-l-15 text-center mn-70">
+                                        <a class="m-r-10" href="" ng-click="$ctrl.openEditUserPopup(item)"><i
+                                                class="fa fa-pencil"></i></a>
+                                        <a href="" ng-click="$ctrl.openResetPasswordPopup(item._id)"><i
+                                                class="fa fa-lock"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <list-pagination total-pages="$ctrl.totalPages" on-page-click="$ctrl.setPage(pageNumber)"
+                                             current-page="$ctrl.currentPage"></list-pagination>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row" ng-show="$ctrl.hasError">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/error.svg">
+            <p class="paragraph m-t-10">{{"admin.unexpectedError" | translate }}</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="$ctrl.noInternetConnection">
+    <div class="col">
+        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+            <div class="card-image-overlay"></div>
+            <img src="assets/img/cards/no-conection.svg">
+            <p class="paragraph m-t-10">{{"admin.noInternet" | translate }}</p>
+        </div>
+    </div>
+</div>
+<create-user on-save="$ctrl.createUser(user)" on-update="$ctrl.updateUser(user)" mode="$ctrl.mode" user="$ctrl.user"></create-user>
+<reset-password user-id="$ctrl.userId"></reset-password>
+
+<script>
+
+    $('#roleId , #status').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+
+</script>
+
+

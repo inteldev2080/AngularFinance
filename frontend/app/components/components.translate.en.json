@@ -1,0 +1,437 @@
+{
+  "component": {
+    "create-branch": {
+      "text": {
+        "adding_new_branch": "Add new branch",
+        "update_branch": "Update branch"
+      },
+      "field": {
+        "branchName": {
+          "label": "Branch Name",
+          "place_holder": "Branch Name in English",
+          "required": "Branch Name is required.",
+          "invalid": "Branch Name is invalid."
+        },
+        "city": {
+          "label": "City",
+          "place_holder": "City"
+        },
+        "location": {
+          "label": "Location",
+          "place_holder": "Enter a location",
+          "required" : "Location is required"
+        },
+        "manager" : {
+          "label" : "Manager",
+          "required" : "Manager is required"
+        }
+      }
+    },
+    "create-role": {
+      "text": {
+        "adding_new_role": "Adding new role "
+      },
+      "field": {
+        "role_name_english": {
+          "label": "Role name in English",
+          "placeholder": "Role name in English",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "role_name_arabic": {
+          "label": "Role name in Arabic ",
+          "placeholder": "Role name in Arabic",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        }
+      },
+      "button": {
+        "add": "Add role",
+        "close": "Close",
+        "save": "Save"
+      },
+      "message": {
+        "add-success": "Role is added successfully ",
+        "data-exit": "The data you entered already exists",
+        "failure": "Failure has been occurred, please try again later",
+        "error": "Failure has been occurred, please try again later"
+      }
+    },
+    "create-user": {
+      "field": {
+        "first_name": {
+          "required": "This field is required",
+          "label": "First name",
+          "placeholder": "First name",
+          "invalid": "Contains invalid characters"
+        },
+        "last_name": {
+          "placeholder": "Last name",
+          "label": "Last name",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters "
+        },
+        "email": {
+          "placeholder": "Email",
+          "required": "This field is required",
+          "invalid": "Invalid email format",
+          "label": "Email"
+        },
+        "mobile": {
+          "required": "This field is required ",
+          "label": "Phone number",
+          "placeholder": "9665XXXXXXXX",
+          "invalid": "Invalid phone format"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Password",
+          "required": "This field is required",
+          "invalid": "password must be from 6 to 20 characters long including numbers"
+        },
+        "roles": {
+          "label": "Role",
+          "placeholder": "Select Role",
+          "required": "This field is required"
+        },
+        "status": {
+          "label": "Status",
+          "placeholder": "Select status ",
+          "required": "This field is required"
+        },
+        "status_active": "Active",
+        "status_blocked": "Blocked",
+        "confirm_password": {
+          "required": "This field is required and should match password",
+          "label": "Confirm password",
+          "placeholder": "Confirm password",
+          "invalid": "Password and confirm password must be identical"
+        }
+      },
+      "button": {
+        "add_user": "Add User",
+        "close": "Close",
+        "save": "Save"
+      },
+      "message": {
+        "add-success": "User added successfully ",
+        "data-exit": "The data you entered already exists",
+        "failure": "Failure has been occurred, please try again later"
+      },
+      "text": {
+        "new_user": "create new user",
+        "update_user": "Update User"
+      }
+    },
+    "reset_password": {
+      "text": {
+        "reset_password": "Reset password"
+      },
+      "button": {
+        "reset_password": "Reset password"
+      },
+      "field": {
+        "new_password": {
+          "label": "New Password",
+          "placeholder": "New Password",
+          "required": "This field is required",
+          "invalid": "password must be from 6 to 20 characters long including numbers"
+        },
+        "confirm_password": {
+          "required": "This field is required and should match password",
+          "label": "Confirm password",
+          "placeholder": "Confirm password",
+          "invalid": "Password and confirm password must be identical",
+          "pattern": "password must be from 6 to 20 characters long including numbers"
+        }
+      }
+    },
+    "role-list": {
+      "text": {
+        "roles": "Roles",
+        "name": "Name",
+        "permissions": "Permissions"
+      },
+      "message": {
+        "updateRole": {
+          "success": "Role Updated Successfully",
+          "failure": "Failure has been occurred, please try again later"
+        },
+        "deleteRole": {
+          "selectalternativeRole": "Please Select alternative Role",
+          "success": "Role deleted Successfully",
+          "failure": "Failure has been occurred, please try again later",
+          "confirm": "Confirm",
+          "cancel": "Cancel",
+          "deleteLastRole": "Sorry, You can not able to delete last role, Please add more and try again."
+        }
+      }
+    },
+    "back": "Back",
+    "upload": {
+      "message": {
+        "uploadSuccess": "image uploaded successfully",
+        "bigImage": "Image size is large; maximum image size 4 Mg"
+      }
+    },
+    "pages": {
+      "noResults": "Sorry! we couldn't find any results",
+      "limits": "Maybe your search was too specific, please try searching again",
+      "page": "page",
+      "pageCount": "{value, plural, =0 {N\/A} one%1$s other{of # pages}}"
+    },
+    "view-payment": {
+      "invoice": "Invoice",
+      "receipt": "Receipt",
+      "vendor": "Vendor",
+      "recipient": "Receipt",
+      "receiptFrom": "Receipt From",
+      "receiptTo": "Receipt To",
+      "date": "Date",
+      "no": "No. Invoice",
+      "noreceipt": "No. Receipt",
+      "paid": "Paid",
+      "sar": "SAR",
+      "notPaid": "Not Paid",
+      "cheque": "Paid by cheque ",
+      "cash": "Paid in cash received by ",
+      "bank1": "Paid via bank transfer from ",
+      "bank2": ", with bank transaction ID: ",
+      "table": {
+        "date": "Date",
+        "description": "Description",
+        "type": "Type",
+        "referenceId": "Reference Id",
+        "status": "Status",
+        "customerName": "Customer name",
+        "amount": "Amount",
+        "balance": "Balance",
+        "subtotal": "SubTotal",
+        "total": "Total",
+        "vat": "VAT",
+        "fees": "Fees"
+      },
+      "statements": "{type, select, adminFees {Admin fees between {supplier} & {customer} } customer {A purchase from }  supplier {A order from } other { }}"
+    },
+    "record-payment": {
+      "text": {
+        "recordPayment": "Record Payment",
+        "paymentDetail": "Payment Detail"
+      },
+      "field": {
+        "supplier": {
+          "label": "Supplier",
+          "placeholder": "Select Supplier",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "customer": {
+          "label": "Customer",
+          "placeholder": "Select Customer",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "Amount",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "date": {
+          "label": " Date of The Transfer",
+          "placeholder": "03\/08\/2018",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "paymentMethod": {
+          "label": " Payment Method : ",
+          "placeholder": "03\/08\/2018",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters",
+          "cash": "Cash",
+          "cheque": "Cheque",
+          "bank": "Bank"
+        },
+        "bankTransactionID": {
+          "label": "Bank Transaction ID",
+          "placeholder": "Bank Transaction ID",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "bankAccountNumber": {
+          "label": "Bank Account Number",
+          "placeholder": "Bank Account Number",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "bankName": {
+          "label": "Bank Name",
+          "placeholder": "Bank Name",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "accountHolderName": {
+          "label": " Account Holder Name",
+          "placeholder": " Account Holder Name",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "chequeRecipientName": {
+          "label": "Cheque Recipient Name",
+          "placeholder": "Cheque Recipient Name",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "chequeNumber": {
+          "label": "Cheque Number",
+          "placeholder": "Cheque Number",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        },
+        "cashRecipientName": {
+          "label": "Cash Recipient Name",
+          "placeholder": "Cash Recipient Name",
+          "required": "This field is required",
+          "invalid": "Contains invalid characters"
+        }
+      },
+      "button": {
+        "add": "Add Payment",
+        "close": "Close",
+        "save": "Save",
+        "accept": "Accept",
+        "reject": "Reject"
+      },
+      "message": {
+        "add-success": "Payment is added successfully ",
+        "failure": "Failure has been occurred, please try again later",
+        "error": "Failure has been occurred, please try again later",
+        "reject": {
+          "success": "Payment rejected Successfully",
+          "failure": "Failure has been occurred, please try again later"
+        },
+        "accept": {
+          "success": "Payment Accepted Successfully",
+          "failure": "Failure has been occurred, please try again later"
+        },
+        "record": {
+          "success": "Payment Recorded Successfully",
+          "failure": "Failure in recording payment"
+        }
+      },
+      "view-payment": {
+        "invoice": "Invoice",
+        "receipt": "Receipt",
+        "vendor": "Vendor",
+        "recipient": "Recipient",
+        "date": "Date",
+        "No": "No.",
+        "sar": "SAR",
+        "table": {
+          "date": "Date",
+          "description": "Description",
+          "type": "Type",
+          "referenceId": "Reference Id",
+          "status": "Status",
+          "customerName": "Customer Name",
+          "amount": "Amount",
+          "balance": "Balance"
+        },
+        "statements": "{type, select, adminFees {عمولة شراء بين {supplier} } customer { عملية شراء من {supplier} }  supplier { عملية شراء من {customer} } other {unwrapped their gift. }}"
+      }
+    },
+    "billing-history": {
+      "invoice": "Invoice",
+      "receipt": "Receipt",
+      "order": "Order"
+    },
+    "transactions": {
+      "sar": "SAR",
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "cash": "Cash",
+      "cheque": "Cheque",
+      "bank": "Bank",
+      "order_from": "Order from",
+      "order": "Order",
+      "from": "from",
+      "paid": "paid",
+      "notpaid": "not paid",
+      "export": "Export",
+      "detailed_transactions": "Detailed Transactions",
+      "credit": "credit",
+      "debit": "debit",
+      "table": {
+        "date": "Date",
+        "description": "Description",
+        "type": "Type",
+        "referenceId": "Reference Id",
+        "status": "Status",
+        "customerName": "Customer Name",
+        "amount": "Amount",
+        "balance": "Balance"
+      }
+    },
+    "daterange": {
+      "from": "From",
+      "to": "To"
+    },
+    "notifications": {
+      "massage": {
+        "noNotifications": "There isn't  notification"
+      }
+    },
+    "contact": {
+      "field": {
+        "first_name": {
+          "required": "This field is required",
+          "label": "First name",
+          "placeholder": "First name",
+          "invalid": "Contains invalid characters"
+        },
+        "last_name": {
+          "required": "This field is required",
+          "label": "Last name",
+          "placeholder": "Last name",
+          "invalid": "Contains invalid characters"
+        },
+        "email": {
+          "label": "Email",
+          "required": "This field is required",
+          "placeholder": "Email",
+          "invalid": "Invalid email format"
+        },
+        "mobile": {
+          "label": "Phone number ",
+          "required": "This field is required",
+          "placeholder": "Phone number ",
+          "invalid": "Invalid phone format"
+        },
+        "message-title": {
+          "label": "Message title ",
+          "required": "This field is required",
+          "placeholder": "Message title ",
+          "invalid": "Invalid  format"
+        },
+        "message-body": {
+          "label": "Message Body ",
+          "required": "This field is required",
+          "placeholder": "Message Body",
+          "invalid": "Invalid  format"
+        }
+      },
+      "button": {
+        "send": "Send"
+      },
+      "title": "Contact Us",
+      "message": {
+        "success": "Operation completed Successfully",
+        "error": "Sorry,Some Error occurred ,please try again "
+      }
+    }
+  },
+  "no-orders": "No Orders",
+  "Save": "Save",
+  "Update": "Update"
+}

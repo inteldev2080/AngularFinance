@@ -1,0 +1,154 @@
+<!-- START INNER CONTENT -->
+
+<div class="sidebar-border"></div>
+
+<div class="content tab-content">
+    <div class="tab-pane active" id="tab3hellowWorld">
+        <div class="row animated zoomIn">
+            <!-- Inventory HTML Start -->
+            <div class="card">
+                <div class="gray-container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="bold text-uppercase p-t-5 p-l-10 p-r-10">
+                                {{'admin.ingredients.list.search.ingredientName.label' | translate}}
+                            </p>
+                        </div>
+                        <div
+                                class="col-sm mb-sm-0 mb-3 d-flex justify-content-start justify-content-sm-end"
+                        >
+                            <div class="btn-toolbar" role="toolbar">
+                                <div dir="ltr" class="btn-group btn-group-sm">
+                                    <button class="btn btn-primary btn-block"
+                                            ng-click="$ctrl.openAddIngredientForm()">
+                                        <i class="pg-plus" style="vertical-align: middle;"></i>
+                                        {{'admin.ingredients.list.button.new_ingredient' |
+                                        translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-block">
+                        <!-- ngIf: $ctrl.reportIsLoaded -->
+                        <div class="col-md-12 padding-0" style="">
+                            <shimmer hide="$ctrl.recipesAreLoaded" col="5"></shimmer>
+                            <div class="dataTables_wrapper">
+                                <div class="table-responsive">
+                                    <table ng-if="$ctrl.recipesAreLoaded"
+                                           class="table table-striped table-compact table-hover">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.barcode' |
+                                                translate}}
+                                            </th>
+
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.inventory_sku' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.flag' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.ingredient_name' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.available_quantity' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.unit' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.threshold' |
+                                                translate}}
+                                            </th>
+                                            <th class="bold text-center">
+                                                {{'admin.ingredients.list.table.header.delete_recipe' |
+                                                translate}}
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in $ctrl.ingredientsItems"
+                                            class="gradeX odd content-table-payment"
+                                            role="row">
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-120 inventory-text-center text-center">
+                                                <svg style="width: 200px; height: auto;"
+                                                     id="barcodeIngredient{{item.barcode}}"
+                                                ></svg>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.sku}}</span>
+                                            </td>
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-60 inventory-text-center text-center">
+                                                <img ng-if="item.quantity <= item.threshold"
+                                                     src="assets/img/icon-warning.png" class="hidden-sm-down"
+                                                     height="20px" ght="">
+                                                <span ng-if="item.quantity > item.threshold" class="upper-case"></span>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.englishName}}</span>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.quantity}}</span>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.unit}}</span>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <span class="upper-case">{{item.threshold}} {{item.unit}}</span>
+                                            </td>
+
+                                            <td ng-class="{ 'list-item-background-change-threshold': item.quantity <= item.threshold}"
+                                                class="sorting_1 mn-80 inventory-text-center text-center">
+                                                <a style="cursor: pointer;"><i
+                                                        class="fa fa-edit inventory-delete-btn-size"
+                                                        ng-click="$ctrl.openEditIngredientForm(item)"
+                                                ></i></a>
+                                                <a style="cursor: pointer;"><i
+                                                        class="fa fa-trash inventory-delete-btn-size"
+                                                        ng-click="$ctrl.deleteIngredientItem(item)"></i></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <list-pagination
+                                            total-pages="$ctrl.totalPages"
+                                            on-page-click="$ctrl.setPage(pageNumber)"
+                                            current-page="$ctrl.currentPage">
+                                    </list-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory HTML End -->
+        </div>
+    </div>
+</div>
+<!-- END INNER CONTENT -->
+
+<ingredient-form></ingredient-form>
+<edit-ingredient-listing-form></edit-ingredient-listing-form>

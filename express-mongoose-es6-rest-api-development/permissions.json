@@ -1,0 +1,646 @@
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44def5"), 
+    "arabicName" : "ادارة الملف الشخصي", 
+    "englishName" : "Manage Profile", 
+    "key" : "manageProfile", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/admins", 
+        "GET_/api/admins/profile", 
+        "PUT_/api/admins", 
+        "PUT_/api/auth/changePassword", 
+        "PUT_/api/auth/changeLanguage"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44def6"), 
+    "arabicName" : "إدارة التصنيفات", 
+    "englishName" : "Manage Category", 
+    "key" : "manageCategories", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/categories", 
+        "PUT_/api/categories", 
+        "DELETE_/api/categories", 
+        "GET_/api/categories"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44def7"), 
+    "arabicName" : "إدارة الموظفين", 
+    "englishName" : "Manage Staff", 
+    "key" : "manageStaff", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/admins", 
+        "PUT_/api/admins/:adminId", 
+        "DELETE_/api/admins", 
+        "GET_/api/admins", 
+        "PUT_/api/auth/changePassword", 
+        "PUT_/api/auth/resetPassword", 
+        "POST_/api/roles", 
+        "PUT_/api/roles", 
+        "DELETE_/api/roles", 
+        "GET_/api/roles", 
+        "GET_/api/roles/permissions", 
+        "GET_/api/admins/otherUsers", 
+        "PUT_/api/admins/otherUsers/:userId"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44def8"), 
+    "arabicName" : "إدارة المحتوى", 
+    "englishName" : "Manage Contents", 
+    "key" : "manageContents", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/contents", 
+        "PUT_/api/contents", 
+        "DELETE_/api/contents", 
+        "GET_/api/contents"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44def9"), 
+    "arabicName" : "إدارة الاعدادات", 
+    "englishName" : "Manage Settings", 
+    "key" : "manageSettings", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/email", 
+        "PUT_/api/email", 
+        "DELETE_/api/email", 
+        "GET_/api/email", 
+        "POST_/api/systemVariables", 
+        "PUT_/api/systemVariables", 
+        "DELETE_/api/systemVariables", 
+        "GET_/api/systemVariables", 
+        "POST_/api/systemUnits", 
+        "PUT_/api/systemUnits", 
+        "DELETE_/api/systemUnits", 
+        "POST_/api/contents", 
+        "PUT_/api/contents", 
+        "DELETE_/api/contents", 
+        "GET_/api/contents", 
+        "GET_/api/systemUnits"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44defa"), 
+    "arabicName" : "إدارة الرسائل", 
+    "englishName" : "Manage Messages", 
+    "key" : "manageMessages", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/contacts", 
+        "PUT_/api/contacts", 
+        "DELETE_/api/contacts", 
+        "GET_/api/contacts", 
+        "PUT_/api/contacts/reply"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44defb"), 
+    "arabicName" : "إداراة المزودين", 
+    "englishName" : "Manage Suppliers", 
+    "key" : "manageSuppliers", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/suppliers", 
+        "PUT_/api/suppliers", 
+        "PUT_/api/suppliers/approve", 
+        "PUT_/api/suppliers/block", 
+        "PUT_/api/suppliers/unblock", 
+        "GET_/api/suppliers", 
+        "GET_/api/suppliers/billingHistory", 
+        "GET_/api/payments/count", 
+        "GET_/api/transactions"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44defc"), 
+    "arabicName" : "إدارة المدفوعات", 
+    "englishName" : "Manage Payments", 
+    "key" : "managePayments", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/transactions/add", 
+        "GET_/api/transactions", 
+        "PUT_/api/transactions", 
+        "POST_/api/invoice", 
+        "GET_/api/invoice", 
+        "GET_/api/payments/count", 
+        "POST_/api/transactions/declare", 
+        "GET_/api/suppliers/reports/transactions", 
+        "GET_/api/payments", 
+        "PUT_/api/payments/:paymentId/reject", 
+        "PUT_/api/payments/:paymentId/accept"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44defd"), 
+    "arabicName" : "إدارة تقارير الطلبات", 
+    "englishName" : "Manage Orders Reports", 
+    "key" : "manageOrdersReports", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/admins/reports/orders", 
+        "GET_/api/suppliers/reports/orders", 
+        "GET_/api/orders", 
+        "GET_/api/orders/history", 
+        "GET_/api/customers", 
+        "GET_/api/suppliers"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44defe"), 
+    "arabicName" : "إدارة تقارير المدفوعات", 
+    "englishName" : "Manage Transactions Reports", 
+    "key" : "manageTransactionsReports", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/suppliers/reports/transactions", 
+        "GET_/api/customers", 
+        "GET_/api/suppliers"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44deff"), 
+    "arabicName" : "امكانية حذف", 
+    "englishName" : "Can Delete", 
+    "key" : "canDelete", 
+    "type" : "Admin", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "DELETE_/api/categories", 
+        "DELETE_/api/suppliers", 
+        "DELETE_/api/suppliers/staff", 
+        "DELETE_/api/admins", 
+        "DELETE_/api/products", 
+        "DELETE_/api/roles", 
+        "DELETE_/api/systemVariables", 
+        "DELETE_/api/systemUnits"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df01"), 
+    "type" : "Customer", 
+    "key" : "manageCustomers", 
+    "arabicName" : "إدارة جميع العملاء", 
+    "englishName" : "Manage Customers", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/carts", 
+        "POST_/api/carts", 
+        "POST_/api/carts/checkout", 
+        "PUT_/api/carts", 
+        "DELETE_/api/carts", 
+        "GET_/api/categories", 
+        "GET_/api/categories/products/:categoryId", 
+        "GET_/api/customers/current", 
+        "PUT_/api/customers", 
+        "PUT_/api/auth/changePassword", 
+        "PUT_/api/auth/resetPassword", 
+        "POST_/api/orders/review", 
+        "GET_/api/orders", 
+        "PUT_/api/orders/cancel", 
+        "GET_/api/products", 
+        "GET_/api/recurringOrders", 
+        "PUT_/api/recurringOrders", 
+        "GET_/api/suppliers", 
+        "POST_/api/transactions/declare", 
+        "GET_/api/customers/:customerId", 
+        "PUT_/api/carts/product", 
+        "DELETE_/api/carts/product", 
+        "GET_/api/carts/supplier", 
+        "GET_/api/products/supplier", 
+        "GET_/api/customers/billingHistory", 
+        "GET_/api/payments", 
+        "GET_/api/suppliers/billingHistory", 
+        "GET_/api/transactions", 
+        "GET_/api/carts/supplier", 
+        "GET_/api/orders/log", 
+        "GET_/api/customers/specialPrices", 
+        "PUT_/api/auth/changeLanguage", 
+        "GET_/api/branches", 
+        "POST_/api/branches", 
+        "PUT_/api/branches", 
+        "DELETE_/api/branches", 
+        "GET_/api/categories/otherProducts", 
+        "POST_/api/products/requestSpecialPrice", 
+        "POST_/api/customers/staff", 
+        "PUT_/api/customers/staff", 
+        "GET_/api/customers/staff", 
+        "DELETE_/api/customers/staff", 
+        "POST_/api/roles", 
+        "PUT_/api/roles", 
+        "GET_/api/roles", 
+        "GET_/api/roles/permissions", 
+        "DELETE_/api/roles", 
+        "GET_/api/branches/:offset/:limit"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df02"), 
+    "key" : "manageOrders", 
+    "englishName" : "Manage Orders", 
+    "arabicName" : "ادارة الطلبات", 
+    "type" : "Customer", 
+    "allowedEndPoints" : [
+        "GET_/api/customers/current", 
+        "PUT_/api/auth/changeLanguage", 
+        "GET_/api/auth/checkToken", 
+        "GET_/api/suppliers", 
+        "GET_/api/carts", 
+        "POST_/api/carts", 
+        "POST_/api/carts/checkout", 
+        "PUT_/api/carts", 
+        "DELETE_/api/carts", 
+        "GET_/api/categories", 
+        "GET_/api/categories/products/:categoryId", 
+        "POST_/api/orders/review", 
+        "GET_/api/orders", 
+        "PUT_/api/orders/cancel", 
+        "GET_/api/products", 
+        "GET_/api/recurringOrders", 
+        "PUT_/api/recurringOrders", 
+        "PUT_/api/carts/product", 
+        "DELETE_/api/carts/product", 
+        "GET_/api/carts/supplier", 
+        "GET_/api/products/supplier", 
+        "POST_/api/products/requestSpecialPrice", 
+        "GET_/api/categories/otherProducts"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df03"), 
+    "key" : "manageAccount", 
+    "englishName" : "Manage Account", 
+    "arabicName" : "ادارة الحسابات", 
+    "type" : "Customer", 
+    "allowedEndPoints" : [
+        "GET_/api/customers/current", 
+        "PUT_/api/auth/changeLanguage", 
+        "GET_/api/auth/checkToken", 
+        "POST_/api/customers/staff", 
+        "PUT_/api/customers/staff", 
+        "GET_/api/customers/staff", 
+        "DELETE_/api/customers/staff", 
+        "PUT_/api/auth/changePassword", 
+        "PUT_/api/auth/resetPassword", 
+        "GET_/api/suppliers", 
+        "POST_/api/roles", 
+        "PUT_/api/roles", 
+        "GET_/api/roles", 
+        "GET_/api/roles/permissions", 
+        "DELETE_/api/roles", 
+        "GET_/api/branches", 
+        "POST_/api/branches", 
+        "PUT_/api/branches", 
+        "DELETE_/api/branches", 
+        "GET_/api/branches/:offset/:limit"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df04"), 
+    "key" : "managePayments", 
+    "englishName" : "Manage Payments", 
+    "arabicName" : "ادارة المدفوعات", 
+    "type" : "Customer", 
+    "allowedEndPoints" : [
+        "PUT_/api/auth/changeLanguage", 
+        "GET_/api/auth/checkToken", 
+        "GET_/api/suppliers", 
+        "GET_/api/customers/billingHistory", 
+        "GET_/api/payments", 
+        "GET_/api/suppliers/billingHistory", 
+        "GET_/api/transactions", 
+        "GET_/api/orders/log", 
+        "GET_/api/customers/specialPrices", 
+        "POST_/api/transactions/declare"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df06"), 
+    "arabicName" : "إدارة العملاء", 
+    "englishName" : "Manage Customers", 
+    "key" : "manageCustomers", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/customers/invite", 
+        "PUT_/api/customers/supplier/:customerId", 
+        "PUT_/api/customers/block", 
+        "PUT_/api/customers/unblock", 
+        "GET_/api/customers/specialPrices", 
+        "POST_/api/customers/specialPrices", 
+        "PUT_/api/customers/specialPrices", 
+        "GET_/api/transactions", 
+        "DELETE_/api/customers/specialPrices", 
+        "GET_/api/customers/:customerId", 
+        "GET_/api/customers", 
+        "POST_/api/customers/download/specialPrices", 
+        "PUT_/api/customers/upload/specialPrices/:customerId"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df07"), 
+    "key" : "manageStaff", 
+    "englishName" : "Manage Staff", 
+    "arabicName" : "إدارة الموظفين", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/suppliers/staff", 
+        "PUT_/api/suppliers/staff", 
+        "GET_/api/suppliers/staff", 
+        "DELETE_/api/suppliers/staff", 
+        "PUT_/api/auth/changePassword", 
+        "PUT_/api/auth/resetPassword"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df08"), 
+    "key" : "manageAccount", 
+    "englishName" : "Manage Account", 
+    "arabicName" : "ادارة الحساب", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/roles", 
+        "PUT_/api/roles", 
+        "GET_/api/roles", 
+        "GET_/api/roles/permissions", 
+        "DELETE_/api/roles", 
+        "GET_/api/suppliers/drivers"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df09"), 
+    "key" : "manageProducts", 
+    "englishName" : "Manage Categories and Products", 
+    "arabicName" : " إدارة المنتجات والتصنيفات", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/categories", 
+        "GET_/api/categories/products/:categoryId", 
+        "GET_/api/products", 
+        "POST_/api/products", 
+        "PUT_/api/products", 
+        "DELETE_/api/products", 
+        "GET_/api/systemUnits"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0a"), 
+    "arabicName" : "ادارة الملف الشخصي", 
+    "englishName" : "Manage Profile", 
+    "key" : "manageProfile", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/suppliers", 
+        "GET_/api/suppliers/profile", 
+        "PUT_/api/suppliers", 
+        "GET_/api/customers/billingHistory", 
+        "GET_/api/suppliers/billingHistory", 
+        "PUT_/api/auth/changeLanguage"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0b"), 
+    "arabicName" : "نظرة عامة للطلبات", 
+    "englishName" : "Manage Order Overview", 
+    "key" : "manageOrderOverview", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/count"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0c"), 
+    "arabicName" : "الطلبات الجديدة", 
+    "englishName" : "Manage New Orders", 
+    "key" : "manageNewOrders", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/orders/count", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/log", 
+        "GET_/api/orders/orderPurchase", 
+        "GET_/api/orders/deliveryNote"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0d"), 
+    "arabicName" : "الطلبات المجهزة", 
+    "englishName" : "Manage Orders Preparation", 
+    "key" : "manageOrderPreparation", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/orders/log", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/count", 
+        "PUT_/api/orders/accept"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0e"), 
+    "arabicName" : "طلبات قيد التوصيل", 
+    "englishName" : "Manage Order Delivery", 
+    "key" : "manageOrderDelivery", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/log", 
+        "GET_/api/orders/count", 
+        "PUT_/api/orders/outForDelivery", 
+        "PUT_/api/orders/delivered", 
+        "PUT_/api/orders/readyForDelivery", 
+        "PUT_/api/orders/fail", 
+        "PUT_/api/orders/cancel"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df0f"), 
+    "arabicName" : "طلبات لم ينجح توصيلها", 
+    "englishName" : "Manage Orders Failed", 
+    "key" : "manageOrderFailed", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/log", 
+        "GET_/api/orders/count", 
+        "PUT_/api/orders/rejectProducts", 
+        "PUT_/api/orders/reject", 
+        "PUT_/api/orders/fail", 
+        "PUT_/api/orders/cancel"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df10"), 
+    "arabicName" : "مراجعة الطلبات", 
+    "englishName" : "Manage Orders Reviews", 
+    "key" : "manageOrderReviews", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/orders/reviews", 
+        "GET_/api/orders/log", 
+        "GET_/api/orders/count"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df11"), 
+    "arabicName" : "ادارة تقارير الطلبات", 
+    "englishName" : "Manage Orders Reports", 
+    "key" : "manageOrdersReports", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/suppliers/reports/orders"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df12"), 
+    "arabicName" : "ادارة تقارير المدفوعات", 
+    "englishName" : "Manage Transactions Reports", 
+    "key" : "manageTransactionsReports", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/suppliers/reports/transactions"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df13"), 
+    "arabicName" : "إدارة المدفوعات", 
+    "englishName" : "Manage Payments", 
+    "key" : "managePayments", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "POST_/api/invoice", 
+        "GET_/api/invoice", 
+        "GET_/api/payments/count", 
+        "GET_/api/payments", 
+        "PUT_/api/payments/:paymentId/reject", 
+        "PUT_/api/payments/:paymentId/accept", 
+        "POST_/api/transactions/declare", 
+        "POST_/api/transactions/add", 
+        "GET_/api/suppliers/reports/transactions", 
+        "GET_/api/transactions"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df14"), 
+    "arabicName" : "امكانية حذف", 
+    "englishName" : "Can Delete", 
+    "key" : "canDelete", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "DELETE_/api/carts/:cartId", 
+        "DELETE_/api/customers/specialPrices", 
+        "DELETE_/api/products", 
+        "DELETE_/api/suppliers/staff", 
+        "DELETE_/api/roles"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea542e11ac4cd3b0a44df15"), 
+    "arabicName" : "إمكانية التوصيل", 
+    "englishName" : "Can Deliver", 
+    "key" : "canDeliver", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/orders", 
+        "GET_/api/order/overview", 
+        "GET_/api/orders/log", 
+        "GET_/api/orders/count", 
+        "PUT_/api/orders/outForDelivery", 
+        "PUT_/api/orders/delivered", 
+        "PUT_/api/orders/readyForDelivery", 
+        "PUT_/api/orders/fail", 
+        "PUT_/api/orders/cancel", 
+        "GET_/api/suppliers/drivers"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f19cd84193daa2c31414ec0"), 
+    "arabicName" : "إدارة المخزون", 
+    "englishName" : "Manage Inventory", 
+    "key" : "manageInventory", 
+    "type" : "Supplier", 
+    "allowedEndPoints" : [
+        "GET_/api/auth/checkToken", 
+        "GET_/api/inventory/recipes", 
+        "POST_/api/inventory/recipes", 
+        "DELETE_/api/inventory/recipes", 
+        "GET_/api/inventory/:recipeId", 
+        "GET_/api/inventory/ingredient/create", 
+        "GET_/api/inventory/ingredient/update", 
+        "DELETE_/api/inventory/ingredients/:Id", 
+        "GET_/api/inventory/ingredient/list", 
+        "GET_/api/inventory/ingredient/list", 
+        "GET_/api/inventory/ingredient/update", 
+        "GET_/api/inventory/ingredient/update", 
+        "DELETE_/api/inventory/ingredients/:IngredientId"
+    ]
+}

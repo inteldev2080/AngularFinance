@@ -1,0 +1,47 @@
+<div class="shimmer" ng-if="!$ctrl.hide">
+    <div class="content" ng-class="{'padding-0': $ctrl.clipped}">
+        <div class="row">
+            <div class="col" ng-repeat="n in [] | range:$ctrl.col">
+                <div class="animated">
+                    <div ng-repeat="n in [] | range:$ctrl.row">
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                    </div>
+                    <div ng-if="!$ctrl.row">
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!$ctrl.col" class="col">
+                <div class="animated">
+                    <div ng-repeat="n in [] | range:$ctrl.row">
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                    </div>
+                    <div ng-if="!$ctrl.row">
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                        <div class="line"></div>
+                        <div class="padding"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+{{$ctrl.col}}
+{{$ctrl.row}}
+{{$ctrl.hide}}
+-->

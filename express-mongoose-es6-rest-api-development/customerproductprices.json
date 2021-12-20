@@ -1,0 +1,1070 @@
+{ 
+    "_id" : ObjectId("5ea876d7d8d93354f616131a"), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "supplier" : ObjectId("5ea86eb7d8d93354f616130a"), 
+    "product" : ObjectId("5ea87176d8d93354f6161312"), 
+    "price" : NumberInt(20), 
+    "updatedAt" : ISODate("2020-04-26T16:15:18.461+0000"), 
+    "createdAt" : ISODate("2020-04-26T16:15:18.460+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1ac750cce33f65397fa826"), 
+    "customer" : ObjectId("5f1ac685cce33f65397fa81f"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-07-23T20:38:13.674+0000"), 
+    "createdAt" : ISODate("2020-07-23T20:38:13.674+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4767c21111bb265a265252"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "createdAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4767d21111bb265a265254"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "createdAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4767df1111bb265a265256"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "createdAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4767e81111bb265a265258"), 
+    "customer" : ObjectId("5f3b8463687ef766db4a8a6d"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "createdAt" : ISODate("2020-08-27T10:50:15.027+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4aabf143ce3f5fb73ea217"), 
+    "customer" : ObjectId("5f4aab3c43ce3f5fb73ea212"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+    "price" : NumberInt(10), 
+    "updatedAt" : ISODate("2020-08-29T21:44:36.672+0000"), 
+    "createdAt" : ISODate("2020-08-29T21:44:36.672+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd7306d02624c26fcf0ec"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "createdAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd7526d02624c26fcf0f0"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "createdAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd76d6d02624c26fcf0f4"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "createdAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd79d6d02624c26fcf0fc"), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "createdAt" : ISODate("2020-08-31T21:22:59.495+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa187c"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa187d"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adf1acce33f65397fa852"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa187e"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab0f4cce33f65397fa7fa"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa187f"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa6a3cce33f65397fa7f1"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1880"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfdbcce33f65397fa854"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1881"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc4ccce33f65397fa801"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1882"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aafbecce33f65397fa7f8"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1883"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa937cce33f65397fa7f4"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1884"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae201cce33f65397fa857"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1885"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abae6cce33f65397fa7ff"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1886"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaec1cce33f65397fa7f6"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1888"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1889"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab041cce33f65397fa7f9"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188a"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adcd9cce33f65397fa84e"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188b"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188c"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa723cce33f65397fa7f2"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188d"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc86cce33f65397fa802"), 
+    "price" : 3.5, 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188e"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab948cce33f65397fa7fe"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa188f"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa38fcce33f65397fa7f0"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1890"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfa1cce33f65397fa853"), 
+    "price" : NumberInt(8), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1891"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abb2fcce33f65397fa800"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1892"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1893"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae3accce33f65397fa85a"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1894"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adee0cce33f65397fa851"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1895"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ad676cce33f65397fa84b"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1896"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aae5dcce33f65397fa7f5"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1897"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae23fcce33f65397fa858"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1898"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2e7cce33f65397fa7fc"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4dd90c1d2357606dfa1899"), 
+    "customer" : ObjectId("5f4ca6ee22c0291c7f2e5fb6"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa8bbcce33f65397fa7f3"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "createdAt" : ISODate("2020-09-01T08:15:18.879+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f4f9e6128826b0cf60635aa"), 
+    "customer" : ObjectId("5f4de2c81d2357606dfa18a1"), 
+    "supplier" : ObjectId("5ea86eb7d8d93354f616130a"), 
+    "product" : ObjectId("5ea87176d8d93354f6161312"), 
+    "price" : NumberInt(10), 
+    "updatedAt" : ISODate("2020-09-01T21:47:24.448+0000"), 
+    "createdAt" : ISODate("2020-09-01T21:47:24.448+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f54b9808d911f4a04884c51"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+    "price" : NumberInt(56), 
+    "updatedAt" : ISODate("2020-09-06T13:14:09.574+0000"), 
+    "createdAt" : ISODate("2020-09-06T13:14:09.574+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f54b9888d911f4a04884c57"), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+    "price" : NumberInt(10), 
+    "updatedAt" : ISODate("2020-09-06T13:14:09.574+0000"), 
+    "createdAt" : ISODate("2020-09-06T13:14:09.574+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bcb"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bcc"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adf1acce33f65397fa852"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bcd"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab0f4cce33f65397fa7fa"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bce"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa6a3cce33f65397fa7f1"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bcf"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfdbcce33f65397fa854"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd0"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc4ccce33f65397fa801"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd1"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aafbecce33f65397fa7f8"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd2"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa937cce33f65397fa7f4"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd3"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae201cce33f65397fa857"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd4"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abae6cce33f65397fa7ff"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd5"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaec1cce33f65397fa7f6"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd6"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae351cce33f65397fa859"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd7"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd8"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab041cce33f65397fa7f9"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bd9"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adcd9cce33f65397fa84e"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bda"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bdb"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa723cce33f65397fa7f2"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bdc"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc86cce33f65397fa802"), 
+    "price" : 3.5, 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bdd"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab948cce33f65397fa7fe"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bde"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa38fcce33f65397fa7f0"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991bdf"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfa1cce33f65397fa853"), 
+    "price" : NumberInt(8), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be0"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abb2fcce33f65397fa800"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be1"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be2"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae3accce33f65397fa85a"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be3"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adee0cce33f65397fa851"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be4"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ad676cce33f65397fa84b"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be5"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aae5dcce33f65397fa7f5"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be6"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae23fcce33f65397fa858"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be7"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2e7cce33f65397fa7fc"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f55f9459f87db0270991be8"), 
+    "customer" : ObjectId("5f55f7bb8d911f4a04884d90"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa8bbcce33f65397fa7f3"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "createdAt" : ISODate("2020-09-07T12:11:07.219+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c5c"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c5d"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adf1acce33f65397fa852"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c5e"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abae6cce33f65397fa7ff"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c5f"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaec1cce33f65397fa7f6"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c60"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa723cce33f65397fa7f2"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c61"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adee0cce33f65397fa851"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c62"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa937cce33f65397fa7f4"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c63"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae201cce33f65397fa857"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c64"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adcd9cce33f65397fa84e"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c65"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c66"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c67"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa8bbcce33f65397fa7f3"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c68"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab041cce33f65397fa7f9"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c69"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa38fcce33f65397fa7f0"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6a"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfa1cce33f65397fa853"), 
+    "price" : NumberInt(8), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6b"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abb2fcce33f65397fa800"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6c"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab2e7cce33f65397fa7fc"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6d"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aafbecce33f65397fa7f8"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6e"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab948cce33f65397fa7fe"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c6f"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aae5dcce33f65397fa7f5"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c70"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae23fcce33f65397fa858"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c71"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc4ccce33f65397fa801"), 
+    "price" : 5.5, 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c72"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c73"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae351cce33f65397fa859"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c74"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ad676cce33f65397fa84b"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c75"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ab0f4cce33f65397fa7fa"), 
+    "price" : NumberInt(3), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c76"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1aa6a3cce33f65397fa7f1"), 
+    "price" : NumberInt(7), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c77"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1adfdbcce33f65397fa854"), 
+    "price" : NumberInt(5), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c78"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1abc86cce33f65397fa802"), 
+    "price" : 3.5, 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f7dec690e9f621d8f7c8c79"), 
+    "customer" : ObjectId("5f7d6a980e9f621d8f7c8c03"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae3accce33f65397fa85a"), 
+    "price" : NumberInt(4), 
+    "updatedAt" : ISODate("2020-09-20T20:30:44.310+0000"), 
+    "createdAt" : ISODate("2020-09-20T20:30:44.309+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("607825ad03835f1d6d6cb1ef"), 
+    "customer" : ObjectId("5f4de2c81d2357606dfa18a1"), 
+    "supplier" : ObjectId("5ea86eb7d8d93354f616130a"), 
+    "product" : ObjectId("6078242903835f1d6d6cb1ee"), 
+    "price" : NumberInt(10), 
+    "updatedAt" : ISODate("2021-04-12T22:13:44.300+0000"), 
+    "createdAt" : ISODate("2021-04-12T22:13:44.300+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5f841534ac396058efca"), 
+    "customer" : ObjectId("60bb59c11534ac396058efbb"), 
+    "supplier" : ObjectId("60bb2ebf864f657f35d5cb11"), 
+    "product" : ObjectId("60bb31b6e6fc60120dd7986e"), 
+    "price" : NumberInt(30), 
+    "updatedAt" : ISODate("2021-06-05T13:59:22.383+0000"), 
+    "createdAt" : ISODate("2021-06-05T13:59:22.383+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60cf8670074a0a53706031af"), 
+    "customer" : ObjectId("5f4bc575adc4d51af535b388"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae493cce33f65397fa85b"), 
+    "price" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-06-20T20:57:10.800+0000"), 
+    "createdAt" : ISODate("2021-06-20T20:57:10.799+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60cf8675074a0a53706031b1"), 
+    "customer" : ObjectId("5f4bc575adc4d51af535b388"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "product" : ObjectId("5f1ae351cce33f65397fa859"), 
+    "price" : NumberInt(45), 
+    "updatedAt" : ISODate("2021-06-20T20:57:10.800+0000"), 
+    "createdAt" : ISODate("2021-06-20T20:57:10.799+0000"), 
+    "__v" : NumberInt(0)
+}

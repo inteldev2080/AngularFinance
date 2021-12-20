@@ -1,0 +1,435 @@
+{
+    "component": {
+        "create-branch": {
+            "text": {
+                "adding_new_branch": "إضافة فرع جديد",
+                "update_branch": "فرع التحديث"
+            },
+            "field": {
+                "branchName": {
+                    "label": "اسم الفرع",
+                    "place_holder": "اسم الفرع بالانجليزية",
+                    "required": "اسم الفرع مطلوب.",
+                    "invalid": "اسم الفرع غير صالح."
+                },
+                "city": {
+                    "label": "مدينة",
+                    "place_holder": "مدينة"
+                },
+                "location": {
+                    "label": "موقعك",
+                    "place_holder": "أدخل موقعًا",
+                    "required" : "الموقع مطلوب"
+                },
+                "manager" : {
+                    "label" : "مدير",
+                    "required" : "مطلوب مدير"
+                }
+            }
+        },
+        "create-role": {
+            "text": {
+                "adding_new_role": "إضافة وظيفة جديدة"
+            },
+            "field": {
+                "role_name_english": {
+                    "label": "اسم الوظيفة بالإنجليزية",
+                    "placeholder": "اسم الوظيفة بالإنجليزية",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "role_name_arabic": {
+                    "label": "اسم الوظيفة بالعربية",
+                    "placeholder": "اسم الوظيفة بالعربية",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                }
+            },
+            "button": {
+                "add": "إضافة وظيفة",
+                "close": "إغلاق",
+                "save": "حفظ"
+            },
+            "message": {
+                "add-success": "تم إضافة الوظيفة بنجاح",
+                "data-exit": "البيانات التي أدخلتها موجودة من قبل",
+                "failure": "حدث خطا، يرجى المحاولة مرة أخرى في وقت لاحق",
+                "error": "حدث خطا، يرجى المحاولة مرة أخرى في وقت لاحق"
+            }
+        },
+        "create-user": {
+            "field": {
+                "first_name": {
+                    "required": "هذه الخانة مطلوبه",
+                    "label": "الاسم الأول",
+                    "placeholder": "الاسم الأول",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "last_name": {
+                    "placeholder": "الاسم الأخير",
+                    "label": "الاسم الأخير",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "email": {
+                    "placeholder": "البريد الإلكتروني",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "صيغة البريد الإلكتروني غير صحيحة",
+                    "label": "البريد الإلكتروني"
+                },
+                "mobile": {
+                    "required": "هذه الخانة مطلوبه",
+                    "label": "رقم الهاتف",
+                    "placeholder": "9665XXXXXXXX",
+                    "invalid": "رقم الهاتف غير صحيح"
+                },
+                "password": {
+                    "label": "كلمة المرور",
+                    "placeholder": "كلمة المرور",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يجب أن تتكون كلمة المرور من 6 إلى 20 حرفا بما في ذلك الأرقام"
+                },
+                "roles": {
+                    "label": "الوظيفة",
+                    "placeholder": "حدد الوظيفة",
+                    "required": "هذه الخانة مطلوبه"
+                },
+                "status": {
+                    "label": "الحالة",
+                    "placeholder": "حدد الحالة",
+                    "required": "هذه الخانة مطلوبه"
+                },
+                "status_active": "فعال",
+                "status_blocked": "محظور",
+                "confirm_password": {
+                    "required": "هذه الخانة مطلوبة ويجب أن تطابق كلمة المرور",
+                    "label": "تأكيد كلمة المرور",
+                    "placeholder": "تأكيد كلمة المرور",
+                    "invalid": "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقة"
+                }
+            },
+            "button": {
+                "add_user": "إضافة مستخدم",
+                "close": "إغلاق",
+                "save": "حفظ"
+            },
+            "message": {
+                "add-success": "تم إضافة المستخدم بنجاح",
+                "data-exit": "البيانات التي أدخلتها موجودة من قبل",
+                "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق"
+            },
+            "text": {
+                "new_user": "إنشاء مستخدم جديد",
+                "update_user": "تحديث المستخدم"
+            }
+        },
+        "reset_password": {
+            "text": {
+                "reset_password": "إعادة تعيين كلمة المرور"
+            },
+            "button": {
+                "reset_password": "حفظ"
+            },
+            "field": {
+                "new_password": {
+                    "label": "كلمة المرور الجديدة",
+                    "placeholder": "كلمة المرور الجديدة",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يجب أن تكون كلمة المرور من 6 إلى 20 حرفًا بما في ذلك الأرقام"
+                },
+                "confirm_password": {
+                    "required": "هذه الخانة مطلوبة ويجب أن تطابق كلمة المرور",
+                    "label": "تأكيد كلمة المرور",
+                    "placeholder": "تأكيد كلمة المرور",
+                    "invalid": "كلمة المرور وتأكيد كلمة المرور يجب أن تكون متطابقة",
+                    "pattern": "كلمة السر يجب أن تكون من 6 إلى 20 حرفا بما في ذلك أرقام"
+                }
+            }
+        },
+        "role-list": {
+            "text": {
+                "roles": "الوظائف",
+                "name": "الاسم",
+                "permissions": "التصريحات"
+            },
+            "message": {
+                "updateRole": {
+                    "success": "تم تعديل الوظيفة بنجاح",
+                    "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق"
+                },
+                "deleteRole": {
+                    "selectalternativeRole": "اختر وظيفة بديله",
+                    "success": "تم الحذف بنجاح",
+                    "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+                    "confirm": "تأكيد",
+                    "cancel": "الغاء",
+                    "deleteLastRole":"عذرا، لايمكنك حذف اخر وظيفة يمكنك اضافة المزيد واعادة المحاولة"
+                }
+            }
+        },
+        "back": "الرجوع",
+        "upload": {
+            "message": {
+                "uploadSuccess": "تم تحميل الصورة بنجاح",
+                "bigImage": "حجم الصورة كبير; أقصى حجم للصورة 4 ميغابايت"
+            }
+        },
+        "pages": {
+            "noResults": "عذرا ! لا يوجد نتائج",
+            "limits": "ربما كان البحث محدد جدا ، يرجى محاولة البحث مرة أخرى",
+            "page": "صفحة",
+            "pageCount": "{value, plural, =0 {N\/A} one{فقط} two{من صفحتان} few{من # صفحات} many{من # صفحة} other{من # صفحة}}"
+        },
+        "view-payment": {
+            "invoice": "فاتورة",
+            "receipt": "إيصال",
+            "vendor": "المورد",
+            "recipient": "المستلم",
+            "receiptFrom": "اسم المستلم",
+            "receiptTo": "اسم المستفيد",
+            "date": "التاريخ",
+            "no": "رقم الفاتورة",
+            "noreceipt": "رقم الإيصال:",
+            "paid": "مدفوعة",
+            "sar": "ريال",
+            "notPaid": "غير مدفوعة",
+            "cheque": "مدفوع بواسطة شيك",
+            "cash": "تم إستلام نقدية من قبل ",
+            "bank1": "تم إستلام حوالة بنكية علي حساب ",
+            "bank2": ", رقم الحوالة هو: ",
+            "table": {
+                "date": "التاريخ",
+                "description": "الوصف",
+                "type": "النوع",
+                "referenceId": "الرقم المرجعي",
+                "status": "الحالة",
+                "customerName": "اسم العميل",
+                "amount": "المبلغ",
+                "balance": "الرصيد",
+                "subtotal": "المجموع",
+                "total": "الإجمالي",
+                "vat": "الضريبة",
+                "fees": "العمولة"
+            },
+            "statements": "{type, select, adminFees {عمولة شراء بين {supplier} و {customer} } customer { عملية بيع من }  supplier { عملية شراء من } other { }}"
+        },
+        "record-payment": {
+            "text": {
+                "recordPayment": "تسجيل عملية الدفع",
+                "paymentDetail": "تفاصيل الدفع"
+            },
+            "field": {
+                "supplier": {
+                    "label": "المورد",
+                    "placeholder": "اختر المورد",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "customer": {
+                    "label": "العميل",
+                    "placeholder": "اختر العميل",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "amount": {
+                    "label": "المبلغ",
+                    "placeholder": "المبلغ",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "date": {
+                    "label": "تاريخ عملية التحويل",
+                    "placeholder": "03\/08\/2020",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "paymentMethod": {
+                    "label": "طريقة الدفع :",
+                    "placeholder": "03\/08\/2020",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة",
+                    "cash": "نقدي",
+                    "cheque": "شيك",
+                    "bank": "بنك"
+                },
+                "bankTransactionID": {
+                    "label": "رقم المعاملة البنكية",
+                    "placeholder": "رقم المعاملة البنكية",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "bankAccountNumber": {
+                    "label": "رقم الحساب البنكي",
+                    "placeholder": "رقم الحساب البنكي",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "bankName": {
+                    "label": "اسم البنك",
+                    "placeholder": "اسم البنك",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "accountHolderName": {
+                    "label": "اسم صاحب الحساب",
+                    "placeholder": "اسم صاحب الحساب",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "chequeRecipientName": {
+                    "label": "اسم مستلم الشيك",
+                    "placeholder": "اسم مستلم الشيك",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "chequeNumber": {
+                    "label": "رقم الشيك",
+                    "placeholder": "رقم الشيك",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "cashRecipientName": {
+                    "label": "اسم مستلم النقدية",
+                    "placeholder": "اسم مستلم النقدية",
+                    "required": "هذه الخانة مطلوبه",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                }
+            },
+            "button": {
+                "add": "تسجيل عملية الدفع",
+                "close": "إغلاق",
+                "save": "حفظ",
+                "accept": "قبول",
+                "reject": "رفض"
+            },
+            "message": {
+                "add-success": "تم تسجيل عملية الدفع بنجاح",
+                "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+                "error": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق",
+                "reject": {
+                    "success": "تم رفض عملية الدفع بنجاح",
+                    "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق"
+                },
+                "accept": {
+                    "success": "تم قبول عملية الدفع بنجاح",
+                    "failure": "حدث خطا ، يرجى المحاولة مرة أخرى في وقت لاحق"
+                },
+                "record": {
+                    "success": "تم تسجيل عملية الدفع بنجاح",
+                    "failure": "فشل في عملية تسجيل الدفع"
+                }
+            },
+            "view-payment": {
+                "invoice": "الفاتورة",
+                "receipt": "إيصال",
+                "vendor": "المورد",
+                "recipient": "المستلم",
+                "date": "التاريخ",
+                "No": "رقم",
+                "sar": "ريال",
+                "table": {
+                    "date": "التاريخ",
+                    "description": "الوصف",
+                    "type": "النوع",
+                    "referenceId": "الرقم المرجعي",
+                    "status": "الحالة",
+                    "customerName": "اسم العميل",
+                    "amount": "المبلغ",
+                    "balance": "الرصيد"
+                },
+                "statements": ""
+            }
+        },
+        "billing-history": {
+            "invoice": "فاتورة",
+            "receipt": "إيصال",
+            "order": "طلب"
+        },
+        "transactions": {
+            "sar": "ريال",
+            "approved": "مؤكدة",
+            "pending": "قيد الانتظار",
+            "rejected": "مرفوض",
+            "cash": "تحصيل نقدي",
+            "cheque": "شيك",
+            "bank": "البنك",
+            "order_from": "طلب من",
+            "order": "طلب",
+            "from": "من",
+            "paid": "مدفوعة",
+            "notpaid": "لم تدفع",
+            "export": "تصدير",
+            "detailed_transactions": "تفاصيل المعاملات",
+            "credit": " دائن",
+            "debit": "مدين",
+            "table": {
+                "date": "التاريخ",
+                "description": "الوصف",
+                "type": "النوع",
+                "referenceId": "الرقم المرجعي",
+                "status": "الحالة",
+                "customerName": "اسم العميل",
+                "amount": "المبلغ",
+                "balance": "الرصيد"
+            }
+        },
+        "daterange":{
+            "from":"من",
+            "to":"إلى"
+        },
+        "notifications" : {
+            "massage" : {
+                "noNotifications" : "لا يوجد اشعارات"
+            }
+        },
+        "contact": {
+            "field": {
+                "first_name": {
+                    "required": "هذه الخانة مطلوبه",
+                    "label": "الاسم الأول",
+                    "placeholder": "الاسم الأول",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "last_name": {
+                    "required": "هذه الخانة مطلوبه",
+                    "label": "الاسم الأخير",
+                    "placeholder": "الاسم الأخير",
+                    "invalid": "يحتوي على أحرف غير صالحة"
+                },
+                "email": {
+                    "label": "البريد الإلكتروني",
+                    "required": "هذه الخانة مطلوبه",
+                    "placeholder": "البريد الإلكتروني",
+                    "invalid": "صيغة البريد الإلكتروني غير صحيحة"
+                },
+                "mobile": {
+                    "label": "رقم الهاتف",
+                    "required": "هذه الخانة مطلوبه",
+                    "placeholder": "رقم الهاتف",
+                    "invalid": "رقم الهاتف غير صحيح"
+                },
+                "message-title": {
+                    "label": "عنوان الرساله",
+                    "required": "هذه الخانة مطلوبه",
+                    "placeholder":  "عنوان الرساله",
+                    "invalid": "صيغة  غير صحيحة"
+                },
+                "message-body": {
+                    "label": "محتوي الرساله",
+                    "required": "هذه الخانة مطلوبه",
+                    "placeholder": "محتوي الرساله",
+                    "invalid": "صيغة  غير صحيحة"
+                }
+            },
+            "button": {"send" :"ارسال"},
+            "title": "تواصل معنا",
+            "message":{
+                "success": "تمت العملية بنجاح!",
+                "error" : "عذراً حدث خطأ, حاول مرة أخرى!"
+            }
+        }
+    },
+    "no-orders" :"لا يوجد طلبات",
+    "Save" : "حفظ",
+    "Update": "تعديل"
+}

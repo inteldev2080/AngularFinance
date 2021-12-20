@@ -1,0 +1,58 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>التاريخ</th>
+    <th>طريقة الدفع</th>
+    <th>من</th>
+    <th>إلى</th>
+    <th>المبلغ</th>
+    <th>النوع</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data.transactions}}
+  <tr>
+    <td>{{:~toTime(date)}}</td>
+    {{if paymentMethod}}
+    <td>{{:paymentMethod}}</td>
+    {{else}}
+    <td>--</td>
+    {{/if}}
+    <td>{{:from}}</td>
+    <td>{{:to}}</td>
+    <td>{{:~toNumber(amount)}}</td>
+    {{if type === 'debit'}}
+    <td>مدين</td>
+    {{else}}
+    <td>دائن</td>
+    {{/if}}
+
+  </tr>
+
+  {{/for}}
+  </tbody>
+</table>
+

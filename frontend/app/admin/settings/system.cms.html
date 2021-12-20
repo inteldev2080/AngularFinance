@@ -1,0 +1,344 @@
+<div class="card card-details-table">
+    <div class="card-header header-bg">
+        <button id="show-modal" class="btn btn-primary btn-cons btn-lg pull-right m-t-10" ng-click="$ctrl.showModal()">
+            <i class="fa fa-plus"></i> {{"admin.settings.cms.button" | translate }}
+        </button>
+        <div>
+            <div class="card-title">
+                {{"admin.settings.cms.cms" | translate }}
+            </div>
+            <div class="card-description">
+                {{"admin.settings.warning" | translate }}
+            </div>
+        </div>
+    </div>
+    <div class="card-block card-wide-padding wide-leftup">
+        <shimmer hide="$ctrl.unitListIsLoaded" col="3" clipped="true"></shimmer>
+        <div ng-if="$ctrl.unitListIsLoaded && ($ctrl.hasError || !$ctrl.cmsList.length)" class="row">
+            <div class="col">
+                <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                    <div class="card-image-overlay"></div>
+                    <img src="assets/img/cards/error.svg">
+                    <p class="paragraph m-t-10">{{"admin.settings.noResults" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" ng-if="$ctrl.unitListIsLoaded && $ctrl.cmsList.length">
+            <div class="table-responsive" ng-if="$ctrl.unitListIsLoaded && $ctrl.cmsList.length">
+                <table class="table table-striped table-compact table-hover" id="basicTable">
+                    <thead>
+                    <tr>
+                        <th style="width:1%"></th>
+                        <th style="width:20%">{{"admin.settings.cms.table.title" | translate }}</th>
+                        <th></th>
+                        <th style="width:1%"></th>
+                        <th style="width:150px">{{"admin.settings.cms.table.op" | translate }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="(key, item) in $ctrl.cmsList">
+                        <td class="v-align-middle">
+                        </td>
+                        <td class="v-align-middle">
+                            {{item.title.english}}
+                        </td>
+                        <td class="v-align-middle">
+                            <!--<p ng-bind-html="item.body.english | limitTo: 100 | rawHtml"></p>-->
+                        </td>
+                        <td class="v-align-middle mn-100">
+                            <span class="label upper-case">{{$ctrl.translateStatus(item.status)}}</span>
+                        </td>
+                        <td class="v-align-middle">
+                            <button ng-click="$ctrl.editModal(item, key)" class="btn btn-xs btn-defualt"><i
+                                    class="fa fa-pencil"></i> {{"admin.settings.units.popUp2.edit" | translate }}</button>
+                            <button permission permission-only="'canDelete'" ng-click="$ctrl.showDeleteModal(item)"
+                                    class="btn btn-xs btn-defualt"><i class="pg-trash"></i> {{"admin.settings.units.popUp2.delete" | translate }}</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CONTAINER FLUID -->
+<div class="modal fade slide-up disable-scroll ng-scope" id="addNewAppModal" tabindex="-1" role="dialog"
+     aria-labelledby="addNewAppModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                            class="pg-close fs-14"></i></button>
+                    <h4 class="p-b-5"><span
+                            class="semi-bold">{{"admin.settings.cms.popUp1.cardTitle.new" | translate }}</span>
+                        {{"admin.settings.cms.popUp1.cardTitle.content" | translate }}</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="modal-body">
+                        <form role="form" class="ng-pristine ng-valid" id="cmsForm" accessible-form name="cmsForm" >
+                            <div class="panel">
+                                <ul class="nav nav-tabs nav-tabs-simple nav-tabs-primary" role="tablist">
+                                    <li class="nav-item">
+                                        <a href="#" data-toggle="tab" role="tab" data-target="#englishNewCMS"
+                                           class="active" aria-expanded="true">{{"admin.settings.cms.tabs.english" |
+                                            translate }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" data-toggle="tab" role="tab" data-target="#arabicNewCMS" class=""
+                                           aria-expanded="false">{{"admin.settings.cms.tabs.arabic" | translate }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a href="#" data-toggle="tab" role="tab" data-target="#settingsNewCMS" class=""
+                                       aria-expanded="false">{{"admin.settings.cms.tabs.settings" | translate }}</a>
+                                </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="englishNewCMS" aria-expanded="true">
+                                        <div class="row column-seperation">
+
+                                            <div class="form-group form-group-default required">
+                                                <label for="englishTitle">{{"admin.settings.cms.popUp1.title_en.label" | translate
+                                                    }}</label>
+                                                <input type="text" id="englishTitle" name="newUserTitle" placeholder="{{'admin.settings.cms.popUp1.title_en.label' | translate }}"
+                                                       class="form-control" ng-model="$ctrl.newContent.title.english"
+                                                       required>
+                                            </div>
+
+                                            <div class="summernote-wrapper w-100">
+                                                <!--.note-editor .note-editable-->
+                                                <div id="summernote" config="$ctrl.summernote_options" on-focus="$ctrl.focus(evt)"
+                                                     on-blur="$ctrl.blur(evt)"  ng-model="$ctrl.newContent.body.english" summernote>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="arabicNewCMS">
+                                        <div class="row">
+
+                                            <div class="form-group form-group-default required">
+                                                <label for="arabicTitle">{{"admin.settings.cms.popUp1.title_ar.label" | translate }}</label>
+                                                <input type="text" id="arabicTitle" dir="rtl" name="newUserTitle" placeholder="{{'admin.settings.cms.popUp1.title_ar.label' | translate }}"
+                                                       class="form-control" ng-model="$ctrl.newContent.title.arabic"
+                                                       required>
+                                            </div>
+
+                                            <div class="summernote-wrapper w-100">
+                                                <!--.note-editor .note-editable-->
+                                                <div id="summernote" config="$ctrl.summernote_options_arabic" on-focus="$ctrl.focus(evt)"
+                                                     on-blur="$ctrl.blur(evt)"  ng-model="$ctrl.newContent.body.arabic" summernote>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="settingsNewCMS">
+                                        <div class="row">
+
+                                            <div class="form-group form-group-default required">
+                                                <label for="newStatus">{{"admin.settings.cms.popUp1.status.label" | translate }}</label>
+                                                <select   id="newStatus" name="newStatus"
+                                                       class="form-control" ng-model="$ctrl.selectedStatus"
+                                                          ng-options="item as $ctrl.translateStatus(item.key) for item in $ctrl.STATUS_LIST.data track by item.key"
+                                                       required>
+                                                </select>
+                                            </div>
+                                            <div class="form-group form-group-default required">
+                                                <label for="key">{{"admin.settings.cms.popUp1.key.label" | translate }}</label>
+                                                <input  type="text" id="key"  name="status"
+                                                        class="form-control" ng-model="$ctrl.newContent.key"
+                                                        required>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer p-0">
+                                <button id="addContentBtn" type="button" class="btn btn-primary  btn-cons" ng-disabled="cmsForm.$invalid" ng-click="$ctrl.add(cmsForm)">
+                                    {{"admin.settings.cms.popUp1.add" | translate }}
+                                </button>
+                                <button type="button" data-dismiss="modal" class="btn btn-cons" ng-click="$ctrl.reset()">
+                                    {{"admin.settings.cms.popUp1.cancel" | translate }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- END CONTAINER FLUID -->
+<div class="modal fade slide-up disable-scroll ng-scope" id="EditModel" tabindex="-1" role="dialog"
+     aria-labelledby="EditModel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-header clearfix ">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i
+                            class="pg-close fs-14"></i></button>
+                    <h4 class="p-b-5"><span class="semi-bold">{{"admin.settings.cms.popUp2.cardTitle.edit" | translate }}</span>
+                        {{"admin.settings.cms.popUp2.cardTitle.content" | translate }}</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="modal-body">
+                        <form role="form" class="ng-pristine ng-valid" name="addItem" ui-keypress="{13:'$ctrl.add()'}">
+                            <div class="panel">
+                                <ul class="nav nav-tabs nav-tabs-simple nav-tabs-primary" role="tablist">
+                                    <li class="nav-item">
+                                        <a href="#" data-toggle="tab" role="tab" data-target="#englishEditCMS"
+                                           class="active" aria-expanded="true">{{"admin.settings.cms.tabs.english" |
+                                            translate }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" data-toggle="tab" role="tab" data-target="#arabicEditCMS" class=""
+                                           aria-expanded="false">{{"admin.settings.cms.tabs.arabic" | translate }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" data-toggle="tab" role="tab" data-target="#settingsEditCMS" class=""
+                                           aria-expanded="false">{{"admin.settings.cms.tabs.settings" | translate }}</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="englishEditCMS">
+                                        <div class="row column-seperation">
+
+                                            <div class="form-group form-group-default required">
+                                                <label>{{"admin.settings.cms.popUp2.title.label" | translate }}</label>
+                                                <input type="text" id="newUserTitle" name="newUserTitle"
+                                                       class="form-control" ng-model="$ctrl.item.title.english"
+                                                       required>
+                                            </div>
+
+                                            <div class="summernote-wrapper w-100">
+                                                <!--.note-editor .note-editable-->
+                                                <div id="summernote" config="$ctrl.summernote_options" on-focus="$ctrl.focus(evt)"
+                                                     on-blur="$ctrl.blur(evt)"  ng-model="$ctrl.item.body.english" summernote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane" id="arabicEditCMS">
+                                        <div class="row">
+
+                                            <div class="form-group form-group-default required">
+                                                <label for="titleArabic2">{{"admin.settings.cms.popUp2.title.label" | translate }}</label>
+                                                <input type="text" id="titleArabic2" dir="rtl" name="titleArabic2"
+                                                       class="form-control" ng-model="$ctrl.item.title.arabic" required>
+                                            </div>
+
+                                            <div class="summernote-wrapper w-100">
+                                                <!--.note-editor .note-editable-->
+                                                <div id="summernote" config="$ctrl.summernote_options_arabic" on-focus="$ctrl.focus(evt)"
+                                                     on-blur="$ctrl.blur(evt)"  ng-model="$ctrl.item.body.arabic" summernote>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="settingsEditCMS">
+                                        <div class="row">
+
+                                            <div class="form-group form-group-default required">
+                                                <label for="status">{{"admin.settings.cms.popUp1.status.label" | translate }}</label>
+                                                <select   id="status" name="status"
+                                                          class="form-control" ng-model="$ctrl.selectedStatus"
+                                                          ng-options="item as $ctrl.translateStatus(item.key) for item in $ctrl.STATUS_LIST.data track by item.key"
+                                                          required>
+                                                </select>
+                                            </div>
+                                            <div class="form-group form-group-default required">
+                                                <label for="key">{{"admin.settings.cms.popUp1.key.label" | translate }}</label>
+                                                <input  type="text" id="key"  name="status"
+                                                        class="form-control" ng-model="$ctrl.item.key"
+                                                        required>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add-app" type="button" class="btn btn-primary  btn-cons" ng-click="$ctrl.save()">
+                            {{"admin.settings.cms.popUp2.save" | translate }}
+                        </button>
+                        <button type="button" data-dismiss="modal" class="btn btn-cons" ng-click="$ctrl.reset()">
+                            {{"admin.settings.cms.popUp2.close" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<div class="modal fade slide-up"  id="deleteModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"admin.settings.units.button.title" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button  ng-click="$ctrl.delete()" class="btn btn-danger btn-block m-t-5">{{"admin.settings.units.button.confirm" | translate }}</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button  onclick="$('#deleteModal').modal('hide');" class="btn btn-primary btn-block m-t-5">{{"admin.settings.units.button.cancel" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    $('#status , #newStatus').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

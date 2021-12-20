@@ -1,0 +1,31 @@
+{
+    "header": {
+        "changeLanguage": "English",
+        "hello": "مرحبا،",
+        "myProfile": "الملف الشخصي",
+        "logout": "تسجيل الخروج",
+        "cart": "عربة التسوق",
+        "type": "اكتب في أي مكان",
+        "search": "البحث"
+    },
+    "menu":{
+        "terms": "شروط الاستخدام",
+        "privacy": "سياسة الخصوصية",
+        "feedback":"تواصل معنا"
+    },
+    "footer": {
+        "copyright": "حقوق الطبع والنشر © 2021",
+        "rights": "جميع الحقوق محفوظة",
+        "hand_craft_statement": "تم تطويره بواسطة",
+        "made_statement": "وصنع مع الحب ®",
+        "terms": "شروط الاستخدام",
+        "privacy": "سياسة الخصوصية",
+        "project_name": "Supplies On",
+        "developer": "اندى لابز ذ.م.م"
+    },
+
+    "meta": {
+        "project_name_supplies": "Supplies",
+        "project_name_on": "ON"
+    }
+}

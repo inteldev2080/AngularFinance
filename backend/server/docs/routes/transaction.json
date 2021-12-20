@@ -1,0 +1,394 @@
+{
+  "schemas": {
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "credit": {
+          "type": "object"
+        },
+        "supplier": {
+          "type": "object"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "order": {
+          "type": "object"
+        },
+        "invoice": {
+          "type": "object"
+        },
+        "transId": {
+          "type": "string"
+        },
+        "isAdminFees": {
+          "type": "boolean"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "paymentMethod": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "accountName": {
+          "type": "string"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "chequeNumber": {
+          "type": "string"
+        },
+        "recipientName": {
+          "type": "string"
+        },
+        "open": {
+          "type": "number"
+        },
+        "close": {
+          "type": "number"
+        },
+        "isPaid": {
+          "type": "boolean"
+        },
+        "PVAT": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/transactions": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get list of transactions.",
+        "operationId": "transactionsList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "transactions": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Transaction"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/transactions/declare": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Declare new transaction.",
+        "operationId": "declareTransaction",
+        "requestBody": {
+          "description": "Transaction Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "amount"
+                ],
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number"
+                  },
+                  "supplierId": {
+                    "type": "string"
+                  },
+                  "transactionId": {
+                    "type": "string"
+                  },
+                  "accountNumber": {
+                    "type": "string"
+                  },
+                  "accountName": {
+                    "type": "string"
+                  },
+                  "bankName": {
+                    "type": "string"
+                  },
+                  "paymentMethod": {
+                    "type": "string"
+                  },
+                  "recipientName": {
+                    "type": "string"
+                  },
+                  "chequeNumber": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Transaction": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Transaction"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/transactions/add": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Create new transaction.",
+        "operationId": "createTransaction",
+        "requestBody": {
+          "description": "Transaction Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "amount"
+                ],
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number"
+                  },
+                  "supplierId": {
+                    "type": "string"
+                  },
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "transactionId": {
+                    "type": "string"
+                  },
+                  "accountNumber": {
+                    "type": "string"
+                  },
+                  "accountName": {
+                    "type": "string"
+                  },
+                  "bankName": {
+                    "type": "string"
+                  },
+                  "paymentMethod": {
+                    "type": "string"
+                  },
+                  "recipientName": {
+                    "type": "string"
+                  },
+                  "chequeNumber": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Transaction": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Transaction"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/transactions/{transactionId}": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get transaction by Id.",
+        "operationId": "getTransaction",
+        "parameters": [{
+          "name": "transactionId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Transaction": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Transaction"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

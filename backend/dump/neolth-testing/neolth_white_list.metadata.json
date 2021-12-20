@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"neolth-testing.neolth_white_list"},{"v":2,"key":{"email":1},"name":"email_1","ns":"neolth-testing.neolth_white_list"},{"v":2,"key":{"customer":1},"name":"customer_1","ns":"neolth-testing.neolth_white_list"}]}

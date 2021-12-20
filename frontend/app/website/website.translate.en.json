@@ -1,0 +1,30 @@
+{
+    "header": {
+        "changeLanguage": "العربية",
+        "hello": "Hello, ",
+        "myProfile": "My Profile",
+        "logout": "Logout",
+        "cart": "Cart",
+        "type": "Type anywhere to ",
+        "search": "search"
+    },
+    "menu":{
+        "privacy":"Privacy Policy",
+        "terms":"Terms of use",
+        "feedback":"Feedback"
+    },
+    "footer": {
+        "copyright": "Copyright © 2021",
+        "rights": "All rights reserved",
+        "hand_craft_statement": "Hand-crafted by",
+        "made_statement": "& Made with Love ®",
+        "terms": "Terms of use",
+        "privacy": "Privacy Policy",
+        "project_name": "Supplies On",
+        "developer": "indielabs, LLC."
+    },
+    "meta": {
+        "project_name_supplies": "Supplies",
+        "project_name_on": "ON"
+    }
+}

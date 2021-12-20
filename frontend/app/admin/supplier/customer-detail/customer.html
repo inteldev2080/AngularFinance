@@ -1,0 +1,449 @@
+<div class="card">
+    <div class="card-header text-center header-bg padding-0 d-flex flex-column align-items-center cover_photo justify-content-end"
+         id="header-bg" style="background: url({{$ctrl.customer.coverPhoto}});height: 200px;" style="height:100%">
+        <div class="image-overlay"></div>
+    </div>
+    <!-- <div ng-if="$ctrl.customer.coverPhoto" class="card-header text-center header-bg padding-0 d-flex flex-column align-items-center justify-content-end" id="header-bg-emp" style="background: url('../assets/img/pattern/pattern1.png');height: 200px;">
+     </div>-->
+    <div class="row">
+        <div class="col-sm-6 p-t-20 p-l-50 sm-p-l-20 p-r-50 sm-p-r-20">
+            <form id="customerForm" name="customerForm" class="p-t-15" role="form">
+            <div class="row">
+                <div class="col-8">
+                    <h4 class="w400">
+                        <input type="text"
+                               class="ae-6 fromCenter"
+                               name="customerName"
+                               id="customerName"
+                               ng-model="$ctrl.representativeName"
+                               ng-pattern="^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]([-']?[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+)*( [\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]([-']?[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+)*)+$"
+                               value="{{$ctrl.customer.representativeName}}"
+                               style="border: 1px solid #fafafa;padding: 5px;width: 100%;"/>
+                        <label id="representativeNameRequired" class="error" for="customerName"
+                               ng-show="customerForm.customerName.$error.required && !customerForm.customerName.$pristine">
+                            - {{"admin.customers.payment.required" | translate }}.
+                        </label>
+                        <label id="representativeNameInvalid" class="error" for="customerName"
+                               ng-show="customerForm.customerName.$error.pattern && !customerForm.customerName.$pristine">
+                            - {{"admin.customers.payment.invalidUsername" | translate }}.
+                        </label>
+                        <span ng-if="$ctrl.customer.status === 'Active'"
+                              class="label label-success upper-case">{{"admin.customers.status.active" | translate}}</span>
+                        <span ng-if="$ctrl.customer.status === 'Invited'"
+                              class="label label-warning upper-case">{{"admin.customers.status.invited" | translate}}</span>
+                        <span ng-if="$ctrl.customer.status === 'Suspended'"
+                              class="label label-warning upper-case">{{"admin.customers.status.suspended" | translate}}</span>
+                        <span ng-if="$ctrl.customer.status === 'Blocked'"
+                              class="label label-important upper-case">{{"admin.customers.status.blocked" | translate}}</span>
+                        <span ng-if="$ctrl.customer.status === 'Deleted'"
+                              class="label label-important upper-case">{{"admin.customers.status.deleted" | translate}}</span>
+                    </h4>
+                </div>
+
+                <div class="col-4">
+                    <div class="dropdown pull-right">
+                        <button class="btn btn-default btn-sm m-t-10 pull-right"
+                                title="{{'admin.customers.customer.change_status' | translate}}" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <i class="pg-menu_justify"></i>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="option in $ctrl.statusOptions">
+                                <span ng-if="option === 'Block'"><a
+                                        ng-click="$ctrl.changeCustomerStatus($ctrl.customer._id, option)"><i
+                                        class="fa fa-check"></i>{{"admin.customers.status.block" | translate}}</a></span>
+                                <span ng-if="option === 'Unblock'"><a
+                                        ng-click="$ctrl.changeCustomerStatus($ctrl.customer._id, option)"><i
+                                        class="fa fa-check"></i>{{"admin.customers.status.unblock" | translate}}</a></span>
+                                <span ng-if="option === 'Approve'"><a
+                                        ng-click="$ctrl.changeCustomerStatus($ctrl.customer._id, option)"><i
+                                        class="fa fa-check"></i>{{"admin.customers.status.approve" | translate}}</a></span>
+                                <span ng-if="option === 'Delete'"><a
+                                        ng-click="$ctrl.changeCustomerStatus($ctrl.customer._id, option)"><i
+                                        class="fa fa-check"></i>{{"admin.customers.status.delete" | translate}}</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-default btn-sm m-t-10 pull-right"
+                            title="{{'admin.customers.customer.reset_password' | translate}}" data-toggle="modal"
+                            data-target="#resetPasswordModal">
+                        <i class="fa fa-lock fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+            <shimmer hide="$ctrl.customerIsLoaded" row="5" clipped="true"></shimmer>
+                <contact ng-if="$ctrl.customerIsLoaded">
+                    <span class="w300 padding-0 text-capitalize no-margin">{{"admin.customers.payment.repName" | translate }}:</span>
+                    <input type="text"
+                           class="ae-6 fromCenter"
+                           name="userName"
+                           id="userName"
+                           ng-model="$ctrl.userName"
+                           ng-pattern="^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]([-']?[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+)*( [\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]([-']?[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+)*)+$"
+                           style="border: 1px solid #fafafa;padding: 5px;"
+                        required/>
+                    <label id="userNameRequired" class="error" for="userName"
+                           ng-show="customerForm.userName.$error.required && !customerForm.userName.$pristine">
+                        - {{"admin.customers.payment.required" | translate }}.
+                    </label>
+                    <label id="userNameInvalid" class="error" for="userName"
+                           ng-show="customerForm.userName.$error.pattern && !customerForm.userName.$pristine">
+                        - {{"admin.customers.payment.invalidUsername" | translate }}.
+                    </label>
+
+                    <p>
+                        <span class="w300 padding-0 no-margin">{{"admin.customers.payment.phone" | translate }}:</span>
+                        <input type="text"
+                               class="ae-6 fromCenter"
+                               name="mobileNumber"
+                               id="mobileNumber"
+                               ng-model="$ctrl.phoneNumberUpdated"
+                               ng-pattern='/^9665[0-9]{8}$$/'
+                               style="border: 1px solid #fafafa;padding: 5px;"
+                               required/>
+                        <label id="userMobilePhoneRequired" class="error" for="mobileNumber"
+                               ng-show="customerForm.mobileNumber.$error.required && !customerForm.mobileNumber.$pristine">
+                            - {{"admin.customers.payment.required" | translate }}.
+                        </label>
+                        <label id="userMobilePhoneInvalid" class="error" for="mobileNumber"
+                               ng-show="customerForm.mobileNumber.$error.pattern && !customerForm.mobileNumber.$pristine">
+                            - {{"admin.customers.payment.invalidPhone" | translate }}.
+                        </label>
+                    </p>
+                    <p>
+                        <span class="w300 padding-0 no-margin">{{"admin.customers.payment.email" | translate }}:</span>
+                        <input type="text"
+                               class="ae-6 fromCenter"
+                               name="email"
+                               id="email"
+                               ng-model="$ctrl.emailUpdated"
+                               ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                               style="border: 1px solid #fafafa;padding: 5px;width: 265px;"
+                               required/>
+                        <label id="userEmailRequired" class="error" for="email"
+                               ng-show="customerForm.email.$error.required && !customerForm.email.$pristine">
+                            - {{"auth.register.customer.field.required" | translate }}.
+                        </label>
+                        <label id="userEmailInvalid" class="error" for="email"
+                               ng-show="customerForm.email.$error.pattern && !customerForm.email.$pristine">
+                            - {{"admin.customers.payment.invalidEmail" | translate }}.
+                        </label>
+                    </p>
+                    <p class="bold text-capitalize compact-text-20 p-b-10">{{$ctrl.customer.location.address}}</p>
+                    <button type= "submit" ng-disabled="customerForm.$invalid" ng-click="$ctrl.changeCustomerInfo()" class="btn btn-primary m-b-10">{{"admin.customers.payment.save" | translate }}</button>
+                    <button ng-if="$ctrl.customer.commercialRegisterPhoto" ng-click="$ctrl.openPhoto($ctrl.customer.commercialRegisterPhoto)" class="btn btn-primary m-b-10">{{"admin.customers.payment.cr_photo" | translate }}</button>
+                    <button ng-if="$ctrl.customer.VATRegisterPhoto" ng-click="$ctrl.openPhoto($ctrl.customer.VATRegisterPhoto)" class="btn btn-primary m-b-10">{{"admin.customers.payment.vat_photo" | translate }}</button>
+                </contact>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="map-container" style="min-width: 100%; height: 200px" map-lazy-load="{{$ctrl.googleMapsUrl}}">
+                <ng-map ng-if="$ctrl.customerIsLoaded" id="map" zoom="11"
+                        center="{{$ctrl.customer.location.coordinates}}">
+                    <marker position="{{$ctrl.customer.location.coordinates}}"
+                            title="Location">
+                    </marker>
+                </ng-map>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="card card-details-table no-margin no-box-shadow">
+        <div class="card-header p-t-70-important">
+            <div class="row">
+                <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 m-t-10">
+                    <div class="card-title">
+                        {{"admin.customers.payment.payments" | translate }}
+                    </div>
+                    <div class="card-description">
+                        <br>
+                    </div>
+                </div>
+                <div permission permission-only="'managePayments'" class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-primary btn-block" ng-click="$ctrl.openRecordPayment()">
+                        {{"admin.customers.payment.record_payment" | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-block-transparent">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-sm-6 add-gap border-top-balance-card"
+                         ng-class="{'danger': $ctrl.balanceDetails.balance < 0, 'warning': $ctrl.balanceDetails.balance == 0}">
+
+                        <div class="payment-box padding-15">
+                            <shimmer hide="$ctrl.billingHistoryIsLoaded" clipped="true"></shimmer>
+                            <div ng-if="$ctrl.billingHistoryIsLoaded" class="row">
+                                <div class="col-lg-6 col-md-12">
+                                    <h6 class="w600">{{"admin.customers.payment.balance" | translate }}</h6>
+                                    <h4 class="bold">{{$ctrl.balanceDetails.balance | currency : "" : 2}}
+                                        <small>
+                                            <small>{{"admin.customers.payment.sar" | translate }}</small>
+                                        </small>
+                                    </h4>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <p class="compact-text-10">{{"admin.customers.payment.nextPayment" | translate
+                                        }}:</p>
+                                    <p class="w600">{{$ctrl.balanceDetails.nextPaymentDate | moment:'fromNow'}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.billingHistoryIsLoaded" class="p-r-10 p-l-10">
+                            <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                                <label class="label-custom">{{"admin.customers.payment.payment_installment" | translate
+                                    }}</label>
+                                <select class="full-width"
+                                        data-placeholder="{{'admin.customers.payment.select_period' | translate }}"
+                                        data-init-plugin="select2"
+                                        ng-change="$ctrl.updateBalanceDetails()"
+                                        ng-model="$ctrl.selectPeriod"
+                                        id="selectPeriod"
+                                        ng-options="item as $ctrl.customOp(item) for item in $ctrl.periods track by (item.interval+item.frequency)">
+                                </select>
+
+                            </div>
+                        </div>
+                        <div ng-if="$ctrl.billingHistoryIsLoaded" class="p-t-10 p-b-20 p-r-20 p-l-20">
+                            <div class="row">
+                                <div class="checkbox check-primary">
+                                    <input type="checkbox" value="true" id="checkbox4"
+                                           ng-model="$ctrl.balanceDetails.exceedPaymentDate"
+                                           ng-change="$ctrl.updateBalanceDetails()">
+                                    <label for="checkbox4" class="fs-14">
+                                        {{"admin.customers.payment.allow_exceed_billing_limit" | translate }}.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6 add-gap border-top-balance-card">
+
+                        <div class="payment-box padding-15">
+                            <shimmer hide="$ctrl.billingHistoryIsLoaded" clipped="true" row="5"></shimmer>
+                            <div class="row" ng-if="$ctrl.billingHistoryIsLoaded">
+                                <div class="col-lg-6 col-md-12">
+                                    <h6 class="w600">{{"admin.customers.payment.creditThisMonth" | translate }}</h6>
+                                    <h4 class="bold">{{$ctrl.balanceDetails.monthCredit | currency : "" : 2}}
+                                        <small>
+                                            <small>{{"admin.customers.payment.sar" | translate }}</small>
+                                        </small>
+                                    </h4>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <p class="compact-text-10">{{"admin.customers.payment.nextInvoice" | translate
+                                        }}:</p>
+                                    <p class="w600">{{$ctrl.balanceDetails.nextInvoiceDate | moment:'fromNow'}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-r-10 p-l-10" ng-if="$ctrl.billingHistoryIsLoaded">
+                            <div class="form-group form-group-default" ng-if="$ctrl.billingHistoryIsLoaded">
+                                <label>{{"admin.customers.payment.creditLimit" | translate }}</label>
+                                <input type="text"
+                                       placeholder="{{$ctrl.balanceDetails.creditLimit | currency : '' : 1}}"
+                                       class="form-control" ng-model="$ctrl.balanceDetails.creditLimit"
+                                       ng-blur="$ctrl.updateBalanceDetails()">
+                            </div>
+                        </div>
+                        <div class="p-t-10 p-b-20 p-r-20 p-l-20" ng-if="$ctrl.billingHistoryIsLoaded">
+                            <div class="row">
+                                <div class="checkbox check-primary">
+                                    <input type="checkbox" value="true" id="checkbox5"
+                                           ng-model="$ctrl.balanceDetails.exceedCreditLimit"
+                                           ng-change="$ctrl.updateBalanceDetails()">
+                                    <label for="checkbox5" class="fs-14">
+                                        {{"admin.customers.payment.allow_exceed_credit_limit" | translate }}.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row m-t-50 m-b-30">
+                    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 m-t-10">
+                        <p class="bold text-uppercase">{{"admin.customers.payment.billingHistory" | translate }}</p>
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                        <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#transactions">
+                            {{"admin.customers.payment.detailed_transactions" | translate }}
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-block-normal">
+                        <div class="col-md-12  padding-0">
+                            <shimmer hide="$ctrl.billingHistoryIsLoaded" row="10" col="5" clipped="true"></shimmer>
+                            <div class="dataTables_wrapper no-footer table-responsive"
+                                 ng-if="$ctrl.billingHistoryIsLoaded">
+                                <table class="table table-striped table-hover table-compact" role="grid">
+                                    <thead>
+                                    <tr role="row">
+                                        <th class="text-center">{{"admin.customers.payment.table.date" | translate }}
+                                        </th>
+                                        <th class="text-center">{{"admin.customers.payment.table.type" | translate }}
+                                        </th>
+                                        <th class="text-center">{{"admin.customers.payment.table.description" |
+                                            translate }}
+                                        </th>
+                                        <th class="text-center">{{"admin.customers.payment.table.amount" | translate
+                                            }}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in $ctrl.billingHistroy"
+                                        class="gradeX odd content-table-payment cursor" role="row"
+                                        ng-click="$ctrl.openBillingShowDetails(item._id,item)">
+                                        <td class="text-center mn-150">
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                        </td>
+                                        <td class="sorting_1 text-center mn-170">
+                                            <span ng-if="item.type === 'credit'"
+                                                  class="label label-success upper-case">{{"admin.customers.payment.credit" | translate }}</span>
+                                            <span ng-if="item.type === 'invoice'"
+                                                  class="label label-warning upper-case">{{"admin.customers.payment.invoice" | translate }}</span>
+                                            <span class="label upper-case">{{item.invoiceId}}{{item.transId}}</span>
+                                        </td>
+                                        <td class="text-center mn-160">
+                                            <span ng-if="item.type === 'credit'">
+                                                <span ng-if="item.paymentMethod === 'Cash'"> {{"admin.customers.payment.cash" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Cheque'"> {{"admin.customers.payment.cheque" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Bank'"> {{"admin.customers.payment.bank" | translate}}</span>
+                                            </span>
+                                            <span ng-if="item.type === 'invoice'">
+                                                {{"admin.customers.payment.invoice_for" | translate }} {{item.createdAt | moment:'MMM YYYY'}}
+                                            </span>
+                                        </td>
+                                        <td class="text-center mn-100">{{item.amount | currency : "" : 2}}<span
+                                                ng-if="item.type === 'invoice'">{{item.total | currency : "" : 2}}</span>
+                                            <small>{{"admin.customers.payment.sar" | translate }}</small>
+                                        </td>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <list-pagination total-pages="$ctrl.billingHistoryQuery.totalPages"
+                                                 on-page-click="$ctrl.setBillingHistoryPage(pageNumber)"
+                                                 current-page="$ctrl.billingHistoryQuery.currentPage"></list-pagination>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div permission permission-only="'managePayments'" class="m-t-50 m-b-30"
+                     ng-if="$ctrl.paymentsClaimsIsLoaded && $ctrl.paymentsClaims.length > 0">
+                    <p class="bold text-uppercase">{{"admin.customers.payment.paymentClaims" | translate }}</p>
+                </div>
+                <div permission permission-only="'managePayments'" class="row"
+                     ng-if="$ctrl.paymentsClaimsIsLoaded && $ctrl.paymentsClaims.length > 0">
+                    <div class="card-block-normal">
+                        <div class="col-md-12  padding-0">
+                            <div class="dataTables_wrapper no-footer ">
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-compact" role="grid">
+                                        <thead>
+                                        <tr role="row">
+                                            <th width="180">{{"admin.customers.payment.table.date" | translate }}</th>
+                                            <th>{{"admin.customers.payment.table.referenceId" | translate }}</th>
+                                            <th>{{"admin.customers.payment.table.type" | translate }}</th>
+                                            <th>{{"admin.customers.payment.table.amount" | translate }}</th>
+                                            <th>{{"admin.customers.payment.table.status" | translate }}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="item in $ctrl.paymentsClaims"
+                                            class="gradeX odd content-table-payment cursor" role="row"
+                                            ng-click="$ctrl.openShowDetails(item._id,item)">
+                                            <td class="sorting_1">
+                                                <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                                <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                            </td>
+                                            <td class="sorting_1"><span
+                                                    class="label upper-case">{{item.paymentId}}</span></td>
+                                            <td class="sorting_1">
+                                            <span ng-if="item.paymentMethod === 'Cash'"
+                                                  class="label label-success upper-case"><li class="fa fa-money"></li> {{"admin.customers.payment.cash" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Cheque'"
+                                                      class="label label-info upper-case"><li
+                                                        class="fa pg-credit_card_line"></li> {{"admin.customers.payment.cheque" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Bank'"
+                                                      class="label label-inverse upper-case"><li
+                                                        class="fa fa-bank"></li> {{"admin.customers.payment.bank" | translate}}</span>
+
+
+                                            </td>
+                                            <td class="sorting_1">{{item.amount| currency:"":2}}
+                                                <small>{{"admin.customers.payment.sar" | translate }}</small>
+                                            </td>
+                                            <td class="sorting_1">
+                                            <span ng-if="item.status === 'Approved'"
+                                                  class="label label-success upper-case">{{"admin.customers.payment.approved" | translate}}</span>
+                                                <span ng-if="item.status === 'Pending'"
+                                                      class="label label-warning upper-case">{{"admin.customers.payment.pending" | translate}}</span>
+                                                <span ng-if="item.status === 'Rejected'"
+                                                      class="label label-important upper-case">{{"admin.customers.payment.rejected" | translate}}</span>
+                                            </td>
+
+                                            <td class="sorting_1">
+                                                <a href="" ng-click="$ctrl.openShowDetails(item._id,item)">{{"admin.customers.payment.details"
+                                                    | translate }}</a>
+                                            </td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <list-pagination total-pages="$ctrl.customerPaymentClaimsQuery.totalPages"
+                                                     current-page="$ctrl.customerPaymentClaimsQuery.currentPage"
+                                                     on-page-click="$ctrl.setPaymentClaimsPage(pageNumber)"></list-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<payment-record on-save="$ctrl.addPayment(payment)" show-actions="true" view-mode="$ctrl.disableRecordPaymentForm"
+                payment="$ctrl.paymentItem" hide-button="false"></payment-record>
+<view-payment bill="$ctrl.billItem" payment-type="'AS'"></view-payment>
+<reset-password user-id="$ctrl.customer.user._id"></reset-password>
+<transactions is-admin-fees="true" customer="$ctrl.customerId"></transactions>
+<script>
+    $('#selectPeriod').on('select2:open', function () {
+        let that = $(this);
+        let flag = false;
+        if ($(window).width() > 739) {
+            $(window).bind('wheel', function (e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function (e) {
+                console.log(e.target);
+                if (!flag && e.target.className === 'select2-results__option') {
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if (!flag && e.target.className !== 'select2-results__option') {
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>

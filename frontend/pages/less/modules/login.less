@@ -1,0 +1,107 @@
+/*------------------------------------------------------------------
+[22. Login]
+*/
+
+
+.login-wrapper{
+	height: 100%;
+	background-color: @color-primary;
+	& > * {
+		height: 100%;
+	}
+	.bg-pic{
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		& > img{
+			height: 100%;
+			opacity: 0.6;
+		}
+	}
+
+	.login-container{
+		width: 550px;
+		display: block;
+		position: relative;
+		.float(right);
+		transition: 0.4s all;
+		&.enlarge-panel {
+			width: 800px;
+		}
+	}
+	.bg-caption{
+		width: 500px;
+	}
+}
+.register-container{
+	width: 550px;
+	margin: auto;
+	height: 100%;
+}
+
+.auth{
+	li{
+		a{
+			color: rgba(22, 57, 85, 0.15);
+			font-size: 24px;
+		}
+		&.active a{
+			color:#163955;
+			border-bottom:2px solid #50e3c2;;
+		}
+
+	}
+
+}
+
+#map{
+	height:230px;
+}
+
+.btn-wide label.btn.btn-primary{
+	width:160px !important;
+}
+
+/* Responsive handlers : Login
+------------------------------------
+*/
+
+@media (max-width: 768px) {
+	.login-wrapper{
+		.login-container{
+			width: 100% !important;
+		}
+	}
+	.register-container{
+		width: 100%;
+		padding: 15px;
+	}
+}
+
+@media (max-width: 480px){
+	.nav-tabs>li>a {
+		padding: 13px 10px;
+	}
+}
+
+@media (max-width: 394px){
+	.nav-tabs>li{
+		text-align: center;
+		&>a{
+			padding:13px 7px;
+			&>span{
+				display:block;
+			}
+		}
+
+	}
+}
+
+
+@media only screen and (max-width : 321px) {
+	.login-wrapper{
+		.login-container{
+			width: 100% !important;
+		}
+	}
+}

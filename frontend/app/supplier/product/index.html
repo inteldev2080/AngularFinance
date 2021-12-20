@@ -1,0 +1,87 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div class="secondary-sidebar-toggle bg-master-lighter padding-10 text-center hidden-md-up">
+            <a href="#" data-init="secondary-side-toggle" class="secondary-side-toggle"><i class="pg pg-more"></i></a>
+        </div>
+        <div class="secondary-side light" data-init="secondary-sidebar">
+            <p class="menu-title d-flex align-items-center upper-case">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-r-10 feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>{{"supplier.menu.product" | translate }}</p>
+            <ul class="main-menu" style="max-height: 285px;overflow-y: auto;overflow-x: hidden;height: auto;">
+                <!--<li class="m-l-25 input-field">-->
+                    <!--<input type="text" id="search" class="form-control" placeholder="{{'supplier.product.search' | translate}}" ng-model="search">-->
+                <!--</li>-->
+                <li ui-sref="app.supplier.products.list({'categoryId':'All'})" ui-sref-active="active top-level bold"
+                    ng-click="$ctrl.setCategoryName($ctrl._$translate.use()==='en'? 'All Categories' :'جميع الاقسام','')">
+                    <a class="m-l-25 cursor">
+                        {{"supplier.product.all" | translate}}
+                    </a>
+                </li>
+
+                <li ng-if="item.childCategory.length" ng-repeat="item in $ctrl.categories | filter:search"
+                    ng-if="item.status!='Hidden'"
+                    ui-sref-active="active top-level bold open"
+                    ng-class="{'active open': search, 'active open': item._id == activeParentCategory}">
+                    <a class="m-l-25 cursor">
+                        <span class="title">{{$ctrl._$translate.use()==='en'?item.englishName:item.arabicName}}</span>
+                        <span ng-if="item.childCategory.length" class="arrow" ui-sref-active="active open"
+                              ng-class="{'active open': item._id == activeParentCategory}">
+                            <i ng-show="$ctrl._$translate.use()==='ar'" class="fa fa-angle-left" aria-hidden="true"></i>
+                            <i ng-show="$ctrl._$translate.use()==='en'" class="fa fa-angle-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li ng-repeat="subItem in item.childCategory | filter:search"
+                            ng-click="$ctrl.setCategoryName($ctrl._$translate.use()==='en'?item.englishName:item.arabicName,$ctrl._$translate.use()==='en'?subItem.englishName:subItem.arabicName)"
+                            ui-sref="app.supplier.products.list({categoryId: subItem._id})"
+                            ui-sref-active="active top-level bold" class="m-l-35 cursor normal"
+                            ng-if="subItem.status!='Hidden'">
+                            {{$ctrl._$translate.use()==="en"?subItem.englishName:subItem.arabicName}}
+                        </li>
+                        <li class="m-l-35 light-color normal" ng-if="!item.childCategory.length">
+                            {{"supplier.product.emptySub" | translate}}
+                        </li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+            <shimmer hide="$ctrl.categoriesLoaded" ></shimmer>
+        </div>
+        <div class="inner-content full-height p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+
+                <ui-view/>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var $menu = $(".secondary-side");
+
+    $('.secondary-side-toggle').click(function () {
+        if(!$menu.hasClass('active')){
+            $menu.addClass("active");
+            $(document).one('click', function closeTooltip(e) {
+                if ($menu.has(e.target).length === 0 && $('.secondary-side-toggle').has(e.target).length === 0) {
+                    $menu.removeClass('active');
+                } else if ($menu.hasClass('active')) {
+                    $(document).one('click', closeTooltip);
+                }
+            });
+        }else{
+            $menu.removeClass("active");
+        }
+
+    });
+
+    $(' .secondary-side ul').on('click','li ul li', function () {
+        $(".secondary-side").toggleClass("active");
+    });
+</script>

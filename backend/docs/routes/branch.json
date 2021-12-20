@@ -1,0 +1,607 @@
+{
+  "schemas": {
+    "Branch": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "customer": {
+          "type": "object"
+        },
+        "branchName": {
+          "type": "string"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "address": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "cityId": {
+              "type": "object"
+            }
+          }
+        },
+        "manager": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/branches": {
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Get branch list.",
+        "operationId": "branchList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Create branch.",
+        "operationId": "branchCreate",
+        "requestBody": {
+          "description": "Branch Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "coordinates",
+                  "address",
+                  "type",
+                  "city",
+                  "cityId",
+                  "branchName",
+                  "manager"
+                ],
+                "type": "object",
+                "properties": {
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "coordinates": {
+                        "type": "array",
+                        "items": [{
+                          "type": "number"
+                        }]
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "cityId": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "branchName": {
+                    "type": "string"
+                  },
+                  "manager": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/branches/{offset}/{limit}": {
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Branch Listing.",
+        "operationId": "branchListing",
+        "parameters": [{
+            "name": "offset",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/branches/{customerId}/{offset}/{limit}": {
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Branch Listing.",
+        "operationId": "branchListing",
+        "parameters": [{
+            "name": "offset",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/branches/{branchId}": {
+      "put": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Update Branch.",
+        "operationId": "updateBranch",
+        "requestBody": {
+          "description": "Branch Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "coordinates",
+                  "address",
+                  "type",
+                  "city",
+                  "cityId",
+                  "branchName"
+                ],
+                "type": "object",
+                "properties": {
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "coordinates": {
+                        "type": "array",
+                        "items": [{
+                          "type": "number"
+                        }]
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "cityId": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "branchName": {
+                    "type": "string"
+                  },
+                  "manager": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "parameters": [{
+          "name": "branchId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Get Branch.",
+        "operationId": "getBranch",
+        "parameters": [{
+          "name": "branchId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Branch"
+        ],
+        "summary": "Delete Branch.",
+        "operationId": "deleteBranch",
+        "parameters": [{
+          "name": "branchId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "branches": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Branch"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    }
+  }
+}

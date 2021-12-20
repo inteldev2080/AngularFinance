@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"swipe2fix.activitylogs"},{"v":2,"key":{"activityLogType":1},"name":"IDX_ACTIVITY_LOG_TYPE","ns":"swipe2fix.activitylogs","background":true}]}

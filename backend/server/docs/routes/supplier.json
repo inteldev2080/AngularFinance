@@ -1,0 +1,1884 @@
+{
+  "schemas": {
+    "Supplier": {
+      "type": "object",
+      "properties": {
+        "staff": [{
+          "type": "object"
+        }],
+        "location": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "object"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "address": {
+              "type": "string"
+            }
+          }
+        },
+        "commercialRegister": {
+          "type": "string"
+        },
+        "commercialRegisterExpireDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "commercialRegisterExpireDateIslamic": {
+          "type": "string",
+          "format": "date"
+        },
+        "commercialRegisterPhoto": {
+          "type": "string"
+        },
+        "VATRegisterNumber": {
+          "type": "number"
+        },
+        "creditLimit": {
+          "type": "number"
+        },
+        "paymentFrequency": {
+          "type": "number"
+        },
+        "paymentInterval": {
+          "type": "string"
+        },
+        "days": {
+          "type": "number"
+        },
+        "exceedCreditLimit": {
+          "type": "string"
+        },
+        "exceedPaymentDate": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "nextPaymentDueDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "startPaymentDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "coverPhoto": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "string"
+        },
+        "inDebit": {
+          "type": "string"
+        },
+        "dueDateMissed": {
+          "type": "string"
+        },
+        "adminFees": {
+          "type": "number"
+        },
+        "payingSoon": {
+          "type": "string"
+        },
+        "canReceiveOrder": {
+          "type": "string"
+        },
+        "reservedBalance": {
+          "type": "number"
+        },
+        "installment": {
+          "type": "number"
+        }
+
+
+      }
+    }
+  },
+  "paths": {
+    "/suppliers": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get supplier list.",
+        "operationId": "supplierList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Create new supplier.",
+        "operationId": "customerCreate",
+        "requestBody": {
+          "description": "Supplier Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "representativeName",
+                  "commercialRegister",
+                  "commercialRegisterPhoto",
+                  "userEmail",
+                  "userMobilePhone",
+                  "userFirstName",
+                  "userLastName",
+                  "userPassword",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+                  "coordinates": {
+                    "type": "array",
+                    "items": [{
+                      "type": "number"
+                    }]
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "representativeName": {
+                    "type": "string"
+                  },
+                  "commercialRegister": {
+                    "type": "string"
+                  },
+                  "commercialRegisterPhoto": {
+                    "type": "string"
+                  },
+                  "userEmail": {
+                    "type": "string"
+                  },
+                  "userMobilePhone": {
+                    "type": "string"
+                  },
+                  "userFirstName": {
+                    "type": "string"
+                  },
+                  "userLasttName": {
+                    "type": "string"
+                  },
+                  "userPassword": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/admin/{supplierId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Update Supplier Relation.",
+        "operationId": "supplierRelation",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Update Supplier.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "paymentInterval"
+                ],
+                "type": "object",
+                "properties": {
+                  "creditLimit": {
+                    "type": "number"
+                  },
+                  "paymentInterval": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "paymentFrequency": {
+                    "type": "number"
+                  },
+                  "exceedCreditLimit": {
+                    "type": "boolean"
+                  },
+                  "exceedPaymentDate": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/drivers": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get Supplier drivers.",
+        "operationId": "supplierDrivers",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "staffQuery",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/staff": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get the staff members of a suppliers.",
+        "operationId": "staffMembers",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Create new supplier staff.",
+        "operationId": "createStaff",
+        "requestBody": {
+          "description": "Staff Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "mobileNumber",
+                  "firstName",
+                  "lastName",
+                  "password",
+                  "role",
+                  "status",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "email": {
+                    "type": "string"
+                  },
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/staff/{staffId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Update supplier staff.",
+        "operationId": "updateStaff",
+        "parameters": [{
+          "name": "staffId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Staff Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "mobileNumber",
+                  "firstName",
+                  "lastName",
+                  "email",
+                  "role",
+                  "status",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "email": {
+                    "type": "string"
+                  },
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "language": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Remove staff from supplier.",
+        "operationId": "deleteStaff",
+        "parameters": [{
+          "name": "staffId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/profile": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get supplier's profile data.",
+        "operationId": "supplierData",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/reports/orders": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get a report of supplier orders and revenue.",
+        "operationId": "getReport",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/reports/transactions": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get transaction report.",
+        "operationId": "getTransactionReport",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/reports/invoices": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get transaction report.",
+        "operationId": "getTransactionReport",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "array.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/supplier/{supplierId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Update supplier name .",
+        "operationId": "getTransactionReport",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Supplier Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "firstName",
+                  "lastName",
+                  "mobileNumber",
+                  "email"
+                ],
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "mobileNumber": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/suppliers/block/{supplierId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Block supplier.",
+        "operationId": "blockSupplier",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/unblock/{supplierId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Unblock supplier.",
+        "operationId": "unblockSupplier",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/approve/{supplierId}": {
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Update supplier status to Active.",
+        "operationId": "updateStatus",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/billingHistory/{supplierId}": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get supplier's billing history.",
+        "operationId": "billingHistory",
+        "parameters": [{
+            "name": "supplierId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/suppliers/{supplierId}": {
+      "get": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Get supplier.",
+        "operationId": "getSupplier",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Delete supplier.",
+        "operationId": "deleteSupplier",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "put": {
+        "tags": [
+          "Supplier"
+        ],
+        "summary": "Update supplier.",
+        "operationId": "updateSupplier",
+        "parameters": [{
+          "name": "supplierId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "Supplier Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "representativeName",
+                  "commercialRegister",
+                  "commercialRegisterPhoto",
+                  "commercialRegisterExpireDate",
+                  "coordinates",
+                  "address",
+                  "type",
+                  "coverPhoto",
+                  "firstName",
+                  "lastName",
+                  "mobileNumber",
+                  "language"
+                ],
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "mobileNumber": {
+                        "type": "string"
+                      },
+                      "language": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "location": {
+                    "type": "object",
+                    "properties": {
+                      "coordinates": {
+                        "type": "array",
+                        "items": [{
+                          "type": "number"
+                        }]
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+
+                    }
+                  },
+
+                  "representativeName": {
+                    "type": "string"
+                  },
+                  "commercialRegister": {
+                    "type": "string"
+                  },
+                  "commercialRegisterPhoto": {
+                    "type": "string"
+                  },
+                  "commercialRegisterExpireDate": {
+                    "type": "string"
+                  },
+                  "commercialRegisterExpireDateIslamic": {
+                    "type": "string"
+                  },
+                  "VATRegisterNumber": {
+                    "type": "number"
+                  },
+                  "VATRegisterPhoto": {
+                    "type": "string"
+                  },
+                  "coverPhoto": {
+                    "type": "string"
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "suppliers": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Supplier"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+
+  }
+}

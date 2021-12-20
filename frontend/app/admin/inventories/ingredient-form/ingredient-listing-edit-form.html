@@ -1,0 +1,231 @@
+<div class="modal fade slide-up payments payments_2"
+     id="editIngredientListingModal"
+     tabindex="-1"
+     role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <button type="button"
+                        ng-click="$ctrl.resetForm(ingredientForm)"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true">
+                    <i class="pg-close fs-14"></i>
+                    {{ "admin.ingredients.create-ingredient.button.close" | translate }}
+                </button>
+                <div class="text-center p-r-25 p-l-25 d-flex">
+                    <h5
+                            class="semi-bold m-t-30 m-b-10"
+                            style="font-size: 28px; font-weight: 500;">
+                        {{ "admin.ingredients.create-ingredient.editTitle" | translate }}
+                    </h5>
+
+                </div>
+                <div class="modal-body">
+                    <form name="ingredientForm"
+                          id="ingredientForm"
+                          ng-submit="$ctrl.editIngredient(ingredientForm)"
+                          class="p-t-15"
+                          role="form"
+                          novalidate>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group
+                                     class="form-group form-group-default"
+                                     ng-class="{'has-error': ingredientForm.ingredientName.$invalid &&!ingredientForm.ingredientName.$pristine}">
+                                    <label>{{ "admin.ingredients.create-ingredient.field.ingredient_name.label" |
+                                        translate}}</label>
+                                    <div class="controls">
+                                        <input type="text"
+                                               id="ingredientName"
+                                               class="form-control"
+                                               name="ingredientName"
+                                               ng-disabled="true"
+                                               placeholder="{{'admin.ingredients.create-ingredient.field.ingredient_name.placeholder'| translate }}"
+                                               ng-model="$ctrl.formData.englishName"
+                                               required/>
+                                    </div>
+                                </div>
+                                <label class="error"
+                                       for="ingredientName"
+                                       ng-show="ingredientForm.ingredientName.$error.required &&!ingredientForm.ingredientName.$pristine">
+                                    {{ "admin.ingredients.create-ingredient.field.ingredient_name.required" | translate
+                                    }}.
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group
+                                     class="form-group form-group-default"
+                                     ng-class="{'has-error': ingredientForm.available-quantity.$invalid &&!ingredientForm.available-quantity.$pristine}">
+                                    <label>{{"admin.ingredients.create-ingredient.field.available_quantity.label" |
+                                        translate }}</label>
+                                    <div class="controls">
+                                        <input type="number"
+                                               id="available-quantity"
+                                               class="form-control"
+                                               name="available-quantity"
+                                               placeholder="{{'admin.ingredients.create-ingredient.field.available_quantity.placeholder'| translate}}"
+                                               ng-model="$ctrl.formData.quantity"
+                                               required/>
+                                    </div>
+                                </div>
+                                <label class="error" for="available-quantity"
+                                       ng-show="ingredientForm.available-quantity.$error.required && !ingredientForm.available-quantity.$pristine">
+                                    {{ "admin.recipes.create-recipe.field.available-quantity.required" | translate }}
+                                </label>
+                                <label class="error"
+                                       for="available-quantity"
+                                       ng-show="ingredientForm.available-quantity.$error.pattern && !ingredientForm.available-quantity.$pristine">
+                                    {{"admin.ingredients.create-ingredient.field.available-quantity.invalid" | translate
+                                    }}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group class="form-group form-group-default"
+                                     ng-class="{'has-error':ingredientForm.threshold.$invalid && !ingredientForm.threshold.$pristine}">
+                                    <label>{{ "admin.ingredients.create-ingredient.field.quantity_threshold.label" |
+                                        translate }}</label>
+                                    <div class="controls">
+                                        <input type="number"
+                                               id="threshold"
+                                               class="form-control"
+                                               name="threshold"
+                                               placeholder="{{'admin.ingredients.create-ingredient.field.quantity_threshold.placeholder'| translate }}"
+                                               ng-model="$ctrl.formData.threshold"
+                                               required/>
+                                    </div>
+                                </div>
+                                <label class="error"
+                                       for="threshold"
+                                       ng-show="ingredientForm.threshold.$error.required && !ingredientForm.threshold.$pristine">
+                                    {{"admin.ingredients.create-ingredient.field.quantity_threshold.required"|
+                                    translate}}
+                                </label>
+                                <label class="error" for="threshold"
+                                       ng-show="ingredientForm.threshold.$error.pattern && !ingredientForm.threshold.$pristine">
+                                    {{"admin.ingredients.create-ingredient.field.quantity_threshold.invalid" | translate
+                                    }}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-custom form-group-default form-group-default-select2 m-b-0">
+                                    <label class="label-custom" style="z-index:10 !important" for="unit">
+                                        {{'admin.ingredients.create-ingredient.field.unit.label' | translate}}
+                                    </label>
+
+                                    <select id="unit" name="unit" ng-model="$ctrl.formData.unit"
+                                    class="full-width" data-disable-search="true"
+                                    data-placeholder="Select Unit" data-init-plugin="select2"
+                                    ng-options="item for item in $ctrl.unitItems track by item">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group
+
+                                     class="form-group form-group-default"
+                                     ng-class="{'has-error':ingredientForm.sku.$invalid && !ingredientForm.sku.$pristine}">
+                                    <label>{{"admin.ingredients.create-ingredient.field.sku.label" | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input type="text"
+                                               id="sku"
+                                               class="form-control"
+                                               name="sku"
+                                               ng-disabled="true"
+                                               ng-pattern="$ctrl.regexSKU"
+                                               placeholder="{{'admin.ingredients.create-ingredient.field.sku.placeholder'| translate}}"
+                                               ng-model="$ctrl.formData.sku"
+                                               required/>
+                                    </div>
+                                </div>
+                                <label class="error" for="sku"
+                                       ng-show="ingredientForm.sku.$error.required && !ingredientForm.sku.$pristine">
+                                    {{"admin.ingredients.create-ingredient.field.sku.required" | translate }}
+                                </label>
+                                <label class="error" for="sku"
+                                       ng-show="ingredientForm.sku.$error.pattern && !ingredientForm.sku.$pristine">
+                                    {{"admin.ingredients.create-ingredient.field.sku.invalid"| translate}}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col-sm-6">
+                                <!-- START Form Control-->
+                                <div pg-form-group
+                                     class="form-group form-group-default"
+                                     ng-class="{'has-error':ingredientForm.barcode.$invalid && !ingredientForm.barcode.$pristine}">
+                                    <label>{{ "admin.ingredients.create-ingredient.field.bar_code.label" | translate
+                                        }}</label>
+                                    <div class="controls">
+                                        <input type="text"
+                                               id="barcode"
+                                               class="form-control"
+                                               name="barcode"
+                                               ng-disabled="true"
+                                               ng-pattern="$ctrl.regexBar"
+                                               placeholder="{{'admin.ingredients.create-ingredient.field.bar_code.placeholder'| translate}}"
+                                               ng-model="$ctrl.formData.barcode"
+                                               required/>
+                                    </div>
+                                </div>
+                                <label class="error"
+                                       for="sku"
+                                       ng-show="ingredientForm.barcode.$error.required &&!ingredientForm.barcode.$pristine ">
+                                    {{"admin.recipes.create-recipe.field.bar_code.required" | translate }}
+                                </label>
+                                <label class="error"
+                                       for="sku"
+                                       ng-show="ingredientForm.barcode.$error.pattern && !ingredientForm.barcode.$pristine">
+                                    {{"admin.recipes.create-recipe.field.bar_code.invalid" | translate }}
+                                </label>
+                                <!-- END Form Control-->
+                            </div>
+
+                            <div class="col m-t-10 sm-m-t-10 clearfix">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary btn-cons m-t-10 pull-right"
+                                            ng-click="$ctrl.resetForm(ingredientForm)"
+                                            class="close"
+                                            data-dismiss="modal"
+                                            aria-hidden="true">
+                                        {{"admin.ingredients.create-ingredient.button.cancel" | translate }}
+                                    </button>
+                                    <button class="btn btn-primary btn-cons m-t-10 pull-right"
+                                            type="submit"
+                                            ng-disabled="$ctrl.formData.quantity === 0">
+                                        {{"admin.ingredients.create-ingredient.button.edit_ingredient" | translate }}
+                                    </button>
+                                </div>
+                                <div class="pull-left">
+                                    <div id="loading"
+                                         ng-if="$ctrl.registerLoading"
+                                         class="progress-circle-indeterminate"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+
+<script>
+    $("#ingredientFormModal").on("hidden.bs.modal", function () {
+        $("#ingredientForm").trigger("reset");
+    });
+</script>

@@ -1,0 +1,75 @@
+<div class="header p-r-0 bg-primary">
+    <div class="header-inner header-md-height">
+        <a href="javascript;" class="btn-link toggle-sidebar hidden-lg-up pg pg-menu text-white" data-toggle="horizontal-menu"></a>
+        <div class="">
+            <div class="brand inline no-border hidden-xs-down">
+                <div class="header-logo-box "><h4 class="logo-text">{{"meta.project_name_supplies" | translate }}<span>{{"meta.project_name_on" | translate }}</span></h4></div>
+            </div>
+
+            <notification/>
+            <search/>
+
+        </div>
+        <div class="d-flex align-items-center">
+
+            <div class="pull-left p-r-10 fs-14 font-heading hidden-md-down text-white">
+                <span class="semi-bold">{{"header.hello" | translate }}</span> <span class="">{{$ctrl.user.firstName | proper}}</span>
+            </div>
+            <div class="dropdown pull-right">
+                <button class="profile-dropdown-toggle cursor" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="thumbnail-wrapper d32 circular cursor inline sm-m-r-5">
+                    <canvas id="user-icon" width="32" height="32"></canvas>
+                </span>
+                </button>
+                <div class="dropdown-menu profile-dropdown" ng-class="{'dropdown-menu-right': $ctrl._translate.use() === 'en', 'dropdown-menu-left': $ctrl._translate.use() === 'ar'}" role="menu">
+                    <a ui-sref="app.supplier.profile" class="dropdown-item"><i class="fa fa-user"></i> {{"header.myProfile" | translate }}</a>
+                    <a ng-click="changeLang()" class="dropdown-item"><i class="fa fa-globe"></i> {{"header.changeLanguage" | translate }}</a>
+                    <a href="#" ng-click="$ctrl.logout()" class="clearfix bg-master-lighter dropdown-item">
+                        <span class="pull-left"> {{"header.logout" | translate }}</span>
+                        <span class="pull-right"><i class="pg-power"></i></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="container">
+            <div class="menu-bar header-sm-height" data-pages-init='horizontal-menu' pg-sidebar>
+                <a class="btn-link toggle-sidebar hidden-lg-up pg pg-close" data-toggle="horizontal-menu">
+                </a>
+                <ul>
+                    <li ui-sref-active="active"><a ui-sref="app.pages.feedback">{{"menu.feedback" | translate }}</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.pages.privacy">{{"menu.privacy" | translate }}</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.pages.terms">{{"menu.terms" | translate }}</a></li>
+                </ul>
+             </div>
+        </div>
+    </div>
+</div>
+<div class="page-container">
+    <!-- START PAGE CONTENT WRAPPER -->
+    <div class="page-content-wrapper">
+        <!-- START PAGE CONTENT -->
+        <div class="content sm-gutter">
+            <ui-view/>
+        </div>
+        <div class="container container-fixed-lg footer">
+            <div class="copyright sm-text-center">
+                <p class="small no-margin pull-left sm-pull-reset">
+                    <span class="hint-text">{{"footer.copyright" | translate }} </span>
+                    <span class="font-montserrat">{{"footer.project_name" | translate }}</span>.
+                    <span class="hint-text">{{"footer.rights" | translate }}</span>
+                    <span class="sm-block"><a ui-sref="app.pages.privacy" class="m-l-10 m-r-10">{{"footer.terms" | translate }}</a> | <a ui-sref="app.pages.privacy" class="m-l-10">{{"footer.privacy" | translate }}</a></span>
+                </p>
+                <p class="small no-margin pull-right sm-pull-reset">
+                    {{"footer.hand_craft_statement" | translate }} <a href="#">{{"footer.developer" | translate }}</a> <span class="hint-text">{{"footer.made_statement" | translate }}</span>
+                </p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+</div>
+<!-- END PAGE CONTAINER -->

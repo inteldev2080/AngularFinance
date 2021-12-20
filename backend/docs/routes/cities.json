@@ -1,0 +1,381 @@
+{
+  "schemas": {
+    "Cities": {
+      "type": "object",
+      "properties": {
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": [{
+            "type": "number"
+          }]
+        },
+        "status": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/systemCities": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Get list of cities.",
+        "operationId": "citiesList",
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "cities": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Cities"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Create new city.",
+        "operationId": "createCity",
+        "requestBody": {
+          "description": "City Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "englishName",
+                  "address"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "number"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": [{
+                      "type": "number"
+                    }]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "City": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Cities"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/systemCities/{cityId}": {
+      "put": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Update city.",
+        "operationId": "updateCity",
+        "parameters": [{
+          "name": "cityId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {
+          "description": "City Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "englishName",
+                  "status",
+                  "address"
+                ],
+                "type": "object",
+                "properties": {
+
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "englishName": {
+                    "type": "number"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": [{
+                      "type": "number"
+                    }]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "City": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Cities"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Get city by Id.",
+        "operationId": "getCity",
+        "parameters": [{
+          "name": "cityId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "City": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Cities"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "delete": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Delete city.",
+        "operationId": "deleteCity",
+        "parameters": [{
+          "name": "cityId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "City": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Cities"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

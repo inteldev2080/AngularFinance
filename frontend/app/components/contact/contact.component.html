@@ -1,0 +1,142 @@
+<div class="card">
+    <form role="form" id="contactForm" name="contactForm" autocomplete="off" accessible-form novalidate
+          ng-submit="$ctrl.addContact(contactForm)">
+        <div class="card-block card-wide-padding">
+            <p class="bold text-uppercase p-l-10">
+                {{"component.contact.title" | translate}}
+            </p>
+            <div class="form-group-attached">
+                <div class="row ">
+                    <div class="col-sm-6">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.firstName.$invalid && !contactForm.firstName.$pristine }">
+                            <label class="no-text-transform fs-12 bold">
+                                {{"component.contact.field.first_name.label" | translate}}
+                            </label>
+                            <input class="form-control" name="firstName" id="firstName" type="text"
+                                   ng-model="$ctrl.contactData.user.firstName"
+                                   required minlength="2" maxlength="20"
+                                   ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                            >
+                        </div>
+                        <label class="error" for="firstName"
+                               ng-show="contactForm.firstName.$error.required && !contactForm.firstName.$pristine">
+                            {{"component.contact.field.first_name.required" | translate }}
+                        </label>
+                        <label class="error" for="firstName"
+                               ng-show="contactForm.firstName.$error.pattern || contactForm.firstName.$error.minlength|| contactForm.firstName.$error.maxlength  && contactForm.$submitted">
+                            {{"component.contact.field.first_name.invalid" | translate }}
+                        </label>
+                    </div>
+                    <div class="col-sm-6 no-margin no-padding">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.lastName.$invalid && !contactForm.lastName.$pristine }">
+                            <label class="no-text-transform fs-12 bold">{{"component.contact.field.last_name.label"
+                                | translate}}</label>
+                            <input class="form-control" name="lastName" id="lastName" type="text"
+                                   ng-model="$ctrl.contactData.user.lastName" required minlength="2" maxlength="20"
+                                   ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/"
+                            >
+                        </div>
+                        <label class="error" for="lastName"
+                               ng-show="contactForm.lastName.$error.required && !contactForm.lastName.$pristine">
+                            {{"component.contact.field.last_name.required" | translate }}
+                        </label>
+                        <label class="error" for="lastName"
+                               ng-show="contactForm.lastName.$error.pattern || contactForm.lastName.$error.minlength|| contactForm.lastName.$error.maxlength  && !contactForm.lastName.$pristine">
+                            {{"component.contact.field.last_name.invalid" | translate }}
+                        </label>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-6 ">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+                            <label class="no-text-transform fs-12 bold">
+                                {{"component.contact.field.email.label" | translate}}</label>
+                            <input  class="form-control" name="email" id="email" ng-model="$ctrl.contactData.user.email"
+                                    type="text"
+                                    ng-pattern='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'
+                                    required/>
+                        </div>
+                        <label class="error" for="email"
+                               ng-show="contactForm.email.$error.required && !contactForm.email.$pristine">
+                            {{"component.contact.field.email.required" | translate }}
+                        </label>
+                        <label class="error" for="email"
+                               ng-show="contactForm.email.$error.pattern  && !contactForm.email.$pristine">
+                            {{"component.contact.field.email.invalid" | translate }}
+                        </label>
+                    </div>
+                    <div class="col-sm-6 no-margin no-padding">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.mobileNumber.$invalid && !contactForm.mobileNumber.$pristine }">
+                            <label class="no-text-transform fs-12 bold">
+                                {{"component.contact.field.mobile.label" | translate}}</label>
+                            <input class="form-control" name="mobileNumber" id="mobileNumber" type="text"
+                                   ng-model="$ctrl.contactData.user.mobileNumber" ng-pattern='/^9665[0-9]{8}$$/' required>
+                        </div>
+                        <label class="error" for="mobileNumber"
+                               ng-show="contactForm.mobileNumber.$error.required && !contactForm.mobileNumber.$pristine">
+                            {{"component.contact.field.mobile.required" | translate }}
+                        </label>
+                        <label class="error" for="mobileNumber"
+                               ng-show="contactForm.mobileNumber.$error.pattern || contactForm.mobileNumber.$error.minlength|| contactForm.mobileNumber.$error.maxlength  && contactForm.$submitted">
+                            {{"component.contact.field.mobile.invalid" | translate }}
+                        </label>
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.messageTitle.$invalid && !contactForm.messageTitle.$pristine }">
+                            <label class="no-text-transform fs-12 bold">
+                                {{"component.contact.field.message-title.label" | translate}}
+                            </label>
+                            <input class="form-control" name="messageTitle" id="messageTitle" type="text"
+                                   ng-model="$ctrl.contactData.message.title"
+                                   required
+                            >
+                        </div>
+                        <label class="error" for="messageTitle"
+                               ng-show="contactForm.messageTitle.$error.required && !contactForm.messageTitle.$pristine">
+                            {{"component.contact.field.message-title.required" | translate }}
+                        </label>
+
+                    </div>
+                    <div class="col-sm-12 no-margin no-padding">
+                        <div class="form-group form-group-default no-margin required"
+                             ng-class="{ 'has-error' : contactForm.messageBody.$invalid && !contactForm.messageBody.$pristine }">
+                            <label for="messageBody" class="no-text-transform fs-12 bold">{{"component.contact.field.message-body.label"
+                                | translate}}</label>
+                            <textarea class="form-control" style="min-height: 58px;" name="messageBody" id="messageBody" type="text"
+                                      ng-model="$ctrl.contactData.message.body"
+                            >
+                    </textarea>
+                        </div>
+                        <label class="error" for="messageBody"
+                               ng-show="contactForm.messageBody.$error.required && !contactForm.messageBody.$pristine">
+                            {{"component.contact.field.message-body.required" | translate }}
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row m-t-20">
+                <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 no-margin no-padding">
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 no-margin no-padding">
+                    <button  type="submit" id="saveChanges" class="btn btn-primary btn-block"
+                             ng-disabled="contactForm.$invalid">
+                        {{"component.contact.button.send" | translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+

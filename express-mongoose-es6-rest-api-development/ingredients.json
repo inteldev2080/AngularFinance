@@ -1,0 +1,465 @@
+{ 
+    "_id" : ObjectId("5f1ad7c7cce33f65397fa84c"), 
+    "sku" : "SKU00001", 
+    "barcode" : "2525", 
+    "arabicName" : "", 
+    "englishName" : "Nutella", 
+    "quantity" : NumberInt(100), 
+    "threshold" : NumberInt(5), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2020-07-24T15:44:55.913+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1adbe2cce33f65397fa84d"), 
+    "sku" : "SKU00001", 
+    "barcode" : "32323", 
+    "arabicName" : "", 
+    "englishName" : "323", 
+    "quantity" : NumberInt(121), 
+    "threshold" : NumberInt(50), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2020-07-24T16:02:26.790+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1aed1fcce33f65397fa86e"), 
+    "sku" : "5333", 
+    "barcode" : "6281007032308", 
+    "arabicName" : "", 
+    "englishName" : "Milk", 
+    "quantity" : NumberInt(216), 
+    "threshold" : NumberInt(48), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:15:59.696+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1aede2cce33f65397fa86f"), 
+    "sku" : "5555", 
+    "barcode" : "6281011137808", 
+    "arabicName" : "", 
+    "englishName" : "Sunflower oil", 
+    "quantity" : NumberInt(38), 
+    "threshold" : NumberInt(30), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:19:14.236+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1aef4bcce33f65397fa872"), 
+    "sku" : "5552", 
+    "barcode" : "32323", 
+    "arabicName" : "", 
+    "englishName" : "nutella", 
+    "quantity" : NumberInt(18), 
+    "threshold" : NumberInt(8), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2020-07-24T17:25:15.445+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1aefadcce33f65397fa873"), 
+    "sku" : "5001", 
+    "barcode" : "19300698016139", 
+    "arabicName" : "", 
+    "englishName" : "Nutella", 
+    "quantity" : NumberInt(18), 
+    "threshold" : NumberInt(8), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:26:53.152+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af064cce33f65397fa874"), 
+    "sku" : "5002", 
+    "barcode" : "6253805183360", 
+    "arabicName" : "", 
+    "englishName" : "Kinder", 
+    "quantity" : NumberInt(4), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:29:56.363+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af0a5cce33f65397fa875"), 
+    "sku" : "5003", 
+    "barcode" : "541026656909", 
+    "arabicName" : "", 
+    "englishName" : "Louts", 
+    "quantity" : NumberInt(2), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:31:01.775+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af11acce33f65397fa876"), 
+    "sku" : "5004", 
+    "barcode" : "0768114827479", 
+    "arabicName" : "", 
+    "englishName" : "Salted caramel", 
+    "quantity" : NumberInt(1), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:32:58.962+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af15dcce33f65397fa877"), 
+    "sku" : "5005", 
+    "barcode" : "6281064110025", 
+    "arabicName" : "", 
+    "englishName" : "Salt", 
+    "quantity" : NumberInt(22), 
+    "threshold" : NumberInt(8), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:34:05.494+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af1b6cce33f65397fa878"), 
+    "sku" : "5006", 
+    "barcode" : "6253805183063", 
+    "arabicName" : "", 
+    "englishName" : "Richie filling", 
+    "quantity" : NumberInt(7), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:35:34.645+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af215cce33f65397fa879"), 
+    "sku" : "5007", 
+    "barcode" : "5150005228", 
+    "arabicName" : "", 
+    "englishName" : "Strawberry jam", 
+    "quantity" : NumberInt(11), 
+    "threshold" : NumberInt(5), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:37:09.896+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af273cce33f65397fa87a"), 
+    "sku" : "5008", 
+    "barcode" : "111111", 
+    "arabicName" : "", 
+    "englishName" : "Pistachio cream", 
+    "quantity" : NumberInt(2), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:38:43.492+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af330cce33f65397fa87b"), 
+    "sku" : "5009", 
+    "barcode" : "6281100450665", 
+    "arabicName" : "", 
+    "englishName" : "Kitchen flour bakemate", 
+    "quantity" : NumberInt(130), 
+    "threshold" : NumberInt(20), 
+    "unit" : "KG", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:41:52.614+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af529cce33f65397fa87c"), 
+    "sku" : "5010", 
+    "barcode" : "0109002796010721152012051088117759", 
+    "arabicName" : "", 
+    "englishName" : "Soft sugar", 
+    "quantity" : NumberInt(14), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:50:17.048+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af5fdcce33f65397fa87d"), 
+    "sku" : "5011", 
+    "barcode" : "00000", 
+    "arabicName" : "", 
+    "englishName" : "Recipe 5kg", 
+    "quantity" : NumberInt(25), 
+    "threshold" : NumberInt(5), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:53:49.704+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af6c2cce33f65397fa880"), 
+    "sku" : "5013", 
+    "barcode" : "000000000", 
+    "arabicName" : "", 
+    "englishName" : "BakingUp Recipe 10kg", 
+    "quantity" : NumberInt(15), 
+    "threshold" : NumberInt(5), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:57:06.147+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af722cce33f65397fa881"), 
+    "sku" : "5014", 
+    "barcode" : "6281011411021", 
+    "arabicName" : "", 
+    "englishName" : "Alosra sugar 10kg", 
+    "quantity" : NumberInt(5), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T17:58:42.120+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af7a4cce33f65397fa883"), 
+    "sku" : "5016", 
+    "barcode" : "8888167033992", 
+    "arabicName" : "", 
+    "englishName" : "Icing sugar 500gram", 
+    "quantity" : NumberInt(3), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:00:52.758+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af7d5cce33f65397fa884"), 
+    "sku" : "5017", 
+    "barcode" : "5556575757", 
+    "arabicName" : "", 
+    "englishName" : "Gloves", 
+    "quantity" : NumberInt(13), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:01:41.524+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af804cce33f65397fa885"), 
+    "sku" : "5018", 
+    "barcode" : "757557757557", 
+    "arabicName" : "", 
+    "englishName" : "Piping bags 100pc", 
+    "quantity" : NumberInt(3), 
+    "threshold" : NumberInt(1), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:02:28.235+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af849cce33f65397fa887"), 
+    "sku" : "5015", 
+    "barcode" : "8888167043014", 
+    "arabicName" : "", 
+    "englishName" : "Caster sugar 1kg", 
+    "quantity" : NumberInt(5), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:03:37.520+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af881cce33f65397fa888"), 
+    "sku" : "5020", 
+    "barcode" : "4764764764", 
+    "arabicName" : "", 
+    "englishName" : "Syrup", 
+    "quantity" : NumberInt(5), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:04:33.117+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af8d5cce33f65397fa889"), 
+    "sku" : "5021", 
+    "barcode" : "7676767575", 
+    "arabicName" : "", 
+    "englishName" : "Roll tissues", 
+    "quantity" : NumberInt(8), 
+    "threshold" : NumberInt(4), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:05:57.550+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1af975cce33f65397fa88a"), 
+    "sku" : "5022", 
+    "barcode" : "65656565565", 
+    "arabicName" : "", 
+    "englishName" : "Zaatar", 
+    "quantity" : NumberInt(4), 
+    "threshold" : NumberInt(2), 
+    "unit" : "KG", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:08:37.123+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1afa84cce33f65397fa88b"), 
+    "sku" : "5023", 
+    "barcode" : "55555555555", 
+    "arabicName" : "", 
+    "englishName" : "Pecan", 
+    "quantity" : 1.285, 
+    "threshold" : 0.5, 
+    "unit" : "KG", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:13:08.218+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f1afbb5cce33f65397fa88c"), 
+    "sku" : "5024", 
+    "barcode" : "80327696264", 
+    "arabicName" : "", 
+    "englishName" : "Cremino pistachio", 
+    "quantity" : NumberInt(18), 
+    "threshold" : NumberInt(2), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T18:18:13.547+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60a8f9eb5d6faa50100aee0c"), 
+    "sku" : "321sad", 
+    "barcode" : "312312", 
+    "arabicName" : "", 
+    "englishName" : "dsa", 
+    "quantity" : NumberInt(21312), 
+    "threshold" : NumberInt(32131), 
+    "unit" : "PC", 
+    "supplierId" : ObjectId("5ea86eb7d8d93354f6161309"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-05-22T15:32:43.333+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5c1c1534ac396058efc1"), 
+    "sku" : "SKY1231", 
+    "barcode" : "21316541", 
+    "arabicName" : "", 
+    "englishName" : "Ingredient1", 
+    "quantity" : NumberInt(47), 
+    "threshold" : NumberInt(20), 
+    "unit" : "KG", 
+    "supplierId" : ObjectId("60bb2ebf864f657f35d5cb10"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-05T14:12:28.603+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5c3f1534ac396058efc2"), 
+    "sku" : "Sku12321", 
+    "barcode" : "32421312", 
+    "arabicName" : "", 
+    "englishName" : "Ing2", 
+    "quantity" : NumberInt(45), 
+    "threshold" : NumberInt(42), 
+    "unit" : "ML", 
+    "supplierId" : ObjectId("60bb2ebf864f657f35d5cb10"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-05T14:13:03.443+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60d33cbdc28ad953199d946f"), 
+    "sku" : "SKU1234", 
+    "barcode" : "23131", 
+    "arabicName" : "", 
+    "englishName" : "Wsda", 
+    "quantity" : NumberInt(212), 
+    "threshold" : NumberInt(2131), 
+    "unit" : "ML", 
+    "supplierId" : ObjectId("5f4a6f019f78705936d5306a"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-23T16:53:01.976+0000"), 
+    "status" : "Active", 
+    "__v" : NumberInt(0)
+}

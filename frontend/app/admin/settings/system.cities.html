@@ -1,0 +1,152 @@
+<div class="card card-details-table">
+    <div class="card-header header-bg">
+        <button id="show-modal" class="btn btn-primary btn-cons btn-lg pull-right m-t-10" ng-click="$ctrl.showModal()"><i class="fa fa-plus"></i> {{"admin.settings.cities.button.addCities" | translate }}</button>
+
+        <div>
+            <div class="card-title">
+                {{"admin.settings.cities.label" | translate }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-block card-wide-padding wide-leftup">
+        <shimmer hide="$ctrl.cityListIsLoaded" col="3" clipped="true"></shimmer>
+        <div  ng-if="$ctrl.cityListIsLoaded &&  !$ctrl.cityList.length" class="row">
+            <div class="col">
+                <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                    <div class="card-image-overlay"></div>
+                    <img src="assets/img/cards/error.svg">
+                    <p class="paragraph m-t-10">{{"admin.settings.noResults" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body" ng-if="$ctrl.cityListIsLoaded && $ctrl.cityList.length">
+                <div class="dataTables_wrapper table-responsive">
+                    <table class="table table-striped table-compact table-hover" id="tableWithExportOptions">
+                    <thead>
+                    <tr>
+                        <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
+                                Comman Practice Followed
+                                -->
+                        <th style="width:20%">{{"admin.settings.cities.label" | translate }}</th>
+                        <th>{{"admin.settings.cities.table.status" | translate }}</th>
+                        <th style="width:150px">{{"admin.settings.cities.table.op" | translate }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="(key, item) in $ctrl.cityList">
+                        <td class="v-align-middle ">
+                            {{item.englishName}}
+                        </td>
+                        <td class="sorting_1 mn-120">
+                                            <span ng-if="item.status === 'Active'"
+                                                  class="label label-success upper-case">{{"admin.suppliers.supplier.active" | translate}}</span>
+                            <span ng-if="item.status === 'Archive'"
+                                  class="label label-important upper-case">{{"admin.suppliers.supplier.deleted" | translate}}</span>
+                        </td>
+                        <td class="v-align-middle">
+                            <button  permission permission-only="'canDelete'" ng-click="$ctrl.showDeleteModal(item)" class="btn btn-xs btn-defualt"><i class="pg-trash"></i> {{"admin.settings.units.popUp2.delete" | translate }}</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- END CONTAINER FLUID -->
+<div class="modal fade slide-up disable-scroll ng-scope" id="addNewCityModal" tabindex="-1" role="dialog" aria-labelledby="addNewCityModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-header clearfix ">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="$ctrl.resetForm(cityForm)" aria-hidden="true"><i class="pg-close fs-14"></i> </button>
+                    <h4 class="p-b-5">{{"admin.settings.cities.popup.heading" | translate }}</h4> </div>
+                <div class="modal-body">
+                    <form role="form" name="cityForm" class="ng-pristine ng-valid" ui-keypress="{13:'$ctrl.add()'}">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div pg-form-group="" class="form-group form-group-default"  ng-class="{ 'has-error' : cityForm.englishCity.$invalid && !cityForm.englishCity.$pristine }">
+                                    <label>{{"admin.settings.cities.popup.label" | translate }}</label>
+                                    <input id="addEnglishCity" type="text" name="englishCity" ng-model="$ctrl.addEnglishCity" class="form-control"
+                                           placeholder='{{"admin.settings.cities.popup.englishHolder" | translate }}' disabled required>
+                                </div>
+                                <div ng-messages="cityForm.englishCity.$error">
+                                    <span class="error" ng-message="required" ng-if="!cityForm.englishCity.$pristine">
+                                       {{"admin.settings.cities.popup.englishRequired" | translate }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div pg-form-group class="form-group form-group-default no-margin required" ng-class="{ 'has-error' : cityForm.address.$invalid && !cityForm.address.$pristine }">
+                                    <label>{{"admin.settings.cities.popup.location" | translate }}</label>
+                                    <div class="controls">
+                                        <input places-auto-complete size=80
+                                               name="address"
+                                               id="location"
+                                               class="form-control"
+                                               component-restrictions="{country:'sa'}"
+                                               ng-model="$ctrl.address"
+                                               types="{{$ctrl.types}}"
+                                               on-place-changed="$ctrl.placeChanged($ctrl)" required/>
+                                    </div>
+                                </div>
+                                <label class="error" ng-show="cityForm.address.$error.required && !cityForm.address.$pristine">
+                                    {{"component.create-branch.field.location.required" | translate }}.
+                                </label>
+                                <div class="m-b-10" style="width:100%" map-lazy-load="{{$ctrl.googleMapsUrl}}">
+                                    <ng-map ng-show="!$ctrl.profileIsloading"  id="map" zoom="11"
+                                            center="{{$ctrl.location.coordinates}}">
+                                        <marker position="{{$ctrl.location.coordinates}}"
+                                                title="Location"  animation="Animation.DROP"
+                                                on-dragend="$ctrl.markerDragEnd($ctrl)"
+                                                draggable="true">
+                                        </marker>
+
+                                    </ng-map>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="add-app" type="button" class="btn btn-primary  btn-cons" ng-click="$ctrl.add()" ng-disabled="cityForm.$invalid">{{"admin.settings.cities.popup.add" | translate }}</button>
+                    <button type="button" data-dismiss="modal" ng-click="$ctrl.resetForm(cityForm)" class="btn btn-cons">{{"admin.settings.cities.popup.close" | translate }}</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade slide-up"  id="deleteModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"admin.settings.units.button.title" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button  ng-click="$ctrl.delete(item)" class="btn btn-danger btn-block m-t-5">{{"admin.settings.units.button.confirm" | translate }}</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button  onclick="$('#deleteModal').modal('hide');" class="btn btn-primary btn-block m-t-5">{{"admin.settings.units.button.cancel" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

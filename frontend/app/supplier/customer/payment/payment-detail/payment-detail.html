@@ -1,0 +1,98 @@
+<fieldset  disabled>
+    <legend>Payment Detailss</legend>
+    <form name="paymentForm" class="payment-details padding-30" ng-submit="$ctrl.onSubmit()" novalidate>
+        <!--  <div ng-if="$ctrl.supplierFlag" class="payment-item no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+         ng-class="{ 'has-error' : paymentForm.payment.$invalid && !paymentForm.payment.$pristine }">
+        <h5 class="bold fs-12 m-b-0">Supplier</h5>
+        <select  ng-model="$ctrl.payment.supplierId" name="supplierId"
+                 class="full-width" data-placeholder="Select Supplier" data-init-plugin="select2">
+            <option value="">-- choose Supplier --</option>
+            <option ng-repeat="supplier in $ctrl.suppliers" value="{{supplier.supplier._id}}">{{supplier.supplier.arabicName}}</option>
+        </select>
+    </div>
+    -->
+        <div class="payment-item no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+             ng-class="{ 'has-error' : paymentForm.amount.$invalid && !paymentForm.amount.$pristine }">
+            <h5 class="bold fs-12 m-b-0">Customer Name</h5>
+            <input ng-model="$ctrl.payment.customer.representativeName" type="text" name="amount" class="form-control"  required>
+        </div>
+
+        <div class="payment-item no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+             ng-class="{ 'has-error' : paymentForm.amount.$invalid && !paymentForm.amount.$pristine }">
+            <h5 class="bold fs-12 m-b-0">Amount</h5>
+            <input ng-model="$ctrl.payment.amount" type="text" name="amount" class="form-control"  required>
+        </div>
+
+        <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+             ng-class="{ 'has-error' : paymentForm.date.$invalid && !paymentForm.date.$pristine }">
+            <div class="clearfix">
+                <h5 class="bold fs-12 m-b-0 pull-left">Date of The Transfer</h5>
+                <i class="fa fa-calendar pull-right m-t-15 m-l-10" aria-hidden="true"></i>
+            </div>
+            <input value="{{$ctrl.payment.date}}" type="text" name="date" class="form-control"  required>
+        </div>
+
+        <div class="radio radio-success">
+            <span class="bold fs-12 p-l-10">Payment Method :</span>
+            <input type="radio" ng-model="$ctrl.payment.paymentMethod" value="Cash"  name="paymentMethod" id="cash">
+            <label for="cash">Cash</label>
+            <input type="radio" ng-model="$ctrl.payment.paymentMethod" value="Cheque" name="paymentMethod" id="cheque">
+            <label for="cheque">Cheque</label>
+            <input type="radio" ng-model="$ctrl.payment.paymentMethod" value="Bank" checked="checked" name="paymentMethod" id="bank">
+            <label for="bank">Bank</label>
+        </div>
+
+        <div ng-if="$ctrl.payment.paymentMethod == 'Bank'">
+            <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+                 ng-class="{ 'has-error' : paymentForm.transaction_id.$invalid && !paymentForm.transaction_id.$pristine }">
+                <h5 class="bold fs-12 m-b-0">Bank Transaction ID</h5>
+                <input ng-model="$ctrl.payment.transactionId" type="text" name="transaction_id" class="form-control"  required>
+            </div>
+
+            <div class="row m-b-20">
+                <div class="col-sm  md-p-r-0 sm-m-b-20">
+                    <div class="payment-item  no-bg md-p-r-10 p-l-10 p-b-10"
+                         ng-class="{ 'has-error' : paymentForm.account_number.$invalid && !paymentForm.account_number.$pristine }">
+                        <h5 class="bold fs-12 m-b-0">Bank Account Number</h5>
+                        <input ng-model="$ctrl.payment.accountNumber" type="text" name="account_number" class="form-control"  required>
+                    </div>
+                </div>
+                <div class="col-sm  md-p-l-0">
+                    <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10"
+                         ng-class="{ 'has-error' : paymentForm.account_name.$invalid && !paymentForm.account_name.$pristine }">
+                        <h5 class="bold fs-12 m-b-0">Account Holder Name</h5>
+                        <input ng-model="$ctrl.payment.accountName" type="text" name="account_name" class="form-control"  required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="$ctrl.payment.paymentMethod == 'Cheque'">
+            <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+                 ng-class="{ 'has-error' : paymentForm.recipient.$invalid && !paymentForm.recipient.$pristine }">
+                <h5 class="bold fs-12 m-b-0">Recipient</h5>
+                <input ng-model="$ctrl.payment.recipientName" type="text" name="recipient" class="form-control"  required>
+            </div>
+
+            <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+                 ng-class="{ 'has-error' : paymentForm.cheque.$invalid && !paymentForm.cheque.$pristine }">
+                <h5 class="bold fs-12 m-b-0">cheque Number</h5>
+                <input ng-model="$ctrl.payment.chequeNumber" type="text" name="cheque" class="form-control"  required>
+            </div>
+        </div>
+
+        <div ng-if="$ctrl.payment.paymentMethod == 'Cash'">
+            <div class="payment-item  no-bg p-r-10 p-l-10 p-b-10 m-b-20"
+                 ng-class="{ 'has-error' : paymentForm.recipient.$invalid && !paymentForm.recipient.$pristine }">
+                <h5 class="bold fs-12 m-b-0">Recipient</h5>
+                <input ng-model="$ctrl.payment.recipientName" type="text" name="recipient" class="form-control"  required>
+            </div>
+        </div>
+
+        <!-- <div ng-if="!$ctrl.hideButton" class="row">
+         <div class="col m-t-10 sm-m-t-10 clearfix">
+             <div class="pull-right"><button type="submit" class="btn btn-primary btn-block m-t-5 " ng-disabled="paymentForm.$invalid">Add Payment</button></div>
+         </div>
+     </div>-->
+    </form>
+</fieldset>

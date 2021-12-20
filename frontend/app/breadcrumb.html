@@ -1,0 +1,12 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item text-capitalize" ng-repeat="step in steps | limitTo:(steps.length-1)">
+            <a href="{{step.ncyBreadcrumbLink}}">
+                {{ step.ncyBreadcrumbLabel.includes('{{')? step.ncyBreadcrumbLabel : step.ncyBreadcrumbLabel | translate}}
+            </a>
+        </li>
+        <li class="breadcrumb-item text-capitalize" ng-repeat="step in steps | limitTo:-1">
+            {{ step.ncyBreadcrumb.label.includes('{{')? step.ncyBreadcrumbLabel : step.ncyBreadcrumbLabel | translate}}
+        </li>
+    </ol>
+</div>

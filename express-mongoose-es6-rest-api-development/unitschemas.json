@@ -1,0 +1,12 @@
+{ 
+    "_id" : ObjectId("5ea87137d8d93354f6161311"), 
+    "englishName" : "PC", 
+    "arabicName" : "قطعه", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ef8e471d8d93354f616135a"), 
+    "englishName" : "KG", 
+    "arabicName" : "KG", 
+    "__v" : NumberInt(0)
+}

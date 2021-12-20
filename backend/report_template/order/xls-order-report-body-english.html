@@ -1,0 +1,71 @@
+<style>
+  thead td{
+    background-color: #003666;
+    height:3px;
+    border:  none!important;
+  }
+  th{
+    background-color: #f8f9fa;
+    border:  solid;
+  }
+  td{
+    border-style: solid;
+  }
+</style>
+
+<table>
+  <thead>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td style="width: 300px;"></td>
+  <td style="width: 300px;"></td>
+  <td></td>
+  </thead>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Customer</th>
+    <th>Supplier</th>
+    <th>Order Number</th>
+    <th>Total Price</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{for data.orders}}
+  <tr>
+    <td>{{:~toTime(date)}}</td>
+    <td>{{:customerName}}</td>
+    <td>{{:supplierName}}</td>
+    <td>{{:orderNumber}}</td>
+    <td>{{:~toNumber(totalPrice)}}</td>
+    {{if orderStatus === 'Accepted'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'Pending'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'Rejected'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'Canceled'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'FailedToDeliver'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'ReadyForDelivery'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'OutForDelivery'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+    {{if orderStatus === 'Delivered'}}
+    <td>{{:orderStatus}}</td>
+    {{/if}}
+  </tr>
+  {{/for}}
+  </tbody>
+</table>
+

@@ -1,0 +1,785 @@
+{
+  "header": {
+    "changeLanguage": "العربية",
+    "hello": "Hello, ",
+    "myProfile": "My Profile",
+    "logout": "Logout",
+    "cart": "Cart",
+    "type": "Type anywhere to ",
+    "search": "search",
+    "contactUS": "Contact us"
+  },
+  "footer": {
+    "copyright": "Copyright © 2021",
+    "rights": "All rights reserved",
+    "hand_craft_statement": "Hand-crafted by",
+    "made_statement": "& Made with Love ®",
+    "terms": "Terms of use",
+    "privacy": "Privacy Policy",
+    "project_name": "SuppliesON",
+    "developer": "indielabs, LLC."
+  },
+  "customer": {
+    "menu": {
+      "product": "Products & Categories",
+      "orders": "Orders",
+      "payment": "Payment",
+      "account": "Account",
+      "report" : "Reports"
+    },
+    "sideMenu": {
+      "suppliers": "Suppliers"
+    },
+    "account": {
+      "profile": {
+        "side_menu": {
+          "back": "Back"
+        },
+        "breadcrumb": {
+          "customer": "Customer",
+          "profile": "Profile",
+          "contact": "Contact us"
+        },
+        "text": {
+          "company_info": "Company Info",
+          "acc_holder_info": "Account Holder Info",
+          "reset_password": "Reset password"
+        },
+        "button": {
+          "save_changes": "Save changes",
+          "upload_photo": "Upload Cover Image",
+          "upload_photo2": "Upload file",
+          "download":"Download File",
+          "show_cr": "Update Attachment",
+          "add_branch": "Add Branch ",
+          "save_branch": "Save",
+          "delete_branch": "Delete",
+          "edit_branch": "Edit",
+          "cancel": "Cancel"
+        },
+        "field": {
+          "coverPhoto": {
+            "required": "This field is required",
+            "label": "cover Photo",
+            "placeholder": "No file chosen",
+            "invalid": "Accepted formats  PNG - GIF - JPEG - JPG and maximum size of 4 MB"
+          },
+          "company_name": {
+            "label": "Company name",
+            "placeholder": "Company name",
+            "invalid": "Contains invalid characters ",
+            "required": "This field is required "
+          },
+          "cr_number": {
+            "label": "Commercial Register Number ",
+            "placeholder": "C.R. Number",
+            "required": "This field is required",
+            "invalid": "Contains invalid characters , must be only 10 digits"
+          },
+          "cr_Expdate": {
+            "required": "This field is required",
+            "label": "Expire date gregorian",
+            "labelHijri": "Expire date Hijri",
+            "placeholder": "DD\/MM\/YYYY"
+          },
+          "vat": {
+            "required": "This field is required",
+            "label": "Vat",
+            "placeholder": "11"
+          },
+          "CRDateIslamic": {
+            "required": "This field is required",
+            "hint": "Expire date Hijri",
+            "placeholder": "11"
+          },
+
+          "cr_photo": {
+            "required": "This field is required",
+            "label": "C.R. Photo",
+            "placeholder": "No file chosen",
+            "invalid": "Accepted formats  PNG - GIF - JPEG - JPG and maximum size of 4 MB"
+          },
+          "location": {
+            "label": "Location",
+            "placeholder": "Enter your location",
+            "required": "This field is required "
+          },
+          "first_name": {
+            "label": "First name",
+            "placeholder": "First name",
+            "required": "This field is required",
+            "invalid": "Contains invalid characters "
+          },
+          "last_name": {
+            "label": "Last name",
+            "required": "This field is required",
+            "placeholder": "Last name",
+            "invalid": "Contains invalid characters "
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "Email@supplieson.com",
+            "required": "This field is required",
+            "invalid": "Invalid Email format"
+          },
+          "phone": {
+            "invalid": "Invalid phone format",
+            "label": "Mobile number",
+            "placeholder": "9665XXXXXXXX",
+            "required": "This field is required"
+          },
+          "old_password": {
+            "placeholder": "Old password",
+            "label": "Old password",
+            "required": "This field is required",
+            "invalid": "password must be from 6 to 20 characters long including numbers"
+          },
+          "new_password": {
+            "invalid": "password must be from 6 to 20 characters long including numbers",
+            "required": "This field is required ",
+            "label": "New password",
+            "placeholder": "New password"
+          },
+          "language": {
+            "required": "This field is required ",
+            "label": "language",
+            "placeholder": "Language"
+          },
+          "branch_input": {
+            "placeholder": "Add new branch"
+          },
+          "select_date":{
+            "label":"Select date :",
+            "hijri":"Hijri",
+            "gregorian":"Gregorian"
+          }
+        },
+        "message": {
+          "old_password_incorrect": "Incorrect old password",
+          "password_update_successfully": "Password updated successfully",
+          "duplicate-data": "The data you entered already exists ",
+          "failure": "Error occurred , please try again later ",
+          "profile_update_successfully": "Profile updated successfully",
+          "branch_added": "Branch added successfully",
+          "branch_deleted": "Branch deleted successfully",
+          "branch_updated": "Branch updated successfully",
+          "delete_branch_message": "Are you sure you want to delete this branch ?",
+          "branch_delete_error": "Sorry, You cannot delete this branch because You must have at least one branch",
+          "expireDate_exceed": "Gregorian Expire Date Exceeds 5 Years",
+          "expireDate_todayOrLess": "Gregorian Expire Date can't be today's date or before",
+          "expireDateHijri_exceed": "Hijri Expire Date Exceeds 5 Years",
+          "expireDateHijri_todayOrLess": "Hijri Expire Date can't be today's date or before"
+        }
+      },
+      "payment": {
+        "billingDes": "This is the account billing between you and ",
+        "balance": "Balance",
+        "record_payment": "Record Payment",
+        "search": "Search By Customer",
+        "status": "Status",
+        "payment_installment": "Payment Cycle",
+        "payment_added": "Your payment has been recorded successfully, The admin will verify the payment and notify you soon.",
+        "payment_failed": "Failed to add your payment record",
+        "allow_exceed_billing_limit": "Allow this customer to exceed the billing date payment",
+        "allow_exceed_credit_limit": "Allow this customer to exceed the monthly credit limit",
+        "payment": "Payment",
+        "payments": "Payments",
+        "paymentsClaims": "Payments Claims",
+        "specialPrices": "Special Prices",
+        "specialPricesTable": {
+          "productName": "Product Name",
+          "specialPrice": "Special Price",
+          "originalPrice": "Original Price"
+        },
+        "creditThisMonth": "This Month Credit",
+        "limitThisMonth": "This Month Limit",
+        "nextPayment": "Next payment",
+        "nextInvoice": "Next invoice",
+        "creditLimit": "Credit Limit",
+        "sar": "SAR",
+        "approved": "Approved",
+        "pending": "Pending",
+        "rejected": "Rejected",
+        "cash": "Cash",
+        "cheque": "Cheque",
+        "bank": "Bank",
+        "billingHistory": "Billing History",
+        "paymentClaims": "Payment Claims",
+        "every": "Every",
+        "Day": "{value, plural, =0 { this day } one{ 1 day } other{ # day }}",
+        "Week": "{value, plural, =0 { this week } one{ 1 week } other{ # weeks }}",
+        "Month": "{value, plural, =0 { this month } one{ 1 month } other{ # months }}",
+        "credit": "credit",
+        "invoice": "invoice",
+        "invoice_for": "Invoice for",
+        "details": "Show Details",
+        "detailed_transactions": "Detailed Transactions",
+        "table": {
+          "date": "Date",
+          "description": "Description",
+          "type": "Type",
+          "referenceId": "Reference Id",
+          "status": "Status",
+          "customerName": "Customer Name",
+          "amount": "Amount",
+          "balance": "Balance"
+        }
+      },
+      "staff": "Staff",
+      "roles": {
+        "title": "Roles & Permissions",
+        "button": {
+          "add": "Add Role"
+        }
+      },
+      "branches" : {
+        "branch": "Branches",
+        "button": "New Branch",
+        "search": "SEARCH BY BRANCH NAME",
+        "table" : {
+          "branchName": "Branch Name",
+          "manager" : "Manager",
+          "location": "Location",
+          "date": "Date Created",
+          "status" : "Status",
+          "city": "City"
+        },
+        "branch_added": "Branch added successfully.",
+        "branch_failure": "Branch added failure.",
+        "branch_updated": "Branch updated successfully."
+      },
+      "users": {
+        "title": "Staff",
+        "text": {
+          "users": "Users",
+          "Name": "Name",
+          "Role": "Role",
+          "Email": "Email",
+          "status": "Status",
+          "search": "Search by name or email",
+          "select_role": "Select role",
+          "all": "All",
+          "update_user": "Update user"
+        },
+        "button": {
+          "New_user": "New user"
+        },
+        "New_user": {
+          "text": {
+            "new_user": "create new user"
+          },
+          "field": {
+            "first_name": {
+              "required": "This field is required",
+              "label": "First name",
+              "placeholder": "First name",
+              "invalid": "Contains invalid characters"
+            },
+            "last_name": {
+              "placeholder": "Last name",
+              "label": "Last name",
+              "required": "This field is required",
+              "invalid": "Contains invalid characters "
+            },
+            "email": {
+              "placeholder": "Email",
+              "required": "This field is required",
+              "invalid": "Invalid email format",
+              "label": "Email"
+            },
+            "mobile": {
+              "required": "This field is required ",
+              "label": "Phone number",
+              "placeholder": "Phone number",
+              "invalid": "Invalid phone format"
+            },
+            "password": {
+              "label": "Password",
+              "placeholder": "Password",
+              "required": "This field is required",
+              "invalid": "password must be from 6 to 20 characters long including numbers"
+            },
+            "roles": {
+              "label": "Role",
+              "placeholder": "Select Role"
+            },
+            "status": {
+              "label": "Status",
+              "placeholder": "Select status "
+            },
+            "status_active": "Active",
+            "status_blocked": "Blocked",
+            "confirm_password": {
+              "required": "This field is required and should match password",
+              "label": "Confirm password",
+              "placeholder": "Confirm password",
+              "invalid": "Password and confirm password must be identical"
+            }
+          },
+          "button": {
+            "add_user": "Add User",
+            "close": "Close",
+            "save": "Save"
+          },
+          "validate_user_successfully": "User added successfully ",
+          "validate_user_failed": "The data you entered already exists "
+        },
+        "reset_password": {
+          "text": {
+            "reset_password": "Reset password"
+          },
+          "button": {
+            "reset_password": "Reset password"
+          },
+          "field": {
+            "new_password": {
+              "label": "New password",
+              "placeholder": "New password"
+            }
+          }
+        },
+        "message": {
+          "success": {
+            "update": "User Updated Successfully",
+            "add": "User has been added Successfully"
+          },
+          "unexpected_failure": "Error in saving data...please try again later",
+          "failure": "User Already Exist",
+          "change_password_success": "Password has been reset successfully, Email is sent to the user",
+          "change_password_failure": "Failure while reseting password"
+        }
+      }
+    },
+    "product": {
+      "breadcrumb": {
+        "categories": "Categories"
+      },
+      "list": {
+        "text": {
+          "all": "All Categories",
+          "allProducts":"All Products"
+        },
+        "yourProducts": "Special Prices",
+        "otherProducts": "Other Products",
+        "noSpecialPriceProduct": "Sorry, No Special Price Products found!",
+        "noOtherProducts": "Sorry, No Other Products found!"
+      },
+      "button": {
+        "back": "Back",
+        "english": "English",
+        "arabic": "Arabic",
+        "addToCart": "Add To Cart",
+        "requestPrice": "Request Price",
+        "details": "Details"
+      },
+      "currency": "SAR",
+      "noProducts": "No Products",
+      "noInternet": "Please check your internet connection",
+      "unexpectedError": "unexpected Error",
+      "message": {
+        "addToCardSuccess": "Product added successfully To Cart",
+        "addToCardFailure": "Sorry, something went wrong: Please try again ...",
+        "requestProductSuccess": "Your request sent to supplier successfully",
+        "requestProductFailure": "Sorry, something went wrong: Please try again ...",
+        "maxQuantity": "Sorry, max quantity 10000.",
+        "exceedLimit": "Sorry, You exceed your limit",
+        "unAuthorized": "Sorry, Unauthorized to order, Contact Your Supplier"
+      },
+      "field": {
+        "categories": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "categories",
+          "placeholder": "categories"
+        },
+        "arabicName": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "Arabic name",
+          "placeholder": "Arabic name"
+        },
+        "englishName": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "English name",
+          "placeholder": "English name"
+        },
+        "arabicDescription": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "Arabic Description",
+          "placeholder": "Arabic Description"
+        },
+        "englishDescription": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "English Description",
+          "placeholder": "English Description"
+        },
+        "sku": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "sku",
+          "placeholder": "1952C14"
+        },
+        "store": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "store",
+          "placeholder": "1952C14"
+        },
+        "shelf": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "shelf",
+          "placeholder": "1952C14"
+        },
+        "price": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "price",
+          "placeholder": "0.00",
+          "currency": "SAR"
+        },
+        "unit": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "unit",
+          "placeholder": "unit"
+        },
+        "images": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "images",
+          "placeholder": "images"
+        },
+        "status": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "status",
+          "placeholder": "status"
+        },
+        "quantity": {
+          "invalid": "contains invalid characters",
+          "required": "This field is required",
+          "label": "quantity",
+          "placeholder": "quantity"
+        }
+      }
+    },
+    "cart": {
+      "deleteModel": {
+        "message": "Are you Sure to delete this Item?!",
+        "button": {
+          "cancel": "Cancel",
+          "confirm": "Confirm"
+        }
+      },
+      "message": {
+        "updateProductQuantitySuccess": "Product Quantity Updated Successfully",
+        "updateProductQuantityFailure": "Sorry, something went wrong: Please try again ...",
+        "deleteProductSuccess": "Product deleted Successfully",
+        "deleteProductFailure": "Sorry, something went wrong: Please try again ...",
+        "checkoutCartSuccess": "Order has been submitted Successfully",
+        "checkoutCartFailure": "Sorry, something went wrong: Please try again ..."
+      },
+      "select_date": {
+        "label" : "Select date",
+        "gregorian" : "Gregorian",
+        "hijri" : "Hijri"
+      },
+      "cr_expdate": {
+        "required": "This field is required",
+        "placeholder": "DD/MM/YYYY",
+        "label": "Delivery Date Gregorian",
+        "labelHijri": "Delivery Date Hijri"
+      },
+      "title": "Shopping Cart",
+      "supplierLabel": "Change Supplier",
+      "branchLabel": "Change Branch",
+      "checkoutDoneMessage_link": "Evaluation",
+      "checkoutDoneMessage_1": "Thank you for your order",
+      "checkoutDoneMessage_2": "Your order is being processed",
+      "checkoutEmptyMessage_1": "Your cart is empty!",
+      "checkoutEmptyMessage_2": "Add something to make us happy",
+      "checkoutErrorMessage": "An Error Occurred, Please Try Again!",
+      "checkoutInternetConnectionMessage": "No Internet Connection, Please Try Again!",
+      "checkoutLimitMessage_1": "Limit Exceeded",
+      "checkoutLimitMessage_2": "You've exceeded your credit limit!",
+      "subTotal": "Sub Total",
+      "isRecurring": "is Recurring?",
+      "autoOrderEvery": "Auto Order Every",
+      "intervalType": {
+        "label": "Interval Type",
+        "day": "Day",
+        "week": "Week",
+        "month": "Month"
+      },
+      "total": "Total",
+      "vat": "VAT",
+      "monthlyCredit": "Current Consumption: ",
+      "currentBalance": "Current Balance: ",
+      "placeOrder": "Place Order",
+      "productName": "Product Name",
+      "quantity": "Quantity",
+      "price": "Price"
+    },
+    "order": {
+      "breadcrumb": {
+        "orders": "Orders",
+        "orderDetail": " Order Detail"
+      },
+      "item": "{value, plural, =0 {N\/A} one{one item} other{# items}}",
+      "text": {
+        "orderId": "Order ID",
+        "recurringOrder": "Recurring Order",
+        "ordersHistory": "Orders History",
+        "orderNumber": "Order Number",
+        "orderStatus": "Order Status",
+        "placeHolder": "Order ID or Branch name",
+        "totalOrders": "Orders Count",
+        "totalPayment": "Total Financial dues",
+        "Month": "{value, plural, =0 { this month } one{ 1 month } other{ # months }}",
+        "orderCount": "{value, plural, =0 {No orders} one{ One Order } other{ # orders }}",
+        "order": "order",
+        "sar": "SAR"
+      },
+      "recurringOrderTable": {
+        "header": {
+          "date": "Date",
+          "branchName": "Branch Name",
+          "repetition": "Repetition",
+          "items": "# Items",
+          "total": "Total"
+        },
+        "button": {
+          "cancelRecurring": "Cancel Recurring",
+          "showDetails": "Show Details"
+        }
+      },
+      "ordersHistoryTable": {
+        "header": {
+          "date": "Date",
+          "branchName": "Branch Name",
+          "orderID": "Order ID",
+          "items": "# Items",
+          "total": "Total",
+          "status": "Status",
+          "reOrder": "Re-Order"
+        },
+        "button": {
+          "showDetails": "Show Details"
+        },
+        "noProducts": "No Items"
+      },
+      "message": {
+        "cancelRecurringOrderSuccess": "Recurring order canceled successfully",
+        "cancelRecurringOrderFailure": "Sorry, something went wrong: Please try again ...",
+        "reOrderSuccess": "Order is sent successfully",
+        "reOrderFailure": "Sorry, something went wrong: Please try again ...",
+        "noInternet": "Please check your internet connection",
+        "confirmDeleteLastProduct":"Sorry, if this product is deleted the order will be canceled",
+        "unexpectedError": "unexpected Error",
+        "noOrders": "No Orders Found",
+        "success": "operation done successfully",
+        "error": "Sorry, some issue occrued, please try again",
+        "cancelConfirmation": "Are you sure you want to cancel the order?"
+      },
+      "view": {
+        "deliveryImage": "Delivery Image",
+        "driverDetails": "Driver Details",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "mobileNumber": "Phone",
+        "print": "Print",
+        "failedToDeliver": "Failed To Deliver",
+        "failedToDeliverTitle": "Failed To Deliver Orders",
+        "rejectedDeliverTitle": "Rejected and Canceled Orders",
+        "retryDelivery": "Retry Delivery",
+        "failReason": "Failure Reason",
+        "rejectOrder": "Reject Order",
+        "delivered": "Delivered",
+        "readyForDelivery": "Ready For Delivery",
+        "outForDelivery": "Out For Delivery",
+        "outAndPrint": "Out For Delivery & Print",
+        "noNotes": "No Comments",
+        "repName": "Rep. Name",
+        "branchName": "Branch Name",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "review": "Review",
+        "condition": "Items Condition",
+        "delivery": "Delivery",
+        "overall": "Overall",
+        "note": "Note",
+        "send":"Send",
+        "cancelConfirmation": "Are you sure you want to cancel the order?",
+        "reason": "Reason",
+        "exit": "NO",
+        "confirm": "Yes, Cancel this order",
+        "table": {
+          "productName": "Product Name",
+          "sku": "SKU",
+          "store": "Store",
+          "shelf": "Shelf #",
+          "quantity": "Quantity",
+          "status": "Status",
+          "unitPrice": "Price Per Unit",
+          "total": "Total Price"
+        },
+        "noOrders": "No Orders",
+        "noOrder": "Sorry, No order found!",
+        "noInternet": "No Internet Connection!",
+        "unexpectedError": "Sorry, Unexpected Error!",
+        "field": {
+          "rejectReason": {
+            "label": "Rejection Reason",
+            "placeholder": "Rejection Reason",
+            "required": "This field is required",
+            "invalid": "Contains invalid characters "
+          },
+          "failReason": {
+            "label": "Failure Reason",
+            "placeholder": "Enter the failure reason ",
+            "required": "This field is required ",
+            "invalid": "Contains invalid characters "
+          }
+        },
+        "status": {
+          "accepted": "Accepted",
+          "new": "New Order",
+          "rejected": "Rejected",
+          "canceled": "Canceled",
+          "ready": "Ready For Delivery",
+          "out": "Out For Delivery",
+          "delivered": "Delivered",
+          "recurring": "Recurring Order",
+          "canceledByCustomer": "Canceled",
+          "canceledByCustomer2": "Canceled By Customer"
+        },
+        "actions": {
+          "buttons": {
+            "accept": "Accept Order",
+            "cancel": "Cancel Order",
+            "reject": "Reject Order",
+            "readyForDelivery": "Ready For Delivery",
+            "outForDelivery": "Out For Delivery",
+            "failedToDeliver": "Failed To Deliver",
+            "retryDelivery": "Retry Delivery",
+            "delivered": "Delivered",
+            "accept_all": "Accept All"
+          },
+          "reject": "This order has been rejected! a notification has been sent to the supplier.",
+          "canceled": "This order has been canceled! a notification has been sent to the supplier.",
+          "readyForDelivery": "This order has been marked as Ready For Delivery!",
+          "delivered": "This order has been Delivered Successfully!"
+        },
+        "failedOrderTitle": "Failed to deliver this order.",
+        "failedOrderLabel": "Failure Reason",
+        "chooseDriverTitle": "Please select the driver.",
+        "chooseDriverLabel": "Driver",
+        "selectDriverLabel": "Select Driver",
+        "cancel": "Cancel",
+        "chooseDriver": "Choose Driver"
+      },
+      "log": {
+        "date": "Date",
+        "status": "Status",
+        "activity": "Activity Log",
+        "by": "Changed by",
+        "supplier": "the supplier",
+        "customer": "the customer"
+      },
+      "status": {
+        "approved": "Approved",
+        "pending": "Pending",
+        "rejected": "Rejected",
+        "failedToDeliver": "Failed To Deliver",
+        "delivered": "Delivered",
+        "readyForDelivery": "Ready For Delivery",
+        "outForDelivery": "Out For Delivery",
+        "canceled": "Canceled",
+        "preparation": "Preparation"
+      },
+      "cancelRecurringModal": {
+        "message": "Are you Sure to cancel this recurring order?!",
+        "button": {
+          "cancel": "Cancel",
+          "confirm": "Confirm"
+        }
+      },
+      "reOrderModal": {
+        "message": "Are you Sure you want to re-order this order?!",
+        "button": {
+          "cancel": "Cancel",
+          "confirm": "Confirm"
+        }
+      },
+      "button": {
+        "addProduct": "Add",
+        "quantity": "quantity"
+      },
+      "label": {
+        "productQuantity": "Quantity",
+        "productName": "Product Name"
+      }
+    },
+    "orders": {
+      "overview": "Overview",
+      "newOrders": "New Orders",
+      "preparation": "Preparation",
+      "delivery": "Delivery",
+      "failed": "Failed",
+      "review": "Review"
+    },
+    "payments": {
+      "breadcrumb": {
+        "payments": "accounts billing"
+      },
+      "message": {
+        "add": {
+          "success": "Payment Added Successfully",
+          "failure": "Sorry, failed to add payment"
+        }
+      },
+      "filter": {
+        "export": "Export"
+      }
+    },
+    "currency": "SAR",
+    "placeOrder": "Place Order",
+    "vat": "VAT.",
+    "sub_total": "Sub Total.",
+    "total_price": "Total Price.",
+    "message": "Message",
+    "noMessage": "No messages",
+    "reports" : {
+      "breadcrumb": {
+        "reports": "Reports",
+        "transactions" : "Transactions"
+      },
+      "menu_item" : {
+        "reports" : "REPORTS",
+        "transactions" : "Transactions"
+      },
+      "tabs" : {
+        "total_orders" : "Orders",
+        "vat" : "VAT",
+        "cost" : "Cost",
+        "grand_total" : "Grand Total",
+        "export" : "Export",
+        "period" : "Transaction Period"
+      },
+      "filters" : {
+        "all" : "All",
+        "suppliers": "Suppliers",
+        "branches": "Branches"
+      }
+    }
+  },
+  "meta": {
+    "project_name_supplies": "Supplies",
+    "project_name_on": "ON"
+  }
+}

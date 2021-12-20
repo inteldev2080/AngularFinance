@@ -1,0 +1,166 @@
+<ol class="breadcrumb breadcrumb-alt">
+    <li class="breadcrumb-item"><a ui-sref="app.supplier.order" ui-sref-opts="{reload:true}">{{"supplier.menu.orders" | translate }}</a></li>
+    <li ng-if="$ctrl.ordersStatus === 'Pending'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.new">{{"supplier.orders.newOrders" | translate }}</a></li>
+    <li ng-if="$ctrl.ordersStatus === 'Accepted'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.preparation">{{"supplier.orders.preparation" | translate }}</a></li>
+    <li ng-if="$ctrl.ordersStatus === 'ReadyForDelivery'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.delivery">{{"supplier.orders.delivery" | translate }}</a></li>
+    <li ng-if="$ctrl.ordersStatus === 'Rejected'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.failed">{{"supplier.orders.failed" | translate }}</a></li>
+    <li ng-if="$ctrl.ordersStatus === 'Delivered'" class="breadcrumb-item"><a ui-sref="app.supplier.order.list.review">{{"supplier.orders.review" | translate }}</a></li>
+</ol>
+<button data-toggle="modal" data-target="#driverModal" class="btn btn-primary btn-lg pull-right" ng-disabled="$ctrl.selected.orders.length === 0 || !$ctrl.selected.orders">{{"supplier.order.view.outAndPrint" | translate }} ({{$ctrl.selected.orders.length}})</button>
+<div class="section-title m-b-50">{{"supplier.order.view.readyForDelivery" | translate }}</div>
+<!--{{$ctrl.selected.orders}}-->
+<div class="clearfix"></div>
+<shimmer col="3" hide="$ctrl.readyForDeliveryOrdersIsLoaded"></shimmer>
+<div ng-if="$ctrl.readyForDeliveryOrdersIsLoaded" class="row p-t-20 p-l-20 p-r-20">
+    <div class="col-lg-4 col-sm-6 d-flex flex-column" ng-repeat="card in $ctrl.readyForDeliveryOrderList.orders">
+        <!-- START ITEM -->
+        <div class="card social-card share share-other full-width m-b-10 d-flex flex-1 full-height no-border" data-social="item">
+            <div ui-sref="app.supplier.order.view.details({orderId:card.order._id})" class="card-content card-image-description flex-1" background="{{card.order.customer.coverPhoto}}">
+
+                <div class="card-image-overlay">
+                    <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" | translate}}</h5>
+                    <h5 ng-if="card.products.length == 1" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}</h5>
+                    <h5 ng-if="card.products.length == 2" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}, {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName: card.products[1].product.arabicName}}</h5>
+                    <h5 ng-if="card.products.length >= 3" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}, {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName: card.products[1].product.arabicName}} <span translate="supplier.overview.items" translate-values="{value: card.products.length-2}"></span></h5>
+                    <h5 class="count"> <span translate="supplier.overview.item" translate-values="{value: card.products.length}"></span></h5>
+                    <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" | translate}}</h5>
+                </div>
+            </div>
+            <div class="card-header clearfix">
+                <div ui-sref="app.supplier.order.view.details({orderId:card.order._id})" class="card-footer-title">{{card.order.customer.representativeName}}</div>
+                <div class="card-footer-title pull-right">{{card.order.branchName}}</div>
+
+
+                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                <div class="checkbox check-primary pull-right m-0 p-0">
+                    <input type="checkbox" checklist-model="$ctrl.selected.orders" checklist-value="card.order._id" id="{{card.order._id}}">
+                    <label for="{{card.order._id}}" class="m-0"></label>
+                </div>
+
+            </div>
+        </div>
+        <!-- END ITEM -->
+    </div>
+
+</div>
+<div class="dataTables_wrapper p-b-20">
+<list-pagination message="'no-orders'"  total-pages="$ctrl.readyForDeliveryOrdersTotalPages" on-page-click="$ctrl.setReadyForDeliveryOrdersCurrentPage(pageNumber)" current-page="$ctrl.readyForDeliveryOrdersCurrentPage"></list-pagination>
+</div>
+
+<div class="section-title m-b-20">{{"supplier.order.view.outForDelivery" | translate }}</div>
+<shimmer col="3" hide="$ctrl.outForDeliveryOrdersIsLoaded"></shimmer>
+<div ng-if="$ctrl.outForDeliveryOrdersIsLoaded" class="row p-t-20 p-l-20 p-r-20">
+    <div  class="col-lg-4 col-sm-6 d-flex flex-column" ng-repeat="card in $ctrl.outForDeliveryOrderList.orders">
+        <!-- START ITEM -->
+        <div ui-sref="app.supplier.order.view.details({orderId:card.order._id})" class="card social-card share share-other full-width m-b-10 d-flex flex-1 full-height no-border" data-social="item">
+            <div class="card-content card-image-description flex-1" background="{{card.order.customer.coverPhoto}}">
+
+                <div class="card-image-overlay">
+                    <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" | translate}}</h5>
+                    <h5 ng-if="card.products.length == 1" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}</h5>
+                    <h5 ng-if="card.products.length == 2" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}, {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName: card.products[1].product.arabicName}}</h5>
+                    <h5 ng-if="card.products.length >= 3" class="description">{{$ctrl._$translate.use() === 'en'? card.products[0].product.englishName: card.products[0].product.arabicName}}, {{$ctrl._$translate.use() == 'en'? card.products[1].product.englishName: card.products[1].product.arabicName}} <span translate="supplier.overview.items" translate-values="{value: card.products.length-2}"></span></h5>
+                    <!--<h5 class="count">{{card.products.length}} <span translate="supplier.overview.item" translate-values="{value: card.products.length}"></span></h5>-->
+                    <h5 class="count"> <span translate="supplier.overview.item" translate-values="{value: card.products.length}"></span></h5>
+                    <h5 ng-if="card.products.length == 0" class="description">{{"supplier.orders.noProducts" | translate}}</h5>
+                </div>
+            </div>
+            <div class="card-header clearfix">
+                <div class="card-footer-title">{{card.order.customer.representativeName}}</div>
+                <div class="card-footer-title float-right"><a>{{card.order.branchName}}</a></div>
+                <div class="pull-right">
+                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                <span class="label upper-case">{{card.order.updatedAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- END ITEM -->
+    </div>
+
+</div>
+<div class="dataTables_wrapper p-b-20">
+<list-pagination message="'no-orders'"  total-pages="$ctrl.outForDeliveryOrdersTotalPages" on-page-click="$ctrl.setOutForDeliveryOrdersCurrentPage(pageNumber)" current-page="$ctrl.outForDeliveryOrdersCurrentPage"></list-pagination>
+</div>
+<div class="modal fade stick-up" id="driverModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.order.view.chooseDriverTitle" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group form-group-custom form-group-default form-group-default-select2">
+                    <label class="label-custom">{{"supplier.order.view.chooseDriverLabel" | translate}}</label>
+                    <select class="full-width" ng-show="$ctrl.staff" data-disable-search="true" ng-model="$ctrl.driver" data-placeholder="{{'supplier.order.view.selectDriverLabel' | translate}}"
+                            data-init-plugin="select2" id="driverSelect3">
+                        <option ng-repeat="staff in $ctrl.staff" value="{{staff._id}}">{{staff.firstName}} {{staff.lastName}}</option>
+                    </select>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <button ng-click="$ctrl.outForDeliveryOrder()" class="btn btn-primary btn-block">{{"supplier.order.view.chooseDriver" | translate }}</button>
+                        <!--<div style="position: absolute;bottom: -8px;left: 90px;" ng-if="$ctrl.chooseDriver" class="progress-circle-indeterminate"></div>-->
+                        <svg ng-if="$ctrl.chooseDriver" version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="25px" height="40px" viewBox="0 0 50 50" style="position: absolute;bottom: -4px;right: 32px;enable-background:new 0 0 50 50;" xml:space="preserve">
+                            <path fill="#fff" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                <animateTransform attributeType="xml"
+                                                  attributeName="transform"
+                                                  type="rotate"
+                                                  from="0 25 25"
+                                                  to="360 25 25"
+                                                  dur="0.6s"
+                                                  repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="col">
+                        <button onclick="$('#driverModal').modal('hide');" class="btn btn-block">{{"supplier.order.view.cancel" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script>
+    $('#driverSelect3').on('select2:open',function(){
+        let that = $(this);
+        let flag = false;
+        if ( $(window).width() > 739) {
+            $(window).bind('wheel', function(e) {
+                // if(!flag && e.target.className === 'select2-results__option'){
+                //     // that.select2("close");
+                //     console.log('scroll');
+                // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                //     that.select2("open");
+                //     console.log('scroll');
+                // }
+            });
+        }
+        else {
+            $(window).bind('wheel', function(e) {
+                console.log(e.target);
+                if(!flag && e.target.className === 'select2-results__option'){
+                    // that.select2("close");
+                    console.log('scroll');
+                } else if(!flag &&  e.target.className !== 'select2-results__option'){
+                    that.select2("close");
+                    console.log('scroll');
+                }
+                else
+                    flag = true;
+            });
+        }
+    });
+</script>
+
+
+

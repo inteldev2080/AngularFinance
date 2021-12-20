@@ -1,0 +1,138 @@
+<!--<ul class="hidden-md-down notification-list no-margin hidden-sm-down b-grey b-l b-r no-style p-l-30 p-r-20">-->
+<ul class="notification-list no-margin b-grey b-l b-r no-style p-r-20">
+    <li class="p-r-10 inline">
+        <div class="dropdown notification-dropdown">
+            <a href="" id="notification-center" class="header-icon pg pg-mail" data-toggle="dropdown" aria-expanded="false">
+                <span ng-if="$ctrl.notReadCount>0" class="bubble"></span>
+            </a>
+            <a  tabindex="" >
+                <div class="dropdown-menu notification-toggle" role="menu" aria-labelledby="notification-center">
+                    <div class="notification-panel">
+                        <div ng-if="$ctrl.showPreviouseBtn && $ctrl.notifications.length > 0 " class="notification-footer text-center">
+                            <a  ng-click="$ctrl.previous()" class="bold text-success"><i class="fa fa-arrow-circle-left m-r-10"></i></a>
+                        </div>
+                        <div class="notification-body scrollable">
+
+                            <!--
+                                                        <div class="notification-item unread clearfix">
+
+                                                            <div class="heading open">
+                                                                <a href="#" class="text-complete pull-left">
+                                                                    <i class="pg-map fs-16 m-r-10"></i>
+                                                                    <span class="bold">Carrot Design</span>
+                                                                    <span class="fs-12 m-l-10">David Nester</span>
+                                                                </a>
+                                                                <div class="pull-right">
+                                                                    <div class="thumbnail-wrapper d16 circular inline m-t-15 m-r-10 toggle-more-details">
+                                                                        <div><i class="fa fa-angle-left"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class=" time">few sec ago</span>
+                                                                </div>
+                                                                <div class="more-details">
+                                                                    <div class="more-details-inner">
+                                                                        <h5 class="semi-bold fs-16">“Apple’s Motivation - Innovation <br>
+                                                                            distinguishes between <br>
+                                                                            A leader and a follower.”</h5>
+                                                                        <p class="small hint-text">
+                                                                            Commented on john Smiths wall.
+                                                                            <br> via pages framework.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="option" data-toggle="tooltip" data-placement="left" title=""
+                                                                 data-original-title="mark as read">
+                                                                <a href="#" class="mark"></a>
+                                                            </div>
+
+                                                        </div>
+
+                            -->
+                            <div ng-repeat="item in $ctrl.notifications" class="notification-item  clearfix"
+                                 ng-class="{'unread' : !item.isRead}">
+                                <div  class="heading">
+                                    <span  class="pull-left time"><i class="text-{{item.level}} fa fa-info m-r-10 fs-13"></i></span>
+                                    <a ng-click="$ctrl.markNotificationsAsRead(item)" href="{{item.url}}" class="text-{{item.level}} pull-left notification-title">
+                                        <span>{{ $ctrl.$translate.use() === 'ar' ? item.actionTitle.ar :  item.actionTitle.en }}</span>
+                                        <!--<span class="fs-12 m-l-10">Take Action</span>-->
+                                    </a>
+                                 <!--   <span class="pull-right time" am-time-ago="item.createdAt"></span>-->
+
+                                   <span class="pull-right time">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+
+                                </div>
+
+                                <div ng-if="item.isRead" class="option">
+                                    <a class="mark"></a>
+                                </div>
+                                <div ng-if="!item.isRead" class="option" data-toggle="tooltip" data-placement="left"
+                                     title=""
+                                     data-original-title="mark as read">
+                                    <a  ng-click="$ctrl.markNotificationsAsRead(item)" class="mark"></a>
+                                </div>
+
+                            </div>
+                            <div ng-if="$ctrl.notificationsCount === 0 || $ctrl.notifications.length === 0" class="notification-item  clearfix"   >
+                                <div class="heading">
+                                    <span class="pull-left time"><i class="text-{{item.level}} fa fa-info m-r-10 fs-13"></i></span>
+                                    <a  class="cursorPointer pull-left notification-title">
+                                        <span>{{ 'component.notifications.massage.noNotifications' | translate }}</span>
+                                        <!--<span class="fs-12 m-l-10">Take Action</span>-->
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--
+                                                        <div class="notification-item  clearfix">
+                                                            <div class="heading">
+                                                                <a href="#" class="text-warning-dark pull-left">
+                                                                    <i class="fa fa-exclamation-triangle m-r-10"></i>
+                                                                    <span class="bold">Warning Notification</span>
+                                                                    <span class="fs-12 m-l-10">Buy Now</span>
+                                                                </a>
+                                                                <span class="pull-right time">yesterday</span>
+                                                            </div>
+
+                                                            <div class="option">
+                                                                <a href="#" class="mark"></a>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="notification-item unread clearfix">
+                                                            <div class="heading">
+                                                                <div class="thumbnail-wrapper d24 circular b-white m-r-5 b-a b-white m-t-10 m-r-10">
+                                                                    <img width="30" height="30" data-src-retina="assets/img/profiles/1x.jpg"
+                                                                         data-src="assets/img/profiles/1.jpg" alt=""
+                                                                         src="assets/img/profiles/1x.jpg">
+                                                                </div>
+                                                                <a href="#" class="text-complete pull-left">
+                                                                    <span class="bold">Revox Design Labs</span>
+                                                                    <span class="fs-12 m-l-10">Owners</span>
+                                                                </a>
+                                                                <span class="pull-right time">11:00pm</span>
+                                                            </div>
+
+                                                            <div class="option" data-toggle="tooltip" data-placement="left" title=""
+                                                                 data-original-title="mark as read">
+                                                                <a href="#" class="mark"></a>
+                                                            </div>
+
+                                                        </div>
+                            -->
+                        </div>
+                        <div ng-if="$ctrl.showNextBtn && $ctrl.notifications.length > 0 " class="notification-footer text-center">
+                            <a  ng-click="$ctrl.next()" class="bold text-success">
+                                <i class="fa fa-arrow-circle-right m-r-10"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,747 @@
+{ 
+    "_id" : ObjectId("5f3c2120687ef766db4a8a7a"), 
+    "orderId" : "SUPOn-1597785600255", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5ea87662d8d93354f6161315"), 
+    "supplier" : ObjectId("5ea86eb7d8d93354f616130a"), 
+    "branch" : ObjectId("5f3c209b687ef766db4a8a73"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-08-19T00:20:00.266+0000"), 
+    "createdAt" : ISODate("2020-08-18T21:42:40.217+0000"), 
+    "status" : "Active", 
+    "startDate" : ISODate("2020-07-26T11:31:55.449+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f3c20f1687ef766db4a8a76"), 
+            "price" : NumberInt(20), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5ea87176d8d93354f6161312"), 
+            "createdAt" : ISODate("2020-07-25T08:31:55.441+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5000b20d4032396a3f3393"), 
+    "orderId" : "SUPOn-1599081600599", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe0f0d4032396a3f3374"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.654+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:29:38.150+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f50009d0d4032396a3f3388"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50009e0d4032396a3f338a"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50009f0d4032396a3f338b"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000a00d4032396a3f338c"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5000f60d4032396a3f33a0"), 
+    "orderId" : "SUPOn-1599081600601", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe210d4032396a3f3375"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.655+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:30:46.220+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f5000c60d4032396a3f3395"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000c70d4032396a3f3397"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000c80d4032396a3f3398"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000c90d4032396a3f3399"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5001080d4032396a3f33ad"), 
+    "orderId" : "SUPOn-1599078664865", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe2e0d4032396a3f3376"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-02T23:31:04.883+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:31:04.883+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-02T17:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f5000fb0d4032396a3f33a2"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000fb0d4032396a3f33a4"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000fc0d4032396a3f33a5"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5000fe0d4032396a3f33a6"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5001df0d4032396a3f33ba"), 
+    "orderId" : "SUPOn-1599081600601", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe3e0d4032396a3f3377"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.654+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:34:39.487+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f5001140d4032396a3f33af"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5001150d4032396a3f33b1"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5001160d4032396a3f33b2"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5001170d4032396a3f33b3"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5002180d4032396a3f33c7"), 
+    "orderId" : "SUPOn-1599081600602", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe4d0d4032396a3f3378"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.654+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:35:36.619+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f50020a0d4032396a3f33bc"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(12), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50020b0d4032396a3f33be"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50020c0d4032396a3f33bf"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50020d0d4032396a3f33c0"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(15), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f50024b0d4032396a3f33d4"), 
+    "orderId" : "SUPOn-1599081600602", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe570d4032396a3f3379"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.655+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:36:27.979+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f50023d0d4032396a3f33c9"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(7), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50023e0d4032396a3f33cb"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50023f0d4032396a3f33cc"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002400d4032396a3f33cd"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(7), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f5002620d4032396a3f33e1"), 
+    "orderId" : "SUPOn-1599081600602", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe770d4032396a3f337b"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.655+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:36:50.301+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f5002540d4032396a3f33d6"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(7), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002550d4032396a3f33d8"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002560d4032396a3f33d9"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002570d4032396a3f33da"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(7), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f50028f0d4032396a3f33ee"), 
+    "orderId" : "SUPOn-1599081600603", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4d264122c0291c7f2e5fc2"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe640d4032396a3f337a"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2020-09-03T00:20:00.651+0000"), 
+    "createdAt" : ISODate("2020-09-02T23:37:35.327+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2020-09-03T20:01:30.975+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("5f50027e0d4032396a3f33e3"), 
+            "price" : 5.5, 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f50027f0d4032396a3f33e5"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002800d4032396a3f33e6"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(5), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }, 
+        {
+            "_id" : ObjectId("5f5002810d4032396a3f33e7"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f1aa346cce33f65397fa7ef"), 
+            "createdAt" : ISODate("2020-09-02T17:01:30.969+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("6044e76579db8f60d01e0875"), 
+    "orderId" : "SUPOn-1615238400749", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("60293aee8e96b72ae212c3af"), 
+    "supplier" : ObjectId("5f1a9c45cce33f65397fa7eb"), 
+    "branch" : ObjectId("5f4ffe770d4032396a3f337b"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-09T00:20:00.770+0000"), 
+    "createdAt" : ISODate("2021-03-07T17:47:01.485+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-09T23:44:56.573+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("6044e75879db8f60d01e086e"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f1aaf5acce33f65397fa7f7"), 
+            "createdAt" : ISODate("2021-03-07T17:44:56.567+0000")
+        }, 
+        {
+            "_id" : ObjectId("6044e75879db8f60d01e0870"), 
+            "price" : NumberInt(5), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+            "createdAt" : ISODate("2021-03-07T17:44:56.567+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a37e762065f505d4a29fc"), 
+    "orderId" : "SUPOn-1615476711334", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-11T18:31:51.353+0000"), 
+    "createdAt" : ISODate("2021-03-11T18:31:51.353+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-08T21:21:43.742+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a37c462065f505d4a29f5"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a37c762065f505d4a29f7"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(2), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a3c1b62065f505d4a2a15"), 
+    "orderId" : "SUPOn-1615477787889", 
+    "orderIntervalType" : "Week", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "days" : NumberInt(7), 
+    "updatedAt" : ISODate("2021-03-11T18:49:47.925+0000"), 
+    "createdAt" : ISODate("2021-03-11T18:49:47.924+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-08T21:21:43.742+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a3c0c62065f505d4a2a0e"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a3c0d62065f505d4a2a10"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a3c9262065f505d4a2a32"), 
+    "orderId" : "SUPOn-1615477906886", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(12), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "days" : NumberInt(12), 
+    "updatedAt" : ISODate("2021-03-11T18:51:46.918+0000"), 
+    "createdAt" : ISODate("2021-03-11T18:51:46.918+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-08T21:21:43.742+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a3c8162065f505d4a2a2e"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(12), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a3d6a62065f505d4a2a3c"), 
+    "orderId" : "SUPOn-1615478122423", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("60045ba7d6c13f401fe3eaa5"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-11T18:55:22.446+0000"), 
+    "createdAt" : ISODate("2021-03-11T18:55:22.446+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-08T21:21:43.742+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a3d0e62065f505d4a2a36"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a3d1062065f505d4a2a37"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a3de462065f505d4a2a57"), 
+    "orderId" : "SUPOn-1615478244885", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-11T18:57:24.904+0000"), 
+    "createdAt" : ISODate("2021-03-11T18:57:24.903+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-08T21:21:43.742+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a3da862065f505d4a2a43"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a3dad62065f505d4a2a52"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(8), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-08T21:21:43.736+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a3fb83841f44f4c73558c"), 
+    "orderId" : "SUPOn-1615497600889", 
+    "orderIntervalType" : "Week", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adc0e94bdfa31b2d2526c"), 
+    "days" : NumberInt(7), 
+    "updatedAt" : ISODate("2021-03-12T00:20:00.929+0000"), 
+    "createdAt" : ISODate("2021-03-11T19:05:12.586+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-18T22:05:12.588+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a3f9c3841f44f4c735585"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-11T19:03:37.499+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a3f9d3841f44f4c735587"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-11T19:03:37.499+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604a40a53841f44f4c735595"), 
+    "orderId" : "SUPOn-1615497600892", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("60045ba7d6c13f401fe3eaa5"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-12T00:20:00.936+0000"), 
+    "createdAt" : ISODate("2021-03-11T19:09:09.819+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-12T22:09:09.820+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604a40983841f44f4c73558e"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(9), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-11T19:03:37.499+0000")
+        }, 
+        {
+            "_id" : ObjectId("604a409a3841f44f4c735590"), 
+            "price" : NumberInt(56), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f5499c10d4032396a3f35ce"), 
+            "createdAt" : ISODate("2021-03-11T19:03:37.499+0000")
+        }
+    ], 
+    "__v" : NumberInt(0), 
+    "updatedDate" : ISODate("2021-03-12T22:09:09.820+0000")
+}
+{ 
+    "_id" : ObjectId("604c30bd3841f44f4c7355a6"), 
+    "orderId" : "SUPOn-1615605949699", 
+    "orderIntervalType" : "Week", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adbdf94bdfa31b2d2526b"), 
+    "days" : NumberInt(7), 
+    "updatedAt" : ISODate("2021-03-13T06:25:49.718+0000"), 
+    "createdAt" : ISODate("2021-03-13T06:25:49.718+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-13T06:25:49.719+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604c309e3841f44f4c7355a1"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(10), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-11T19:03:37.499+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604c3c49091d6f4600c02099"), 
+    "orderId" : "SUPOn-1615611780323", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adbdf94bdfa31b2d2526b"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-03-13T08:03:00.369+0000"), 
+    "createdAt" : ISODate("2021-03-13T07:15:05.619+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-03-14T10:15:05.621+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604c3c3f091d6f4600c02095"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(3), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-13T07:14:16.817+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604c3c5b091d6f4600c020a2"), 
+    "orderId" : "SUPOn-1615608923235", 
+    "orderIntervalType" : "Week", 
+    "orderFrequency" : NumberInt(2), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("601adbdf94bdfa31b2d2526b"), 
+    "days" : NumberInt(14), 
+    "updatedAt" : ISODate("2021-03-13T07:15:23.267+0000"), 
+    "createdAt" : ISODate("2021-03-13T07:15:23.266+0000"), 
+    "status" : "Inactive", 
+    "startDate" : ISODate("2021-04-10T07:15:23.267+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604c3c51091d6f4600c0209e"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(4), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-13T07:14:16.817+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604c49fe52e72a4c71227417"), 
+    "orderId" : "SUPOn-1628457600270", 
+    "orderIntervalType" : "Week", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("60045ba7d6c13f401fe3eaa5"), 
+    "days" : NumberInt(7), 
+    "updatedAt" : ISODate("2021-08-09T00:20:00.304+0000"), 
+    "createdAt" : ISODate("2021-03-13T08:13:34.726+0000"), 
+    "status" : "Active", 
+    "startDate" : ISODate("2021-08-16T23:13:34.728+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604c49e952e72a4c71227412"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(1), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-13T08:13:03.244+0000")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("604c4a2052e72a4c71227420"), 
+    "orderId" : "SUPOn-1628457600271", 
+    "orderIntervalType" : "Day", 
+    "orderFrequency" : NumberInt(1), 
+    "customer" : ObjectId("5f4ab2a243ce3f5fb73ea21f"), 
+    "supplier" : ObjectId("5f4a6f019f78705936d5306b"), 
+    "branch" : ObjectId("60045ba7d6c13f401fe3eaa5"), 
+    "days" : NumberInt(1), 
+    "updatedAt" : ISODate("2021-08-09T00:20:00.314+0000"), 
+    "createdAt" : ISODate("2021-03-13T08:14:08.862+0000"), 
+    "status" : "Active", 
+    "startDate" : ISODate("2021-08-11T02:14:08.863+0000"), 
+    "products" : [
+        {
+            "_id" : ObjectId("604c4a1752e72a4c7122741c"), 
+            "price" : NumberInt(10), 
+            "quantity" : NumberInt(4), 
+            "product" : ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+            "createdAt" : ISODate("2021-03-13T08:13:03.244+0000")
+        }
+    ], 
+    "__v" : NumberInt(0), 
+    "updatedDate" : ISODate("2021-03-13T08:14:08.863+0000")
+}

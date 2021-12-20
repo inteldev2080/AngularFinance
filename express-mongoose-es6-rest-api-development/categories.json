@@ -1,0 +1,119 @@
+{ 
+    "_id" : ObjectId("5ea59bc2d8d93354f6161308"), 
+    "arabicName" : "مخبوزات", 
+    "englishName" : "Bakery", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-04-26T17:33:38.955+0000"), 
+    "status" : "Active", 
+    "products" : [
+
+    ], 
+    "childCategory" : [
+        ObjectId("5ea870e7d8d93354f616130f")
+    ], 
+    "__v" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5ea870e7d8d93354f616130f"), 
+    "parentCategory" : ObjectId("5ea59bc2d8d93354f6161308"), 
+    "arabicName" : "دونات", 
+    "englishName" : "Dounat", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-04-28T21:07:35.057+0000"), 
+    "status" : "Active", 
+    "products" : [
+        ObjectId("5ea87176d8d93354f6161312"), 
+        ObjectId("5ef8e693d8d93354f616135b"), 
+        ObjectId("5f1aa346cce33f65397fa7ef"), 
+        ObjectId("5f1aa38fcce33f65397fa7f0"), 
+        ObjectId("5f1aa6a3cce33f65397fa7f1"), 
+        ObjectId("5f1aa723cce33f65397fa7f2"), 
+        ObjectId("5f1aa8bbcce33f65397fa7f3"), 
+        ObjectId("5f1aa937cce33f65397fa7f4"), 
+        ObjectId("5f1aae5dcce33f65397fa7f5"), 
+        ObjectId("5f1aaec1cce33f65397fa7f6"), 
+        ObjectId("5f1aaf5acce33f65397fa7f7"), 
+        ObjectId("5f1aafbecce33f65397fa7f8"), 
+        ObjectId("5f1ab041cce33f65397fa7f9"), 
+        ObjectId("5f1ab0f4cce33f65397fa7fa"), 
+        ObjectId("5f1ab2b2cce33f65397fa7fb"), 
+        ObjectId("5f1ab2e7cce33f65397fa7fc"), 
+        ObjectId("5f1ab4c9cce33f65397fa7fd"), 
+        ObjectId("5f1ab948cce33f65397fa7fe"), 
+        ObjectId("5f1abae6cce33f65397fa7ff"), 
+        ObjectId("5f1abb2fcce33f65397fa800"), 
+        ObjectId("5f1abc4ccce33f65397fa801"), 
+        ObjectId("5f1abc86cce33f65397fa802"), 
+        ObjectId("5f1ad676cce33f65397fa84b"), 
+        ObjectId("5f1adcd9cce33f65397fa84e"), 
+        ObjectId("5f1add1ccce33f65397fa84f"), 
+        ObjectId("5f1addfccce33f65397fa850"), 
+        ObjectId("5f1adee0cce33f65397fa851"), 
+        ObjectId("5f1adf1acce33f65397fa852"), 
+        ObjectId("5f1adfa1cce33f65397fa853"), 
+        ObjectId("5f1adfdbcce33f65397fa854"), 
+        ObjectId("5f1ae11fcce33f65397fa855"), 
+        ObjectId("5f1ae158cce33f65397fa856"), 
+        ObjectId("5f1ae201cce33f65397fa857"), 
+        ObjectId("5f1ae23fcce33f65397fa858"), 
+        ObjectId("5f1ae351cce33f65397fa859"), 
+        ObjectId("5f1ae3accce33f65397fa85a"), 
+        ObjectId("5f1ae493cce33f65397fa85b"), 
+        ObjectId("5f1ae4d5cce33f65397fa85c"), 
+        ObjectId("5f4aaa4943ce3f5fb73ea20f"), 
+        ObjectId("5f5499c10d4032396a3f35ce"), 
+        ObjectId("60bb31b6e6fc60120dd7986e"), 
+        ObjectId("60bb3200e6fc60120dd7986f")
+    ], 
+    "childCategory" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ea87105d8d93354f6161310"), 
+    "arabicName" : "Sweets", 
+    "englishName" : "Sweets", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-04-28T21:08:05.528+0000"), 
+    "status" : "Active", 
+    "products" : [
+
+    ], 
+    "childCategory" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("6078228e03835f1d6d6cb1ec"), 
+    "arabicName" : "خضروات", 
+    "englishName" : "Vegetables", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-04-15T14:25:02.044+0000"), 
+    "status" : "Active", 
+    "products" : [
+
+    ], 
+    "childCategory" : [
+        ObjectId("6078232903835f1d6d6cb1ed")
+    ], 
+    "__v" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("6078232903835f1d6d6cb1ed"), 
+    "parentCategory" : ObjectId("6078228e03835f1d6d6cb1ec"), 
+    "arabicName" : "خضروات", 
+    "englishName" : "Vegetables", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-04-15T14:27:37.704+0000"), 
+    "status" : "Active", 
+    "products" : [
+        ObjectId("6078242903835f1d6d6cb1ee"), 
+        ObjectId("60bb315ae6fc60120dd7986d")
+    ], 
+    "childCategory" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}

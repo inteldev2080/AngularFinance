@@ -1,0 +1,397 @@
+<div class="inner-content p-t-15 p-r-20 p-l-20">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+      <li class="breadcrumb-item">
+        <a href="#">{{"m.categories" | translate }}</a>
+      </li>
+      <li
+        ng-if="$ctrl._$translate.use() === 'en'"
+        class="breadcrumb-item active"
+      >
+        {{$ctrl.category.englishName}}
+      </li>
+      <li
+        ng-if="$ctrl._$translate.use() !== 'en'"
+        class="breadcrumb-item active"
+      >
+        {{$ctrl.category.arabicName}}
+      </li>
+    </ol>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h6 ng-if="$ctrl._$translate.use() == 'en'" class="cursor">
+        {{$ctrl.category.englishName}}
+        <!--<small><small>({{$ctrl.category.arabicName}})</small></small>-->
+        <span
+          ng-if="$ctrl.category.status=='Hidden'"
+          class="fa fa-eye-slash m-l-5"
+        ></span>
+        <span
+          class="btn-edit"
+          ng-click="$ctrl.openEditCategoryPopup($ctrl.category)"
+          ><i class="fa fa-pencil" aria-hidden="true"></i
+        ></span>
+      </h6>
+      <h6 ng-if="$ctrl._$translate.use() != 'en'" class="cursor">
+        {{$ctrl.category.arabicName}}
+        <!--<small><small>({{$ctrl.category.englishName}})</small></small>-->
+        <span
+          ng-if="$ctrl.category.status=='Hidden'"
+          class="fa fa-eye-slash m-l-5"
+        ></span>
+        <span
+          class="btn-edit"
+          ng-click="$ctrl.openEditCategoryPopup($ctrl.category)"
+          ><i class="fa fa-pencil" aria-hidden="true"></i>
+        </span>
+      </h6>
+    </div>
+    <div class="col-sm-6">
+      <!--<ul class="nav nav-tabs nav-tabs-custom border-0 justify-content-sm-end justify-content-start m-b-25 mt-3 mt-sm-0 ml-sm-4 mr-sm-4">-->
+      <!--<li class="nav-item">-->
+      <!--<a class="active" data-toggle="tab" ng-click="$ctrl._$translate.use() == 'en' = true" href="#" aria-expanded="true"><span class="no-text-transform">{{"admin.categories.english" | translate }}</span></a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+      <!--<a data-toggle="tab" ng-click="$ctrl._$translate.use() == 'en' = false" href="#" aria-expanded="false"><span class="no-text-transform">{{"admin.categories.arabic" | translate }}</span></a>-->
+      <!--</li>-->
+      <!--</ul>-->
+    </div>
+  </div>
+  <div class="sidebar-border"></div>
+
+  <div class="content tab-content">
+    <div class="tab-pane active" id="tab3hellowWorld">
+      <div class="row animated zoomIn">
+        <div
+          ng-repeat="item in $ctrl.category.childCategory"
+          class="col-lg-4 col-sm-6 d-flex flex-column"
+        >
+          <!-- START ITEM -->
+          <div
+            class="card hover-layout-card social-card card-add-icon share share-other full-width d-flex flex-1 full-height no-border"
+            data-social="item"
+          >
+            <div class="card-content-container">
+              <div ng-if="$ctrl._$translate.use()=== 'en'" class="bold h5">
+                {{item.englishName}}
+                <span
+                  ng-if="item.status=='Hidden'"
+                  class="fa fa-eye-slash m-l-5"
+                ></span>
+                <!--<p>{{item.arabicName}}</p>-->
+              </div>
+              <div ng-if="$ctrl._$translate.use() !== 'en'" class="bold h5">
+                {{item.arabicName}}
+                <span
+                  ng-if="item.status=='Hidden'"
+                  class="fa fa-eye-slash m-l-5"
+                ></span>
+                <!--<p>{{item.englishName}}</p>-->
+              </div>
+            </div>
+            <div class="hover-layout-container">
+              <div class="row hover-actions">
+                <div
+                  class="col-4 btn-primary w600 text-shadow no-box-shadow text-white"
+                  ng-click="$ctrl.renameSupCategory(item)"
+                >
+                  {{"admin.categories.rename" | translate}}
+                </div>
+                <div
+                  ng-if="item.status!='Hidden'"
+                  class="col-4 btn-primary w600 text-shadow no-box-shadow text-white"
+                  ng-click="$ctrl.hideCategory(item)"
+                >
+                  {{"admin.categories.hide" | translate}}
+                </div>
+                <div
+                  ng-if="item.status==='Hidden'"
+                  class="col-4 btn-primary w600 text-shadow no-box-shadow text-white"
+                  ng-click="$ctrl.hideCategory(item)"
+                >
+                  {{"admin.categories.unhide" | translate}}
+                </div>
+                <div
+                  permission
+                  permission-only="'canDelete'"
+                  class="col-4 btn-danger w600 text-shadow no-box-shadow text-white btn-delete"
+                  ng-click="$ctrl.openConfirmMessage(item._id, 'subCategory')"
+                >
+                  {{"admin.categories.delete" | translate}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END ITEM -->
+        </div>
+        <div
+          ng-if="!$ctrl.disableAddSubCategory"
+          class="col-lg-4 col-sm-6 d-flex flex-column"
+        >
+          <!-- START ITEM -->
+          <div
+            class="card social-card card-add-icon share share-other full-width d-flex flex-1 full-height no-border"
+            data-social="item"
+          >
+            <div
+              ng-click="$ctrl.openAddSubCategoryPopup()"
+              class="card-header flex-1 tx-center p-t-40 p-b-40"
+            >
+              <i class="pg-plus"></i>
+              <p class="paragraph bold m-t-10">
+                {{"admin.categories.addSubCategory" | translate }}
+              </p>
+            </div>
+          </div>
+          <!-- END ITEM -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade stick-up" id="categoryModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header clearfix text-left">
+        <button
+          type="button"
+          class="close"
+          ng-click="$ctrl.closeCategoryModalPopup(categoryForm)"
+          data-dismiss="modal"
+          aria-hidden="true"
+        >
+          <i class="pg-close fs-14"></i>
+        </button>
+        <h5><span class="semi-bold">{{$ctrl.title}}</span></h5>
+        <p></p>
+      </div>
+      <div class="modal-body">
+        <form
+          role="form"
+          name="categoryForm"
+          ng-submit="$ctrl.onSubmit(categoryForm)"
+          accessible-form
+        >
+          <div class="">
+            <div class="row m-b-5">
+              <div class="col-md-12">
+                <div
+                  class="form-group form-group-default"
+                  ng-class="{ 'has-error' : categoryForm.arabicName.$invalid && !categoryForm.arabicName.$pristine }"
+                >
+                  <label>{{"admin.categories.arabicName" | translate }}</label>
+                  <input
+                    ng-model="$ctrl.formData.arabicName"
+                    name="arabicName"
+                    id="arabicName"
+                    ng-minlength="2"
+                    ng-maxlength="20"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div ng-messages="categoryForm.arabicName.$error">
+                  <span
+                    class="error"
+                    ng-message="required"
+                    ng-if="!categoryForm.arabicName.$pristine"
+                  >
+                    {{'admin.categories.field.arabicName.required' | translate}}
+                  </span>
+                  <span class="error" ng-message="minlength">
+                    {{'admin.categories.field.arabicName.minLength' |
+                    translate}}
+                  </span>
+                  <span class="error" ng-message="maxlength">
+                    {{'admin.categories.field.arabicName.maxLength' |
+                    translate}}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row m-b-5">
+              <div class="col-md-12">
+                <div
+                  class="form-group form-group-default"
+                  ng-class="{ 'has-error' : categoryForm.englishName.$invalid && !categoryForm.englishName.$pristine }"
+                >
+                  <label>{{"admin.categories.englishName" | translate }}</label>
+                  <input
+                    ng-model="$ctrl.formData.englishName"
+                    type="text"
+                    name="englishName"
+                    id="englishName"
+                    ng-minlength="2"
+                    ng-maxlength="20"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div ng-messages="categoryForm.englishName.$error">
+                  <span
+                    class="error"
+                    ng-message="required"
+                    ng-if="!categoryForm.englishName.$pristine"
+                  >
+                    {{'admin.categories.field.englishName.required' |
+                    translate}}
+                  </span>
+                  <span class="error" ng-message="minlength">
+                    {{'admin.categories.field.englishName.minLength' |
+                    translate}}
+                  </span>
+                  <span class="error" ng-message="maxlength">
+                    {{'admin.categories.field.englishName.maxLength' |
+                    translate}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div ng-show="$ctrl.mode=='Update'" class="row m-b-5">
+              <div class="col-md-12">
+                <div
+                  class="form-group form-group-custom form-group-default form-group-default-select2"
+                  ng-class="{ 'has-error' : categoryForm.status.$invalid && !categoryForm.status.$pristine }"
+                >
+                  <label class="label-custom"
+                    >{{"admin.categories.role" | translate }}</label
+                  >
+                  <select
+                    ng-model="$ctrl.formData.status"
+                    name="status"
+                    class="full-width"
+                    data-placeholder="Select Status"
+                    data-disable-search="true"
+                    id="status"
+                    data-init-plugin="select2"
+                  >
+                    <option value="Active"
+                      >{{"admin.categories.active" | translate }}</option
+                    >
+                    <option value="Hidden"
+                      >{{"admin.categories.hidden" | translate }}</option
+                    >
+                  </select>
+                </div>
+                <div ng-messages="categoryForm.status.$error">
+                  <span
+                    class="error"
+                    ng-message="required"
+                    ng-if="!categoryForm.status.$pristine"
+                  >
+                    {{'admin.categories.field.englishName.required' |
+                    translate}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block m-t-5"
+                ng-disabled="categoryForm.$invalid"
+              >
+                {{$ctrl.action}}
+              </button>
+            </div>
+            <div class="col-sm">
+              <button
+                permission
+                permission-only="'canDelete'"
+                type="button"
+                ng-if="$ctrl.mode==='Update'"
+                ng-click="$ctrl.openConfirmMessage($ctrl.formData._id, 'mainCategory'); "
+                class="btn btn-danger btn-block m-t-5"
+                ng-disabled="categoryForm.$invalid"
+              >
+                {{"admin.categories.delete" | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade slide-up" id="deleteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header clearfix text-left">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-hidden="true"
+        >
+          <i class="pg-close fs-14"></i>
+        </button>
+        <h5>
+          <span class="semi-bold"
+            >{{"admin.categories.message.confirmDelete" | translate }}</span
+          >
+        </h5>
+        <p></p>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm">
+            <button
+              ng-click="$ctrl.confirmDelete()"
+              class="btn btn-danger btn-block m-t-5"
+            >
+              {{"admin.categories.confirm" | translate }}
+            </button>
+          </div>
+          <div class="col-sm">
+            <button
+              onclick="$('#deleteModal').modal('hide');"
+              class="btn btn-primary btn-block m-t-5"
+            >
+              {{"admin.categories.cancel" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<script>
+  $("#status").on("select2:open", function () {
+    let that = $(this);
+    let flag = false;
+    if ($(window).width() > 739) {
+      $(window).bind("wheel", function (e) {
+        // if(!flag && e.target.className === 'select2-results__option'){
+        //     // that.select2("close");
+        //     console.log('scroll');
+        // } else if(!flag &&  e.target.className !== 'select2-results__option'){
+        //     that.select2("open");
+        //     console.log('scroll');
+        // }
+      });
+    } else {
+      $(window).bind("wheel", function (e) {
+        console.log(e.target);
+        if (!flag && e.target.className === "select2-results__option") {
+          // that.select2("close");
+          console.log("scroll");
+        } else if (!flag && e.target.className !== "select2-results__option") {
+          that.select2("close");
+          console.log("scroll");
+        } else flag = true;
+      });
+    }
+  });
+</script>

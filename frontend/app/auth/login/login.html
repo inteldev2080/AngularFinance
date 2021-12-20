@@ -1,0 +1,67 @@
+<p id="account-signin" class="p-t-35">{{"auth.login.text.account_signin" | translate }}</p>
+
+<form id="form-login" name="login" class="p-t-15" role="form" ng-submit="$ctrl.signIn()" novalidate>
+   <!-- <label class="error" ng-if="!$ctrl.isAuthorized">{{ $ctrl.error }}</label>-->
+    <!-- START Form Control-->
+    <div id="authorized" ng-if="!$ctrl.isAuthorized" class="alert alert-danger" role="alert">
+        <button id="close6" class="close" data-dismiss="alert"></button>
+        <strong id="error6"> </strong>{{"auth.login.invalid_login" | translate}}
+    </div>
+    <div ng-if="message" class="alert alert-{{message.type}}" role="alert">
+        <button id="close7" class="close" data-dismiss="alert"></button>
+        <strong id="error7"> </strong>{{message.text | translate}}
+    </div>
+    <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : login.username.$invalid && !login.username.$pristine }">
+        <label>{{"auth.login.field.Email.label" | translate }}</label>
+        <div class="controls">
+            <input type="text" name="username" id="username" placeholder='{{"auth.login.field.Email.placeholder" | translate }}' class="form-control"
+                   ng-model="$ctrl.formData.username"
+            required>
+        </div>
+        <!-- ng-pattern = '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i' -->
+    </div>
+    <label id="usernameRequired" class="error" for="username" ng-show="login.username.$error.required && !login.username.$pristine" >
+        {{"auth.login.field.Email.required" | translate }}
+    </label>
+    <label id="usernameInvalid" class="error" for="username" ng-show="login.username.$error.pattern && !login.username.$pristine" >
+        {{"auth.login.field.Email.invalid" | translate }}
+    </label>
+    <!-- END Form Control-->
+    <!-- START Form Control-->
+    <div pg-form-group class="form-group form-group-default" ng-class="{ 'has-error' : login.password.$invalid && !login.password.$pristine }">
+        <!--ng-class="{ 'has-error' : login.password.$invalid && !login.password.$pristine }"-->
+        <label>{{"auth.login.field.password.label" | translate }}</label>
+        <div class="controls">
+            <input type="password" id="password" class="form-control" name="password" placeholder='{{"auth.login.field.password.placeholder" | translate }}'
+                   ng-model="$ctrl.formData.password" required>
+        </div>
+    </div>
+    <label id="passwordRequired" class="error" for="password" ng-show="login.password.$error.required && !login.password.$pristine">
+        {{"auth.login.field.password.required" | translate }}
+    </label>
+    <!-- START Form Control-->
+    <div class="">
+        <a ui-sref="app.auth.forgotPassword" id="forgot-Password" class="byn btn-link small">{{"auth.login.link.forget_password" | translate }}</a>
+    </div>
+    <!-- END Form Control-->
+
+
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-cons m-t-10" id="sign-in" type="submit"  ng-disabled="login.$invalid" >
+                {{"auth.login.button.signin" | translate }}
+            </button>
+        </div>
+        <div class="col-6">
+            <div id="loading3" ng-if="$ctrl.loading" class="progress-circle-indeterminate"></div>
+
+        </div>
+
+    </div>
+
+    <br/>
+    <span class="text-info small m-t-30 fs-16" id="sign-up" >
+        {{"auth.login.text.signup" | translate }}
+    </span>
+    <button id="sign-up2" ui-sref="app.auth.register.supplier" class="btn btn-link p-l-5">{{"auth.login.button.signup" | translate }}</button>
+</form>

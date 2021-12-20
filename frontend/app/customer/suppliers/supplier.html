@@ -1,0 +1,255 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item">{{"customer.menu.payment" | translate }}</li>
+        <li class="breadcrumb-item active text-capitalize">{{supplierName}}</li>
+    </ol>
+</div>
+<div class="card card-details-table">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+                <div class="card-title">
+                    {{"customer.account.payment.payment" | translate }}
+                </div>
+                <div class="card-description">
+                    {{"customer.account.payment.billingDes" | translate }} {{supplierName}}
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                <button class="btn btn-primary btn-block" ng-click="$ctrl.openRecordPaymentPopup()"
+                        ng-class="{'btn-danger': $ctrl.balanceDetails.balance < 0, 'btn-warning': $ctrl.balanceDetails.balance == 0}">{{"customer.account.payment.record_payment" | translate }}</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-block-transparent">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-sm-6 add-gap border-top-balance-card" ng-class="{'danger': $ctrl.balanceDetails.balance < 0, 'warning': $ctrl.balanceDetails.balance == 0}">
+                    <div class="payment-box padding-15">
+                        <shimmer hide="$ctrl.supplierIsLoaded" clipped="true"></shimmer>
+                        <div class="row" ng-if="$ctrl.supplierIsLoaded">
+                            <div class="col-xl-6 col-lg-5 col-md-12">
+                                <h6 class="w600">{{"customer.account.payment.balance" | translate }}</h6>
+                                <h4 class="bold">{{$ctrl.balanceDetails.balance | currency : "" : 2}} <small><small>{{"customer.account.payment.sar" | translate }}</small></small></h4>
+                            </div>
+                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                <p class="compact-text-10">{{"customer.account.payment.nextPayment" | translate }}:</p>
+                                <p class="w600">{{$ctrl.balanceDetails.nextPaymentDate | moment:'fromNow'}}</p>
+                            </div>
+                        </div>
+                        <div class="gray-box p-t-5 p-b-5 p-l-10 p-r-10 m-t-20" ng-if="$ctrl.supplierIsLoaded">
+                            <p class="w600 no-padding no-margin">{{"customer.account.payment.payment_installment" | translate }}</p>
+                            <p class="no-padding no-margin">{{"customer.account.payment.every" | translate }}
+                                <span ng-if="$ctrl.balanceDetails.payment.interval === 'Month'" translate="customer.account.payment.Month" translate-values="{value: $ctrl.balanceDetails.payment.frequency}"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 add-gap border-top-balance-card" ng-class="{'danger': $ctrl.balanceDetails.monthCredit > $ctrl.balanceDetails.creditLimit, 'warning': $ctrl.balanceDetails.monthCredit == $ctrl.balanceDetails.creditLimit}">
+                    <div class="payment-box p-t-15 p-l-15">
+                        <shimmer hide="$ctrl.supplierIsLoaded" clipped="true"></shimmer>
+                        <div class="row" ng-if="$ctrl.supplierIsLoaded">
+                            <div class="col-lg-6 col-md-12">
+                                <h6 class="w600">{{"customer.account.payment.creditThisMonth" | translate }}</h6>
+                                <h4 class="bold">{{$ctrl.balanceDetails.monthCredit | currency : "" : 2}} <small><small>{{"customer.account.payment.sar" | translate }}</small></small></h4>
+                            </div>
+                            <div class="col-lg-6 col-md-12" ng-if="$ctrl.supplierIsLoaded">
+                                <p class="compact-text-10">{{"customer.account.payment.nextInvoice" | translate }}:</p>
+                                <p class="w600">{{$ctrl.balanceDetails.nextInvoiceDate | moment:'fromNow'}}</p>
+                            </div>
+                        </div>
+                        <div class="gray-box p-t-5 p-b-5 p-l-10 p-r-10 m-t-20" ng-if="$ctrl.supplierIsLoaded && !$ctrl.balanceDetails.exceedCreditLimit">
+                            <p class="w600 no-padding no-margin">{{"customer.account.payment.limitThisMonth" | translate }}</p>
+                            <p class="no-padding no-margin">{{$ctrl.balanceDetails.creditLimit | currency : "" : 2}} <small><small>{{"customer.account.payment.sar" | translate }}</small></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-t-50 m-b-30">
+                <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9 m-t-10">
+                    <p class="bold text-uppercase">{{"customer.account.payment.billingHistory" | translate }}</p>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#transactions">{{"customer.account.payment.detailed_transactions" | translate }}</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-block-normal">
+                    <div class="col-md-12  padding-0">
+                        <shimmer hide="$ctrl.supplierIsLoaded" row="10" col="5" clipped="true"></shimmer>
+                        <div class="dataTables_wrapper no-footer">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-compact table-hover" role="grid">
+                                    <thead>
+                                    <tr role="row">
+                                        <th>{{"customer.account.payment.table.date" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.type" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.description" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.amount" | translate }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in $ctrl.billingHistroy" class="gradeX odd content-table-payment cursor" role="row" ng-click="$ctrl.openBillingShowDetails(item._id,item)">
+                                        <td class="mn-170">
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                        </td>
+                                        <td class="mn-170 sorting_1">
+                                            <span ng-if="item.type === 'credit'"
+                                                  class="label label-success upper-case">{{"customer.account.payment.credit" | translate }}</span>
+                                            <span ng-if="item.type === 'invoice'"
+                                                  class="label label-warning upper-case">{{"customer.account.payment.invoice" | translate }}</span>
+                                            <span class="label upper-case">{{item.invoiceId}}{{item.transId}}</span>
+                                        </td>
+                                        <td class="mn-150">
+                                            <span ng-if="item.type === 'credit'">
+                                                <span ng-if="item.paymentMethod === 'Cash'"> {{"customer.account.payment.cash" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Cheque'"> {{"customer.account.payment.cheque" | translate}}</span>
+                                                <span ng-if="item.paymentMethod === 'Bank'"> {{"customer.account.payment.bank" | translate}}</span>
+                                            </span>
+                                            <span ng-if="item.type === 'invoice'">
+                                                {{"customer.account.payment.invoice_for" | translate }} {{item.createdAt | moment:'MMM YYYY'}}
+                                            </span>
+                                        </td>
+                                        <td class="mn-120">{{item.amount | currency : "" : 2}} <span ng-if="item.type === 'invoice'">{{item.total | currency : "" : 2}}</span> <small>{{"customer.account.payment.sar" | translate }}</small></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <shimmer hide="$ctrl.billingHistroyIsLoaded" row="6" rol="5" clipped="true"></shimmer>
+                                <list-pagination total-pages="$ctrl.billingHistoryQuery.totalPages" on-page-click="$ctrl.setBillingHistoryPage(pageNumber)" current-page="$ctrl.billingHistoryQuery.currentPage"></list-pagination>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-50 m-b-30" ng-if="$ctrl.paymentsClaimsIsLoaded && $ctrl.paymentsClaims.length > 0">
+                <p class="bold text-uppercase">{{"customer.account.payment.paymentClaims" | translate }}</p>
+            </div>
+            <div class="row" ng-if="$ctrl.paymentsClaimsIsLoaded && $ctrl.paymentsClaims.length > 0">
+                <div class="card-block-normal">
+                    <div class="col-md-12  padding-0">
+                        <div class="dataTables_wrapper no-footer ">
+
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover table-compact" role="grid">
+                                    <thead>
+                                    <tr role="row">
+                                        <th width="150">{{"customer.account.payment.table.date" | translate }}</th>
+                                        <th width="130">{{"customer.account.payment.table.referenceId" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.type" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.amount" | translate }}</th>
+                                        <th>{{"customer.account.payment.table.status" | translate }}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in $ctrl.paymentsClaims" class="gradeX odd content-table-payment cursor" role="row" ng-click="$ctrl.openShowDetails(item._id,item)">
+                                        <td class="mn-170 sorting_1">
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'DD-MM-YYYY'}}</span>
+                                            <span class="label upper-case">{{item.createdAt | amUtcOffset:'-0000' | amDateFormat:'HH:mm:ss'}}</span>
+                                        </td>
+                                        <td class="mn-150 sorting_1"><span class="label upper-case">{{item.paymentId}}</span></td>
+                                        <td class="mn-100 sorting_1">
+                                            <span ng-if="item.paymentMethod === 'Cash'"
+                                                  class="label label-success upper-case"><li class="fa fa-money"></li> {{"customer.account.payment.cash" | translate}}</span>
+                                            <span ng-if="item.paymentMethod === 'Cheque'"
+                                                  class="label label-info upper-case"><li class="fa pg-credit_card_line"></li> {{"customer.account.payment.cheque" | translate}}</span>
+                                            <span ng-if="item.paymentMethod === 'Bank'"
+                                                  class="label label-inverse upper-case"><li class="fa fa-bank"></li> {{"customer.account.payment.bank" | translate}}</span>
+
+
+                                        </td>
+                                        <td class="mn-100 sorting_1">{{item.amount| currency:"":2}} <small>{{"customer.account.payment.sar" | translate }}</small></td>
+                                        <td class="mn-100 sorting_1">
+                                            <span ng-if="item.status === 'Approved'"
+                                                  class="label label-success upper-case">{{"customer.account.payment.approved" | translate}}</span>
+                                            <span ng-if="item.status === 'Pending'"
+                                                  class="label label-warning upper-case">{{"customer.account.payment.pending" | translate}}</span>
+                                            <span ng-if="item.status === 'Rejected'"
+                                                  class="label label-important upper-case">{{"customer.account.payment.rejected" | translate}}</span>
+                                        </td>
+
+                                        <!--<td class="sorting_1"><a href=""  ui-sref="app.supplier.customer.payments-details({paymentId:item._id,payment:item})">Show Details</a></td>-->
+
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <list-pagination total-pages="$ctrl.supplierPaymentClaimsQuery.totalPages" current-page="$ctrl.supplierPaymentClaimsQuery.currentPage" on-page-click="$ctrl.setPaymentClaimsPage(pageNumber)"></list-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="card card-details-table no-margin no-box-shadow" ng-if="$ctrl.specialPricesIsLoaded && $ctrl.specialPrices.length > 0">
+        <div class="card-header p-t-30">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-4 col-xl-5 m-t-10">
+                    <div class="card-title">
+                        {{"customer.account.payment.specialPrices" | translate }}
+                    </div>
+                    <!--<div class="card-description">-->
+                        <!--<br>-->
+                    <!--</div>-->
+                </div>
+                <!--<div class="col-sm-7 col-md-7 col-lg-8 col-xl-7 d-flex justify-content-start justify-content-sm-end mb-3 mb-sm-0">-->
+                    <!--&lt;!&ndash;-->
+                                        <!--<button class="btn btn-complete pull-right m-l-20 p-l-40 p-r-40">Edit</button>-->
+                    <!--&ndash;&gt;-->
+                    <!--<small class="text-uppercase p-t-10 p-l-10 p-r-10">{{"customer.payments.filter.export" | translate }}</small>-->
+                    <!--<div class="btn-toolbar" role="toolbar">-->
+                        <!--<div class="btn-group btn-group-sm" dir="ltr">-->
+                            <!--<button type="button" class="btn btn-transparent" ng-click="$ctrl.export('pdf')">PDF</button>-->
+                            <!--<button type="button" class="btn btn-transparent" ng-click="$ctrl.export('xls')">XLS</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="card-block-transparent">
+
+            <div class="card-block-normal card-wide-padding wide-leftup">
+                <div class="col-md-12 padding-0">
+                    <div class="dataTables_wrapper no-footer ">
+                        <div class="table-responsive">
+                            <table class="table table-striped dataTable dataTableFormat no-footer table-hover" role="grid">
+                                <thead>
+                                <tr role="row">
+                                    <th class="mn-130">{{"customer.account.payment.specialPricesTable.productName" | translate}}</th>
+                                    <th class="mn-110">{{"customer.account.payment.specialPricesTable.specialPrice" | translate}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in $ctrl.specialPrices" class="gradeX odd content-table-payment cursor" role="row"  ui-sref="app.customer.product.view.product({'productId':item.product._id})">
+                                    <td class="sorting_1">{{ currentLanguage.language === 'ar'? item.product.arabicName : item.product.englishName }}</td>
+                                    <td class="sorting_1">{{item.price | currency : "" : 2}} <small>{{"customer.account.payment.sar" | translate }}</small></td>
+                                    <td class="mn-120 sorting_1"><a ui-sref="app.customer.product.view.product({'productId':item.product._id})">{{"customer.account.payment.details" | translate }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <list-pagination total-pages="$ctrl.customerSpecialPricesQuery.totalPages" current-page="$ctrl.customerSpecialPricesQuery.currentPage" on-page-click="$ctrl.setSpecialPricesPage(pageNumber)"></list-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<payment-record on-save="$ctrl.addPayment(payment)" view-mode="$ctrl.disableRecordPaymentForm" payment="$ctrl.paymentItem"></payment-record>
+<view-payment bill="$ctrl.billItem" payment-type="'CS'"></view-payment>
+<transactions is-admin-fees="false" supplier="$ctrl.supplierId"></transactions>
+
+
+

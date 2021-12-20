@@ -1,0 +1,22 @@
+<div class="container">
+    <ol class="breadcrumb breadcrumb-alt">
+        <li class="breadcrumb-item">{{"customer.menu.account" | translate }}</li>
+        <li class="breadcrumb-item active text-capitalize">{{"customer.account.roles.title" | translate }}</li>
+    </ol>
+</div>
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="row">
+            <div class="col"><p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{"customer.account.roles.title" |
+                translate }}</p></div>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+        <button data-toggle="modal" data-target="#myModal" ng-if="!$ctrl.blockRolesAdd"
+                class="btn btn-primary btn-block">{{"customer.account.roles.button.add" | translate }}
+        </button>
+    </div>
+
+</div>
+<role-list></role-list>
+<create-role get-roles="$ctrl.getRoles()"></create-role>

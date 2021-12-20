@@ -1,0 +1,232 @@
+<!-- START PAGE CONTENT WRAPPER -->
+<div class="page-content-wrapper ">
+    <!-- START PAGE CONTENT -->
+    <div class="container  no-padding">
+        <div  class="secondary-sidebar light" data-init="secondary-sidebar">
+            <ul class="main-menu">
+                <li class="active top-level">
+                    <back></back>
+                </li>
+            </ul>
+        </div>
+        <div class="inner-content p-t-15 p-r-20 p-l-20">
+            <div class="sidebar-border"></div>
+            <div class="content">
+                <div class="container">
+                    <ol class="breadcrumb breadcrumb-alt">
+                        <li class="breadcrumb-item"><a href="#">{{"supplier.menu.product" | translate}}</a></li>
+                        <li ng-show="$ctrl.product.categories[0].parentCategory.arabicName" class="breadcrumb-item active">
+                            {{$ctrl._$translate.use()==="ar" ? $ctrl.product.categories[0].parentCategory.arabicName : $ctrl.product.categories[0].parentCategory.englishName}}
+                        </li>
+                        <li ng-show="$ctrl.product.categories[0].arabicName"  class="breadcrumb-item active">
+                            {{$ctrl._$translate.use()==="ar"  ? $ctrl.product.categories[0].arabicName : $ctrl.product.categories[0].englishName}}
+
+                        </li>
+                    </ol>
+                </div>
+                <div ng-show="!$ctrl.isLoading && !$ctrl.catIsLoading" class="card card-details-form">
+                    <fieldset ng-readonly="true">
+                        <form ng-readonly="true" class="p-b-30" id="productForm" name="productForm"  accessible-form novalidate ng-model-options=" {getterSetter: true }">
+                            <div class="card-header text-center header-bg padding-0 cover_photo"
+                                 style=" background-image: url({{$ctrl.product.coverPhoto}});height: 200px;">
+                                <div class="image-overlay">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="card-header padding-0">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <ul class="nav nav-tabs nav-tabs-custom border-0 justify-content-end m-t-20">
+                                            <li class="nav-item">
+                                                <a class="active" data-toggle="tab" data-target="#tab_english" ng-class="{'active': !$ctrl.next}" href="#" aria-expanded="true"><span>{{"supplier.product.button.english" | translate}}</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a data-toggle="tab" data-target="#tab_arabic" ng-class="{'active': $ctrl.next}" href="#" class="" aria-expanded="false"><span>{{"supplier.product.button.arabic" | translate}}</span></a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-md-4 p-0 m-b-10">
+                                        <div ng-repeat="imgUrl in $ctrl.product.images  track by $index" class="custom-image-input" background="{{imgUrl}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm">
+                                        <div class="card card-transparent">
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="tab_arabic" aria-expanded="true">
+                                                    <div class="form-group form-group-custom form-group-default">
+                                                        <label class="label-custom">{{"supplier.product.field.arabicName.label" | translate}}</label>
+                                                        <input id="arabicName" name="arabicName"
+                                                               type="text"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.arabicName"
+                                                               ng-readonly="true">
+                                                    </div>
+                                                    <div class="form-group form-group-custom form-group-default">
+                                                        <label class="label-custom">{{"supplier.product.field.arabicDescription.label" | translate}}</label>
+                                                        <textarea id="arabicDescription" name="arabicDescription" type="text" class="form-control input-lg" rows="4" cols="10"
+                                                                  class="form-control"
+                                                                  ng-model="$ctrl.product.arabicDescription"
+                                                                  ng-readonly="true"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane active" id="tab_english" aria-expanded="false">
+                                                    <div class="form-group form-group-custom form-group-default">
+                                                        <label class="label-custom">{{"supplier.product.field.englishName.label" | translate}}</label>
+                                                        <input id="englishName" name="englishName" type="text"  class="form-control"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.englishName"
+                                                               ng-readonly="true">
+                                                    </div>
+                                                    <div class="form-group form-group-custom form-group-default">
+                                                        <label class="label-custom">{{"supplier.product.field.englishDescription.label" | translate}}</label>
+                                                        <textarea id="englishDescription" name="englishDescription" type="text" class="form-control input-lg" rows="4" cols="10"
+                                                                  class="form-control"
+                                                                  ng-model="$ctrl.product.englishDescription"
+                                                                  ng-readonly="true"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group form-group-default input-group col-md-12">
+                                                    <div class="form-input-group form-group-custom">
+                                                        <label class="label-custom">{{"supplier.product.field.price.label" | translate}}</label>
+                                                        <input name="price" type="text" class="form-control"  id="price"
+                                                               class="form-control"
+                                                               ng-model="$ctrl.product.price"
+                                                               ng-readonly="true">
+                                                    </div>
+                                                    <div class="input-group-addon">{{"supplier.product.currency" | translate}}</div>
+                                                </div>
+                                            </div>
+                                            <div class="col" style="display: inline-flex;">
+                                                <div class="form-group form-group-custom form-group-default">
+                                                    <label class="label-custom">{{"supplier.product.field.store.label" | translate}}</label>
+                                                    <input id="store" name="store" type="text"  class="form-control"
+
+                                                           class="form-control"
+                                                           ng-model="$ctrl.product.store"
+                                                           ng-readonly="true">
+                                                </div>
+                                                <div class="form-group form-group-custom form-group-default">
+                                                    <label class="label-custom">{{"supplier.product.field.shelf.label" | translate}}</label>
+                                                    <input id="shelf" name="shelf" type="text" class="form-control"
+
+                                                           class="form-control"
+                                                           ng-model="$ctrl.product.shelf"
+                                                           ng-readonly="true">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-group-custom form-group-default">
+                                            <label class="label-custom">{{"supplier.product.field.status.label" | translate}}</label>
+                                            <input type="text" class="form-control"
+                                                   class="form-control"
+                                                   value='{{$ctrl._$translate.use()==="ar" ? $ctrl.product.status.arabicName : $ctrl.product.status.englishName}}'
+                                                   ng-readonly="true">
+                                        </div>
+                                        <div class="form-group form-group-custom form-group-default">
+                                            <label class="label-custom">{{"supplier.product.field.sku.label" | translate}}</label>
+                                            <input type="text" class="form-control"
+
+                                                   class="form-control"
+                                                   ng-model="$ctrl.product.sku"
+                                                   ng-readonly="true">
+                                        </div>
+
+                                        <div class="form-group form-group-custom form-group-default">
+                                            <label class="label-custom">{{"supplier.product.field.categories.label" | translate}}</label>
+                                            <input type="text" class="form-control"
+                                                   class="form-control"
+                                                   value='{{$ctrl._$translate.use()==="ar" ? $ctrl.product.categories[0].arabicName : $ctrl.product.categories[0].englishName}}'
+                                                   ng-readonly="true">
+
+
+                                        </div>
+
+                                        <div class="form-group form-group-custom form-group-default">
+                                            <label class="label-custom">{{"supplier.product.field.unit.label" | translate}}</label>
+                                            <input type="text" class="form-control"
+                                                   class="form-control"
+                                                   value='{{$ctrl._$translate.use()==="ar" ? $ctrl.product.unit.arabicName : $ctrl.product.unit.englishName}}'
+                                                   ng-readonly="true">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="row">
+                                        <div class="col-6 p-r-0">
+                                            <button permission permission-only="'canDelete'" type="button" ng-click="$ctrl.openConfirmMessage()" class="btn btn-danger btn-cons m-r-0" >{{"supplier.product.button.delete" | translate}}</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button ui-sref="app.supplier.product.edit({productId : $ctrl.product._id})" class="btn btn-primary btn-cons" >
+                                                {{"supplier.product.button.edit" | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="pull-left">-->
+                                    <!--<button type="button" ng-click="$ctrl.openConfirmMessage()" class="btn btn-danger btn-cons" >{{"supplier.product.button.delete" | translate}}</button>-->
+                                <!--</div>-->
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+                <shimmer hide="!$ctrl.isLoading"></shimmer>
+                <div class="row" ng-if="$ctrl.hasError">
+                    <div class="col">
+                        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                            <div class="card-image-overlay"></div>
+                            <img src="assets/img/cards/error.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-if="$ctrl.noInternetConnection">
+                    <div class="col">
+                        <div class="tx-center p-t-50 p-b-20" background="assets/img/cards/stripes.png">
+                            <div class="card-image-overlay"></div>
+                            <img src="assets/img/cards/no-conection.svg">
+                            <p class="paragraph m-t-10">{{"supplier.product.noInternet" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $.Pages.init();
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade slide-up"  id="deleteModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{"supplier.product.message.confirmDelete" | translate }}</span></h5>
+                <p></p>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button  onclick="$('#deleteModal').modal('hide');" class="btn btn-primary btn-block m-t-5">{{"supplier.product.button.cancel" | translate }}</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button  ng-click="$ctrl.deleteProduct()" class="btn btn-danger btn-block m-t-5">{{"supplier.product.button.confirm" | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

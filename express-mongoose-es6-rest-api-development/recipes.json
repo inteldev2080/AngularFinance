@@ -1,0 +1,137 @@
+{ 
+    "_id" : ObjectId("5f1ac2a4cce33f65397fa803"), 
+    "sku" : "SKU00001", 
+    "barcode" : "2051224045", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "Nutella", 
+    "supplierId" : ObjectId("5f1a9c45cce33f65397fa7ea"), 
+    "type" : NumberInt(2), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2020-07-24T14:14:44.816+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60a8f9dc5d6faa50100aee0b"), 
+    "sku" : "21321321", 
+    "barcode" : "232132", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "123", 
+    "supplierId" : ObjectId("5ea86eb7d8d93354f6161309"), 
+    "type" : NumberInt(2), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-05-22T15:32:28.864+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5bf51534ac396058efc0"), 
+    "sku" : "SKU12361", 
+    "barcode" : "1236145113", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "Recipe1", 
+    "supplierId" : ObjectId("60bb2ebf864f657f35d5cb10"), 
+    "type" : NumberInt(1), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-05T14:11:49.529+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+        {
+            "_id" : ObjectId("60bb5c651534ac396058efc4"), 
+            "quantity" : NumberInt(2), 
+            "ingredientId" : ObjectId("60bb5c3f1534ac396058efc2")
+        }, 
+        {
+            "_id" : ObjectId("60bb5c651534ac396058efc3"), 
+            "quantity" : NumberInt(3), 
+            "ingredientId" : ObjectId("60bb5c1c1534ac396058efc1")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5cbe1534ac396058efc5"), 
+    "sku" : "Sku93212", 
+    "barcode" : "21121", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "Item2", 
+    "supplierId" : ObjectId("60bb2ebf864f657f35d5cb10"), 
+    "type" : NumberInt(2), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-05T14:15:10.830+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60bb5e8c1534ac396058efc6"), 
+    "sku" : "1951212", 
+    "barcode" : "2342412", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "Chocolcate", 
+    "supplierId" : ObjectId("60bb2ebf864f657f35d5cb10"), 
+    "type" : NumberInt(2), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-05T14:22:52.854+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+        {
+            "_id" : ObjectId("60bb5eaf1534ac396058efc7"), 
+            "quantity" : NumberInt(1), 
+            "ingredientId" : ObjectId("60bb5c3f1534ac396058efc2")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("60d33caac28ad953199d946e"), 
+    "sku" : "3213213", 
+    "barcode" : "123213", 
+    "barcodeImage" : "", 
+    "arabicName" : "", 
+    "englishName" : "Reciep1", 
+    "supplierId" : ObjectId("5f4a6f019f78705936d5306a"), 
+    "type" : NumberInt(1), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2021-06-23T16:52:42.657+0000"), 
+    "status" : "Active", 
+    "ingredients" : [
+
+    ], 
+    "addIngredients" : [
+        {
+            "_id" : ObjectId("60d33ccfc28ad953199d9470"), 
+            "quantity" : NumberInt(1), 
+            "ingredientId" : ObjectId("60d33cbdc28ad953199d946f")
+        }
+    ], 
+    "__v" : NumberInt(0)
+}

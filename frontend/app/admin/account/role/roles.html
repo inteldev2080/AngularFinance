@@ -1,0 +1,13 @@
+<div class="row m-b-15">
+    <div class="col-sm-7 col-md-7 col-lg-8 col-xl-9">
+        <div class="row">
+            <div class="col"><p class="bold text-uppercase p-t-5 p-l-10 p-r-10">{{'admin.account.roles.text.roles' | translate}}</p></div>
+        </div>
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+        <button id ="new_role" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-block">{{'admin.account.roles.button.new_role' | translate}}</button>
+    </div>
+</div>
+<role-list></role-list>
+
+<create-role get-roles="$ctrl.getRoles()"></create-role>

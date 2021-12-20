@@ -1,0 +1,2806 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "SuppliesOn",
+    "description": "Online B2B marketplace for both buyers and sells",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "supplieson.com",
+  "basePath": "/api",
+  "securityDefinitions": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "http://supplieson.com/api",
+      "scopes": {}
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Login",
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Login",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/auth/login",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"username\": \"hisham@indielabs.sa\",\n  \"password\": \"123456789\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Login",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/auth/verify-jwt": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Verify JWT",
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Verify JWT",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/auth/verify-jwt",
+              "headers": {
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNWFiZjVhNzkwNzNkZDIwYmM3MzgiLCJpYXQiOjE1MTAwMzkzNzksImV4cCI6MTUxMDkwMzM3OX0.-yRat0cdLnSoBpzHXj6FtwRZjhXexYMtdKOSmmSkXCw"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Verify JWT",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/carts": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Customer Carts",
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "Get Customer Carts",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/carts",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNjE2NjY3YzRlZTNlNjA0MWMzNGEiLCJpYXQiOjE1MTAwNDA1NTUsImV4cCI6MTUxMDkwNDU1NX0.E3L0GfhGyTJeO4MiNNRzM5a3gVk5irhSpwLs1s7Cvh0",
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Customer Carts",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Add To Cart",
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "Add To Cart",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddToCartrequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/carts",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNjE2NjY3YzRlZTNlNjA0MWMzNGEiLCJpYXQiOjE1MTAwNDA1NTUsImV4cCI6MTUxMDkwNDU1NX0.E3L0GfhGyTJeO4MiNNRzM5a3gVk5irhSpwLs1s7Cvh0"
+              },
+              "body": "{\n  \"product\": \"5a015aea5a79073dd20bc73b\",\n  \"quantity\": 2\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Add To Cart",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/carts/checkout/59e7134b992a1527c62ab9a6": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Checkout Cart",
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "Checkout Cart",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CheckoutCartrequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/carts/checkout/59e7134b992a1527c62ab9a6",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1OWU3MDBiODNkOTExYjIyOTY2ZTg4MjkiLCJpYXQiOjE1MDgzMTU3OTMsImV4cCI6MTUwOTE3OTc5M30.E8XaGudJeypwQ-FygFiTD4k7RjISJY9YWvH_qWm9xio"
+              },
+              "body": "{\n  \"startDate\": \"1/1/2018\",\n  \"orderIntervalType\": \"Week\",\n  \"orderFrequency\": 0\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Checkout Cart",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/carts/product": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Update Product Quantity in Cart",
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "Update Product Quantity in Cart",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "quantity",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/carts/product?productId=5a015aea5a79073dd20bc73b&quantity=3",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNjE2NjY3YzRlZTNlNjA0MWMzNGEiLCJpYXQiOjE1MTAwNDA1NTUsImV4cCI6MTUxMDkwNDU1NX0.E3L0GfhGyTJeO4MiNNRzM5a3gVk5irhSpwLs1s7Cvh0"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Update Product Quantity in Cart",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Remove Product from Cart",
+        "tags": [
+          "Cart"
+        ],
+        "operationId": "Remove Product from Cart",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/carts/product?productId=5a015aea5a79073dd20bc73b",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNjE2NjY3YzRlZTNlNjA0MWMzNGEiLCJpYXQiOjE1MTAwNDA1NTUsImV4cCI6MTUxMDkwNDU1NX0.E3L0GfhGyTJeO4MiNNRzM5a3gVk5irhSpwLs1s7Cvh0"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Remove Product from Cart",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/customers/": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Customers",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Get Customers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/customers/",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Customers",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Customer",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Create Customer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateCustomerrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/customers/",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"longitude\": \"50.210758\",\n  \"latitude\": \"26.314926\",\n  \"representativeName\": \"Hisham Garout\",\n  \"representativePhone\": \"0531108094\",\n  \"representativeEmail\": \"hishamgarout@outlook.com\",\n  \"userEmail\": \"hisham@indielabs.sa\",\n  \"userMobilePhone\": \"1234567893\",\n  \"userFirstName\": \"Hisham\",\n  \"userLastName\": \"Garout\",\n  \"userPassword\": \"123456789\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create Customer",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/customers/59f978984bb7db4c3ac46b43": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Customer",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Get Customer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/customers/59f978984bb7db4c3ac46b43",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Customer",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/customers/59f978984bb7db4c3ac46b42": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Update Customer",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Update Customer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateCustomerrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/customers/59f978984bb7db4c3ac46b42",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"longitude\": \"50.210758\",\n  \"latitude\": \"26.314926\",\n  \"representativeName\": \"Hisham Yahya\",\n  \"representativePhone\": \"0531108094\",\n  \"representativeEmail\": \"hishamgarout@outlook.com\",\n  \"userEmail\": \"hisham3@email.com\",\n  \"userMobilePhone\": \"123456789\",\n  \"userFirstName\": \"Hisham\",\n  \"userLastName\": \"Garout\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Update Customer",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Delete Customer",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Delete Customer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteCustomerrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/customers/59f978984bb7db4c3ac46b42",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"longitude\": \"50.210758\",\n  \"latitude\": \"26.314926\",\n  \"representativeName\": \"Hisham Garout\",\n  \"representativePhone\": \"0531108094\",\n  \"representativeEmail\": \"hishamgarout@outlook.com\",\n  \"userEmail\": \"hisham2@email.com\",\n  \"userMobilePhone\": \"123456789\",\n  \"userFirstName\": \"Hisham\",\n  \"userLastName\": \"Garout\",\n  \"userPassword\": \"123456789\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Delete Customer",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/customers/invite": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Invite Customer",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Invite Customer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/InviteCustomerrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/customers/invite",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMzI0NzgsImV4cCI6MTUxMDk5NjQ3OH0.FgD6aJqDSuPFSWvMHMX0Vv0YE37FaDEspq_e6MzQqnE"
+              },
+              "body": "{\n  \"customerEmail\": \"hisham@indielabs.sa\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Invite Customer",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/customers/5a02cf4755bd982359728900/supplier": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Update Supplier Relation",
+        "tags": [
+          "Customer"
+        ],
+        "operationId": "Update Supplier Relation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateSupplierRelationrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/customers/5a02cf4755bd982359728900/supplier",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              },
+              "body": "{\n  \"status\": \"Active\",\n  \"creditLimit\": 100000,\n  \"paymentInterval\": \"Monthly\",\n  \"productPrices\": [\n    {\n      \"productId\": \"5a02c05d2ee5ba21c8289b49\",\n      \"price\": \"45\"\n    }]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Update Supplier Relation",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Categories",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Get Categories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/categories"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Categories",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Create Category",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateCategoryrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/categories",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"arabicName\": \"Fruits\",\n  \"englishName\": \"فواكه\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create Category",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/orders/": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Orders",
+        "tags": [
+          "Order"
+        ],
+        "operationId": "Get Orders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/orders/",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1OWU3MDA0YjNkOTExYjIyOTY2ZTg4MjUiLCJpYXQiOjE1MDg3NDIwNjIsImV4cCI6MTUwOTYwNjA2Mn0.QwVTK5KU1iaLdKKwGJIrchVlmMXpqF1tT7oZbLX8IZk"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Orders",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/orders/59ec873c6cea51279008f20f": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Order",
+        "tags": [
+          "Order"
+        ],
+        "operationId": "Get Order",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/orders/59ec873c6cea51279008f20f",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1OWU3MDBiODNkOTExYjIyOTY2ZTg4MjkiLCJpYXQiOjE1MDgzMTU3OTMsImV4cCI6MTUwOTE3OTc5M30.E8XaGudJeypwQ-FygFiTD4k7RjISJY9YWvH_qWm9xio"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Order",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Products (Supplier)",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Get Products (Supplier)",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/products",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNWFiZjVhNzkwNzNkZDIwYmM3MzgiLCJpYXQiOjE1MTAwMzgyMjIsImV4cCI6MTUxMDkwMjIyMn0.8VEmJnLsI1H0OQiCL-UPRGYsMwLmkG-mkqkJI8eK-qY"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Products (Supplier)",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Product",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Create Product",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateProductrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/products",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              },
+              "body": "{\n  \"categories\": [\"5a02c02a2ee5ba21c8289b48\"],\n  \"arabicName\": \"تفاح\",\n  \"englishName\": \"Apple\",\n  \"arabicDescription\": \"فاكهة التفاح\",\n  \"englishDescription\": \"Apple fruit\",\n  \"sku\": \"12344\",\n  \"store\": \"3E\",\n  \"shelf\": \"8\",\n  \"price\": \"15\",\n  \"unit\": \"Kilogram\",\n  \"images\" : [\"some random image\"]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create Product",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/products/5a015aea5a79073dd20bc73b": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Product",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Get Product",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/products/5a015aea5a79073dd20bc73b",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNWFiZjVhNzkwNzNkZDIwYmM3MzgiLCJpYXQiOjE1MTAwMzgyMjIsImV4cCI6MTUxMDkwMjIyMn0.8VEmJnLsI1H0OQiCL-UPRGYsMwLmkG-mkqkJI8eK-qY"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Product",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "Update Product",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Update Product",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateProductrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/products/5a015aea5a79073dd20bc73b",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAxNWFiZjVhNzkwNzNkZDIwYmM3MzgiLCJpYXQiOjE1MTAwMzgyMjIsImV4cCI6MTUxMDkwMjIyMn0.8VEmJnLsI1H0OQiCL-UPRGYsMwLmkG-mkqkJI8eK-qY"
+              },
+              "body": "{\n  \"categories\": [\"5a015ae25a79073dd20bc73a\"],\n  \"arabicName\": \"تفاح\",\n  \"englishName\": \"Apple\",\n  \"arabicDescription\": \"فاكهة التفاح\",\n  \"englishDescription\": \"Banana fruit\",\n  \"sku\": \"12344\",\n  \"store\": \"3E\",\n  \"shelf\": \"8\",\n  \"price\": \"15\",\n  \"unit\": \"Kilogram\",\n  \"images\": [\"some random image\"],\n  \"status\": \"Active\" \n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Update Product",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/products/supplier": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Products (Customer)",
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Get Products (Customer)",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/products/supplier?supplierId=5a02b0520b0b0d20ea70eacd",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyY2Y0NzU1YmQ5ODIzNTk3Mjg4ZmYiLCJpYXQiOjE1MTAxMzM2MjksImV4cCI6MTUxMDk5NzYyOX0.ywpI0Z1PN1TGSWY0zXk0LeaSyHNqnXQST2IKRSvPznM"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Products (Customer)",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/recurringOrders": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Recurring Orders",
+        "tags": [
+          "Recurring Order"
+        ],
+        "operationId": "Get Recurring Orders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/recurringOrders",
+              "headers": {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1OWU3MDBiODNkOTExYjIyOTY2ZTg4MjkiLCJpYXQiOjE1MDgzMTU3OTMsImV4cCI6MTUwOTE3OTc5M30.E8XaGudJeypwQ-FygFiTD4k7RjISJY9YWvH_qWm9xio",
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Recurring Orders",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/suppliers/": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Suppliers",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Get Suppliers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/suppliers/",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyY2Y0NzU1YmQ5ODIzNTk3Mjg4ZmYiLCJpYXQiOjE1MTAxMzM2MjksImV4cCI6MTUxMDk5NzYyOX0.ywpI0Z1PN1TGSWY0zXk0LeaSyHNqnXQST2IKRSvPznM"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Suppliers",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Supplier",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Create Supplier",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateSupplierrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/suppliers/",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n    \"englishName\": \"Hisham Supplies\",\n    \"arabicName\": \"محل هشام\",\n    \"commercialRegister\": \"123456789\",\n    \"commercialRegisterPhoto\": \"some random photo\",\n  \"userEmail\": \"hisham@email.com\",\n  \"userMobilePhone\": \"123456789\",\n  \"userFirstName\": \"Hisham\",\n  \"userLastName\": \"Garout\",\n  \"userPassword\": \"123456789\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create Supplier",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/suppliers/5a02b0520b0b0d20ea70eacd": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Supplier",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Get Supplier",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/suppliers/5a02b0520b0b0d20ea70eacd",
+              "headers": {
+                "Content-Type": "application/json"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Supplier",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/suppliers/staff": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Supplier Staff",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Get Supplier Staff",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/suppliers/staff",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Supplier Staff",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Supplier Staff Member",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Create Supplier Staff Member",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateSupplierStaffMemberrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/suppliers/staff",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              },
+              "body": "{\n  \"userEmail\": \"hisham3@email.com\",\n  \"userMobilePhone\": \"123456129\",\n  \"userFirstName\": \"Hisham\",\n  \"userLastName\": \"Garout\",\n  \"userPassword\": \"1234567891\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create Supplier Staff Member",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "Remove Staff from Supplier",
+        "tags": [
+          "Supplier"
+        ],
+        "operationId": "Remove Staff from Supplier",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "staffId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/suppliers/staff?staffId=5a04132936f09f4d364ff54f",
+              "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTAyYjA1MjBiMGIwZDIwZWE3MGVhY2MiLCJpYXQiOjE1MTAxMjU3MDUsImV4cCI6MTUxMDk4OTcwNX0.R_2wglilJApyMsHrjpfaLu814xntY7Yum8V7w061tBc"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Remove Staff from Supplier",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Users",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Get Users",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/users/"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Get Users",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create User",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Create User",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateUserrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/users/",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n  \"email\": \"hisham@indielabs.sa\",\n    \"firstName\": \"Hisham\",\n    \"lastName\": \"Garout\",\n    \"mobileNumber\": \"0531108094\",\n    \"password\": \"123456789\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Create User",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "username": "hisham@indielabs.sa",
+        "password": "123456789"
+      },
+      "type": "object",
+      "properties": {
+        "username": {
+          "description": "",
+          "type": "string"
+        },
+        "password": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "AddToCartrequest": {
+      "title": "Add To CartRequest",
+      "example": {
+        "product": "5a015aea5a79073dd20bc73b",
+        "quantity": 2
+      },
+      "type": "object",
+      "properties": {
+        "product": {
+          "description": "",
+          "type": "string"
+        },
+        "quantity": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "product",
+        "quantity"
+      ]
+    },
+    "CheckoutCartrequest": {
+      "title": "Checkout CartRequest",
+      "example": {
+        "startDate": "1/1/2018",
+        "orderIntervalType": "Week",
+        "orderFrequency": 0
+      },
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "description": "",
+          "type": "string"
+        },
+        "orderIntervalType": {
+          "description": "",
+          "type": "string"
+        },
+        "orderFrequency": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "startDate",
+        "orderIntervalType",
+        "orderFrequency"
+      ]
+    },
+    "CreateCustomerrequest": {
+      "title": "Create CustomerRequest",
+      "example": {
+        "longitude": "50.210758",
+        "latitude": "26.314926",
+        "representativeName": "Hisham Garout",
+        "representativePhone": "0531108094",
+        "representativeEmail": "hishamgarout@outlook.com",
+        "userEmail": "hisham@indielabs.sa",
+        "userMobilePhone": "1234567893",
+        "userFirstName": "Hisham",
+        "userLastName": "Garout",
+        "userPassword": "123456789"
+      },
+      "type": "object",
+      "properties": {
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeName": {
+          "description": "",
+          "type": "string"
+        },
+        "representativePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userMobilePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "userFirstName": {
+          "description": "",
+          "type": "string"
+        },
+        "userLastName": {
+          "description": "",
+          "type": "string"
+        },
+        "userPassword": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "longitude",
+        "latitude",
+        "representativeName",
+        "representativePhone",
+        "representativeEmail",
+        "userEmail",
+        "userMobilePhone",
+        "userFirstName",
+        "userLastName",
+        "userPassword"
+      ]
+    },
+    "DeleteCustomerrequest": {
+      "title": "Delete CustomerRequest",
+      "example": {
+        "longitude": "50.210758",
+        "latitude": "26.314926",
+        "representativeName": "Hisham Garout",
+        "representativePhone": "0531108094",
+        "representativeEmail": "hishamgarout@outlook.com",
+        "userEmail": "hisham2@email.com",
+        "userMobilePhone": "123456789",
+        "userFirstName": "Hisham",
+        "userLastName": "Garout",
+        "userPassword": "123456789"
+      },
+      "type": "object",
+      "properties": {
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeName": {
+          "description": "",
+          "type": "string"
+        },
+        "representativePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userMobilePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "userFirstName": {
+          "description": "",
+          "type": "string"
+        },
+        "userLastName": {
+          "description": "",
+          "type": "string"
+        },
+        "userPassword": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "longitude",
+        "latitude",
+        "representativeName",
+        "representativePhone",
+        "representativeEmail",
+        "userEmail",
+        "userMobilePhone",
+        "userFirstName",
+        "userLastName",
+        "userPassword"
+      ]
+    },
+    "UpdateCustomerrequest": {
+      "title": "Update CustomerRequest",
+      "example": {
+        "longitude": "50.210758",
+        "latitude": "26.314926",
+        "representativeName": "Hisham Yahya",
+        "representativePhone": "0531108094",
+        "representativeEmail": "hishamgarout@outlook.com",
+        "userEmail": "hisham3@email.com",
+        "userMobilePhone": "123456789",
+        "userFirstName": "Hisham",
+        "userLastName": "Garout"
+      },
+      "type": "object",
+      "properties": {
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeName": {
+          "description": "",
+          "type": "string"
+        },
+        "representativePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "representativeEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userMobilePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "userFirstName": {
+          "description": "",
+          "type": "string"
+        },
+        "userLastName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "longitude",
+        "latitude",
+        "representativeName",
+        "representativePhone",
+        "representativeEmail",
+        "userEmail",
+        "userMobilePhone",
+        "userFirstName",
+        "userLastName"
+      ]
+    },
+    "InviteCustomerrequest": {
+      "title": "Invite CustomerRequest",
+      "example": {
+        "customerEmail": "hisham@indielabs.sa"
+      },
+      "type": "object",
+      "properties": {
+        "customerEmail": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "customerEmail"
+      ]
+    },
+    "UpdateSupplierRelationrequest": {
+      "title": "Update Supplier RelationRequest",
+      "example": {
+        "status": "Active",
+        "creditLimit": 100000,
+        "paymentInterval": "Monthly",
+        "productPrices": [
+          {
+            "productId": "5a02c05d2ee5ba21c8289b49",
+            "price": "45"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "",
+          "type": "string"
+        },
+        "creditLimit": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "paymentInterval": {
+          "description": "",
+          "type": "string"
+        },
+        "productPrices": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductPrice"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "creditLimit",
+        "paymentInterval",
+        "productPrices"
+      ]
+    },
+    "ProductPrice": {
+      "title": "ProductPrice",
+      "type": "object",
+      "properties": {
+        "productId": {
+          "description": "",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "productId",
+        "price"
+      ]
+    },
+    "CreateCategoryrequest": {
+      "title": "Create CategoryRequest",
+      "example": {
+        "arabicName": "Fruits",
+        "englishName": "فواكه"
+      },
+      "type": "object",
+      "properties": {
+        "arabicName": {
+          "description": "",
+          "type": "string"
+        },
+        "englishName": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "arabicName",
+        "englishName"
+      ]
+    },
+    "CreateProductrequest": {
+      "title": "Create ProductRequest",
+      "example": {
+        "categories": [
+          "5a02c02a2ee5ba21c8289b48"
+        ],
+        "arabicName": "تفاح",
+        "englishName": "Apple",
+        "arabicDescription": "فاكهة التفاح",
+        "englishDescription": "Apple fruit",
+        "sku": "12344",
+        "store": "3E",
+        "shelf": "8",
+        "price": "15",
+        "unit": "Kilogram",
+        "images": [
+          "some random image"
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "categories": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arabicName": {
+          "description": "",
+          "type": "string"
+        },
+        "englishName": {
+          "description": "",
+          "type": "string"
+        },
+        "arabicDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "englishDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "sku": {
+          "description": "",
+          "type": "string"
+        },
+        "store": {
+          "description": "",
+          "type": "string"
+        },
+        "shelf": {
+          "description": "",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "type": "string"
+        },
+        "unit": {
+          "description": "",
+          "type": "string"
+        },
+        "images": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "categories",
+        "arabicName",
+        "englishName",
+        "arabicDescription",
+        "englishDescription",
+        "sku",
+        "store",
+        "shelf",
+        "price",
+        "unit",
+        "images"
+      ]
+    },
+    "UpdateProductrequest": {
+      "title": "Update ProductRequest",
+      "example": {
+        "categories": [
+          "5a015ae25a79073dd20bc73a"
+        ],
+        "arabicName": "تفاح",
+        "englishName": "Apple",
+        "arabicDescription": "فاكهة التفاح",
+        "englishDescription": "Banana fruit",
+        "sku": "12344",
+        "store": "3E",
+        "shelf": "8",
+        "price": "15",
+        "unit": "Kilogram",
+        "images": [
+          "some random image"
+        ],
+        "status": "Active"
+      },
+      "type": "object",
+      "properties": {
+        "categories": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arabicName": {
+          "description": "",
+          "type": "string"
+        },
+        "englishName": {
+          "description": "",
+          "type": "string"
+        },
+        "arabicDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "englishDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "sku": {
+          "description": "",
+          "type": "string"
+        },
+        "store": {
+          "description": "",
+          "type": "string"
+        },
+        "shelf": {
+          "description": "",
+          "type": "string"
+        },
+        "price": {
+          "description": "",
+          "type": "string"
+        },
+        "unit": {
+          "description": "",
+          "type": "string"
+        },
+        "images": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "categories",
+        "arabicName",
+        "englishName",
+        "arabicDescription",
+        "englishDescription",
+        "sku",
+        "store",
+        "shelf",
+        "price",
+        "unit",
+        "images",
+        "status"
+      ]
+    },
+    "CreateSupplierrequest": {
+      "title": "Create SupplierRequest",
+      "example": {
+        "englishName": "Hisham Supplies",
+        "arabicName": "محل هشام",
+        "commercialRegister": "123456789",
+        "commercialRegisterPhoto": "some random photo",
+        "userEmail": "hisham@email.com",
+        "userMobilePhone": "123456789",
+        "userFirstName": "Hisham",
+        "userLastName": "Garout",
+        "userPassword": "123456789"
+      },
+      "type": "object",
+      "properties": {
+        "englishName": {
+          "description": "",
+          "type": "string"
+        },
+        "arabicName": {
+          "description": "",
+          "type": "string"
+        },
+        "commercialRegister": {
+          "description": "",
+          "type": "string"
+        },
+        "commercialRegisterPhoto": {
+          "description": "",
+          "type": "string"
+        },
+        "userEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userMobilePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "userFirstName": {
+          "description": "",
+          "type": "string"
+        },
+        "userLastName": {
+          "description": "",
+          "type": "string"
+        },
+        "userPassword": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "englishName",
+        "arabicName",
+        "commercialRegister",
+        "commercialRegisterPhoto",
+        "userEmail",
+        "userMobilePhone",
+        "userFirstName",
+        "userLastName",
+        "userPassword"
+      ]
+    },
+    "CreateSupplierStaffMemberrequest": {
+      "title": "Create Supplier Staff MemberRequest",
+      "example": {
+        "userEmail": "hisham3@email.com",
+        "userMobilePhone": "123456129",
+        "userFirstName": "Hisham",
+        "userLastName": "Garout",
+        "userPassword": "1234567891"
+      },
+      "type": "object",
+      "properties": {
+        "userEmail": {
+          "description": "",
+          "type": "string"
+        },
+        "userMobilePhone": {
+          "description": "",
+          "type": "string"
+        },
+        "userFirstName": {
+          "description": "",
+          "type": "string"
+        },
+        "userLastName": {
+          "description": "",
+          "type": "string"
+        },
+        "userPassword": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "userEmail",
+        "userMobilePhone",
+        "userFirstName",
+        "userLastName",
+        "userPassword"
+      ]
+    },
+    "CreateUserrequest": {
+      "title": "Create UserRequest",
+      "example": {
+        "email": "hisham@indielabs.sa",
+        "firstName": "Hisham",
+        "lastName": "Garout",
+        "mobileNumber": "0531108094",
+        "password": "123456789"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "description": "",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "",
+          "type": "string"
+        },
+        "mobileNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "password": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "firstName",
+        "lastName",
+        "mobileNumber",
+        "password"
+      ]
+    }
+  }
+}

@@ -1,0 +1,937 @@
+{
+  "schemas": {
+    "Inventory": {
+      "type": "object",
+      "properties": {
+        "barcode": {
+          "type": "string"
+        },
+        "barcodeImage": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "addIngredients": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ingredientId": {
+                "type": "object"
+              },
+              "quantity": {
+                "type": "number"
+              },
+              "unit": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ingredients": [{
+          "type": "object"
+        }],
+        "arabicName": {
+          "type": "string"
+        },
+        "englishName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "number"
+        },
+        "supplierId": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/inventory/recipes/items": {
+      "get": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Get list of recipes.",
+        "operationId": "recipesList",
+        "parameters": [{
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "Recipes": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Inventory"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Create inventory.",
+        "operationId": "inventoryCreate",
+        "requestBody": {
+          "description": "Inventory Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "englishName",
+                  "recipeSku",
+                  "barCode"
+                ],
+                "type": "object",
+                "properties": {
+                  "englishName": {
+                    "type": "string"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "recipeSku": {
+                    "type": "string"
+                  },
+                  "barCode": {
+                    "type": "string"
+                  },
+                  "typeMethod": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipe": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/recipes/items/{Id}": {
+      "delete": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Delete inventory.",
+        "operationId": "deleteInventory",
+        "parameters": [{
+          "name": "Id",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipe": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/{recipeId}": {
+      "get": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Get recipe.",
+        "operationId": "getSingle",
+        "parameters": [{
+          "name": "recipeId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "recipe": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/ingredient/create ": {
+      "post": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Add ingredient.",
+        "operationId": "ingredientCreate",
+        "requestBody": {
+          "description": "Ingredient Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "englishName",
+                  "sku",
+                  "barCode",
+                  "quantity",
+                  "unit",
+                  "threshold"
+                ],
+                "type": "object",
+                "properties": {
+                  "englishName": {
+                    "type": "string"
+                  },
+                  "arabicName": {
+                    "type": "string"
+                  },
+                  "sku": {
+                    "type": "string"
+                  },
+                  "barCode": {
+                    "type": "string"
+                  },
+                  "threshold": {
+                    "type": "number"
+                  },
+                  "qunatity": {
+                    "type": "string"
+                  },
+                  "unit": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+
+    },
+    "/inventory/ingredient/update ": {
+      "put": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Update ingredient.",
+        "operationId": "updateIngredient",
+        "requestBody": {
+          "description": "Ingredient Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "quantity"
+                ],
+                "type": "object",
+                "properties": {
+                  "oldQuantity": {
+                    "type": "number"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  },
+                  "_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Update ingredient in bulk.",
+        "operationId": "updateIngredientInBulk",
+        "requestBody": {
+          "description": "Ingredient Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "quantity"
+                ],
+                "type": "object",
+                "properties": {
+                  "ingredients": {
+                    "type": "array",
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      },
+                      "quantityAdd": {
+                        "type": "number"
+                      }
+                    }
+                  }
+
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/ingredient/{InventoryId} ": {
+      "delete": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Delete inventory.",
+        "operationId": "deleteInventory",
+        "parameters": [{
+          "name": "InventoryId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/ingredient/list ": {
+      "get": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Ingredient list.",
+        "operationId": "listIngredient",
+        "parameters": [{
+          "name": "skip",
+          "in": "query",
+          "schema": {
+            "type": "number"
+          }
+        }, {
+          "name": "limit",
+          "in": "query",
+          "schema": {
+            "type": "number"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredients": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Inventory"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      },
+      "post": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Ingredient list.",
+        "operationId": "ingredientList",
+        "requestBody": {
+          "description": "Inventory Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [],
+                "type": "object",
+                "properties": {
+                  "limit": {
+                    "type": "string"
+                  },
+                  "skip": {
+                    "type": "string"
+                  },
+                  "barCode": {
+                    "type": "id"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredients": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Inventory"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/ingredient/single ": {
+      "put": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Update single ingredient.",
+        "operationId": "updateSingleIngredient",
+        "requestBody": {
+          "description": "Ingredient Attributes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "quantity",
+                  "unit",
+                  "threshold"
+                ],
+                "type": "object",
+                "properties": {
+                  "unit": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  },
+                  "threshold": {
+                    "type": "number"
+                  },
+                  "_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    },
+    "/inventory/ingredient/{IngredientId} ": {
+      "delete": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Delete ingredient.",
+        "operationId": "deleteIngredient",
+        "parameters": [{
+          "name": "IngredientId",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Return successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "ingredient": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Inventory"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "409": {
+            "$ref": "#/components/responses/409"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        },
+        "security": [{
+          "APIKeyHeader": []
+        }]
+      }
+    }
+  }
+}

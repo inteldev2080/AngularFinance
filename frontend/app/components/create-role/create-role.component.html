@@ -1,0 +1,69 @@
+<div class="modal fade slide-up disable-scroll" id="myModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content-wrapper">
+             <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button ng-click="$ctrl.resetForm(newRoleForm)" type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                </button>
+                <h5><span class="semi-bold">{{'component.create-role.text.adding_new_role' | translate}}</span></h5>
+                <p></p>
+            </div>
+            <div class="modal-body">
+                <form role="form" name="newRoleForm" ng-submit="$ctrl.submit(newRoleForm)">
+                    <div class="form-group-attached">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-default"  ng-class="{ 'has-error' : newRoleForm.englishName.$invalid && !newRoleForm.englishName.$pristine }">
+                                    <label>{{'component.create-role.field.role_name_english.label' | translate}}</label>
+                                    <!--<input ng-model="$ctrl.role.englishName" type="text" class="form-control required"-->
+                                           <!--name="englishName" id="englishName"-->
+                                           <!--ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/" required >-->
+                                    <input ng-model="$ctrl.role.englishName" type="text" class="form-control required"
+                                           name="englishName" id="englishName" required >
+                                </div>
+                                <div class="error" ng-messages="newRoleForm.englishName.$error">
+                                    <span ng-message="required" ng-if="!newRoleForm.englishName.$pristine" >
+                                      {{'component.create-role.field.role_name_english.required' | translate}}
+                                    </span>
+                                    <!--<span ng-message="pattern">-->
+                                        <!--{{'component.create-role.field.role_name_english.invalid' | translate}}-->
+                                    <!--</span>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-default"  ng-class="{ 'has-error' : newRoleForm.arabicName.$invalid && !newRoleForm.arabicName.$pristine }">
+                                    <label>{{'component.create-role.field.role_name_arabic.label' | translate}}</label>
+                                    <!--<input ng-model="$ctrl.role.arabicName"  type="text" class="form-control required"-->
+                                           <!--name="arabicName" id="arabicName"-->
+                                           <!--ng-pattern="/^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$/" required >-->
+                                    <input ng-model="$ctrl.role.arabicName"  type="text" class="form-control required"
+                                           name="arabicName" id="arabicName" required >
+                                </div>
+                                <div class="error" ng-messages="newRoleForm.arabicName.$error">
+                                    <span ng-message="required" ng-if="!newRoleForm.arabicName.$pristine">
+                                      {{'component.create-role.field.role_name_arabic.required' | translate}}
+                                    </span>
+                                    <!--<span ng-message="pattern">-->
+                                        <!--{{'component.create-role.field.role_name_arabic.invalid' | translate}}-->
+                                    <!--</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4 m-t-10 sm-m-t-10 text-center">
+                            <button type="submit" class="btn btn-primary btn-block m-t-5" ng-disabled="newRoleForm.$invalid">
+                                {{'component.create-role.button.save' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+             <!-- /.modal-content -->
+         </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
